@@ -1,10 +1,5 @@
-<header align="center">
-<h1 >
-<i role="img" aria-label="Cute mushrooms">𓍊𓋼𓍊𓋼𓍊</i>
-GameOff 2025 Mashroom
-<i role="img" aria-label="Cute mushrooms">𓍊𓋼𓍊𓋼𓍊</i>
-</h1>
-</header>
+
+<h1 align="center"> GameOff 2025 Mashroom</h1>
 
 ## Description
 
@@ -31,3 +26,4 @@ This project is licensed under the GPL-2.0 license - see the [LICENSE](LICENSE) 
 <div align="center">
   Made with ❤️ by <a href="https://github.com/salem404">@salem404</a>
 </div>
+
