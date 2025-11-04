@@ -1,5 +1,5 @@
 
-<h1 align="center"> GameOff 2025 Mashroom</h1>
+<h1 align="center">Curse of the waves</h1>
 
 ## Description
 
