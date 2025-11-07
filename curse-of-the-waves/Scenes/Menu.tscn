@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(148, 700), Vector2(148, 102)]
+"values": [Vector2(0, 1000), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_syfuq"]
@@ -103,14 +103,13 @@ text = "Options"
 
 [node name="Options" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
 layout_mode = 1
-anchor_left = 0.128
-anchor_top = 0.157
-anchor_right = 0.874
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.5439911
-offset_top = 0.26399994
-offset_right = 0.5439453
-offset_bottom = 0.2647705
+offset_left = 148.0
+offset_top = 102.0
+offset_right = 148.0
+offset_bottom = 101.999756
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_ma218")
@@ -118,9 +117,14 @@ OptionAnim = NodePath("OptionsAnimation")
 
 [node name="OptionsBackground" type="PanelContainer" parent="Options"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.13900001
+anchor_top = 0.148
+anchor_right = 0.86100006
 anchor_bottom = 1.0
+offset_left = -0.12802124
+offset_top = 0.09603119
+offset_right = 0.12792969
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -133,14 +137,14 @@ libraries = {
 [node name="BackButton" type="Button" parent="Options"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.66700006
-anchor_top = 0.804
-anchor_right = 0.86300004
-anchor_bottom = 0.91300005
-offset_left = -0.21447754
-offset_top = -0.19699097
-offset_right = -0.0064697266
-offset_bottom = 0.069244385
+anchor_left = 0.611
+anchor_top = 0.84000003
+anchor_right = 0.77800006
+anchor_bottom = 0.938
+offset_left = 0.12799072
+offset_top = -0.32000732
+offset_right = -0.25604248
+offset_bottom = 0.17596436
 text = "Back"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
