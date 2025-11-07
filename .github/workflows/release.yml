@@ -1,0 +1,488 @@
+name: Release to GitHub & Itch.io
+
+on:
+ workflow_dispatch:  # Manual trigger only
+   inputs:
+     bump_type:
+       description: 'Version bump type'
+       required: false
+       default: 'auto'
+       type: choice
+       options:
+         - auto
+         - none
+         - major
+         - minor
+         - patch
+     rebuild:
+       description: '🔨 Rebuild from scratch (slower, normally not needed)'
+       required: false
+       default: false
+       type: boolean
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+ Detect-Platforms:
+  runs-on: ubuntu-latest
+  outputs:
+    matrix: ${{ steps.set-matrix.outputs.matrix }}
+    has-platforms: ${{ steps.set-matrix.outputs.has-platforms }}
+    godot-version: ${{ steps.detect-config.outputs.godot-version }}
+    game-name: ${{ steps.detect-config.outputs.game-name }}
+    project-path: ${{ steps.detect-config.outputs.project-path }}
+  steps:
+  - uses: actions/checkout@v4
+  
+  - name: Detect Project Configuration
+    id: detect-config
+    shell: bash
+    run: |
+      echo "Detecting project configuration from project.godot..."
+      
+      # Find project.godot location
+      if [ -f "project.godot" ]; then
+        PROJECT_PATH="."
+      elif [ -f "curse-of-the-waves/project.godot" ]; then
+        PROJECT_PATH="curse-of-the-waves"
+      else
+        echo "❌ ERROR: Could not find project.godot"
+        exit 1
+      fi
+      
+      echo "Found project at: $PROJECT_PATH"
+      
+      GODOT_VERSION=$(grep 'config/features' "$PROJECT_PATH/project.godot" | grep -o '[0-9]\+\.[0-9]\+' | head -n 1)
+      
+      if [ -z "$GODOT_VERSION" ]; then
+        echo "❌ ERROR: Could not detect Godot version from project.godot"
+        exit 1
+      fi
+      
+      GAME_NAME=$(grep 'config/name=' "$PROJECT_PATH/project.godot" | sed 's/config\/name="\(.*\)"/\1/' | tr ' ' '-' | tr '[:upper:]' '[:lower:]' || echo "godot-game")
+      
+      echo "godot-version=$GODOT_VERSION" >> $GITHUB_OUTPUT
+      echo "game-name=$GAME_NAME" >> $GITHUB_OUTPUT
+      echo "project-path=$PROJECT_PATH" >> $GITHUB_OUTPUT
+      
+      echo "Detected configuration:"
+      echo "  Project Path: $PROJECT_PATH"
+      echo "  Godot Version: $GODOT_VERSION"
+      echo "  Game Name: $GAME_NAME"
+  
+  - name: Detect Export Presets & Set Matrix
+    id: set-matrix
+    shell: bash
+    run: |
+      echo "Detecting configured export presets..."
+      
+      PROJECT_PATH="${{ steps.detect-config.outputs.project-path }}"
+      GAME_NAME="${{ steps.detect-config.outputs.game-name }}"
+      
+      # Check if export_presets.cfg exists
+      if [ ! -f "$PROJECT_PATH/export_presets.cfg" ]; then
+        echo "⚠️ WARNING: export_presets.cfg not found in $PROJECT_PATH"
+        echo "Please configure export presets in Godot Editor (Project → Export)"
+        echo "has-platforms=false" >> $GITHUB_OUTPUT
+        echo "matrix={\"include\":[]}" >> $GITHUB_OUTPUT
+        exit 0
+      fi
+      
+      declare -A platforms=(
+        ["windows"]="Windows Desktop|windows|${GAME_NAME}.exe"
+        ["linux"]="Linux|linux|${GAME_NAME}.x86_64"
+        ["web"]="Web|web|index.html"
+        ["macos"]="macOS|macos|${GAME_NAME}.app"
+      )
+      
+      matrix_include="["
+      platform_count=0
+      
+      for platform in "${!platforms[@]}"; do
+        IFS='|' read -ra PLATFORM_INFO <<< "${platforms[$platform]}"
+        preset_name="${PLATFORM_INFO[0]}"
+        folder_name="${PLATFORM_INFO[1]}"
+        file_name="${PLATFORM_INFO[2]}"
+        
+        if grep -q "platform=\"$preset_name\"" "$PROJECT_PATH/export_presets.cfg"; then
+          echo "✅ Found preset for $platform ($preset_name)"
+          
+          if [ $platform_count -gt 0 ]; then
+            matrix_include+=","
+          fi
+          
+          matrix_include+="{\"platform\":\"$platform\",\"preset\":\"$preset_name\",\"folder\":\"$folder_name\",\"file\":\"$file_name\"}"
+          platform_count=$((platform_count + 1))
+        else
+          echo "❌ No preset found for $platform ($preset_name)"
+        fi
+      done
+      
+      matrix_include+="]"
+      
+      if [ $platform_count -eq 0 ]; then
+        echo "No export presets found!"
+        echo "has-platforms=false" >> $GITHUB_OUTPUT
+        echo "matrix={\"include\":[]}" >> $GITHUB_OUTPUT
+      else
+        echo "Found $platform_count platform(s) to export"
+        echo "has-platforms=true" >> $GITHUB_OUTPUT
+        echo "matrix={\"include\":$matrix_include}" >> $GITHUB_OUTPUT
+      fi
+      
+      echo "Matrix: {\"include\":$matrix_include}"
+
+ Export:
+  needs: Detect-Platforms
+  if: needs.Detect-Platforms.outputs.has-platforms == 'true' && github.event.inputs.rebuild == 'true'
+  runs-on: ubuntu-latest
+  name: Export (${{ matrix.platform }})
+  strategy:
+    matrix: ${{ fromJson(needs.Detect-Platforms.outputs.matrix) }}
+    fail-fast: false
+  steps:
+  - uses: actions/checkout@v4
+  
+  - name: Cache Godot
+    uses: actions/cache@v4
+    id: cache-godot
+    with:
+      path: |
+        ~/godot-bin
+        ~/.local/share/godot/export_templates
+      key: godot-${{ needs.Detect-Platforms.outputs.godot-version }}-${{ runner.os }}
+  
+  - name: Setup Godot
+    if: steps.cache-godot.outputs.cache-hit != 'true'
+    shell: bash
+    run: |
+       GODOT_VERSION="${{ needs.Detect-Platforms.outputs.godot-version }}"
+       echo "Setting up Godot $GODOT_VERSION..."
+       
+       # Download Godot
+       GODOT_URL="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip"
+       echo "Downloading from: $GODOT_URL"
+       
+       if ! curl -f -L -o godot.zip "$GODOT_URL"; then
+         echo "❌ ERROR: Failed to download Godot $GODOT_VERSION"
+         exit 1
+       fi
+       
+       unzip -q godot.zip
+       mkdir -p ~/godot-bin
+       mv "Godot_v${GODOT_VERSION}-stable_linux.x86_64" ~/godot-bin/godot
+       chmod +x ~/godot-bin/godot
+       ~/godot-bin/godot --version
+       
+       # Download export templates
+       TEMPLATES_URL="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz"
+       echo "Downloading templates from: $TEMPLATES_URL"
+       
+       if ! curl -f -L -o export_templates.tpz "$TEMPLATES_URL"; then
+         echo "❌ ERROR: Failed to download export templates"
+         exit 1
+       fi
+       
+       unzip -q export_templates.tpz
+       mkdir -p ~/.local/share/godot/export_templates/$GODOT_VERSION.stable
+       mv templates/* ~/.local/share/godot/export_templates/$GODOT_VERSION.stable/
+       
+       echo "✅ Successfully installed Godot $GODOT_VERSION and export templates"
+  
+  - name: Add Godot to PATH
+    shell: bash
+    run: echo "$HOME/godot-bin" >> $GITHUB_PATH
+
+  - name: Export ${{ matrix.platform }}
+    shell: bash
+    run: |
+      PROJECT_PATH="${{ needs.Detect-Platforms.outputs.project-path }}"
+      mkdir -p ./exports/${{ matrix.folder }}
+      echo "Exporting ${{ matrix.platform }} build..."
+      
+      godot --headless --path "./$PROJECT_PATH" --export-release "${{ matrix.preset }}" "../exports/${{ matrix.folder }}/${{ matrix.file }}"
+      
+      # Verify export
+      if [ "${{ matrix.platform }}" == "macos" ]; then
+        if [ ! -d "./exports/${{ matrix.folder }}/${{ matrix.file }}" ]; then
+          echo "❌ ${{ matrix.platform }} export failed"
+          exit 1
+        fi
+      else
+        if [ ! -f "./exports/${{ matrix.folder }}/${{ matrix.file }}" ]; then
+          echo "❌ ${{ matrix.platform }} export failed"
+          exit 1
+        fi
+      fi
+      
+      echo "✅ ${{ matrix.platform }} export completed successfully"
+      ls -la "./exports/${{ matrix.folder }}/"
+  
+  - name: Upload ${{ matrix.platform }} Export
+    uses: actions/upload-artifact@v4
+    with:
+     name: export-${{ matrix.platform }}
+     path: exports/${{ matrix.folder }}
+  
+ Release:
+  needs: [Detect-Platforms, Export]
+  if: always() && (needs.Export.result == 'success' || needs.Export.result == 'skipped')
+  runs-on: ubuntu-latest
+  outputs:
+    release-tag: ${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}
+    game-name: ${{ needs.Detect-Platforms.outputs.game-name }}
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Need full history for changelog
+   
+    - name: Get Existing Tag (if no bump)
+      if: github.event.inputs.bump_type == 'none'
+      id: existing_tag
+      shell: bash
+      run: |
+        LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+        echo "Using existing tag: $LATEST_TAG"
+        echo "new_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+        echo "changelog=Release for $LATEST_TAG (no version bump)" >> $GITHUB_OUTPUT
+    
+    - name: Create New Version Tag
+      if: github.event.inputs.bump_type != 'none'
+      id: new_tag
+      uses: mathieudutour/github-tag-action@v6.2
+      with:
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       default_bump: ${{ github.event.inputs.bump_type == 'auto' && 'false' || github.event.inputs.bump_type }}
+       release_branches: main
+    
+    - name: Verify Tag
+      if: github.event.inputs.bump_type != 'none' && !steps.new_tag.outputs.new_tag
+      run: |
+        echo "❌ ERROR: No version tag was created!"
+        echo ""
+        echo "This can happen if:"
+        echo "1. No commits follow conventional commit format (feat:, fix:, etc.)"
+        echo "2. You selected 'auto' but no bump was detected"
+        echo ""
+        echo "Please either:"
+        echo "- Use conventional commits in your commit messages, OR"
+        echo "- Select a specific bump type (major, minor, patch), OR"
+        echo "- Select 'none' to use the existing version tag"
+        exit 1
+    
+    - name: Download Exports (from test run)
+      if: github.event.inputs.rebuild != 'true'
+      uses: dawidd6/action-download-artifact@v3
+      with:
+        workflow: test.yml
+        branch: main
+        name_is_regexp: true
+        name: export-.*
+        path: exports
+        check_artifacts: true
+        search_artifacts: true
+      continue-on-error: true
+    
+    - name: Verify Downloaded Artifacts
+      if: github.event.inputs.rebuild != 'true'
+      id: check_artifacts
+      run: |
+        echo "Checking for downloaded artifacts..."
+        if [ -z "$(ls -A exports 2>/dev/null)" ]; then
+          echo "⚠️ No test artifacts found from recent test runs"
+          echo "artifacts_found=false" >> $GITHUB_OUTPUT
+        else
+          echo "✅ Using builds from test run"
+          ls -R exports/
+          echo "artifacts_found=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Download Exports (freshly built)
+      if: github.event.inputs.rebuild == 'true' || failure()
+      uses: actions/download-artifact@v4
+      with:
+       pattern: export-*
+       path: exports
+       merge-multiple: false
+    
+    - name: Create Platform Zips
+      run: |
+        echo "Creating ZIP files for release..."
+        
+        TAG="${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}"
+        GAME="${{ needs.Detect-Platforms.outputs.game-name }}"
+        
+        # Debug: Show directory structure
+        echo "Directory structure:"
+        ls -R exports/
+        echo ""
+        
+        # Create ZIPs for downloadable platforms (not web)
+        # When merge-multiple is false, artifacts are in exports/export-{platform}/*
+        if [ -d exports/export-windows ]; then
+          cd exports/export-windows
+          zip -r ../../${GAME}-windows-${TAG}.zip .
+          cd ../..
+          echo "✅ Windows ZIP created"
+        fi
+        
+        if [ -d exports/export-linux ]; then
+          cd exports/export-linux
+          zip -r ../../${GAME}-linux-${TAG}.zip .
+          cd ../..
+          echo "✅ Linux ZIP created"
+        fi
+        
+        if [ -d exports/export-macos ]; then
+          cd exports/export-macos
+          zip -r ../../${GAME}-macos-${TAG}.zip .
+          cd ../..
+          echo "✅ macOS ZIP created"
+        fi
+        
+        # List created files
+        echo ""
+        echo "Release files:"
+        ls -lh *.zip 2>/dev/null || echo "⚠️ No ZIP files created"
+    
+    - name: Create GitHub Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+       tag_name: ${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}
+       name: Release ${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}
+       body: ${{ steps.existing_tag.outputs.changelog || steps.new_tag.outputs.changelog }}
+       files: |
+         ${{ needs.Detect-Platforms.outputs.game-name }}-*-${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}.zip
+       draft: false
+       prerelease: false
+ 
+ Publish:
+  needs: Release
+  if: needs.Release.outputs.release-tag
+  runs-on: ubuntu-latest
+  name: Publish to Itch.io (${{ matrix.platform }})
+  strategy:
+    matrix:
+      include:
+        - platform: windows
+          folder: windows
+        - platform: linux
+          folder: linux
+        - platform: web
+          folder: web
+    fail-fast: false
+  steps:
+    - name: Download ${{ matrix.platform }} Export (from test run)
+      if: github.event.inputs.rebuild != 'true'
+      uses: dawidd6/action-download-artifact@v3
+      with:
+        workflow: test.yml
+        branch: main
+        name: export-${{ matrix.platform }}
+        path: exports/${{ matrix.folder }}
+        check_artifacts: true
+        search_artifacts: true
+      continue-on-error: true
+    
+    - name: Download ${{ matrix.platform }} Export (freshly built)
+      if: github.event.inputs.rebuild == 'true' || failure()
+      uses: actions/download-artifact@v4
+      with:
+        name: export-${{ matrix.platform }}
+        path: exports/${{ matrix.folder }}
+    
+    - name: Cache Butler
+      uses: actions/cache@v4
+      id: cache-butler
+      with:
+        path: butler
+        key: butler-latest
+    
+    - name: Download + Setup Butler
+      if: steps.cache-butler.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+       echo "Downloading Butler..."
+       curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+       unzip butler.zip
+       chmod +x butler
+       ./butler -V
+    
+    - name: Login To Butler
+      run: ./butler login
+      env:
+        BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+    
+    - name: Push ${{ matrix.platform }} Build to Itch.io
+      shell: bash
+      env:
+        BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        ITCH_USER: ${{ vars.ITCH_USER }}
+        ITCH_GAME: ${{ vars.ITCH_GAME }}
+      run: |
+        echo "Pushing ${{ matrix.platform }} build to itch.io..."
+        ./butler push exports/${{ matrix.folder }} ${ITCH_USER}/${ITCH_GAME}:${{ matrix.platform }} --userversion ${{ needs.Release.outputs.release-tag }}
+        echo "✅ ${{ matrix.platform }} build pushed successfully"
+
+ Notify:
+  needs: [Export, Release, Publish]
+  if: always()
+  runs-on: ubuntu-latest
+  steps:
+    - name: Release Summary
+      shell: bash
+      env:
+        ITCH_USER: ${{ vars.ITCH_USER }}
+        ITCH_GAME: ${{ vars.ITCH_GAME }}
+      run: |
+        echo "## 🚀 Release Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ needs.Release.result }}" == "success" ]; then
+          echo "### ✅ Release Created Successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${{ needs.Release.outputs.release-tag }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Bump Type:** ${{ github.event.inputs.bump_type }}" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ github.event.inputs.rebuild }}" == "true" ]; then
+            echo "**Build:** 🔨 Freshly rebuilt from source" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Build:** ♻️ Reused from test run (verified builds)" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📦 Published Platforms" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.Publish.result }}" == "success" ]; then
+            echo "- ✅ Windows" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ Linux" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ Web" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🎮 Play Now" >> $GITHUB_STEP_SUMMARY
+            echo "- **GitHub Release:** [Download builds](https://github.com/${{ github.repository }}/releases/tag/${{ needs.Release.outputs.release-tag }})" >> $GITHUB_STEP_SUMMARY
+            echo "- **Itch.io:** https://${ITCH_USER}.itch.io/${ITCH_GAME}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ GitHub release created but itch.io publishing failed" >> $GITHUB_STEP_SUMMARY
+          fi
+        else
+          echo "### ❌ Release Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Export Status:** ${{ needs.Export.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Release Status:** ${{ needs.Release.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Publish Status:** ${{ needs.Publish.result }}" >> $GITHUB_STEP_SUMMARY
+        fi
+
+ Cleanup:
+  needs: [Export, Release, Publish, Notify]
+  if: always()
+  runs-on: ubuntu-latest
+  steps:
+    - uses: geekyeggo/delete-artifact@v5
+      with:
+       name: |
+         export-*
