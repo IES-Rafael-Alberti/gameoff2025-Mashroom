@@ -426,7 +426,11 @@ jobs:
         ITCH_GAME: ${{ vars.ITCH_GAME }}
       run: |
         echo "Pushing ${{ matrix.platform }} build to itch.io..."
-        ./butler push exports/${{ matrix.folder }} ${ITCH_USER}/${ITCH_GAME}:${{ matrix.platform }} --userversion ${{ needs.Release.outputs.release-tag }}
+        VERSION="${{ needs.Release.outputs.release-tag }}"
+        # Strip 'v' prefix from version for itch.io
+        VERSION_NUMBER="${VERSION#v}"
+        echo "Using version: $VERSION_NUMBER (from tag: $VERSION)"
+        ./butler push exports/${{ matrix.folder }} ${ITCH_USER}/${ITCH_GAME}:${{ matrix.platform }} --userversion $VERSION_NUMBER
         echo "✅ ${{ matrix.platform }} build pushed successfully"
 
  Notify:
