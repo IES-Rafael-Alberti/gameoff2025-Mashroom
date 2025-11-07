@@ -689,7 +689,6 @@ limit_top = NodePath("../TopPoint")
 limit_bottom = NodePath("../BottomPoint")
 
 [node name="ObstacleSpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_area_top", "spawn_area_bottom")]
-z_index = 1
 script = ExtResource("3_ymtfl")
 obstacle_scene = ExtResource("4_31ux6")
 spawn_area_top = NodePath("../TopPoint")
