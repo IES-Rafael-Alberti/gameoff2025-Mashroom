@@ -1,5 +1,6 @@
 extends Control
 
+@export_group("Objects")
 @export var OptionAnim: AnimationPlayer
 
 func _ready():

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4v7gtix0jsul"
-path="res://.godot/imported/Trip.png-4df5423da835967b59905c968871c66a.ctex"
+uid="uid://bbqx0ewphuoly"
+path="res://.godot/imported/Surfboards.png-f6915e19fc8f55d6e2a7fb2be7fced26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Trip.png"
-dest_files=["res://.godot/imported/Trip.png-4df5423da835967b59905c968871c66a.ctex"]
+source_file="res://^Scrapped/SurfMinigame/Assets/Surfboards.png"
+dest_files=["res://.godot/imported/Surfboards.png-f6915e19fc8f55d6e2a7fb2be7fced26.ctex"]
 
 [params]
 
