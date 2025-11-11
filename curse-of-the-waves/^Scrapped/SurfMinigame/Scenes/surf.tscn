@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=4 uid="uid://beoay7fihoxp3"]
 
-[ext_resource type="Texture2D" uid="uid://c04md5i3yfedh" path="res://assets/fondo mar.png" id="1_h8u7h"]
-[ext_resource type="PackedScene" uid="uid://duhamusyxqe2" path="res://Scenes/SurfMinigame/player_surf.tscn" id="2_tri7c"]
-[ext_resource type="Script" uid="uid://d4npi0252pvmc" path="res://Scripts/SurfMinigame/obstacle_spawner.gd" id="3_ymtfl"]
-[ext_resource type="PackedScene" uid="uid://d3bwi5xx5ngvq" path="res://Scenes/SurfMinigame/obstacle.tscn" id="4_31ux6"]
+[ext_resource type="Texture2D" uid="uid://c04md5i3yfedh" path="res://^Scrapped/SurfMinigame/Assets/fondo mar.png" id="1_h8u7h"]
+[ext_resource type="PackedScene" uid="uid://duhamusyxqe2" path="res://^Scrapped/SurfMinigame/Scenes/player_surf.tscn" id="2_tri7c"]
+[ext_resource type="Script" uid="uid://d4npi0252pvmc" path="res://^Scrapped/SurfMinigame/Scripts/obstacle_spawner.gd" id="3_ymtfl"]
+[ext_resource type="PackedScene" uid="uid://d3bwi5xx5ngvq" path="res://^Scrapped/SurfMinigame/Scenes/obstacle.tscn" id="4_31ux6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8u7h"]
 texture = ExtResource("1_h8u7h")

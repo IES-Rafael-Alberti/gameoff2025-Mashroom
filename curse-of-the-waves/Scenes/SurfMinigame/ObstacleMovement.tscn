@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl24m24mpki3k"]
+
+[ext_resource type="Script" uid="uid://dyloumclm2mfs" path="res://Scripts/SurfMinigame/obstacleMovement.gd" id="1_k8sgb"]
+
+[node name="ObstacleMovement" type="Node2D"]
+position = Vector2(576, 320)
+script = ExtResource("1_k8sgb")

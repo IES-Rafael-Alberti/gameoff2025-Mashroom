@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c04md5i3yfedh"
-path="res://.godot/imported/fondo mar.png-014b9aef8620f7d8e98cfed639b1856b.ctex"
+uid="uid://4v7gtix0jsul"
+path="res://.godot/imported/Trip.png-13d6101c2a22b12d5c4812c2ec182176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo mar.png"
-dest_files=["res://.godot/imported/fondo mar.png-014b9aef8620f7d8e98cfed639b1856b.ctex"]
+source_file="res://^Scrapped/SurfMinigame/Assets/Trip.png"
+dest_files=["res://.godot/imported/Trip.png-13d6101c2a22b12d5c4812c2ec182176.ctex"]
 
 [params]
 

@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3bwi5xx5ngvq"]
+[gd_scene load_steps=4 format=3 uid="uid://bs4n5x3ah1xcj"]
 
-[ext_resource type="Script" uid="uid://dun5vixweoqmr" path="res://Scripts/SurfMinigame/obstacle.gd" id="1_drdry"]
-[ext_resource type="Texture2D" uid="uid://fccxr0t5ohwe" path="res://assets/Prop_7.png" id="2_cjuko"]
+[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_kdum4"]
+[ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/ObstacleMovement.tscn" id="2_ckm5w"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sh7k1"]
-radius = 8.062258
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckm5w"]
+size = Vector2(112, 40)
 
-[node name="Obstacle" type="Area2D" groups=["obstacle"]]
-scale = Vector2(2, 2)
-collision_layer = 2
-script = ExtResource("1_drdry")
+[node name="Obstacle" type="Area2D" groups=["Damage"]]
+position = Vector2(576, 320)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-scale = Vector2(0.069288395, 0.06395349)
-texture = ExtResource("2_cjuko")
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Damage"]]
+y_sort_enabled = true
+position = Vector2(0, -64)
+texture = ExtResource("1_kdum4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("CircleShape2D_sh7k1")
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_ckm5w")
+
+[node name="ObstacleMovement" parent="." instance=ExtResource("2_ckm5w")]
+position = Vector2(0, 0)
+SizeMult = 0.3
