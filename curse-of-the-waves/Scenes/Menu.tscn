@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=7 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://dhnhdk32epd8y" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
-[ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
 
 [sub_resource type="Animation" id="Animation_6pedr"]
 resource_name = "OptionsMenu"
@@ -128,99 +127,6 @@ offset_top = 0.09603119
 offset_right = 0.12792969
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Control" type="Control" parent="Options/OptionsBackground"]
-layout_mode = 2
-
-[node name="Audio" type="VBoxContainer" parent="Options/OptionsBackground/Control" node_paths=PackedStringArray("general", "musica", "efectos")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.066
-anchor_top = 0.040000003
-anchor_right = 0.919
-anchor_bottom = 0.33900002
-offset_left = 0.08800125
-offset_top = -0.079992294
-offset_right = 0.39196777
-offset_bottom = -0.12792969
-script = ExtResource("4_s2c3o")
-general = NodePath("HBoxContainer/General")
-musica = NodePath("HBoxContainer2/Musica")
-efectos = NodePath("HBoxContainer3/Sfx")
-
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/line_spacing = 3
-text = "Volumen"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
-layout_mode = 2
-text = "Audio general"
-
-[node name="menosG" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
-layout_mode = 2
-text = "-"
-
-[node name="General" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="masG" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
-layout_mode = 2
-text = "+"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/line_spacing = 4
-theme_override_constants/paragraph_spacing = 1
-text = "Música "
-
-[node name="menosM" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
-layout_mode = 2
-text = "-"
-
-[node name="Musica" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="masM" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
-layout_mode = 2
-text = "+"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
-layout_mode = 2
-text = "Efectos sonido"
-
-[node name="menosS" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
-layout_mode = 2
-text = "-"
-
-[node name="Sfx" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-
-[node name="masS" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
-layout_mode = 2
-text = "+"
 
 [node name="OptionsAnimation" type="AnimationPlayer" parent="Options"]
 root_node = NodePath("../..")
