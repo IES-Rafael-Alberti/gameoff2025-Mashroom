@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4v7gtix0jsul"
-path="res://.godot/imported/Trip.png-4df5423da835967b59905c968871c66a.ctex"
+uid="uid://bbqx0ewphuoly"
+path="res://.godot/imported/Surfboards.png-dacc33e29716bd9a5cba21fa51097310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Trip.png"
-dest_files=["res://.godot/imported/Trip.png-4df5423da835967b59905c968871c66a.ctex"]
+source_file="res://assets/high_tides_basic_pack/Objects/Surfboards.png"
+dest_files=["res://.godot/imported/Surfboards.png-dacc33e29716bd9a5cba21fa51097310.ctex"]
 
 [params]
 
