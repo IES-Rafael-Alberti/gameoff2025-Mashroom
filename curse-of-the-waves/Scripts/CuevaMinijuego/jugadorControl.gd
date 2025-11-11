@@ -16,9 +16,9 @@ func _process(delta):
 		return
 
 	vel = Vector2.ZERO
-	if Input.is_action_pressed("derecha"):
+	if Input.is_action_pressed("move_right"):
 		vel.x += 1
-	if Input.is_action_pressed("izquierda"):
+	if Input.is_action_pressed("move_left"):
 		vel.x -= 1
 
 	if vel.length() > 0:

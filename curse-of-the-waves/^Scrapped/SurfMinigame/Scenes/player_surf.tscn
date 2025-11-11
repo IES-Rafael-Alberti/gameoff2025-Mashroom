@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://duhamusyxqe2"]
 
-[ext_resource type="Script" uid="uid://bfyamktfjdcf5" path="res://Scripts/SurfMinigame/player_surf.gd" id="1_1degt"]
-[ext_resource type="Texture2D" uid="uid://ce8soudssdp65" path="res://assets/Surfboards1.PNG" id="1_j2h6l"]
+[ext_resource type="Script" uid="uid://bfyamktfjdcf5" path="res://^Scrapped/SurfMinigame/Scripts/player_surf.gd" id="1_4x6qi"]
+[ext_resource type="Texture2D" uid="uid://ce8soudssdp65" path="res://^Scrapped/SurfMinigame/Assets/Surfboards1.PNG" id="2_l24g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1degt"]
 size = Vector2(30, 11)
@@ -12,14 +12,14 @@ size = Vector2(30, 11)
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_mask = 2
-script = ExtResource("1_1degt")
+script = ExtResource("1_4x6qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1degt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_j2h6l")
+texture = ExtResource("2_l24g6")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 2

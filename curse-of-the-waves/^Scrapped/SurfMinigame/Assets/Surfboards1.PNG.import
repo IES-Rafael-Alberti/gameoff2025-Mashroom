@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c04md5i3yfedh"
-path="res://.godot/imported/fondo mar.png-014b9aef8620f7d8e98cfed639b1856b.ctex"
+uid="uid://ce8soudssdp65"
+path="res://.godot/imported/Surfboards1.PNG-56f292e2194f30ca841ffbcfe959646b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fondo mar.png"
-dest_files=["res://.godot/imported/fondo mar.png-014b9aef8620f7d8e98cfed639b1856b.ctex"]
+source_file="res://^Scrapped/SurfMinigame/Assets/Surfboards1.PNG"
+dest_files=["res://.godot/imported/Surfboards1.PNG-56f292e2194f30ca841ffbcfe959646b.ctex"]
 
 [params]
 
