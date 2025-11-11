@@ -14,7 +14,7 @@ Submission for [GitHub's GameOff 2025](https://itch.io/jam/game-off-2025)
 
 ## License
 
-This project is licensed under the GPL-2.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
 
 ## Contact us
 
