@@ -26,6 +26,5 @@ func _physics_process(delta):
 
 
 func _on_hitbox_area_entered(body):
-	print("touched")
 	if body.is_in_group("Damage"):
 		queue_free()
