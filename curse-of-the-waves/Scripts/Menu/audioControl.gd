@@ -1,9 +1,12 @@
 extends VBoxContainer
 
+@export_group("Basics")
+@export var vol: float = 5.0
+
+@export_group("Objects")
 @export var general: HSlider
 @export var musica: HSlider
 @export var efectos: HSlider
-@export var vol: float = 5.0
 
 @onready var menosG = $HBoxContainer/menosG
 @onready var masG = $HBoxContainer/masG

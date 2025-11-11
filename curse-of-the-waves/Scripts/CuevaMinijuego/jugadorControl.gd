@@ -1,6 +1,8 @@
 extends Area2D
 
+@export_group("Basics")
 @export var speed = 50
+
 var puedeMoverse: bool = true
 var vel: Vector2 = Vector2.ZERO
 var screen_size: Vector2

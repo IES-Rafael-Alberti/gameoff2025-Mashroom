@@ -1,5 +1,6 @@
 extends Control
 
+@export_group("Objects")
 @export var OptionsContainer: Control
 
 func _on_play_button_pressed():
