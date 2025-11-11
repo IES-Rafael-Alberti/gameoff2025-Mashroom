@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtppkhc763bvn"]
+
+[ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://NewSurfGameplay/Scenes/Player.tscn" id="1_7ktql"]
+[ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://NewSurfGameplay/Scenes/surf_minigame.gd" id="1_rkf72"]
+[ext_resource type="Script" uid="uid://dk61wpj55cxsa" path="res://NewSurfGameplay/Scenes/spawner.gd" id="3_f7fj6"]
+[ext_resource type="PackedScene" uid="uid://bs4n5x3ah1xcj" path="res://NewSurfGameplay/Scenes/Obstacle.tscn" id="4_kjjhm"]
+[ext_resource type="Texture2D" uid="uid://544hwi1iejfc" path="res://square.png" id="5_ahrgc"]
+
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("Player", "Spawner", "MinPos", "MaxPos")]
+script = ExtResource("1_rkf72")
+Player = NodePath("Player")
+Spawner = NodePath("Spawner")
+MinPos = NodePath("Player/MinPlayerMov")
+MaxPos = NodePath("Player/MaxPlayerMov")
+
+[node name="Player" parent="." instance=ExtResource("1_7ktql")]
+z_index = 2
+position = Vector2(592, 456)
+
+[node name="MinPlayerMov" type="Marker2D" parent="Player"]
+top_level = true
+position = Vector2(130, 642)
+
+[node name="MaxPlayerMov" type="Marker2D" parent="Player"]
+top_level = true
+position = Vector2(1026, 642)
+
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("SpawnPoint")]
+script = ExtResource("3_f7fj6")
+ObjectsSpeed = 1
+SpawnPoint = NodePath("SpawnPoint")
+Objects = Array[PackedScene]([ExtResource("4_kjjhm")])
+
+[node name="SpawnPoint" type="Marker2D" parent="Spawner"]
+top_level = true
+position = Vector2(576, 256)
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+autostart = true
+
+[node name="SeaBackground" type="Sprite2D" parent="."]
+modulate = Color(0.14285323, 0.42735937, 0.71533513, 1)
+z_index = -1
+position = Vector2(576, 452)
+scale = Vector2(115.19999, 39.200005)
+texture = ExtResource("5_ahrgc")
+
+[node name="SeaFrontground" type="Sprite2D" parent="."]
+modulate = Color(0.093849726, 0.5662211, 0.80904496, 1)
+z_index = 5
+position = Vector2(576, 608)
+scale = Vector2(115.19999, 8.000001)
+texture = ExtResource("5_ahrgc")
+
+[node name="SkyBackground" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.30026168, 0.64066803, 0.94250077, 1)
+z_index = -5
+position = Vector2(576, 324.00003)
+scale = Vector2(115.19999, 64.80001)
+texture = ExtResource("5_ahrgc")
+
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]

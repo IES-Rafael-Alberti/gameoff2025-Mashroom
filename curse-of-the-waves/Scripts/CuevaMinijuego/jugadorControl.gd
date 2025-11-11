@@ -1,6 +1,8 @@
 extends Area2D
 
+@export_group("Basics")
 @export var speed = 50
+
 var puedeMoverse: bool = true
 var vel: Vector2 = Vector2.ZERO
 var screen_size: Vector2
@@ -16,9 +18,9 @@ func _process(delta):
 		return
 
 	vel = Vector2.ZERO
-	if Input.is_action_pressed("derecha"):
+	if Input.is_action_pressed("move_right"):
 		vel.x += 1
-	if Input.is_action_pressed("izquierda"):
+	if Input.is_action_pressed("move_left"):
 		vel.x -= 1
 
 	if vel.length() > 0:
