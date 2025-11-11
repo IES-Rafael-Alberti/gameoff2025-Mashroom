@@ -128,6 +128,9 @@ offset_right = 0.12792969
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Control" type="Control" parent="Options/OptionsBackground"]
+layout_mode = 2
+
 [node name="OptionsAnimation" type="AnimationPlayer" parent="Options"]
 root_node = NodePath("../..")
 libraries = {
