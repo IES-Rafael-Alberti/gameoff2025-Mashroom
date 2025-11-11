@@ -23,6 +23,9 @@ This project uses third-party assets whose licenses can be found in the followin
 
 - Dialogic addon - [License](curse-of-the-waves/addons/dialogic/LICENSE)
 - High Tides Basic Pack by Kanpelle - [Itchio](https://kanpelle.itch.io/high-tides-asset-pack) - [License](curse-of-the-waves/assets/high_tides_basic_pack/README.txt)
+  - surfboards1.png its an edit from this pack
+- fondo mar.png - previously named pixil-frame-0 (82).png - [Itchio](https://gamer247.itch.io/cu-azul)
+- wooden crate - Free Objects for 2D Jump Games - [Itchio](https://free-game-assets.itch.io/free-objects-for-2d-jump-games) - [License](https://craftpix.net/file-licenses/)
 
 ## Contact us
 
