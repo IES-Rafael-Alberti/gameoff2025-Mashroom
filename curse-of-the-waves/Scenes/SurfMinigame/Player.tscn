@@ -49,7 +49,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,7 +82,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"turning_right",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -105,6 +105,6 @@ y_sort_enabled = true
 position = Vector2(5.3333187, -58.666683)
 scale = Vector2(2.3466663, 2.3466663)
 sprite_frames = SubResource("SpriteFrames_advmg")
-frame_progress = 0.017336214
+animation = &"death"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

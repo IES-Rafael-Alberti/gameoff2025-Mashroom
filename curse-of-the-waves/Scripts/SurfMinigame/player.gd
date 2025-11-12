@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 @export_group("Basics")
 @export var Hp = 3
-@export var Speed = 300.0
+@export var BaseSpeed = 800.0
 
 @onready var anims = $Sprite2D
 
+var speed = BaseSpeed
 var limitMin: float
 var limitMax: float
 var canMove = true
@@ -17,9 +18,9 @@ func _physics_process(delta):
 		
 		var direction = Input.get_axis("move_left", "move_right") # Player Movement
 		if direction:
-			velocity.x = direction * Speed
+			velocity.x = direction * speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, Speed)
+			velocity.x = move_toward(velocity.x, 0, speed)
 
 		move_and_slide()
 		
@@ -39,8 +40,11 @@ func _physics_process(delta):
 	
 func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene que ser Area2D)
 	if body.is_in_group("Damage") and canBeDamaged:
-		death()
 		body.queue_free()
+		
+		Hp -= 1
+		if Hp <= 0:
+			death()
 
 func death(): # Proceso de Muerte
 	canMove = false
