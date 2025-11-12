@@ -133,7 +133,6 @@ jobs:
       fi
       
       echo "Matrix: {\"include\":$matrix_include}"
-
  Export:
   needs: Detect-Platforms
   if: needs.Detect-Platforms.outputs.has-platforms == 'true' && github.event.inputs.rebuild == 'true'
@@ -432,7 +431,6 @@ jobs:
         echo "Using version: $VERSION_NUMBER (from tag: $VERSION)"
         ./butler push exports/${{ matrix.folder }} ${ITCH_USER}/${ITCH_GAME}:${{ matrix.platform }} --userversion $VERSION_NUMBER
         echo "✅ ${{ matrix.platform }} build pushed successfully"
-
  Notify:
   needs: [Export, Release, Publish]
   if: always()
@@ -480,7 +478,6 @@ jobs:
           echo "**Release Status:** ${{ needs.Release.result }}" >> $GITHUB_STEP_SUMMARY
           echo "**Publish Status:** ${{ needs.Publish.result }}" >> $GITHUB_STEP_SUMMARY
         fi
-
  Cleanup:
   needs: [Export, Release, Publish, Notify]
   if: always()
