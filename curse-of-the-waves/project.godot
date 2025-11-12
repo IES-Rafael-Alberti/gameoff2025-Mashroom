@@ -80,6 +80,10 @@ translation/intern/file_mode=1
 translation/intern/translation_folder="res://DialogicAssets/translations"
 translation/locales=["en", "es"]
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
