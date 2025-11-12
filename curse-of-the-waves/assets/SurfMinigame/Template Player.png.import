@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4v7gtix0jsul"
-path="res://.godot/imported/Trip.png-60f02fe787242dbf3ebd39b52d5c43a3.ctex"
+uid="uid://bslieln6i8ob5"
+path="res://.godot/imported/Template Player.png-e36a8af3c2d32afbbcf0604483c842fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/high_tides_basic_pack/Characters/Trip.png"
-dest_files=["res://.godot/imported/Trip.png-60f02fe787242dbf3ebd39b52d5c43a3.ctex"]
+source_file="res://assets/SurfMinigame/Template Player.png"
+dest_files=["res://.godot/imported/Template Player.png-e36a8af3c2d32afbbcf0604483c842fb.ctex"]
 
 [params]
 

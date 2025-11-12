@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bs4n5x3ah1xcj"]
+[gd_scene load_steps=12 format=3 uid="uid://bs4n5x3ah1xcj"]
 
 [ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scenes/SurfMinigame/obstacle.gd" id="1_b81qs"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_kdum4"]
@@ -8,12 +8,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckm5w"]
 size = Vector2(112, 61.333344)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lqj17"]
+load_path = "res://.godot/imported/ObstacleTemplate.png-2d4e92458fae7580e76e252bf3f15b9a.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b81qs"]
-atlas = ExtResource("4_b81qs")
+atlas = SubResource("CompressedTexture2D_lqj17")
 region = Rect2(0, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqj17"]
-atlas = ExtResource("4_b81qs")
+atlas = SubResource("CompressedTexture2D_lqj17")
 region = Rect2(100, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1yic"]
@@ -34,7 +37,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lqj17")
 }],
 "loop": true,
-"name": &"Obs1",
+"name": &"Var1",
 "speed": 2.0
 }, {
 "frames": [{
@@ -45,7 +48,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_a0jr7")
 }],
 "loop": true,
-"name": &"Obs2",
+"name": &"Var2",
 "speed": 2.0
 }]
 
@@ -75,5 +78,4 @@ y_sort_enabled = true
 position = Vector2(-2.666648, -66.66665)
 scale = Vector2(2.2933333, 2.2933333)
 sprite_frames = SubResource("SpriteFrames_l1yic")
-animation = &"Obs2"
-frame_progress = 0.5331507
+animation = &"Var2"

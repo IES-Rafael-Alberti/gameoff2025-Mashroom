@@ -76,4 +76,4 @@ position = Vector2(-2.666648, -66.66665)
 scale = Vector2(2.2933333, 2.2933333)
 sprite_frames = SubResource("SpriteFrames_l1yic")
 animation = &"Obs2"
-frame_progress = 0.5331507
+frame_progress = 0.264779

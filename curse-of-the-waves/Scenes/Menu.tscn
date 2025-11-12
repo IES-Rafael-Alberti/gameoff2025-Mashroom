@@ -1,9 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=10 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://dhnhdk32epd8y" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2c3o"]
+font_size = 80
+outline_size = 2
+shadow_size = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_ma218"]
+font_size = 40
 
 [sub_resource type="Animation" id="Animation_6pedr"]
 resource_name = "OptionsMenu"
@@ -87,6 +95,7 @@ offset_right = 0.10394287
 offset_bottom = -0.12802124
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="."]
@@ -100,6 +109,7 @@ offset_left = -0.104003906
 offset_top = 0.19998169
 offset_right = 0.10394287
 offset_bottom = -0.08001709
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Options" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
@@ -152,7 +162,9 @@ efectos = NodePath("HBoxContainer3/Sfx")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/line_spacing = 3
-text = "Volumen"
+text = "Volume"
+label_settings = SubResource("LabelSettings_s2c3o")
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
 layout_mode = 2
@@ -161,19 +173,26 @@ size_flags_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
-text = "Audio general"
+text = "Main Volume"
+label_settings = SubResource("LabelSettings_ma218")
+horizontal_alignment = 2
 
 [node name="menosG" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="General" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
 [node name="masG" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "+"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
@@ -183,21 +202,28 @@ size_flags_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 4
 theme_override_constants/paragraph_spacing = 1
-text = "Música "
+text = "Music"
+label_settings = SubResource("LabelSettings_ma218")
+horizontal_alignment = 2
 
 [node name="menosM" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="Musica" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
 [node name="masM" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "+"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Options/OptionsBackground/Control/Audio"]
@@ -207,19 +233,26 @@ size_flags_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
-text = "Efectos sonido"
+text = "Sound Effects"
+label_settings = SubResource("LabelSettings_ma218")
+horizontal_alignment = 2
 
 [node name="menosS" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="Sfx" type="HSlider" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
 [node name="masS" type="Button" parent="Options/OptionsBackground/Control/Audio/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "+"
 
 [node name="OptionsAnimation" type="AnimationPlayer" parent="Options"]
@@ -239,6 +272,7 @@ offset_left = 0.12799072
 offset_top = -0.32000732
 offset_right = -0.25604248
 offset_bottom = 0.17596436
+theme_override_font_sizes/font_size = 50
 text = "Back"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

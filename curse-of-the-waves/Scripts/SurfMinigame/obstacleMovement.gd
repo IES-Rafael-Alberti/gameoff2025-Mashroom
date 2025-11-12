@@ -9,29 +9,25 @@ extends Node2D
 @export var SizeMult = 1.02
 @export var EndPos: Vector2
 
-var parent
-var startPos: Vector2
+@onready var parent = get_parent()
+@onready var startPos = parent.global_position
+@onready var sizeIncrement = parent.scale.x/7.0
+@onready var movement = (EndPos-startPos)/100.0
+
 var movAmount: float
 
-var sizeIncrement: float
-var movement: Vector2
-
 func _ready():
-	parent = get_parent()
-	startPos = parent.global_position
 	parent.scale = Vector2(0.01,0.01)
-	
-	movement = (EndPos-startPos)/100.0
-	sizeIncrement = 1/7.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	parent.position += movement * delta * Speed
 	parent.scale += Vector2(sizeIncrement,sizeIncrement) * delta * Speed
-	if parent.position.y < EndPos.y:
+	
+	if parent.position.y < EndPos.y: # Proceso para similar acercamiento 3D
 		movement *= 1 + SpeedMult * delta * Speed
 		sizeIncrement *= 1 + SizeMult * delta * Speed
-	else:
+	else: # Punto donde empieza a desaparecer (llega al final de su ruta)
 		movement /= 1 +SpeedMult * delta * Speed
 		sizeIncrement /= 1 +SizeMult * delta * Speed
 		parent.get_node("Sprite2D").self_modulate.a -= 0.03
