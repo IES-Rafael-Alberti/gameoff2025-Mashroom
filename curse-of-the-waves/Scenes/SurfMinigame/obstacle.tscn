@@ -11,6 +11,7 @@ position = Vector2(576, 320)
 scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Damage"]]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -64)
 texture = ExtResource("1_kdum4")

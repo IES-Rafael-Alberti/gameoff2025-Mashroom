@@ -20,13 +20,26 @@ func _ready():
 
 
 func _on_spawn_timer_timeout():
-	spawnObject()
-	
-func spawnObject():
-	var object = Objects[0].instantiate()
-			
-	var spawnPos = Vector2(randf_range(limitMin, limitMax), SpawnPoint.position.y) 
+	spawnRandObject()
+	$SpawnTimer.wait_time = randf_range(SpawnTime/2, SpawnTime*1.2)
 		
+	
+func spawnRandObject():
+	var object = Objects[randi_range(0,Objects.size()-1)].instantiate()
+	spawnObject(object)
+	
+func spawnRandObjectPos(posRange: float): # posRange: Range between 0 and 100
+	var object = Objects[0].instantiate()
+	spawnObjectPos(object, posRange)
+	
+func spawnObject(object: Node2D):
+	spawnObjectPos(object, randf_range(0, 100))
+	
+func spawnObjectPos(object: Node2D, posRange: float): # posRange: Range between 0 and 100
+	var actualPos = (limitMax-limitMin)*(posRange/100)+limitMin
+	print(actualPos)
+	var spawnPos = Vector2(actualPos, SpawnPoint.position.y) 
+	
 	object.global_position = spawnPos + Vector2((SpawnPoint.position.x-spawnPos.x)/(FishEye+1) ,0)
 	var objMov = object.get_node("ObstacleMovement")
 	objMov.EndPos = Vector2(spawnPos.x, heightEnd)
