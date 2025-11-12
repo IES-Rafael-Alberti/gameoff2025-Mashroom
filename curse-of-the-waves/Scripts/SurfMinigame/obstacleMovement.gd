@@ -19,10 +19,11 @@ var movement: Vector2
 func _ready():
 	parent = get_parent()
 	startPos = parent.global_position
-	parent.scale = Vector2(0.01,0.01)
 	
 	movement = (EndPos-startPos)/100.0
-	sizeIncrement = 1/7.0
+	sizeIncrement = parent.scale.x/7.0
+	
+	parent.scale = Vector2(0.01,0.01)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

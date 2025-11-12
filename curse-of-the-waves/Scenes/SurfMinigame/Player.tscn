@@ -7,7 +7,8 @@
 size = Vector2(96, 72)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(576, 504)
+position = Vector2(920, 840)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_f12qk")
 metadata/_edit_group_ = true
 

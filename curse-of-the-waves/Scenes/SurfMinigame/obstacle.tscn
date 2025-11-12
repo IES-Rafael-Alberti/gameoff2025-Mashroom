@@ -8,6 +8,7 @@ size = Vector2(112, 40)
 
 [node name="Obstacle" type="Area2D" groups=["Damage"]]
 position = Vector2(576, 320)
+scale = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Damage"]]
 y_sort_enabled = true

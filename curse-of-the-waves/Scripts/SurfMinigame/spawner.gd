@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_group("Basics")
-@export var SpawnTime = 2
+@export var SpawnTime = 2.0
 @export var FishEye = 0.0
 @export var ObjectsSpeed = 10
 
