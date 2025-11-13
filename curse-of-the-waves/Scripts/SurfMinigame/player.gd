@@ -15,6 +15,7 @@ var limitMin: float
 var limitMax: float
 var canMove = true
 var canBeDamaged = true
+
 func _process(delta):
 	salud_ctrl()
 	
