@@ -1,7 +1,7 @@
 extends Node2D
 
 @export_group("Basics")
-@export var Speed = 10.0
+@export var Speed = 1.0
 @export var DespawnTimerPostEnd = 1
 
 @export_group("Complex Values")

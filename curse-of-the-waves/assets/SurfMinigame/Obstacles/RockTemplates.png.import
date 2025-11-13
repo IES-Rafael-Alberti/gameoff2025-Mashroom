@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2mho2uuppg04"
-path="res://.godot/imported/ObstacleTemplates.png-b4330206c97ef78baaa1802d75b18763.ctex"
+path="res://.godot/imported/RockTemplates.png-5690616a3257f25764ad8be1ea5680e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Obstacles/ObstacleTemplates.png"
-dest_files=["res://.godot/imported/ObstacleTemplates.png-b4330206c97ef78baaa1802d75b18763.ctex"]
+source_file="res://assets/SurfMinigame/Obstacles/RockTemplates.png"
+dest_files=["res://.godot/imported/RockTemplates.png-5690616a3257f25764ad8be1ea5680e8.ctex"]
 
 [params]
 
