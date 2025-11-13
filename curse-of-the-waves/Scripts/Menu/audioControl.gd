@@ -8,12 +8,12 @@ extends VBoxContainer
 @export var musica: HSlider
 @export var efectos: HSlider
 
-@onready var menosG = $HBoxContainer/menosG
-@onready var masG = $HBoxContainer/masG
-@onready var menosM = $HBoxContainer2/menosM
-@onready var masM = $HBoxContainer2/masM
-@onready var menosS = $HBoxContainer3/menosS
-@onready var masS = $HBoxContainer3/masS
+@onready var menosG = $MainHBox/menosG
+@onready var masG = $MainHBox/masG
+@onready var menosM = $MusicHBox/menosM
+@onready var masM = $MusicHBox/masM
+@onready var menosS = $SoundHBox/menosS
+@onready var masS = $SoundHBox/masS
 
 const minDeci = -60.0
 const maxDeci = 0.0
@@ -33,6 +33,7 @@ func _ready():
 	masS.pressed.connect(btnMasS)
 
 func sliders():
+	print(general)
 	general.value = deci_to_slider(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
 	musica.value = deci_to_slider(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Musica")))
 	efectos.value = deci_to_slider(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
