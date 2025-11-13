@@ -34,16 +34,16 @@ func _on_spawn_timer_timeout():
 	$SpawnTimer.start()
 
 func OutsideSpawns(): # Obstacles that doesn't affect Gameplay
-	match randi_range(0,3):
-		0: # Big Rock
-			for n in range(0,randf_range(1,10)):
-				await get_tree().create_timer(randf_range(0.2,1)).timeout
+	for n in range(0,randf_range(5,20)):
+				await get_tree().create_timer(randf_range(0.1,0.5)).timeout
 				var nextObject = Objects[0]
 				if randi_range(0,1) == 0:
 					spawnObjectPos(nextObject, randi_range(-300,-50))
 				else: 
 					spawnObjectPos(nextObject, randi_range(150,400))
-		1: # Big Rock
+					
+	match randi_range(0,3): # 0 is Nothing
+		1: # Line of rocks
 			var nextObject = Objects[0]
 			spawnObjectPos(nextObject, randi_range(150,400))
 			if randi_range(0,1) == 0:
