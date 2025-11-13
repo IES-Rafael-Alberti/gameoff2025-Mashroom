@@ -275,10 +275,6 @@ offset_bottom = 0.17596436
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(40, 540)
-offset = Vector2(920, 0)
-
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Options/BackButton" to="Options" method="_on_back_button_pressed"]

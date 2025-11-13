@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtppkhc763bvn"]
+[gd_scene load_steps=9 format=3 uid="uid://dtppkhc763bvn"]
 
 [ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/Player.tscn" id="1_7ktql"]
 [ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surf_minigame.gd" id="1_rkf72"]
+[ext_resource type="PackedScene" uid="uid://b5y0u4ckrdg8f" path="res://Scenes/SurfMinigame/gui_surf.tscn" id="2_bs3yf"]
 [ext_resource type="Script" uid="uid://dk61wpj55cxsa" path="res://Scripts/SurfMinigame/spawner.gd" id="3_f7fj6"]
 [ext_resource type="PackedScene" uid="uid://bs4n5x3ah1xcj" path="res://Scenes/SurfMinigame/Obstacle.tscn" id="4_kjjhm"]
 [ext_resource type="Texture2D" uid="uid://k8egjqyrclw3" path="res://assets/SurfMinigame/BackgroundTemplate.png" id="5_4j74a"]
@@ -14,6 +15,17 @@ Player = NodePath("Player")
 Spawner = NodePath("Spawner")
 MinPos = NodePath("Player/MinPlayerMov")
 MaxPos = NodePath("Player/MaxPlayerMov")
+
+[node name="GUI surf" parent="." instance=ExtResource("2_bs3yf")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 920.0
+offset_top = 540.0
+offset_right = 920.0
+offset_bottom = 540.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Player" parent="." instance=ExtResource("1_7ktql")]
 position = Vector2(920.00006, 852)
@@ -44,7 +56,7 @@ autostart = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(960, 543)
+position = Vector2(960, 540)
 texture = ExtResource("5_4j74a")
 
 [node name="FrontGround" type="Sprite2D" parent="."]
@@ -75,9 +87,5 @@ z_index = 5
 position = Vector2(960.00006, 959)
 scale = Vector2(191.99998, 24.199993)
 texture = ExtResource("5_iurn6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(40, 540)
-offset = Vector2(920, 0)
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
