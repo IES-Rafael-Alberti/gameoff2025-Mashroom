@@ -1,12 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://bs4n5x3ah1xcj"]
 
-[ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scenes/SurfMinigame/obstacle.gd" id="1_b81qs"]
+[ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scripts/SurfMinigame/Obstacles/obstacleSkin.gd" id="1_b81qs"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_kdum4"]
 [ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/ObstacleMovement.tscn" id="2_ckm5w"]
-[ext_resource type="Texture2D" uid="uid://2mho2uuppg04" path="res://assets/SurfMinigame/Obstacles/ObstacleTemplates.png" id="4_b81qs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckm5w"]
-size = Vector2(112, 61.333344)
+[ext_resource type="Texture2D" uid="uid://2mho2uuppg04" path="res://assets/SurfMinigame/Obstacles/RockTemplates.png" id="4_b81qs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b81qs"]
 atlas = ExtResource("4_b81qs")
@@ -49,10 +46,12 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_settv"]
+size = Vector2(127.99997, 13.333359)
+
 [node name="Obstacle" type="Area2D" groups=["Damage"]]
-position = Vector2(576, 320)
+position = Vector2(960, 600)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_b81qs")
 
 [node name="SpriteGeneralShape" type="Sprite2D" parent="." groups=["Damage"]]
 visible = false
@@ -61,19 +60,19 @@ y_sort_enabled = true
 position = Vector2(0, -64)
 texture = ExtResource("1_kdum4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -38.66667)
-shape = SubResource("RectangleShape2D_ckm5w")
-
 [node name="ObstacleMovement" parent="." instance=ExtResource("2_ckm5w")]
 position = Vector2(0, 0)
 SizeMult = 0.3
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." groups=["Damage"]]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(-2.666648, -66.66665)
 scale = Vector2(2.2933333, 2.2933333)
 sprite_frames = SubResource("SpriteFrames_l1yic")
 animation = &"Obs2"
-frame_progress = 0.5331507
+script = ExtResource("1_b81qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.00012207031, -14.6666565)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_settv")

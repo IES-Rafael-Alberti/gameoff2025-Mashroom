@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bslieln6i8ob5" path="res://assets/SurfMinigame/Template Player.png" id="2_n5hrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f12qk"]
-size = Vector2(96, 126.66669)
+size = Vector2(96, 78.6667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jo03e"]
 atlas = ExtResource("2_n5hrt")
@@ -96,7 +96,7 @@ metadata/_edit_group_ = true
 [node name="Hitbox" type="Area2D" parent="." groups=["Damage"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 22)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_f12qk")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -105,6 +105,5 @@ y_sort_enabled = true
 position = Vector2(5.3333187, -58.666683)
 scale = Vector2(2.3466663, 2.3466663)
 sprite_frames = SubResource("SpriteFrames_advmg")
-animation = &"death"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
