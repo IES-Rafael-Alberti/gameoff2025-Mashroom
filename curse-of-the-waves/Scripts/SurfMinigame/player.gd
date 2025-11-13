@@ -5,13 +5,19 @@ extends CharacterBody2D
 @export var BaseSpeed = 800.0
 
 @onready var anims = $Sprite2D
+@onready var heart_textures = {
+	"full": preload("res://assets/SurfMinigame/Heart.png"),
+	"broken": preload("res://assets/SurfMinigame/Broken-heart.png")
+}
 
 var speed = BaseSpeed
 var limitMin: float
 var limitMax: float
 var canMove = true
 var canBeDamaged = true
-
+func _process(delta):
+	salud_ctrl()
+	
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	if canMove:
@@ -45,6 +51,7 @@ func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene qu
 		Hp -= 1
 		if Hp <= 0:
 			death()
+		
 
 func death(): # Proceso de Muerte
 	canMove = false
@@ -54,3 +61,21 @@ func death(): # Proceso de Muerte
 	anims.play("death")
 	await get_tree().create_timer(1.0).timeout
 	get_tree().reload_current_scene()
+	
+func salud_ctrl():
+	if Hp == 3:
+		$Life/Heart.texture = heart_textures["full"]
+		$Life/Heart2.texture = heart_textures["full"]
+		$Life/Heart3.texture = heart_textures["full"]
+	elif Hp == 2:
+		$Life/Heart.texture = heart_textures["full"]
+		$Life/Heart2.texture = heart_textures["full"]
+		$Life/Heart3.texture = heart_textures["broken"]
+	elif Hp == 1:
+		$Life/Heart.texture = heart_textures["full"]
+		$Life/Heart2.texture = heart_textures["broken"]
+		$Life/Heart3.texture = heart_textures["broken"]
+	elif Hp <= 0:
+		$Life/Heart.texture = heart_textures["broken"]
+		$Life/Heart2.texture = heart_textures["broken"]
+		$Life/Heart3.texture = heart_textures["broken"]
