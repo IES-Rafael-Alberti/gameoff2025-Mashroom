@@ -15,9 +15,6 @@ var limitMin: float
 var limitMax: float
 var canMove = true
 var canBeDamaged = true
-
-func _process(delta):
-	salud_ctrl()
 	
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -38,21 +35,31 @@ func _physics_process(delta):
 			position.x = limitMin
 			velocity.x = 0
 			
-		if velocity.x == 0:  # Pone animaciones segun su movimiento
-			anims.play("default")
-		elif velocity.x > 0:
-			anims.play("turning_right")
-		elif velocity.x < 0:
-			anims.play("turning_left")
+		if canBeDamaged:
+			if velocity.x == 0:  # Pone animaciones segun su movimiento
+				anims.play("default")
+			elif velocity.x > 0:
+				anims.play("turning_right")
+			elif velocity.x < 0:
+				anims.play("turning_left")
 	
 func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene que ser Area2D)
 	if body.is_in_group("Damage") and canBeDamaged:
 		body.queue_free()
 		
 		Hp -= 1
+		salud_ctrl()
 		if Hp <= 0:
 			death()
-		
+		else:
+			anims.play("damaged")
+			canBeDamaged = false
+			canMove = false
+			await get_tree().create_timer(0.2).timeout
+			canMove = true
+			await anims.animation_finished
+			canBeDamaged = true
+			anims.play("default")
 
 func death(): # Proceso de Muerte
 	canMove = false
@@ -60,23 +67,27 @@ func death(): # Proceso de Muerte
 	if randi_range(0,1) == 1: # 50% de flipear la death anim para dar variedad
 		anims.flip_h = true
 	anims.play("death")
-	await get_tree().create_timer(1.0).timeout
+	await anims.animation_finished
 	get_tree().reload_current_scene()
 	
 func salud_ctrl():
-	if Hp == 3:
-		$Life/Heart.texture = heart_textures["full"]
-		$Life/Heart2.texture = heart_textures["full"]
-		$Life/Heart3.texture = heart_textures["full"]
-	elif Hp == 2:
-		$Life/Heart.texture = heart_textures["full"]
-		$Life/Heart2.texture = heart_textures["full"]
-		$Life/Heart3.texture = heart_textures["broken"]
-	elif Hp == 1:
-		$Life/Heart.texture = heart_textures["full"]
-		$Life/Heart2.texture = heart_textures["broken"]
-		$Life/Heart3.texture = heart_textures["broken"]
-	elif Hp <= 0:
-		$Life/Heart.texture = heart_textures["broken"]
-		$Life/Heart2.texture = heart_textures["broken"]
-		$Life/Heart3.texture = heart_textures["broken"]
+	match Hp:
+		3:
+			$Life/Heart.texture = heart_textures["full"]
+			$Life/Heart2.texture = heart_textures["full"]
+			$Life/Heart3.texture = heart_textures["full"]
+			
+		2:
+			$Life/Heart.texture = heart_textures["full"]
+			$Life/Heart2.texture = heart_textures["full"]
+			$Life/Heart3.texture = heart_textures["broken"]
+			
+		1:
+			$Life/Heart.texture = heart_textures["full"]
+			$Life/Heart2.texture = heart_textures["broken"]
+			$Life/Heart3.texture = heart_textures["broken"]
+			
+		0:
+			$Life/Heart.texture = heart_textures["broken"]
+			$Life/Heart2.texture = heart_textures["broken"]
+			$Life/Heart3.texture = heart_textures["broken"]

@@ -1,0 +1,40 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "3f",
+&"color": Color(0.30588236, 0.9764706, 0.99215686, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "only_eyes",
+&"description": "",
+&"display_name": "???",
+&"mirror": false,
+&"nicknames": ["Eris"],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"eyes_smile": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"only_eyes": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}
