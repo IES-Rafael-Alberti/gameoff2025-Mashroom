@@ -23,7 +23,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_nfvkj")
 }],
 "loop": true,
-"name": &"obj1",
+"name": &"Obj1",
 "speed": 2.0
 }]
 
@@ -50,8 +50,8 @@ y_sort_enabled = true
 position = Vector2(-2.666648, -128)
 scale = Vector2(2.2933333, 2.2933333)
 sprite_frames = SubResource("SpriteFrames_nfvkj")
-animation = &"obj1"
-frame_progress = 0.5296323
+animation = &"Obj1"
+frame_progress = 0.7026643
 script = ExtResource("1_4tvrl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
