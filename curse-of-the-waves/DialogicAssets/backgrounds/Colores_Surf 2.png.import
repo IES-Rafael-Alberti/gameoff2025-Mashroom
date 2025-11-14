@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f2qar4xvuq1i"
-path="res://.godot/imported/Colores_Surf 2.png-3422dd441b0ddd4e19797fd53122e380.ctex"
+path="res://.godot/imported/Colores_Surf 2.png-5118fe55ad2388aeed428eda3de595dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/timelines/Colores_Surf 2.png"
-dest_files=["res://.godot/imported/Colores_Surf 2.png-3422dd441b0ddd4e19797fd53122e380.ctex"]
+source_file="res://DialogicAssets/backgrounds/Colores_Surf 2.png"
+dest_files=["res://.godot/imported/Colores_Surf 2.png-5118fe55ad2388aeed428eda3de595dd.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 {
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
-&"_translation_id": "17",
-&"color": Color(0.92156863, 0.8862745, 0.7372549, 1),
+&"_translation_id": "3e",
+&"color": Color(0.30588236, 0.9764706, 0.99215686, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -10,13 +10,49 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Icon",
+&"default_portrait": "Neutral",
 &"description": "",
 &"display_name": "Eris",
 &"mirror": false,
-&"nicknames": ["???"],
+&"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Angry": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Annoyed": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Attack": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Hurt": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Icon": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
@@ -26,7 +62,34 @@
 "scale": 1,
 "scene": ""
 },
+"Joy": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Neutral": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Shock": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/Eris.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Smug": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/eris/Eris.png\""
 },

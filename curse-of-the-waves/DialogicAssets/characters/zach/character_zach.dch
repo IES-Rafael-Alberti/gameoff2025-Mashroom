@@ -1,7 +1,7 @@
 {
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
-&"_translation_id": "19",
+&"_translation_id": "41",
 &"color": Color(0.44705883, 0.69411767, 0.41960785, 1),
 &"custom_info": {
 "prefix": "",
@@ -10,32 +10,14 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Triton_icon",
+&"default_portrait": "Icon",
 &"description": "",
-&"display_name": "Zachary",
+&"display_name": "Zach",
 &"mirror": false,
-&"nicknames": ["Zach"],
+&"nicknames": ["esbirro"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"Human_icon": {
-"export_overrides": {
-"image": "\"res://DialogicAssets/characters/zach/ZachHumanIcon.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Human_neutral": {
-"export_overrides": {
-"image": "\"res://DialogicAssets/characters/zach/ZachHuman.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Triton_icon": {
+"Icon": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/zach/ZacharyIcon.png\""
 },
@@ -44,7 +26,7 @@
 "scale": 1,
 "scene": ""
 },
-"Triton_neutral": {
+"Neutral": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/zach/Zachary.png\""
 },
