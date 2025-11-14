@@ -22,7 +22,6 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
 "zach": "res://DialogicAssets/characters/zach.dch"
 }
 directories/dtl_directory={
