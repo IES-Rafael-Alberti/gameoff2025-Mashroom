@@ -1,5 +1,4 @@
-[style name="New_File"]
-join zach center [animation="Fade In Up"]
+[background arg="res://DialogicAssets/timelines/Colores_Surf 2.png" fade="0.0"]
 Era una tarde de verano, de esas en las que no tienes ni idea de lo que hacer con tu vida; estaba soleado y el oleaje resplandecía con posibilidades, una buena manera de poder alejarme de mis preocupaciones. #id:11
 
 Bueno lo suyo sería presentarme, mi nombre es Zachary, un universitario promedio, soy bastante activo y disfruto de varios deportes, sobre todo el surf. #id:12
@@ -8,7 +7,6 @@ Poder ir sobre las olas me ayuda a despejar la mente, me hace falta más que nun
 
 Respiré hondo, mi tabla de surf en mano mientras me dirija derecho hacia el mar. #id:14
 
-zach: “...Bueno, vamos a darlo todo.” #id:15
+character_zach (Human_icon): ...Bueno, vamos a darlo todo. #id:15
 
 Solo metiéndome lo suficiente en el mar ya empezaron a brotar olas de tamaño adecuado para surfear, ¡cogí impulso y me dispuse a montar la ola! #id:16
-[end_timeline]
