@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ddex5cefta08l"
+
+[deps]
+
+files=["res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation"]
+
+source_file="res://DialogicAssets/translations/dialogic_3-cave_scene_translation.csv"
+dest_files=["res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

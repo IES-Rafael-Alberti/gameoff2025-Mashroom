@@ -22,14 +22,24 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"zach": "res://DialogicAssets/characters/zach.dch"
+"character_eris": "res://DialogicAssets/characters/eris/character_eris.dch",
+"character_eris_hidden": "res://DialogicAssets/characters/eris/character_eris_hidden.dch",
+"character_kumi": "res://DialogicAssets/characters/kumi/character_kumi.dch",
+"character_minion1": "res://DialogicAssets/characters/minions/character_minion1.dch",
+"character_minion2": "res://DialogicAssets/characters/minions/character_minion2.dch",
+"character_zach": "res://DialogicAssets/characters/zach/character_zach.dch",
+"character_zach_human": "res://DialogicAssets/characters/zach/character_zach_human.dch"
 }
 directories/dtl_directory={
-"1cutscene": "res://DialogicAssets/timelines/1cutscene.dtl"
+"1-prologue": "res://DialogicAssets/timelines/1-prologue.dtl",
+"2-underwater_scene": "res://DialogicAssets/timelines/2-underwater_scene.dtl",
+"3-cave_scene": "res://DialogicAssets/timelines/3-cave_scene.dtl"
 }
 layout/style_directory={
-"": "res://DialogicAssets/styles/New_File.tres",
-"New_File": "res://DialogicAssets/styles/New_File.tres"
+"": "res://DialogicAssets/styles/Base.tres",
+"BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
+"Base": "res://DialogicAssets/styles/Base.tres",
+"Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -71,13 +81,22 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/New_File.tres"]
-layout/default_style="res://DialogicAssets/styles/New_File.tres"
-variables={}
+layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/Kumi_style.tres"]
+layout/default_style="res://DialogicAssets/styles/Base.tres"
+variables={
+"canon_final": false
+}
+translation/locales=[]
+translation/id_counter=65
+portraits/default_portrait=""
 translation/intern/save_mode=0
 translation/intern/file_mode=1
 translation/intern/translation_folder="res://DialogicAssets/translations"
-translation/locales=["en", "es"]
+glossary/glossary_files=[]
+history/simple_history_enabled=true
+history/visited_event_history_enabled=true
+text/autocolor_names=true
+text/autoadvance_enabled=true
 
 [display]
 
@@ -128,8 +147,8 @@ move_left={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1cutscene_translation.es.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation", "res://DialogicAssets/translations/dialogic_1cutscene_translation.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation")
-locale/test="en"
+locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation")
+locale/test="es"
 
 [rendering]
 
