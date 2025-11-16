@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=10 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://dhnhdk32epd8y" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
-[ext_resource type="Script" uid="uid://bqlgflahark65" path="res://Scripts/languageControl.gd" id="5_ma218"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s2c3o"]
 font_size = 80
@@ -97,7 +96,7 @@ offset_bottom = -0.12802124
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "Play"
+text = "ui_play"
 
 [node name="OptionsButton" type="Button" parent="."]
 layout_mode = 1
@@ -111,7 +110,7 @@ offset_top = 0.19998169
 offset_right = 0.10394287
 offset_bottom = -0.08001709
 theme_override_font_sizes/font_size = 50
-text = "Options"
+text = "ui_options"
 
 [node name="Options" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
 layout_mode = 1
@@ -166,7 +165,7 @@ efectos = NodePath("SoundHBox/Sfx")
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/line_spacing = 3
-text = "Volume"
+text = "ui_volume"
 label_settings = SubResource("LabelSettings_s2c3o")
 horizontal_alignment = 1
 
@@ -179,7 +178,7 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
-text = "Main Volume"
+text = "ui_main_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
@@ -210,7 +209,7 @@ custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 4
 theme_override_constants/paragraph_spacing = 1
-text = "Music"
+text = "ui_music_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
@@ -239,7 +238,7 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
-text = "Sound Effects"
+text = "ui_sfx_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
@@ -261,36 +260,30 @@ text = "+"
 
 [node name="LanguageVBox" type="VBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox"]
 layout_mode = 2
-script = ExtResource("5_ma218")
 
 [node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/line_spacing = 3
-text = "Language"
+text = "ui_language"
 label_settings = SubResource("LabelSettings_s2c3o")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="English" type="AspectRatioContainer" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
+[node name="OptionButton" type="OptionButton" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-
-[node name="English" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/English"]
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
-text = "English"
-
-[node name="SpanishContainer" type="AspectRatioContainer" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
-layout_mode = 2
-
-[node name="SpanishButton" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/SpanishContainer"]
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Español
-"
+alignment = 1
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Español"
+popup/item_1/id = 1
 
 [node name="BackButton" type="Button" parent="Options/OptionsBackground/Control"]
 layout_mode = 1
@@ -304,7 +297,7 @@ offset_top = -0.34753418
 offset_right = 0.059448242
 offset_bottom = 0.14837646
 theme_override_font_sizes/font_size = 50
-text = "Back"
+text = "ui_back"
 
 [node name="OptionsAnimation" type="AnimationPlayer" parent="Options"]
 root_node = NodePath("../..")
@@ -314,6 +307,4 @@ libraries = {
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/English/English" to="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox" method="_on_english_pressed"]
-[connection signal="pressed" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/SpanishContainer/SpanishButton" to="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox" method="_on_spanish_button_pressed"]
 [connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="Options" method="_on_back_button_pressed"]

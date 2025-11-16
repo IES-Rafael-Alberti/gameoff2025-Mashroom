@@ -1,0 +1,9 @@
+keys,es,en
+ui_play,Jugar,Play
+ui_options,Opciones,Options
+ui_back,Volver,Back
+ui_language,Idioma,Language
+ui_volume,Volumen,Volume
+ui_main_volume, Volumen General, Master Volume
+ui_music_volume, Volumen de Música, Music Volume
+ui_sfx_volume, Volumen de Efectos, SFX Volume

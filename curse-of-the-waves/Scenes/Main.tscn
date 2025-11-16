@@ -34,5 +34,6 @@ flat = true
 [node name="Menu" parent="GameManager" instance=ExtResource("2_idj7w")]
 
 [connection signal="pressed" from="GameManager/Menu/PlayButton" to="GameManager" method="_on_play_button_pressed"]
+[connection signal="item_selected" from="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="GameManager" method="_on_language_option_button_item_selected"]
 
 [editable path="GameManager/Menu"]
