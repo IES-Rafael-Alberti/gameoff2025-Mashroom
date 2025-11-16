@@ -101,7 +101,7 @@ label Primera eleccion #id:43
 	
 	Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto… #id:47
 - Creo que voy a vomitar… #id:48
-	character_eris (Default): Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
+	character_eris (Neutral): Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
 	# TODO: Vibración momentánea para simular el guantazo Añadir efecto de variable
 	update character_eris (Attack)
 	En un instante ví como la bruja me abofeteó tan fuerte que me puso horizontal, rápidamente tuve que intentar nadar con mi nueva cola para ponerme correctamente. #id:4a
@@ -232,6 +232,7 @@ label Tercera eleccion #id:72
 	character_zach: ¡N-NADA-! #id:8a
 	jump Tercera eleccion
 - ¿Odias a los humanos? #id:8b
+	character_zach: ¿Odias a los humanos? #id:42
 	character_eris (Neutral): Nah, no los odio, pero eso no quita que no sean objetivamente inferiores. #id:8c
 	
 	character_zach: ¿Q-Qué nos hace inferiores exactamente? #id:8d
@@ -289,7 +290,7 @@ label Tercera eleccion #id:72
 	character_zach: Si tu lo dices… #id:a8
 	jump Tercera eleccion
 - ¿Cómo puedo volver a mi forma humana? #id:a9
-	Zach: ¿Cómo puedo volver a mi forma humana? #id:aa
+	character_zach: ¿Cómo puedo volver a mi forma humana? #id:aa
 
 label Infodumped #id:ab
 character_eris (Smug): ¿Así que vuelves con esas eh? Bien, pues iré al grano… #id:ac
