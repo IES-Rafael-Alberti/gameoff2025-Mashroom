@@ -40,7 +40,7 @@ else:
 	[style name="BASE_BIG"]
 	# [Letra grande, vibrando]
 	character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
-	[style]
+	[style name="Base"]
 	# cueva2
 	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
 	join character_eris (Hurt) center
@@ -64,7 +64,8 @@ else:
 	… #id:e4
 	…Oh no… #id:e5
 	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:e6
-	character_kumi: [Kumi habla lentamente en todos sus diálogos y tiene letra de mayor tamaño y color distinto] ¿ACASO TE DOY MIEDO? #id:e7
+	# [Kumi habla lentamente en todos sus diálogos y tiene letra de mayor tamaño y color distinto]
+	character_kumi: ¿ACASO TE DOY MIEDO? #id:e7
 	character_kumi: …No puedo ni responder, no puedo hacer nada… #id:e8
 	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:e9
 	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:ea
