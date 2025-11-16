@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Curse of the waves"
-run/main_scene="uid://167ot86du27h"
+run/main_scene="uid://wt4d5ycbn3af"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://20fp21ngqhwu"
 
 [autoload]
 
@@ -97,6 +97,7 @@ history/simple_history_enabled=true
 history/visited_event_history_enabled=true
 text/autocolor_names=true
 text/autoadvance_enabled=true
+text/autoadvance_fixed_delay=0.01
 
 [display]
 
@@ -147,7 +148,7 @@ move_left={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation")
+locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation", "res://Translations/ui_translations.en.translation", "res://Translations/ui_translations.es.translation")
 locale/test="es"
 
 [rendering]
