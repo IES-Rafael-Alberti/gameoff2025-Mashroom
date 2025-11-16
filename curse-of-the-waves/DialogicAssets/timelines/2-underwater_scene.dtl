@@ -232,7 +232,7 @@ label Tercera eleccion #id:72
 	character_zach: ¡N-NADA-! #id:8a
 	jump Tercera eleccion
 - ¿Odias a los humanos? #id:8b
-	character_zach: ¿Odias a los humanos? #id:42
+	character_zach: ¿Odias a los humanos? #id:8b1
 	character_eris (Neutral): Nah, no los odio, pero eso no quita que no sean objetivamente inferiores. #id:8c
 	
 	character_zach: ¿Q-Qué nos hace inferiores exactamente? #id:8d
