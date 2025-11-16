@@ -68,7 +68,13 @@ func death(): # Proceso de Muerte
 		anims.flip_h = true
 	anims.play("death")
 	await anims.animation_finished
-	get_tree().reload_current_scene()
+	# Temporal, para testeo
+	if true:
+		Dialogic.start('2-underwater_scene')
+		await Dialogic.timeline_ended
+		get_tree().change_scene_to_file("res://Scenes/cuevaMinijuego/escena_cueva.tscn")
+	else:
+		get_tree().reload_current_scene()
 	
 func salud_ctrl():
 	match Hp:

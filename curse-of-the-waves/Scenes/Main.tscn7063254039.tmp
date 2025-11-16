@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://wt4d5ycbn3af"]
+
+[ext_resource type="Script" uid="uid://yhtvcwta74c3" path="res://Scripts/main.gd" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_idj7w"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r150o")
+
+[node name="Menu" parent="." instance=ExtResource("2_idj7w")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
-[ext_resource type="Script" uid="uid://bqlgflahark65" path="res://Scenes/languageControl.gd" id="5_ma218"]
+[ext_resource type="Script" uid="uid://bqlgflahark65" path="res://Scripts/languageControl.gd" id="5_ma218"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s2c3o"]
 font_size = 80
