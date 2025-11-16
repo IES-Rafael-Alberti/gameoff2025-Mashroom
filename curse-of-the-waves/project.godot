@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Curse of the waves"
-run/main_scene="uid://167ot86du27h"
+run/main_scene="uid://wt4d5ycbn3af"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://20fp21ngqhwu"
 
 [autoload]
 
