@@ -86,8 +86,8 @@ layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false
 }
-translation/locales=[]
-translation/id_counter=65
+translation/locales=["en", "es"]
+translation/id_counter=66
 portraits/default_portrait=""
 translation/intern/save_mode=0
 translation/intern/file_mode=1
