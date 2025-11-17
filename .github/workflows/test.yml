@@ -192,6 +192,13 @@ jobs:
     shell: bash
     run: echo "$HOME/godot-bin" >> $GITHUB_PATH
 
+  - name: Import Project Files
+    shell: bash
+    run: |
+      PROJECT_PATH="${{ needs.Detect-Platforms.outputs.project-path }}"
+      echo "Importing project files for Dialogic..."
+      godot --headless --editor --quit --import --path "./$PROJECT_PATH"
+
   - name: Test Export ${{ matrix.platform }}
     shell: bash
     run: |
