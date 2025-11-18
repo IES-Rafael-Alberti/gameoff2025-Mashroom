@@ -1,9 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bs4n5x3ah1xcj"]
 
-[ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scripts/SurfMinigame/Obstacles/obstacleSkin.gd" id="1_b81qs"]
+[ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scripts/SurfMinigame/Obstacles/surfobstacleSkin.gd" id="1_b81qs"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_kdum4"]
-[ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/ObstacleMovement.tscn" id="2_ckm5w"]
+[ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/SurfObstacleMovement.tscn" id="2_ckm5w"]
 [ext_resource type="Texture2D" uid="uid://inixhkskjocr" path="res://assets/SurfMinigame/Obstacles/SurfObstacles1.png" id="3_settv"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecett"]
 atlas = ExtResource("3_settv")

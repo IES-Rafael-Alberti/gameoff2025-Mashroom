@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cga1rsgfpq8aj"]
 
-[ext_resource type="Script" uid="uid://dlqp8wy1q20cr" path="res://Scripts/CuevaMinijuego/jugadorControl.gd" id="1_4bqv8"]
+[ext_resource type="Script" uid="uid://dlqp8wy1q20cr" path="res://Scripts/OLDCuevaMinijuego/jugadorControl.gd" id="1_4bqv8"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_f2b36"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4bqv8"]
