@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var Hp = 3
 @export var BaseSpeed = 800.0
 
+@onready var sonidoCaida = preload("res://assets/Audio/SFX/splash_effect.wav")
 @onready var anims = $Sprite2D
 @onready var heart_textures = {
 	"full": preload("res://assets/SurfMinigame/Heart.png"),
@@ -67,6 +68,8 @@ func death(): # Proceso de Muerte
 	if randi_range(0,1) == 1: # 50% de flipear la death anim para dar variedad
 		anims.flip_h = true
 	anims.play("death")
+	await get_tree().create_timer(0.999).timeout #para sfx de caida y que espere
+	AudioPlayer.playSfx(sonidoCaida, -12.0)
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
