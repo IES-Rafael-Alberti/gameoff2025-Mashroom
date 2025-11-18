@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8vwv4bfefxwq"
+path="res://.godot/imported/tense-cinematic-trailer.wav-827be11680db67c235f2b8972e43c931.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Música/Cutscene 2/tense-cinematic-trailer.wav"
+dest_files=["res://.godot/imported/tense-cinematic-trailer.wav-827be11680db67c235f2b8972e43c931.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
