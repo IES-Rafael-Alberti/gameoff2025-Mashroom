@@ -3,6 +3,8 @@ extends Control
 @export_group("Objects")
 @export var OptionsContainer: Control
 
+func _ready():
+	AudioPlayer.play_music_nivel()
 
 func _on_play_button_pressed() -> void:
 	Dialogic.start('1-prologue')
@@ -12,3 +14,9 @@ func _on_play_button_pressed() -> void:
 
 func _on_options_button_pressed():
 	OptionsContainer.showOptionMenu(true)
+
+"func play_sound(stream: AudioStream):
+	var musica = AudioStreamPlayer.new()
+	musica.stream = stream
+	add_child(musica)
+	musica.play()"

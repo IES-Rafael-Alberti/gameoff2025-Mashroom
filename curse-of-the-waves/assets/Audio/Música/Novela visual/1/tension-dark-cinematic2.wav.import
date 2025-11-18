@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b88xc0uvjryca"
+path="res://.godot/imported/tension-dark-cinematic2.wav-5c7baefea0fb36bee1319b90934e4b1c.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav"
+dest_files=["res://.godot/imported/tension-dark-cinematic2.wav-5c7baefea0fb36bee1319b90934e4b1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
