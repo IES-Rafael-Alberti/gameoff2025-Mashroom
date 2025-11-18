@@ -1,0 +1,100 @@
+name: 🐛 Informe de error (bug)
+description: Reporta un error o problema con el juego
+title: "[Bug]: <title> "
+labels: ["bug"]
+type: "Bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tomarte el tiempo para reportar un error! Por favor, completa el siguiente formulario.
+
+  - type: checkboxes
+    id: platform
+    attributes:
+      label: Plataforma
+      description: ¿En qué plataforma estás experimentando este problema?
+      options:
+        - label: Windows
+        - label: Linux
+        - label: macOS
+        - label: Web 
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Navegador (si aplica)
+      description: Si estás jugando en la web, por favor especifica tu navegador y versión
+      placeholder: Chrome v90.0.4430.93
+  - type: input
+    id: version
+    attributes:
+      label: Versión del juego
+      description: ¿Qué versión del juego estás jugando? (p. ej., v1.2.0)
+      placeholder: "v1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del error
+      description: Una descripción clara y concisa de cuál es el error
+      placeholder: El jugador atraviesa la plataforma al saltar...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      description: ¿Cómo podemos reproducir este problema?
+      placeholder: |
+        1. Inicia el juego
+        2. Salta en la segunda plataforma
+        3. El jugador atraviesa la plataforma
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+      description: ¿Qué esperabas que sucediera?
+      placeholder: El jugador debería aterrizar en la plataforma
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento real
+      description: ¿Qué fue lo que realmente sucedió?
+      placeholder: El jugador atraviesa la plataforma
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Capturas de pantalla / Videos
+      description: Si aplica, agrega capturas de pantalla o videos para ayudar a explicar tu problema
+      placeholder: Arrastra y suelta imágenes/videos aquí o pega enlaces
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Contexto adicional
+      description: Agrega cualquier otro contexto sobre el problema aquí
+      placeholder: Esto solo sucede después de recoger una moneda...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Lista de verificación
+      description: Por favor confirma lo siguiente
+      options:
+        - label: He revisado los issues existentes para evitar duplicados
+          required: true
