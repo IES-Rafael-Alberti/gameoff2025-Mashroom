@@ -38,9 +38,11 @@ directories/dtl_directory={
 "3-cave_scene": "res://DialogicAssets/timelines/3-cave_scene.dtl"
 }
 layout/style_directory={
-"": "res://DialogicAssets/styles/Base.tres",
+"": "res://DialogicAssets/styles/Base_Nueva.tres",
 "BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
 "Base": "res://DialogicAssets/styles/Base.tres",
+"Base_BIG_Nueva": "res://DialogicAssets/styles/Base_BIG_Nueva.tres",
+"Base_Nueva": "res://DialogicAssets/styles/Base_Nueva.tres",
 "Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -83,8 +85,8 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/Kumi_style.tres"]
-layout/default_style="res://DialogicAssets/styles/Base.tres"
+layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/Base_BIG_Nueva.tres", "res://DialogicAssets/styles/Base_Nueva.tres"]
+layout/default_style="res://DialogicAssets/styles/Base_Nueva.tres"
 variables={
 "canon_final": false
 }
