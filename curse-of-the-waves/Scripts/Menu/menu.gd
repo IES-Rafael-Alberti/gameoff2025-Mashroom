@@ -17,3 +17,4 @@ func _on_play_button_pressed() -> void:
 
 func _on_options_button_pressed():
 	OptionsContainer.showOptionMenu(true)
+	AudioPlayer.pulsarBtn()
