@@ -24,11 +24,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravityMult
 	if canMove:
-		if Input.is_action_just_pressed("SecondaryAction"):
-			isHidden = not isHidden
-		# Handle jump.
-		if not isHidden:
-			if Input.is_action_just_pressed("move_up"):
+		if Input.is_action_pressed("SecondaryAction"):
+			isHidden = true
+		else: 
+			isHidden = false
+			# Handle jump.
+			if Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("move_up"):
 				if velocity.y > 0:
 					velocity.y = 0
 				velocity.y += JumpPower
