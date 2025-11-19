@@ -59,6 +59,7 @@ audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
 
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
+join character_zach (Neutral) center
 [style name="BASE_BIG"]
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav"
 
