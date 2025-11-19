@@ -1,4 +1,5 @@
 [background arg="res://DialogicAssets/backgrounds/Colores_Surf 2.png" fade="0.0"]
+audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3"
 # TODO: Cambiar por playa
 
 
