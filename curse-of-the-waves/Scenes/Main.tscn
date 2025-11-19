@@ -33,7 +33,41 @@ flat = true
 
 [node name="Menu" parent="GameManager" instance=ExtResource("2_idj7w")]
 
+[node name="menosG" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="1"]
+focus_neighbor_right = NodePath("../masG")
+
+[node name="General" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="2"]
+focus_mode = 0
+
+[node name="masG" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="3"]
+focus_neighbor_left = NodePath("../menosG")
+
+[node name="menosM" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="1"]
+focus_neighbor_right = NodePath("../masM")
+
+[node name="Musica" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="2"]
+focus_mode = 0
+
+[node name="masM" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="3"]
+focus_neighbor_left = NodePath("../menosM")
+
+[node name="menosS" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="1"]
+focus_neighbor_right = NodePath("../masS")
+
+[node name="Sfx" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="2"]
+focus_mode = 0
+
+[node name="masS" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="3"]
+focus_neighbor_left = NodePath("../menosS")
+
+[node name="OptionButton" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox" index="1"]
+focus_neighbor_bottom = NodePath("../../../BackButton")
+
+[node name="BackButton" parent="GameManager/Menu/Options/OptionsBackground/Control" index="1"]
+focus_neighbor_top = NodePath("../SettingsVBox/LanguageVBox/OptionButton")
+
 [connection signal="pressed" from="GameManager/Menu/PlayButton" to="GameManager" method="_on_play_button_pressed"]
 [connection signal="item_selected" from="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="GameManager" method="_on_language_option_button_item_selected"]
+[connection signal="pressed" from="GameManager/Menu/Options/OptionsBackground/Control/BackButton" to="GameManager/Menu" method="_on_back_button_pressed"]
 
 [editable path="GameManager/Menu"]

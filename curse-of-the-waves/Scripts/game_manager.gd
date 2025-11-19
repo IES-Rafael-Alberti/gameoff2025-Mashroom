@@ -4,6 +4,10 @@ extends Node
 @export var health = 3
 @export var objects : Dictionary
 
+var baseWindowsSize = Vector2(
+	ProjectSettings.get_setting("display/window/size/viewport_width"),
+	ProjectSettings.get_setting("display/window/size/viewport_height")
+)
 
 
 func _enter_tree() -> void:
