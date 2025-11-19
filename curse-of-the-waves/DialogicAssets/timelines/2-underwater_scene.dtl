@@ -1,4 +1,5 @@
 [background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav"
 
 No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
 
