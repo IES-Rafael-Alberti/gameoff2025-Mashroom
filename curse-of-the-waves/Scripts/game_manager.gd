@@ -23,6 +23,18 @@ func _on_language_option_button_item_selected(index: int) -> void:
 func _ready():
 	loadScene(currentScene)
 
+func loadSceneDialogic(scene: PackedScene, dialogic: String):
+	currentScene = scene
+	Dialogic.start(dialogic)
+	var scenes = $LoadedScene.get_children()
+	if scenes:
+		for i in range(0,scenes.size()):
+			scenes[i].queue_free()
+	
+	await Dialogic.timeline_ended
+	$LoadedScene.add_child(scene.instantiate())
+	
+
 func loadScene(scene: PackedScene):
 	currentScene = scene
 	

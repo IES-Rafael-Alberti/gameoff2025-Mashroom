@@ -71,9 +71,8 @@ func death(): # Proceso de Muerte
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
-		Dialogic.start('2-underwater_scene')
-		await Dialogic.timeline_ended
-		get_tree().get_root().get_node("Main/GameManager").loadScene(preload("res://Scenes/CaveMinigame/CaveGame.tscn"))
+		var GameManager = get_tree().get_root().get_node("Main/GameManager")
+		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
 	
 func salud_ctrl():
 	match Hp:
