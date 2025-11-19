@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b81bt4qhs7ksc"
+path="res://.godot/imported/ukeleleMenu.wav-8f0f0906afc3c387efd93e0c41923cbe.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Música/Para menú/ukeleleMenu.wav"
+dest_files=["res://.godot/imported/ukeleleMenu.wav-8f0f0906afc3c387efd93e0c41923cbe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -19,6 +19,7 @@ config/icon="uid://20fp21ngqhwu"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+AudioPlayer="*res://Scenes/AudioPlayer.tscn"
 
 [dialogic]
 
