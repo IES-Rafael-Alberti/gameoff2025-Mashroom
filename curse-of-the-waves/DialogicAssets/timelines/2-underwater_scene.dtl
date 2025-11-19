@@ -4,7 +4,7 @@ No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en
 
 Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema. #id:18
 
-character_zach: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
+character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
 
 Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando… #id:1a
 
@@ -12,7 +12,7 @@ Eran un par de ojos, no como los de antes, pero aún así no me transmitían seg
 join character_eris_hidden (only_eyes) center [animation="Fade In"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
-character_zach: ¿...Q-Quién eres…? #id:1d
+character_zach_human: ¿...Q-Quién eres…? #id:1d
 
 character_eris_hidden: Oh no te preocupes, eso lo descubrirás dentro de poco humano, primero tengo una oferta para tí… #id:1e
 
@@ -20,19 +20,19 @@ character_eris_hidden: Mi magia ahora mismo es lo único que te mantiene con vid
 
 character_eris_hidden: Necesito que me ayudes a recolectar algunas… emociones, de algunas personas de por aquí, nada forzoso, solo un poco de… manipulación emocional. #id:20
 
-character_zach: ¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…? #id:21
+character_zach_human: ¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…? #id:21
 
 character_eris_hidden: Oooh mucha más de la que tu crees chaval, el mar es todo un mundo... #id:22
 
-character_zach: ...Ll-Llévame a casa… #id:23
+character_zach_human: ...Ll-Llévame a casa… #id:23
 
 character_eris_hidden: Ooh, ¿exigiéndome a pesar de que te acabo de salvar la vida? Los humanos sois todos unos ingratos. Si quieres volver a casa tendrás que obedecerme… #id:24
 
-character_zach: ...N-No… #id:25
+character_zach_human: ...N-No… #id:25
 
 character_eris_hidden: ¿...Perdona? #id:26
 
-character_zach: ...N-No quiero… llévame a casa… #id:27
+character_zach_human: ...N-No quiero… llévame a casa… #id:27
 
 character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?! #id:28
 update character_eris_hidden (eyes_smile)
