@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt0al2xc4nqsm"
+path="res://.godot/imported/lightVoid-mystical-orchestral.wav-22b2ae3aa8bfc95db5c7488f637e815c.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav"
+dest_files=["res://.godot/imported/lightVoid-mystical-orchestral.wav-22b2ae3aa8bfc95db5c7488f637e815c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
