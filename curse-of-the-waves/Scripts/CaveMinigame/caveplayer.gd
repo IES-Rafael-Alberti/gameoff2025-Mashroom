@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export_group("Basics")
 @export var BaseSpeed = 400.0
-@export var JumpPower = -30
+@export var JumpPower = -200
 @export var Hp = 3
 @export var iframes = 1
 
@@ -17,7 +17,6 @@ var speed = BaseSpeed
 var canMove = true
 var canBeDamaged = true
 var isMoving = false
-var isSwimming = false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -25,13 +24,10 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta * gravityMult
 	if canMove:
 		# Handle jump.
-		if Input.is_action_pressed("move_up"):
-			isSwimming = true
+		if Input.is_action_just_pressed("move_up"):
+			if velocity.y > 0:
+				velocity.y = 0
 			velocity.y += JumpPower
-		else: 
-			isSwimming = false
-			if Input.is_action_just_released("move_up"):
-				velocity.y = releaseJumpPower
 			
 		# Handle Left-Right
 		var direction = Input.get_axis("move_left", "move_right")
@@ -48,7 +44,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	# Detect movement
-	if velocity.x != 0 or isSwimming: 
+	if velocity.x != 0: 
 		isMoving = true
 	else: 
 		isMoving = false
@@ -57,7 +53,6 @@ func _physics_process(delta):
 
 func _on_hitbox_area_entered(area):
 	if area.is_in_group("Damage") and canBeDamaged:
-		area.queue_free()
 		takeDamage()
 	elif area.is_in_group("SoundWave"):
 		velocity.x = area.PushPower
