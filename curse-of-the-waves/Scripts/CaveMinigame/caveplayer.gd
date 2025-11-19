@@ -85,6 +85,4 @@ func death(): # Proceso de Muerte
 	if true:
 		#Dialogic.start('2-underwater_scene')
 		#await Dialogic.timeline_ended
-		get_tree().change_scene_to_file("res://Scenes/CaveMinigame/CaveGame.tscn")
-	else:
-		get_tree().reload_current_scene()
+		get_tree().get_root().get_node("Main/GameManager").loadScene(preload("res://Scenes/CaveMinigame/CaveGame.tscn"))
