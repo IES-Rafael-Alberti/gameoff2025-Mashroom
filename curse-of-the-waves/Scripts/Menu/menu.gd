@@ -20,7 +20,6 @@ func _on_options_button_pressed():
 	$OptionsButton.focus_mode  = Control.FOCUS_NONE
 	
 func _on_back_button_pressed():
-	print("HOla")
 	await OptionsContainer.showOptionMenu(false)
 	$PlayButton.focus_mode  = Control.FOCUS_ALL
 	$OptionsButton.focus_mode  = Control.FOCUS_ALL 
