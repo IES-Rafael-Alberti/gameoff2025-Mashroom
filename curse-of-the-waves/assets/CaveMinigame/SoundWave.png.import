@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4v7gtix0jsul"
-path="res://.godot/imported/Trip.png-60f02fe787242dbf3ebd39b52d5c43a3.ctex"
+uid="uid://bhos4c5rfutaq"
+path="res://.godot/imported/SoundWave.png-80f2646256b43f9f6f97277b598d6ad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/high_tides_basic_pack/Characters/Trip.png"
-dest_files=["res://.godot/imported/Trip.png-60f02fe787242dbf3ebd39b52d5c43a3.ctex"]
+source_file="res://assets/CaveMinigame/SoundWave.png"
+dest_files=["res://.godot/imported/SoundWave.png-80f2646256b43f9f6f97277b598d6ad4.ctex"]
 
 [params]
 

@@ -1,0 +1,86 @@
+extends CharacterBody2D
+
+
+@export_group("Basics")
+@export var BaseSpeed = 400.0
+@export var JumpPower = -30
+@export var Hp = 3
+@export var iframes = 1
+
+@export_group("Complex")
+@export var gravityMult = 0.5
+@export var releaseJumpPower = -200
+@export var maxJumpSpeed = -500
+@export var maxFallSpeed = 300
+
+var speed = BaseSpeed
+var canMove = true
+var canBeDamaged = true
+var isMoving = false
+var isSwimming = false
+
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta * gravityMult
+	if canMove:
+		# Handle jump.
+		if Input.is_action_pressed("move_up"):
+			isSwimming = true
+			velocity.y += JumpPower
+		else: 
+			isSwimming = false
+			if Input.is_action_just_released("move_up"):
+				velocity.y = releaseJumpPower
+			
+		# Handle Left-Right
+		var direction = Input.get_axis("move_left", "move_right")
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+		
+	# Limit the Vertical Movement
+	if velocity.y > maxFallSpeed:
+		velocity = Vector2(velocity.x,maxFallSpeed)
+	elif velocity.y < maxJumpSpeed:
+		velocity = Vector2(velocity.x,maxJumpSpeed)
+	move_and_slide()
+	
+	# Detect movement
+	if velocity.x != 0 or isSwimming: 
+		isMoving = true
+	else: 
+		isMoving = false
+
+
+
+func _on_hitbox_area_entered(area):
+	if area.is_in_group("Damage") and canBeDamaged:
+		area.queue_free()
+		takeDamage()
+	elif area.is_in_group("SoundWave"):
+		velocity.x = area.PushPower
+		if isMoving and canBeDamaged:
+			takeDamage()
+	
+func takeDamage():
+	Hp -= 1
+	if Hp <= 0:
+		death()
+	else:
+		canBeDamaged = false
+		await get_tree().create_timer(iframes).timeout
+		canBeDamaged = true
+
+func death(): # Proceso de Muerte
+	canMove = false
+	canBeDamaged = false
+	
+	# Temporal, para testeo
+	if true:
+		#Dialogic.start('2-underwater_scene')
+		#await Dialogic.timeline_ended
+		get_tree().change_scene_to_file("res://Scenes/CaveMinigame/CaveGame.tscn")
+	else:
+		get_tree().reload_current_scene()

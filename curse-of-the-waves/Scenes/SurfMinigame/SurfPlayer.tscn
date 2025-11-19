@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://kg2yrh4ogamm"]
 
-[ext_resource type="Script" uid="uid://b4r3l2ukijbmj" path="res://Scripts/SurfMinigame/player.gd" id="1_f12qk"]
+[ext_resource type="Script" uid="uid://b4r3l2ukijbmj" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_f12qk"]
 [ext_resource type="Texture2D" uid="uid://bgq52jvnth3ht" path="res://assets/SurfMinigame/ZachSurfAnimations.png" id="3_bpsjh"]
 [ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/SurfMinigame/Heart.png" id="3_y3qsp"]
 

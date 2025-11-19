@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnbw4a2re15di"]
+
+[ext_resource type="Script" uid="uid://dirh2j205weas" path="res://Scenes/CaveMinigame/cavesound_wave.gd" id="1_l2vgw"]
+[ext_resource type="Texture2D" uid="uid://bhos4c5rfutaq" path="res://assets/CaveMinigame/SoundWave.png" id="2_rn0ry"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cn1ly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rn0ry")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fys0"]
+radius = 24.0
+height = 96.0
+
+[node name="Area2D" type="Area2D" groups=["SoundWave"]]
+position = Vector2(1544, 488)
+script = ExtResource("1_l2vgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cn1ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
+shape = SubResource("CapsuleShape2D_0fys0")

@@ -44,9 +44,9 @@ func _physics_process(delta):
 			elif velocity.x < 0:
 				anims.play("turning_left")
 	
-func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene que ser Area2D)
-	if body.is_in_group("Damage") and canBeDamaged:
-		body.queue_free()
+func _on_hitbox_area_entered(area): # Detección al tocar un obstaculo (tiene que ser Area2D)
+	if area.is_in_group("Damage") and canBeDamaged:
+		area.queue_free()
 		
 		Hp -= 1
 		salud_ctrl()
@@ -65,8 +65,6 @@ func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene qu
 func death(): # Proceso de Muerte
 	canMove = false
 	canBeDamaged = false
-	if randi_range(0,1) == 1: # 50% de flipear la death anim para dar variedad
-		anims.flip_h = true
 	anims.play("death")
 	await get_tree().create_timer(0.999).timeout #para sfx de caida y que espere
 	AudioPlayer.playSfx(sonidoCaida, -12.0)
