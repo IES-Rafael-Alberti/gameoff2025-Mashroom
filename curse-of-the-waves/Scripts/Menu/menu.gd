@@ -36,3 +36,4 @@ func _on_back_button_pressed():
 	musica.stream = stream
 	add_child(musica)
 	musica.play()"
+	AudioPlayer.pulsarBtn()
