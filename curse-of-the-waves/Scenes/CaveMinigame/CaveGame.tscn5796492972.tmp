@@ -1,0 +1,172 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4gsjk0vvrubs"]
+
+[ext_resource type="PackedScene" uid="uid://d17finaakavly" path="res://Scenes/CaveMinigame/CavePlayer.tscn" id="1_qvq2s"]
+[ext_resource type="Script" uid="uid://cso658cos5o8x" path="res://Scripts/CaveMinigame/cavecamera.gd" id="2_mqivk"]
+[ext_resource type="Script" uid="uid://bes152j6yk3ek" path="res://Scripts/CaveMinigame/cavespawner.gd" id="3_n6d1v"]
+[ext_resource type="PackedScene" uid="uid://cnbw4a2re15di" path="res://Scenes/CaveMinigame/SoundWave.tscn" id="4_upos3"]
+[ext_resource type="PackedScene" uid="uid://b01ah5q562863" path="res://Scenes/CaveMinigame/Enemies/caveenemy1.tscn" id="5_si7a0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qvq2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si7a0"]
+size = Vector2(38.4, 19.200006)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqivk"]
+size = Vector2(38.4, 25.600004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxwp0"]
+size = Vector2(38.399998, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6d1v"]
+size = Vector2(3.8400002, 134.40001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upos3"]
+size = Vector2(3.8400002, 134.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvq2s"]
+size = Vector2(115.20001, 20.800001)
+
+[node name="CaveGame" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qvq2s")]
+position = Vector2(512, 880)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("objectToFollow", "BLMarker", "TRMarker")]
+position = Vector2(960, 552)
+script = ExtResource("2_mqivk")
+objectToFollow = NodePath("../Player")
+BLMarker = NodePath("../BottomLeft")
+TRMarker = NodePath("../TopRight")
+
+[node name="Spawner" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("SpawnPoint", "TopSpawn", "BottomSpawn")]
+z_index = 2
+position = Vector2(-960, -552)
+script = ExtResource("3_n6d1v")
+SWSpeed = 3000
+SpawnPoint = NodePath("SpawnPoint")
+SoundWave = ExtResource("4_upos3")
+TopSpawn = NodePath("../../TopRight")
+BottomSpawn = NodePath("../../BottomLeft")
+
+[node name="SpawnPoint" type="Marker2D" parent="Camera2D/Spawner"]
+position = Vector2(2880, 448)
+
+[node name="SpawnTimer" type="Timer" parent="Camera2D/Spawner"]
+one_shot = true
+
+[node name="MapBorders" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="MapBorders"]
+
+[node name="Floor" type="StaticBody2D" parent="MapBorders/Floor"]
+position = Vector2(960, 1048)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Floor/Floor"]
+position = Vector2(0, 7.999981)
+scale = Vector2(1920.0001, 192.00003)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Floor/Floor"]
+position = Vector2(0, 8)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_si7a0")
+
+[node name="Floor2" type="StaticBody2D" parent="MapBorders/Floor"]
+position = Vector2(2880, 984)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Floor/Floor2"]
+position = Vector2(0, 39.999947)
+scale = Vector2(1920.0001, 255.99998)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Floor/Floor2"]
+position = Vector2(0, 40)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_mqivk")
+
+[node name="Floor3" type="StaticBody2D" parent="MapBorders/Floor"]
+position = Vector2(4800, 984)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Floor/Floor3"]
+position = Vector2(0, 7.999998)
+scale = Vector2(1920.0001, 319.99988)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Floor/Floor3"]
+position = Vector2(0, 8)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_pxwp0")
+
+[node name="Walls" type="Node2D" parent="MapBorders"]
+
+[node name="Wall" type="StaticBody2D" parent="MapBorders/Walls"]
+position = Vector2(-96, 376)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Walls/Wall"]
+position = Vector2(0, 103.99999)
+scale = Vector2(192.00006, 1344.0001)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Walls/Wall"]
+position = Vector2(0, 104.00003)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_n6d1v")
+
+[node name="Wall2" type="StaticBody2D" parent="MapBorders/Walls"]
+position = Vector2(5856, 376)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Walls/Wall2"]
+position = Vector2(0, 103.99994)
+scale = Vector2(192.00006, 1344)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Walls/Wall2"]
+position = Vector2(0, 104)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_upos3")
+
+[node name="Roof" type="Node2D" parent="MapBorders"]
+
+[node name="Roof" type="StaticBody2D" parent="MapBorders/Roof"]
+position = Vector2(1152, -88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="MapBorders/Roof/Roof"]
+position = Vector2(1727.9995, 0)
+scale = Vector2(5759.999, 208)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/Roof/Roof"]
+position = Vector2(1728, 0)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_qvq2s")
+
+[node name="BottomLeft" type="Marker2D" parent="."]
+top_level = true
+position = Vector2(-184, 1144)
+
+[node name="TopRight" type="Marker2D" parent="."]
+top_level = true
+position = Vector2(5944, -184)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(1984, 736)
+scale = Vector2(2, 2)
+Points = [NodePath("Marker2D"), NodePath("Marker2D2")]
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Enemy"]
+top_level = true
+position = Vector2(1984, 736)
+
+[node name="Marker2D2" type="Marker2D" parent="Enemies/Enemy"]
+top_level = true
+position = Vector2(2376, 736)
+
+[connection signal="timeout" from="Camera2D/Spawner/SpawnTimer" to="Camera2D/Spawner" method="_on_spawn_timer_timeout"]

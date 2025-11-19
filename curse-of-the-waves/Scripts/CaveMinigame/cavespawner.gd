@@ -26,7 +26,6 @@ func _ready():
 	
 
 func _on_spawn_timer_timeout():
-	print("Spawned")
 	match randi_range(0,1):
 		0: await spawnBigSoundWave()
 		1: await spawnGroupSoundWave()

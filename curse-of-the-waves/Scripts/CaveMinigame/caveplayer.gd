@@ -17,25 +17,29 @@ var speed = BaseSpeed
 var canMove = true
 var canBeDamaged = true
 var isMoving = false
+var isHidden = false
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravityMult
 	if canMove:
+		if Input.is_action_just_pressed("SecondaryAction"):
+			isHidden = not isHidden
 		# Handle jump.
-		if Input.is_action_just_pressed("move_up"):
-			if velocity.y > 0:
-				velocity.y = 0
-			velocity.y += JumpPower
+		if not isHidden:
+			if Input.is_action_just_pressed("move_up"):
+				if velocity.y > 0:
+					velocity.y = 0
+				velocity.y += JumpPower
+			# Handle Left-Right
 			
-		# Handle Left-Right
-		var direction = Input.get_axis("move_left", "move_right")
-		if direction:
-			velocity.x = direction * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-		
+	var direction = Input.get_axis("move_left", "move_right")
+	if direction and not isHidden:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+				
 	# Limit the Vertical Movement
 	if velocity.y > maxFallSpeed:
 		velocity = Vector2(velocity.x,maxFallSpeed)
@@ -48,15 +52,19 @@ func _physics_process(delta):
 		isMoving = true
 	else: 
 		isMoving = false
+		
+	# Temporal (to know when hidden)
+	if isHidden: $Sprite2D.flip_v = true
+	else: $Sprite2D.flip_v = false
 
 
 
 func _on_hitbox_area_entered(area):
-	if area.is_in_group("Damage") and canBeDamaged:
+	if area.is_in_group("Damage") and canBeDamaged and not isHidden:
 		takeDamage()
 	elif area.is_in_group("SoundWave"):
 		velocity.x = area.PushPower
-		if isMoving and canBeDamaged:
+		if canBeDamaged and not isHidden:
 			takeDamage()
 	
 func takeDamage():
