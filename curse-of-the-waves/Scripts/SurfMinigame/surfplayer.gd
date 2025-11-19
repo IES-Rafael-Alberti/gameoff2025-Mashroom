@@ -16,7 +16,10 @@ var limitMin: float
 var limitMax: float
 var canMove = true
 var canBeDamaged = true
-	
+
+func _ready():
+	AudioPlayer.musicMinijuegoSurf()
+
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	if canMove:
@@ -73,6 +76,12 @@ func death(): # Proceso de Muerte
 	if true:
 		var GameManager = get_tree().get_root().get_node("Main/GameManager")
 		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+		AudioPlayer.stopMusic()
+		Dialogic.start('2-underwater_scene')
+		await Dialogic.timeline_ended
+		get_tree().change_scene_to_file("res://Scenes/cuevaMinijuego/escena_cueva.tscn")
+	else:
+		get_tree().reload_current_scene()
 	
 func salud_ctrl():
 	match Hp:
