@@ -321,7 +321,7 @@ character_eris: Creeme cuando te digo que los habitantes de estas profundidades 
 
 character_zach: ...Prefiero arriesgarme. #id:b9
 
-character_eris (Angry): En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi… #id:ba
+character_eris (Joy): En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi… #id:ba
 update character_zach leftmost
 join character_minion1 center [animation="Slide In Up"]
 join character_minion2 rightmost [animation="Slide In Up"]
