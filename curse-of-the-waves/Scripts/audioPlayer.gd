@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 const musica1 = preload("res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
 const musica2 = preload("res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
+const sfx1 = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
 #para otra cancion prueba a hacer lo mismo que en 3
 
 var velFade = 1.0
@@ -19,6 +20,9 @@ func musicNivel():
 
 func musicMinijuegoSurf():
 	play_music(musica2)
+
+func pulsarBtn():
+	playSfx(sfx1)
 
 func stopMusic(): #con fade
 	if fade:
@@ -41,7 +45,7 @@ func musicFade(musica: AudioStream, vol = 0.0):
 func playSfx(stream: AudioStream, vol = 0.0):
 	var sfx = AudioStreamPlayer.new()
 	sfx.stream = stream
-	sfx.name = "SFX_Jugador"
+	sfx.name = "SFX"
 	sfx.volume_db = vol
 	add_child(sfx)
 	sfx.play()
