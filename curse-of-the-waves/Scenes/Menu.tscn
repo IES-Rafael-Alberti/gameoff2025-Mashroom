@@ -307,4 +307,4 @@ libraries = {
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="Options" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="." method="_on_back_button_pressed"]
