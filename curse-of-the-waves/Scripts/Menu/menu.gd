@@ -8,6 +8,7 @@ func _ready():
 
 func _on_play_button_pressed() -> void:
 	AudioPlayer.stopMusic()
+	AudioPlayer.pulsarBtn()
 	Dialogic.start('1-prologue')
 	await Dialogic.timeline_ended
 	get_tree().change_scene_to_file("res://Scenes/SurfMinigame/SurfMinigame.tscn")
