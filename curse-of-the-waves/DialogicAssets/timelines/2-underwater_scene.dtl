@@ -57,7 +57,6 @@ label Cueva #id:42
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
 
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
-join character_zach (Neutral) center
 [style name="BASE_BIG"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
@@ -66,17 +65,15 @@ character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena. #id:31
 
 Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da. #id:32
-join character_eris_hidden (eyes_smile) rightmost [animation="Fade In"]
-update character_zach left
+join character_eris_hidden (eyes_smile) center [animation="Fade In"]
 
 character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:33
-update character_zach [mirrored="true"]
 
 Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva. #id:34
 
 Ví como se acercaba, por fin pudiendo ver su verdadera apariencia… #id:35
 leave character_eris_hidden [animation="Fade Out"]
-join character_eris (Joy) right [animation="Fade In"]
+join character_eris (Joy) center [animation="Fade In"]
 
 character_eris_hidden: Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero! #id:36
 
@@ -114,15 +111,13 @@ label Primera eleccion #id:43
 
 character_eris (Neutral): Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje. #id:4d
 leave character_eris
-update character_zach center
 
 Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco… #id:4e
 label Cueva pt2 #id:4f
 [background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
 
 Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal. #id:50
-join character_eris (Joy) right [animation="Fade In"]
-update character_zach left
+join character_eris (Joy) center [animation="Fade In"]
 
 character_eris: ¡Mucho mejor! Ahora que estamos aquí vamos a hablar en condiciones… #id:51
 
@@ -185,6 +180,7 @@ character_eris (Annoyed): Ugh… Bien bien, tu confusión es entendible por much
 
 Para supuestamente tenerme como un esbirro se muestra extrañamente cooperativa… Mejor no tiento a la suerte y aprovecho… #id:71
 label Tercera eleccion #id:72
+update character_eris (Neutral)
 - ¿Qué eres exactamente? #id:73
 	character_zach: ¿Qué eres exactamente? #id:74
 	
@@ -322,9 +318,8 @@ character_eris: Creeme cuando te digo que los habitantes de estas profundidades 
 character_zach: ...Prefiero arriesgarme. #id:b9
 
 character_eris (Joy): En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi… #id:ba
-update character_zach leftmost
-join character_minion1 center [animation="Slide In Up"]
-join character_minion2 rightmost [animation="Slide In Up"]
+join character_minion1 left [animation="Slide In Up"]
+join character_minion2 right [animation="Slide In Up"]
 
 character_eris: Te recomiendo que cambies de idea… A menos que quieras que te mate yo misma… #id:bb
 update character_minion1 [animation="Shake X" repeat="4"]
@@ -338,7 +333,6 @@ label Final choice #id:be
 	set {canon_final} = true
 	
 	¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida! #id:c0
-	leave character_zach [animation="Slide Out Down"]
 	update character_eris [animation="Shake X"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
