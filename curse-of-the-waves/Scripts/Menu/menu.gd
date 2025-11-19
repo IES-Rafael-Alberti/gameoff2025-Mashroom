@@ -12,7 +12,7 @@ func _on_play_button_pressed() -> void:
 	$OptionsButton.focus_mode  = Control.FOCUS_NONE
 	Dialogic.start('1-prologue')
 	await Dialogic.timeline_ended
-	get_tree().change_scene_to_file("res://Scenes/SurfMinigame/SurfMinigame.tscn")
+	get_tree().get_root().get_node("Main/GameManager").loadScene(preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"))
 	
 
 func _on_options_button_pressed():

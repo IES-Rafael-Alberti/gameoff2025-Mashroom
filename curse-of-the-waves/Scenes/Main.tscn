@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wt4d5ycbn3af"]
+[gd_scene load_steps=4 format=3 uid="uid://wt4d5ycbn3af"]
 
 [ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="3_kln2b"]
 
 [node name="Main" type="Node"]
 
@@ -9,6 +10,7 @@
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_idj7w")
+currentScene = ExtResource("2_idj7w")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="GameManager"]
 
@@ -31,43 +33,8 @@ layout_mode = 2
 text = "ui_options"
 flat = true
 
-[node name="Menu" parent="GameManager" instance=ExtResource("2_idj7w")]
+[node name="LoadedScene" type="Node" parent="GameManager"]
 
-[node name="menosG" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="1"]
-focus_neighbor_right = NodePath("../masG")
-
-[node name="General" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="2"]
-focus_mode = 0
-
-[node name="masG" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox" index="3"]
-focus_neighbor_left = NodePath("../menosG")
-
-[node name="menosM" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="1"]
-focus_neighbor_right = NodePath("../masM")
-
-[node name="Musica" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="2"]
-focus_mode = 0
-
-[node name="masM" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox" index="3"]
-focus_neighbor_left = NodePath("../menosM")
-
-[node name="menosS" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="1"]
-focus_neighbor_right = NodePath("../masS")
-
-[node name="Sfx" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="2"]
-focus_mode = 0
-
-[node name="masS" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox" index="3"]
-focus_neighbor_left = NodePath("../menosS")
-
-[node name="OptionButton" parent="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox" index="1"]
-focus_neighbor_bottom = NodePath("../../../BackButton")
-
-[node name="BackButton" parent="GameManager/Menu/Options/OptionsBackground/Control" index="1"]
-focus_neighbor_top = NodePath("../SettingsVBox/LanguageVBox/OptionButton")
-
-[connection signal="pressed" from="GameManager/Menu/PlayButton" to="GameManager" method="_on_play_button_pressed"]
-[connection signal="item_selected" from="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="GameManager" method="_on_language_option_button_item_selected"]
-[connection signal="pressed" from="GameManager/Menu/Options/OptionsBackground/Control/BackButton" to="GameManager/Menu" method="_on_back_button_pressed"]
-
-[editable path="GameManager/Menu"]
+[node name="Sprite2D" type="Sprite2D" parent="GameManager"]
+position = Vector2(96, 96)
+texture = ExtResource("3_kln2b")
