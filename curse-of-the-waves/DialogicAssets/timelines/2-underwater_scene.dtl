@@ -42,6 +42,7 @@ character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita esc
 
 # [Mayor tamaño de letra, la pantalla vibra y hay un flash de color morado fuerte] (Sería un estilo)
 [style name="BASE_BIG"]
+audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
 character_zach: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
@@ -59,7 +60,9 @@ audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
 
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
+join character_zach (Neutral) center
 [style name="BASE_BIG"]
+audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav"
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
