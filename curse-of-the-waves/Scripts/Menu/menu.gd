@@ -35,9 +35,9 @@ func _on_back_button_pressed():
 	$OptionsButton.focus_mode  = Control.FOCUS_ALL 
 	$OptionsButton.grab_focus()
 
+	AudioPlayer.pulsarBtn()
 "func play_sound(stream: AudioStream):
 	var musica = AudioStreamPlayer.new()
 	musica.stream = stream
 	add_child(musica)
 	musica.play()"
-	AudioPlayer.pulsarBtn()
