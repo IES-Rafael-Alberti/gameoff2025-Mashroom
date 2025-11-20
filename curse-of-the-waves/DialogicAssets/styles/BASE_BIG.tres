@@ -23,6 +23,7 @@ script = ExtResource("2_1c7em")
 script = ExtResource("2_1c7em")
 overrides = {
 "box_animation_new_text": "1",
+"disabled": "true",
 "name_label_box_offset": "Vector2(0, -80)"
 }
 

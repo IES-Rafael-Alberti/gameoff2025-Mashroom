@@ -4,10 +4,12 @@ extends Control
 @export var OptionsContainer: Control
 
 func _ready():
-	AudioPlayer.play_music_nivel()
+	AudioPlayer.musicNivel()
 	$PlayButton.grab_focus()
 
 func _on_play_button_pressed() -> void:
+	AudioPlayer.stopMusic()
+	AudioPlayer.pulsarBtn()
 	$PlayButton.focus_mode  = Control.FOCUS_NONE
 	$OptionsButton.focus_mode  = Control.FOCUS_NONE
 	var GameManager = get_tree().get_root().get_node("Main/GameManager")
@@ -15,11 +17,13 @@ func _on_play_button_pressed() -> void:
 	
 
 func _on_options_button_pressed():
+	AudioPlayer.pulsarBtn()
 	OptionsContainer.showOptionMenu(true)
 	$PlayButton.focus_mode  = Control.FOCUS_NONE
 	$OptionsButton.focus_mode  = Control.FOCUS_NONE
 	
 func _on_back_button_pressed():
+	AudioPlayer.pulsarBtn()
 	await OptionsContainer.showOptionMenu(false)
 	$PlayButton.focus_mode  = Control.FOCUS_ALL
 	$OptionsButton.focus_mode  = Control.FOCUS_ALL 
