@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtppkhc763bvn"]
+[gd_scene load_steps=9 format=3 uid="uid://dtppkhc763bvn"]
 
 [ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/SurfPlayer.tscn" id="1_7ktql"]
 [ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surfminigame.gd" id="1_rkf72"]
@@ -8,10 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://737vwjxu5i2r" path="res://Scenes/SurfMinigame/Obstacles/SurfBigRock.tscn" id="5_bs3yf"]
 [ext_resource type="Texture2D" uid="uid://npus86ka0myn" path="res://assets/SurfMinigame/square.png" id="5_iurn6"]
 [ext_resource type="Texture2D" uid="uid://fnf80fbxsr5" path="res://assets/SurfMinigame/FrontGroundTemplate.png" id="6_4kepo"]
-[ext_resource type="Texture2D" uid="uid://dek12vocqne1x" path="res://assets/SurfMinigame/Ocean/clouds.png" id="9_kkn7c"]
-[ext_resource type="Texture2D" uid="uid://drcbvvsar7085" path="res://assets/SurfMinigame/Ocean/water.png" id="10_16ybj"]
-[ext_resource type="Texture2D" uid="uid://v0dssg6hl7k3" path="res://assets/SurfMinigame/Ocean/shadow.png" id="11_1dovv"]
-[ext_resource type="Texture2D" uid="uid://dpw4ocssqapo5" path="res://assets/SurfMinigame/Ocean/wave.png" id="12_nv0eg"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("Player", "Spawner", "MinPos", "MaxPos")]
 script = ExtResource("1_rkf72")
@@ -47,51 +43,38 @@ one_shot = true
 autostart = true
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 z_index = -5
 position = Vector2(960, 540)
 texture = ExtResource("5_4j74a")
 
 [node name="FrontGround" type="Sprite2D" parent="."]
-visible = false
 z_index = 5
 position = Vector2(960, 1005)
 texture = ExtResource("6_4kepo")
 
-[node name="Oleaje" type="Node2D" parent="."]
+[node name="LinesReference" type="Node2D" parent="."]
+visible = false
 
-[node name="BackGround" type="Node2D" parent="Oleaje"]
-z_index = -5
-
-[node name="Sky" type="Sprite2D" parent="Oleaje/BackGround"]
-modulate = Color(0.60784316, 0.93333334, 0.8666667, 1)
+[node name="SkyBackground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.30026168, 0.64066803, 0.94250077, 1)
 z_index = -5
 position = Vector2(960.00006, 540)
 scale = Vector2(192.00002, 108.00001)
 texture = ExtResource("5_iurn6")
 
-[node name="Clouds" type="Sprite2D" parent="Oleaje/BackGround"]
-position = Vector2(960, 176)
-texture = ExtResource("9_kkn7c")
+[node name="SeaBackground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.14285323, 0.42735937, 0.71533513, 1)
+z_index = -1
+position = Vector2(960.0001, 718)
+scale = Vector2(192.00002, 72.4)
+texture = ExtResource("5_iurn6")
 
-[node name="Ocean" type="Sprite2D" parent="Oleaje/BackGround"]
-position = Vector2(960, 715.5)
-scale = Vector2(1, 1.0534682)
-texture = ExtResource("10_16ybj")
-
-[node name="Foreground" type="Node2D" parent="Oleaje"]
+[node name="SeaFrontground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.13008308, 0.33902723, 0.6587576, 1)
 z_index = 5
-position = Vector2(0, 96)
-
-[node name="Shadow" type="Sprite2D" parent="Oleaje/Foreground"]
-position = Vector2(960, 723.901)
-scale = Vector2(1, 1.075828)
-texture = ExtResource("11_1dovv")
-
-[node name="Wave" type="Sprite2D" parent="Oleaje/Foreground"]
-position = Vector2(960, 870.25)
-scale = Vector2(1, 1.07289)
-texture = ExtResource("12_nv0eg")
+position = Vector2(960.00006, 959)
+scale = Vector2(191.99998, 24.199993)
+texture = ExtResource("5_iurn6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)

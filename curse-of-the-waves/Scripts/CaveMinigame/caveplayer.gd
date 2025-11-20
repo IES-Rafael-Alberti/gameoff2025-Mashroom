@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export_group("Basics")
 @export var BaseSpeed = 400.0
 @export var JumpPower = -200
-@export var Hp = 3
 @export var iframes = 1
 
 @export_group("Complex")
@@ -69,13 +68,18 @@ func _on_hitbox_area_entered(area):
 			takeDamage()
 	
 func takeDamage():
-	Hp -= 1
-	if Hp <= 0:
+	if updHp(-1) <= 0:
 		death()
 	else:
 		canBeDamaged = false
 		await get_tree().create_timer(iframes).timeout
 		canBeDamaged = true
+		
+func updHp(add: int):
+	var GameManager = get_tree().get_root().get_node("Main/GameManager")
+	var newHp = GameManager.health + add
+	GameManager.HpUpdate(newHp)
+	return newHp
 
 func death(): # Proceso de Muerte
 	canMove = false
@@ -85,4 +89,5 @@ func death(): # Proceso de Muerte
 	if true:
 		#Dialogic.start('2-underwater_scene')
 		#await Dialogic.timeline_ended
-		get_tree().get_root().get_node("Main/GameManager").loadScene(preload("res://Scenes/CaveMinigame/CaveGame.tscn"))
+		var GameManager = get_tree().get_root().get_node("Main/GameManager")
+		GameManager.loadScene(load("res://Scenes/CaveMinigame/CaveGame.tscn"))

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_rgh2o"]
+[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://bl7c5lomp3aw1" path="res://Scenes/hearts.gd" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/GUI/Heart.png" id="4_rgh2o"]
-[ext_resource type="Texture2D" uid="uid://bppfbcdle6nb7" path="res://assets/GUI/Broken-heart.png" id="6_v1gob"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kln2b"]
 specular_color = Color(0, 0, 0, 1)
@@ -12,6 +12,7 @@ specular_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_kln2b")
 currentScene = ExtResource("2_rgh2o")
@@ -30,6 +31,10 @@ texture = SubResource("CanvasTexture_kln2b")
 
 [node name="LoadedScene" type="Node" parent="GameManager"]
 
+[node name="Sprite2D" type="Sprite2D" parent="GameManager"]
+position = Vector2(96, 96)
+texture = ExtResource("3_kln2b")
+
 [node name="GUI" type="Control" parent="GameManager"]
 layout_mode = 3
 anchors_preset = 0
@@ -46,8 +51,6 @@ offset_bottom = -50.0
 scale = Vector2(2, 2)
 alignment = 1
 script = ExtResource("4_pbw6q")
-fullHpIcon = ExtResource("4_rgh2o")
-emptyHpIcon = ExtResource("6_v1gob")
 
 [node name="H1" type="TextureRect" parent="GameManager/GUI/Hearts"]
 layout_mode = 2
