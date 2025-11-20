@@ -13,6 +13,7 @@ character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
 Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando… #id:1a
 
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
+join character_eris_hidden (only_eyes) center [animation="Fade In"]
 [style name="Base_Dialogo"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
@@ -418,6 +419,7 @@ label Final choice #id:be
 	[style name="Base"]
 	
 	¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida! #id:c0
+	update character_eris [animation="Shake X"]
 	[style name="Base_Dialogo"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
