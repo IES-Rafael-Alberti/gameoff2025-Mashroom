@@ -12,6 +12,7 @@ var baseWindowsSize = Vector2(
 )
 func _ready():
 	loadScene(currentScene)
+	GuiShow(false)
 
 func _enter_tree() -> void:
 	TranslationServer.set_locale("en")
@@ -24,6 +25,7 @@ func _on_language_option_button_item_selected(index: int) -> void:
 			TranslationServer.set_locale("es")
 
 func loadSceneDialogic(scene: PackedScene, dialogic: String):
+	GuiShow(false)
 	if health <= 0:
 		HpUpdate(1)
 	currentScene = scene
@@ -35,9 +37,11 @@ func loadSceneDialogic(scene: PackedScene, dialogic: String):
 	
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(scene.instantiate())
+	GuiShow(true)
 	
 
 func loadScene(scene: PackedScene):
+	GuiShow(false)
 	if health <= 0:
 		HpUpdate(1)
 	currentScene = scene
@@ -48,9 +52,13 @@ func loadScene(scene: PackedScene):
 			scenes[i].queue_free()
 			
 	$LoadedScene.add_child(scene.instantiate())
+	GuiShow(true)
 	
 func HpUpdate(number: int):
 	if number > 3:
 		number = 3
 	health = number
 	var heartsIcons = $GUI/Hearts.updateIcons(number)
+	
+func GuiShow(show: bool):
+	$GUI.visible = show
