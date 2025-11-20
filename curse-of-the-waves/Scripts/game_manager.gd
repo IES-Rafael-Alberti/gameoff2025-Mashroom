@@ -49,5 +49,5 @@ func loadScene(scene: PackedScene):
 			
 	$LoadedScene.add_child(scene.instantiate())
 
-func HpUpdate():
-	var hearts = 
+#func HpUpdate():
+#	var hearts = 
