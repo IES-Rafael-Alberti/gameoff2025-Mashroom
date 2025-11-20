@@ -41,7 +41,9 @@ layout/style_directory={
 "": "res://DialogicAssets/styles/Base.tres",
 "BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
 "Base": "res://DialogicAssets/styles/Base.tres",
-"Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres"
+"Base_Dialogo": "res://DialogicAssets/styles/Base_Dialogo.tres",
+"Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres",
+"New_File": "res://DialogicAssets/styles/New_File.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -83,7 +85,7 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/Kumi_style.tres"]
+layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base_Dialogo.tres"]
 layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false
