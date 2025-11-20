@@ -73,7 +73,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
 join character_zach (Cutscene1) center [animation="Fade In Up" wait="true"]
 
-character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
+character_zach_human: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
 leave character_zach [animation="Fade Out Down" wait="true"]
 
@@ -138,6 +138,7 @@ label Primera eleccion #id:43
 	join character_eris (Joy) center
 	
 	character_eris: ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
+	# Va a haber un cambio de sprite a partir de esto?
 	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
