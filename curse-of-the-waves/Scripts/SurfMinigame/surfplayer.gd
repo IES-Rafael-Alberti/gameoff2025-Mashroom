@@ -80,3 +80,4 @@ func death(): # Proceso de Muerte
 		AudioPlayer.stopMusic()
 		var GameManager = get_tree().get_root().get_node("Main/GameManager")
 		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+		

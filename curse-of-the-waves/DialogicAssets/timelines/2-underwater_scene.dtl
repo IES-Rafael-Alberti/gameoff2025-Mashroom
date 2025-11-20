@@ -98,11 +98,13 @@ De solo oírla hablar ya podía discernir que tenía el ego subido a más no pod
 character_eris (Smug): Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
 label Primera eleccion #id:43
 - ...E-Eres muy hermosa… #id:44
+	audio "res://assets/Audio/SFX/recogeObjetoGrave.wav"
 	character_zach: ...E-Eres muy hermosa… #id:45
 	character_eris (Joy): ¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones! #id:46
 	
 	Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto… #id:47
-- Creo que voy a vomitar… #id:48
+- Creo que voy a vomitar… | [=""] #id:48
+	audio "res://assets/Audio/SFX/recogeObjetoGrave.wav"
 	character_eris (Neutral): Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
 	# TODO: Vibración momentánea para simular el guantazo Añadir efecto de variable
 	update character_eris (Attack)

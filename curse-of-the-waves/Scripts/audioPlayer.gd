@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 const musica1 = preload("res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
 const musica2 = preload("res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
 const sfx1 = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
-#para otra cancion prueba a hacer lo mismo que en 3
+const musica3 = preload("res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
 
 var velFade = 1.0
 var fade = false
@@ -23,6 +23,9 @@ func musicMinijuegoSurf():
 
 func pulsarBtn():
 	playSfx(sfx1)
+
+func musicMinijuegoCueva():
+	play_music(musica3)
 
 func stopMusic(): #con fade
 	if fade:
