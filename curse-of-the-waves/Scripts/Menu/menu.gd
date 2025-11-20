@@ -1,4 +1,4 @@
-sextends Control
+extends Control
 
 @export_group("Objects")
 @export var OptionsContainer: Control
