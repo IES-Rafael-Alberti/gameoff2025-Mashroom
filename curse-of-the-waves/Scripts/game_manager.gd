@@ -24,6 +24,8 @@ func _ready():
 	loadScene(currentScene)
 
 func loadSceneDialogic(scene: PackedScene, dialogic: String):
+	if health <= 0:
+		health = 1
 	currentScene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
