@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtppkhc763bvn"]
+
+[ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/Player.tscn" id="1_7ktql"]
+[ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surf_minigame.gd" id="1_rkf72"]
+[ext_resource type="Script" uid="uid://dk61wpj55cxsa" path="res://Scripts/SurfMinigame/spawner.gd" id="3_f7fj6"]
+[ext_resource type="PackedScene" uid="uid://bs4n5x3ah1xcj" path="res://Scenes/SurfMinigame/obstacle.tscn" id="4_kjjhm"]
+[ext_resource type="Texture2D" uid="uid://k8egjqyrclw3" path="res://assets/SurfMinigame/BackgroundTemplate.png" id="5_4j74a"]
+[ext_resource type="PackedScene" uid="uid://c7wo0lb7x66hf" path="res://Scenes/SurfMinigame/Botella.tscn" id="5_bs3yf"]
+[ext_resource type="Texture2D" uid="uid://npus86ka0myn" path="res://assets/SurfMinigame/square.png" id="5_iurn6"]
+[ext_resource type="Texture2D" uid="uid://fnf80fbxsr5" path="res://assets/SurfMinigame/FrontGroundTemplate.png" id="6_4kepo"]
+[ext_resource type="PackedScene" uid="uid://dtgb16irhaxda" path="res://Scenes/SurfMinigame/Madera.tscn" id="6_16ybj"]
+[ext_resource type="PackedScene" uid="uid://ctrauwscfqrrc" path="res://Scenes/SurfMinigame/Alga.tscn" id="6_kkn7c"]
+
+[node name="Gameplay" type="Node2D" node_paths=PackedStringArray("Player", "Spawner", "MinPos", "MaxPos")]
+script = ExtResource("1_rkf72")
+Player = NodePath("Player")
+Spawner = NodePath("Spawner")
+MinPos = NodePath("Player/MinPlayerMov")
+MaxPos = NodePath("Player/MaxPlayerMov")
+
+[node name="Player" parent="." node_paths=PackedStringArray("Spawner") instance=ExtResource("1_7ktql")]
+position = Vector2(920.00006, 852)
+BaseSpeed = 1000.0
+Spawner = NodePath("../Spawner")
+
+[node name="MinPlayerMov" type="Marker2D" parent="Player"]
+top_level = true
+position = Vector2(192, 960)
+
+[node name="MaxPlayerMov" type="Marker2D" parent="Player"]
+top_level = true
+position = Vector2(1728, 960)
+
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("SpawnPoint", "SpawnPointItem")]
+top_level = true
+y_sort_enabled = true
+script = ExtResource("3_f7fj6")
+FishEye = 0.2
+SpawnPoint = NodePath("SpawnPoint")
+Objects = Array[PackedScene]([ExtResource("4_kjjhm")])
+SpawnPointItem = NodePath("SpawnPoint")
+Items = Array[PackedScene]([ExtResource("6_kkn7c"), ExtResource("6_16ybj"), ExtResource("5_bs3yf")])
+BuffSpawnMin = 2.0
+BuffSpawnMax = 5.0
+
+[node name="SpawnPoint" type="Marker2D" parent="Spawner"]
+top_level = true
+position = Vector2(960, 356)
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+autostart = true
+
+[node name="BuffTimer" type="Timer" parent="Spawner"]
+autostart = true
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(960, 543)
+texture = ExtResource("5_4j74a")
+
+[node name="FrontGround" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(960, 1005)
+texture = ExtResource("6_4kepo")
+
+[node name="LinesReference" type="Node2D" parent="."]
+visible = false
+
+[node name="SkyBackground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.30026168, 0.64066803, 0.94250077, 1)
+z_index = -5
+position = Vector2(960.00006, 540)
+scale = Vector2(192.00002, 108.00001)
+texture = ExtResource("5_iurn6")
+
+[node name="SeaBackground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.14285323, 0.42735937, 0.71533513, 1)
+z_index = -1
+position = Vector2(960.0001, 718)
+scale = Vector2(192.00002, 72.4)
+texture = ExtResource("5_iurn6")
+
+[node name="SeaFrontground" type="Sprite2D" parent="LinesReference"]
+modulate = Color(0.13008308, 0.33902723, 0.6587576, 1)
+z_index = 5
+position = Vector2(960.00006, 959)
+scale = Vector2(191.99998, 24.199993)
+texture = ExtResource("5_iurn6")
+
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Spawner/BuffTimer" to="Spawner" method="_on_buff_timer_timeout"]
