@@ -28,13 +28,6 @@ func _on_back_button_pressed():
 	$OptionsButton.focus_mode  = Control.FOCUS_ALL 
 	$OptionsButton.grab_focus()
 
-"func play_sound(stream: AudioStream):
-	var musica = AudioStreamPlayer.new()
-	musica.stream = stream
-	add_child(musica)
-	musica.play()"
-
-
 func _on_option_button_item_selected(index):
 	var GameManager = get_tree().get_root().get_node("Main/GameManager")
 	GameManager.changeLanguage(index)
