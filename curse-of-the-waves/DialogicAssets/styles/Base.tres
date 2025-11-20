@@ -35,7 +35,6 @@ scene = ExtResource("5_qx10r")
 [sub_resource type="Resource" id="Resource_wmmnd"]
 script = ExtResource("2_wmmnd")
 scene = ExtResource("10_vsrf6")
-overrides = {
 [sub_resource type="Resource" id="Resource_430mb"]
 script = ExtResource("2_wmmnd")
 scene = ExtResource("10_wmmnd")
