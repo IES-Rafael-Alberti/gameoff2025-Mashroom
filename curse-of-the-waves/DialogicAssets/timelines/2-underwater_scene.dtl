@@ -67,7 +67,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
 join character_zach (Cutscene1) center [animation="Fade In Up" wait="true"]
 
-character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
+character_zach_human: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
 leave character_zach [animation="Fade Out Down" wait="true"]
 
