@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wt4d5ycbn3af"]
+[gd_scene load_steps=7 format=3 uid="uid://wt4d5ycbn3af"]
 
 [ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_rgh2o"]
@@ -30,10 +30,6 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_kln2b")
 
 [node name="LoadedScene" type="Node" parent="GameManager"]
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager"]
-position = Vector2(96, 96)
-texture = ExtResource("3_kln2b")
 
 [node name="GUI" type="Control" parent="GameManager"]
 layout_mode = 3
