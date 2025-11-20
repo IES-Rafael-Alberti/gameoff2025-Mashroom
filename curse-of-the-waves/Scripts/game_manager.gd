@@ -17,7 +17,7 @@ func _ready():
 func _enter_tree() -> void:
 	TranslationServer.set_locale("en")
 
-func _on_language_option_button_item_selected(index: int) -> void:
+func changeLanguage(index: int):
 	match index:
 		0:
 			TranslationServer.set_locale("en")

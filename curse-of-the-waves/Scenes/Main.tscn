@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_rgh2o"]
-[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="3_kln2b"]
-[ext_resource type="Script" path="res://Scenes/hearts.gd" id="4_pbw6q"]
+[ext_resource type="Script" uid="uid://bl7c5lomp3aw1" path="res://Scenes/hearts.gd" id="4_pbw6q"]
 [ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/GUI/Heart.png" id="4_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://bppfbcdle6nb7" path="res://assets/GUI/Broken-heart.png" id="6_v1gob"]
 
