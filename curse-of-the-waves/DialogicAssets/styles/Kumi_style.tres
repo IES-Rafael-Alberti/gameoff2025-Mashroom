@@ -37,7 +37,9 @@ scene = ExtResource("9_0xxk3")
 overrides = {
 "box_size": "Vector2(1200, 300)",
 "name_label_hide_when_no_character": "true",
-"portrait_stretch_factor": "0.5"
+"portrait_stretch_factor": "0.5",
+"text_custom_color": "Color(0.3293152, 0.4231565, 0.8515625, 1)",
+"text_use_global_color": "false"
 }
 
 [sub_resource type="Resource" id="Resource_3yed2"]
