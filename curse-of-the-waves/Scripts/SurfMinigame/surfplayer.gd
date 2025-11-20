@@ -74,6 +74,8 @@ func death(): # Proceso de Muerte
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
+		var GameManager = get_tree().get_root().get_node("Main/GameManager")
+		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
 		AudioPlayer.stopMusic()
 		Dialogic.start('2-underwater_scene')
 		await Dialogic.timeline_ended

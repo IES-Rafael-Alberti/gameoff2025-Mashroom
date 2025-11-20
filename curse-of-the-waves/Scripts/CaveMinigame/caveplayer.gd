@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export_group("Basics")
 @export var BaseSpeed = 400.0
-@export var JumpPower = -30
+@export var JumpPower = -200
 @export var Hp = 3
 @export var iframes = 1
 
@@ -17,29 +17,30 @@ var speed = BaseSpeed
 var canMove = true
 var canBeDamaged = true
 var isMoving = false
-var isSwimming = false
+var isHidden = false
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravityMult
 	if canMove:
-		# Handle jump.
-		if Input.is_action_pressed("move_up"):
-			isSwimming = true
-			velocity.y += JumpPower
+		if Input.is_action_pressed("SecondaryAction"):
+			isHidden = true
 		else: 
-			isSwimming = false
-			if Input.is_action_just_released("move_up"):
-				velocity.y = releaseJumpPower
+			isHidden = false
+			# Handle jump.
+			if Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("move_up"):
+				if velocity.y > 0:
+					velocity.y = 0
+				velocity.y += JumpPower
+			# Handle Left-Right
 			
-		# Handle Left-Right
-		var direction = Input.get_axis("move_left", "move_right")
-		if direction:
-			velocity.x = direction * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-		
+	var direction = Input.get_axis("move_left", "move_right")
+	if direction and not isHidden:
+		velocity.x = direction * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+				
 	# Limit the Vertical Movement
 	if velocity.y > maxFallSpeed:
 		velocity = Vector2(velocity.x,maxFallSpeed)
@@ -48,20 +49,23 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	# Detect movement
-	if velocity.x != 0 or isSwimming: 
+	if velocity.x != 0: 
 		isMoving = true
 	else: 
 		isMoving = false
+		
+	# Temporal (to know when hidden)
+	if isHidden: $Sprite2D.flip_v = true
+	else: $Sprite2D.flip_v = false
 
 
 
 func _on_hitbox_area_entered(area):
-	if area.is_in_group("Damage") and canBeDamaged:
-		area.queue_free()
+	if area.is_in_group("Damage") and canBeDamaged and not isHidden:
 		takeDamage()
 	elif area.is_in_group("SoundWave"):
 		velocity.x = area.PushPower
-		if isMoving and canBeDamaged:
+		if canBeDamaged and not isHidden:
 			takeDamage()
 	
 func takeDamage():
@@ -81,6 +85,4 @@ func death(): # Proceso de Muerte
 	if true:
 		#Dialogic.start('2-underwater_scene')
 		#await Dialogic.timeline_ended
-		get_tree().change_scene_to_file("res://Scenes/CaveMinigame/CaveGame.tscn")
-	else:
-		get_tree().reload_current_scene()
+		get_tree().get_root().get_node("Main/GameManager").loadScene(preload("res://Scenes/CaveMinigame/CaveGame.tscn"))

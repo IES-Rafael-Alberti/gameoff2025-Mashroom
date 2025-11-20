@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://wt4d5ycbn3af"]
+[gd_scene load_steps=5 format=3 uid="uid://wt4d5ycbn3af"]
 
 [ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="3_kln2b"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kln2b"]
+specular_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 
@@ -9,6 +13,7 @@
 unique_name_in_owner = true
 process_mode = 3
 script = ExtResource("1_idj7w")
+currentScene = ExtResource("2_idj7w")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="GameManager"]
 
@@ -31,9 +36,18 @@ layout_mode = 2
 text = "ui_options"
 flat = true
 
-[node name="Menu" parent="GameManager" instance=ExtResource("2_idj7w")]
+[node name="Background" type="TextureRect" parent="GameManager"]
+modulate = Color(0, 0, 0, 1)
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kln2b")
 
-[connection signal="pressed" from="GameManager/Menu/PlayButton" to="GameManager" method="_on_play_button_pressed"]
-[connection signal="item_selected" from="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="GameManager" method="_on_language_option_button_item_selected"]
+[node name="LoadedScene" type="Node" parent="GameManager"]
 
-[editable path="GameManager/Menu"]
+[node name="Sprite2D" type="Sprite2D" parent="GameManager"]
+position = Vector2(96, 96)
+texture = ExtResource("3_kln2b")

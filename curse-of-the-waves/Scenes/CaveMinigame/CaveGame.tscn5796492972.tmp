@@ -42,8 +42,6 @@ TRMarker = NodePath("../TopRight")
 z_index = 2
 position = Vector2(-960, -552)
 script = ExtResource("3_n6d1v")
-SWBigSpeed = 4000
-SWBigScale = 30
 SWSpeed = 3000
 SpawnPoint = NodePath("SpawnPoint")
 SoundWave = ExtResource("4_upos3")
@@ -51,7 +49,7 @@ TopSpawn = NodePath("../../TopRight")
 BottomSpawn = NodePath("../../BottomLeft")
 
 [node name="SpawnPoint" type="Marker2D" parent="Camera2D/Spawner"]
-position = Vector2(3584, 448)
+position = Vector2(2880, 448)
 
 [node name="SpawnTimer" type="Timer" parent="Camera2D/Spawner"]
 one_shot = true

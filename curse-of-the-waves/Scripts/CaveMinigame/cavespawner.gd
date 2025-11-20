@@ -26,7 +26,6 @@ func _ready():
 	
 
 func _on_spawn_timer_timeout():
-	print("Spawned")
 	match randi_range(0,1):
 		0: await spawnBigSoundWave()
 		1: await spawnGroupSoundWave()
@@ -34,12 +33,12 @@ func _on_spawn_timer_timeout():
 	
 func spawnGroupSoundWave():
 	for i in range(0,3):
-		var spawnPos = Vector2(SpawnPoint.position.x,randf_range(BottomSpawn.position.y,TopSpawn.position.y))
+		var spawnPos = Vector2(SpawnPoint.global_position.x,randf_range(BottomSpawn.position.y,TopSpawn.position.y))
 		spawnSoundWave(SWSpeed, SWDespawnTime, SWScale, SWPushPower, spawnPos)
 		await get_tree().create_timer(SWGroupCd).timeout 
 
 func spawnBigSoundWave():
-	spawnSoundWave(SWBigSpeed, SWBigDespawnTime, SWBigScale, SWBigPushPower, SpawnPoint.position)
+	spawnSoundWave(SWBigSpeed, SWBigDespawnTime, SWBigScale, SWBigPushPower, SpawnPoint.global_position)
 	
 func spawnSoundWave(Speed: float, Dp: float, Scale: float, PushPower: float, pos: Vector2):
 	var SWInstance = SoundWave.instantiate()
