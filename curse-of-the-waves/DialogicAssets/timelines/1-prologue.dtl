@@ -1,7 +1,6 @@
-[background arg="res://DialogicAssets/backgrounds/Colores_Surf 2.png" fade="0.0"]
+[background arg="res://DialogicAssets/backgrounds/Fondo_Playa.png" fade="0.0"]
 # TODO: Cambiar por playa
-
-
+audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3"
 
 Era una tarde de verano, de esas en las que no tienes ni idea de lo que hacer con tu vida; estaba soleado y el oleaje resplandecía con posibilidades, una buena manera de poder alejarme de mis preocupaciones. #id:11
 

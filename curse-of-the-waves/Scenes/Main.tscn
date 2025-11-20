@@ -1,39 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://wt4d5ycbn3af"]
+[gd_scene load_steps=7 format=3 uid="uid://wt4d5ycbn3af"]
 
-[ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_idj7w"]
-[ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_idj7w"]
+[ext_resource type="Script" uid="uid://ci3g8mu8h4lmv" path="res://Scripts/game_manager.gd" id="1_kln2b"]
+[ext_resource type="PackedScene" uid="uid://167ot86du27h" path="res://Scenes/Menu.tscn" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://bl7c5lomp3aw1" path="res://Scenes/hearts.gd" id="4_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/GUI/Heart.png" id="4_rgh2o"]
+[ext_resource type="Texture2D" uid="uid://bppfbcdle6nb7" path="res://assets/GUI/Broken-heart.png" id="6_v1gob"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kln2b"]
+specular_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
 process_mode = 3
-script = ExtResource("1_idj7w")
+script = ExtResource("1_kln2b")
+currentScene = ExtResource("2_rgh2o")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="GameManager"]
 
-[node name="HUD" type="AspectRatioContainer" parent="GameManager"]
-visible = false
-anchors_preset = 10
+[node name="Background" type="TextureRect" parent="GameManager"]
+modulate = Color(0, 0, 0, 1)
+z_index = -100
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 31.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kln2b")
 
-[node name="Objetos" type="Node" parent="GameManager/HUD"]
+[node name="LoadedScene" type="Node" parent="GameManager"]
 
-[node name="Vida" type="Node" parent="GameManager/HUD"]
+[node name="GUI" type="Control" parent="GameManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="GameManager/HUD"]
+[node name="Hearts" type="HBoxContainer" parent="GameManager/GUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 48.000004
+anchor_bottom = 2.5
+offset_right = -960.0001
+offset_bottom = -50.0
+scale = Vector2(2, 2)
+alignment = 1
+script = ExtResource("4_pbw6q")
+fullHpIcon = ExtResource("4_rgh2o")
+emptyHpIcon = ExtResource("6_v1gob")
+
+[node name="H1" type="TextureRect" parent="GameManager/GUI/Hearts"]
 layout_mode = 2
+texture = ExtResource("4_rgh2o")
+
+[node name="H2" type="TextureRect" parent="GameManager/GUI/Hearts"]
+layout_mode = 2
+texture = ExtResource("4_rgh2o")
+
+[node name="H3" type="TextureRect" parent="GameManager/GUI/Hearts"]
+layout_mode = 2
+texture = ExtResource("4_rgh2o")
+
+[node name="Objetos" type="Node" parent="GameManager/GUI"]
+
+[node name="Button" type="Button" parent="GameManager/GUI"]
+visible = false
+layout_mode = 0
+offset_left = 916.0
+offset_right = 1004.0
+offset_bottom = 31.0
 text = "ui_options"
 flat = true
-
-[node name="Menu" parent="GameManager" instance=ExtResource("2_idj7w")]
-
-[connection signal="pressed" from="GameManager/Menu/PlayButton" to="GameManager" method="_on_play_button_pressed"]
-[connection signal="item_selected" from="GameManager/Menu/Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="GameManager" method="_on_language_option_button_item_selected"]
-
-[editable path="GameManager/Menu"]
