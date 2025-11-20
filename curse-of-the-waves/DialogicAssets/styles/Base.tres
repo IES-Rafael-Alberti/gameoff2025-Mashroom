@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="9_v2k1h"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_348ll"]
 [ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="10_vsrf6"]
-[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="10_wmmnd"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_ats0v"]
 
 [sub_resource type="Resource" id="Resource_hyhdv"]
@@ -74,13 +73,12 @@ overrides = {
 [resource]
 script = ExtResource("11_ats0v")
 name = "Base"
-layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "18"])
+layer_list = Array[String](["10", "11", "12", "14", "15", "16", "18"])
 layer_info = {
 "": SubResource("Resource_hyhdv"),
 "10": SubResource("Resource_rxd0v"),
 "11": SubResource("Resource_3m68n"),
 "12": SubResource("Resource_wum0v"),
-"13": SubResource("Resource_430mb"),
 "14": SubResource("Resource_wmmnd"),
 "15": SubResource("Resource_y5rdx"),
 "16": SubResource("Resource_r87y2"),
