@@ -67,6 +67,7 @@ else:
 	… #id:e4
 	…Oh no… #id:e5
 	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:e6
+	# [Kumi habla lentamente en todos sus diálogos y tiene letra de mayor tamaño y color distinto]
 	[style name="Kumi_style"]
 	character_kumi: ¿ACASO TE DOY MIEDO? #id:e7
 	[style name="Base"]
