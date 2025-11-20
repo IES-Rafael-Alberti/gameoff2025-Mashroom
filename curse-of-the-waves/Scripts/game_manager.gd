@@ -4,6 +4,7 @@ extends Node
 @export var health = 3
 @export var objects : Dictionary
 @export var currentScene: PackedScene
+@export var FullHP: CompressedTexture2D
 
 var baseWindowsSize = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_width"),
@@ -38,6 +39,8 @@ func loadSceneDialogic(scene: PackedScene, dialogic: String):
 	
 
 func loadScene(scene: PackedScene):
+	if health <= 0:
+		health = 1
 	currentScene = scene
 	
 	var scenes = $LoadedScene.get_children()
@@ -46,3 +49,7 @@ func loadScene(scene: PackedScene):
 			scenes[i].queue_free()
 			
 	$LoadedScene.add_child(scene.instantiate())
+
+func HpUpdate():
+	var heartsIcons = $GUI/Hearts
+	

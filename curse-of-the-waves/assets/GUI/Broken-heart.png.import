@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmjumwwyis163"
-path="res://.godot/imported/Heart.png-b3f0e1dcbe499f00fa53ac6fb93bf378.ctex"
+uid="uid://bppfbcdle6nb7"
+path="res://.godot/imported/Broken-heart.png-bfe606eb24d0b88e3f2cb9b21ff09de6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Heart.png"
-dest_files=["res://.godot/imported/Heart.png-b3f0e1dcbe499f00fa53ac6fb93bf378.ctex"]
+source_file="res://assets/GUI/Broken-heart.png"
+dest_files=["res://.godot/imported/Broken-heart.png-bfe606eb24d0b88e3f2cb9b21ff09de6.ctex"]
 
 [params]
 

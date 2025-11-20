@@ -45,6 +45,7 @@ func musicFade(musica: AudioStream, vol = 0.0):
 func playSfx(stream: AudioStream, vol = 0.0):
 	var sfx = AudioStreamPlayer.new()
 	sfx.stream = stream
+	sfx.name = "SFX_Jugador"
 	sfx.name = "SFX"
 	sfx.volume_db = vol
 	add_child(sfx)
