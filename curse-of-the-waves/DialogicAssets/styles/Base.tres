@@ -32,6 +32,13 @@ scene = ExtResource("4_fnlu8")
 script = ExtResource("2_wmmnd")
 scene = ExtResource("5_qx10r")
 
+[sub_resource type="Resource" id="Resource_430mb"]
+script = ExtResource("2_wmmnd")
+scene = ExtResource("10_wmmnd")
+overrides = {
+"box_size": "Vector2(1200, 300)"
+}
+
 [sub_resource type="Resource" id="Resource_wmmnd"]
 script = ExtResource("2_wmmnd")
 scene = ExtResource("10_vsrf6")
@@ -56,13 +63,6 @@ scene = ExtResource("9_v2k1h")
 [sub_resource type="Resource" id="Resource_vsrf6"]
 script = ExtResource("2_wmmnd")
 scene = ExtResource("10_348ll")
-
-[sub_resource type="Resource" id="Resource_430mb"]
-script = ExtResource("2_wmmnd")
-scene = ExtResource("10_wmmnd")
-overrides = {
-"box_size": "Vector2(1200, 300)"
-}
 
 [resource]
 script = ExtResource("11_ats0v")
