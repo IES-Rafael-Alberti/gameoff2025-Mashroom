@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_x2bdd"]
 script = ExtResource("2_1c7em")
 overrides = {
-"global_font_size": "80.0"
+"global_font_size": "50.0"
 }
 
 [sub_resource type="Resource" id="Resource_cswuu"]

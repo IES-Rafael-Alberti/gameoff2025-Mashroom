@@ -3,13 +3,16 @@
 No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
 
 Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema. #id:18
+[style name="Base_Dialogo"]
 
 character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
+[style name="Base"]
 
 Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando… #id:1a
 
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
 join character_eris_hidden (only_eyes) center [animation="Fade In"]
+[style name="Base_Dialogo"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
 character_zach_human: ¿...Q-Quién eres…? #id:1d
@@ -66,14 +69,17 @@ Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el to
 
 Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da. #id:32
 join character_eris_hidden (eyes_smile) center [animation="Fade In"]
+[style name="Base_Dialogo"]
 
 character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:33
+[style name="Base"]
 
 Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva. #id:34
 
 Ví como se acercaba, por fin pudiendo ver su verdadera apariencia… #id:35
 leave character_eris_hidden [animation="Fade Out"]
 join character_eris (Joy) center [animation="Fade In"]
+[style name="Base_Dialogo"]
 
 character_eris_hidden: Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero! #id:36
 
@@ -83,34 +89,45 @@ update character_eris (Neutral)
 character_eris_hidden: Ah cierto, no me llegué a presentar… #id:38
 
 character_eris: Me llamo Eris, y soy una infame bruja marina, que suerte la tuya al haber sido rescatado por una anfitriona tan buena como yo, jeje. #id:39
+[style name="Base"]
 
 Casi ni podía mirarle a la cara, sus ojos y su sonrisa me helaban la sangre… #id:3a
+[style name="Base_Dialogo"]
 
 character_eris: ¿Qué te pasa eh? Ya soy consciente de que soy hermosa, no hace falta que apartes la vista, ¡jajaja! #id:3b
+[style name="Base"]
 
 De solo oírla hablar ya podía discernir que tenía el ego subido a más no poder… [b] Tengo que tener cuidado con lo que digo o puede que me arrepienta… [/b] #id:3c
+[style name="Base_Dialogo"]
 
 character_eris (Smug): Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
 label Primera eleccion #id:43
 - ...E-Eres muy hermosa… #id:44
 	character_zach: ...E-Eres muy hermosa… #id:45
 	character_eris (Joy): ¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones! #id:46
+	[style name="Base"]
 	
 	Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto… #id:47
 - Creo que voy a vomitar… #id:48
+	[style name="Base_Dialogo"]
 	character_eris (Neutral): Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
 	# TODO: Vibración momentánea para simular el guantazo Añadir efecto de variable
 	update character_eris (Attack)
+	[style name="Base"]
 	En un instante ví como la bruja me abofeteó tan fuerte que me puso horizontal, rápidamente tuve que intentar nadar con mi nueva cola para ponerme correctamente. #id:4a
+	[style name="Base_Dialogo"]
 	
 	character_eris (Joy): ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
 	# Va a haber un cambio de sprite a partir de esto?
+	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
+[style name="Base_Dialogo"]
 
 
 character_eris (Neutral): Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje. #id:4d
 leave character_eris
+[style name="Base"]
 
 Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco… #id:4e
 label Cueva pt2 #id:4f
@@ -118,6 +135,7 @@ label Cueva pt2 #id:4f
 
 Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal. #id:50
 join character_eris (Joy) center [animation="Fade In"]
+[style name="Base_Dialogo"]
 
 character_eris: ¡Mucho mejor! Ahora que estamos aquí vamos a hablar en condiciones… #id:51
 
@@ -143,16 +161,20 @@ label Segunda eleccion #id:54
 	character_zach: Todos necesitamos escapar de vez en cuando, no lo entenderías… #id:5e
 	
 	character_eris: ¿Y de que te sirve escapar si al final terminas volviendo? Solo me da a entender que eres un inseguro, incapaz de ver nada en sí mismo. #id:5f
+	[style name="Base"]
 	
 	La bruja agarró un hueso y lo presionó contra mi pecho repetidas veces de manera burlona. #id:60
+	[style name="Base_Dialogo"]
 	
 	character_eris (Joy): Aunque para mi, esto solo son ventajas, serías más feliz simplemente siguiendo mis órdenes antes que volviendo a tu mundo de humanos, ¿a que sí? ¡jajajaja! #id:61
+	[style name="Base"]
 	
 	La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad… #id:62
 	# TODO: Añadir el cosito
 	
 	Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… (+1 Estalactita) #id:63
 - Quería nuevos amigos… #id:64
+	[style name="Base_Dialogo"]
 	character_zach: Quería nuevos amigos… #id:65
 	
 	character_eris: ¿Amigos? ¿No se supone que los humanos sois sociables o algo así? #id:66
@@ -177,11 +199,13 @@ Se estaba burlando de mí por completo… Decidí armarme de valor e intentar so
 character_zach: Vale… P-Pero no es justo que seas la única en preguntarme cosas, yo tengo muchas preguntas también, ¡y más aún ahora! #id:6f
 
 character_eris (Annoyed): Ugh… Bien bien, tu confusión es entendible por mucho que me moleste, te permitiré que me preguntes cosas… Más vale que sea entretenido… #id:70
+[style name="Base"]
 
 Para supuestamente tenerme como un esbirro se muestra extrañamente cooperativa… Mejor no tiento a la suerte y aprovecho… #id:71
 label Tercera eleccion #id:72
 update character_eris (Neutral)
 - ¿Qué eres exactamente? #id:73
+	[style name="Base_Dialogo"]
 	character_zach: ¿Qué eres exactamente? #id:74
 	
 	character_eris (Neutral): Soy lo que tu especie define como una ‘ningen’, somos una raza antigua proveniente de las profundidades de los mares árticos, aunque ya quedan muy pocos de nosotros, jeje… #id:75
@@ -197,10 +221,12 @@ update character_eris (Neutral)
 	character_zach: Perdón, tampoco te tomaba como alguien con una relación sentimental hacia sus padres… #id:7a
 	
 	character_eris: Claro que la tengo, soy una bruja pero no un monstruo, mis padres me enseñaron todo lo que sé, si crees que yo intimido no te quieres ni imaginar cómo son mis viejos. #id:7b
+	[style name="Base"]
 	
 	No pude evitar sentir un escalofrío de solo pensar cómo deberían ser sus padres, posiblemente abominaciones abisales fuera de mi conocimiento… No quiero volver a estar en el mar después de esto… #id:7c
 	jump Tercera eleccion
 - Por qué te haces llamar bruja? #id:7d
+	[style name="Base_Dialogo"]
 	character_zach: ¿Por qué te haces llamar bruja? #id:7e
 	
 	character_eris (Neutral): Porque es mi oficio, obvio. #id:7f
@@ -253,8 +279,10 @@ update character_eris (Neutral)
 	character_eris (Shock): ... #id:97
 	
 	character_eris (Smug): ... #id:98
+	[style name="Base"]
 	
 	La bruja me miró intensamente, parecía que se intentaba aguantar la risa… #id:99
+	[style name="Base_Dialogo"]
 	
 	character_zach: ¿...Y bien? #id:9a
 	
@@ -263,10 +291,12 @@ update character_eris (Neutral)
 	character_zach: ¿Entonces la conoces? #id:9c
 	
 	character_eris: No diré nada al respecto por tu bien… Solo reza por que no te la vuelvas a encontrar… Jeje… #id:9d
+	[style name="Base"]
 	
 	Sentí ese terror de antes por unos instantes, mejor cambio de tema… #id:9e
 	jump Tercera eleccion
 - ¿Te gusto? #id:9f
+	[style name="Base_Dialogo"]
 	character_zach: ¿Te gusto? #id:a0
 	
 	character_eris (Annoyed): ¿Qué? #id:a1
@@ -302,8 +332,10 @@ character_eris (Annoyed): Lo cuál requiere relacionarse con otras personas, cae
 character_eris (Neutral): Y ahí entras TÚ mi querido esbirro, serás la nueva cara en este mar perdido, quiero que encuentres a alguien, quien sea, y que hagas que se enamoren de ti para obtener esa esencia. #id:b1
 
 character_eris (Smug): Si quieres volver a ser humano no te queda otra que seguir mis instrucciones, jejeje… #id:b2
+[style name="Base"]
 
 Sentí desesperación al escuchar sus palabras, ¿de verdad no tengo más elección que ayudarla? No quería creerlo, no quiero tener que ser un esclavo para esta bruja… #id:b3
+[style name="Base_Dialogo"]
 
 character_zach: ...N-No… …N-No puede ser cierto, ¡tiene que haber otra manera! #id:b4
 
@@ -324,22 +356,28 @@ join character_minion2 right [animation="Slide In Up"]
 character_eris: Te recomiendo que cambies de idea… A menos que quieras que te mate yo misma… #id:bb
 update character_minion1 [animation="Shake X" repeat="4"]
 update character_minion2 [animation="Shake X" repeat="4"]
+[style name="Base"]
 
 Los esbirros de la bruja mordían hacia mi amenazantemente, magia extraña brotaba de sus manos… #id:bc
+[style name="Base_Dialogo"]
 
 character_eris (Attack): ¿Y bien humano? ¿Qué harás? #id:bd
 label Final choice #id:be
 - ¡Huir! #id:bf
 	set {canon_final} = true
+	[style name="Base"]
 	
 	¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida! #id:c0
 	update character_eris [animation="Shake X"]
+	[style name="Base_Dialogo"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
 - ¡Luchar! #id:c2
 	set {canon_final} = false
+	[style name="Base"]
 	
 	Me pongo en posición de combate, enseñando mis dientes y puños sin miedo. #id:c3
+	[style name="Base_Dialogo"]
 	
 	character_eris: ...¡JAJAJAJA! ¡¿Es en serio?! ¡No tienes ni idea del poder que tengo, te podría matar en un instante! #id:c4
 	
