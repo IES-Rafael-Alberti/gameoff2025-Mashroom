@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://kg2yrh4ogamm"]
+[gd_scene load_steps=17 format=3 uid="uid://kg2yrh4ogamm"]
 
 [ext_resource type="Script" uid="uid://byor8eyxyn80p" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_i56nu"]
 [ext_resource type="Texture2D" uid="uid://bgq52jvnth3ht" path="res://assets/SurfMinigame/ZachSurfAnimations.png" id="2_5iip6"]
-[ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/GUI/Heart.png" id="3_g3awo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f12qk"]
 size = Vector2(96, 78.6667)
@@ -142,19 +141,5 @@ sprite_frames = SubResource("SpriteFrames_advmg")
 animation = &"damaged"
 frame = 1
 frame_progress = 1.0
-
-[node name="Life" type="CanvasLayer" parent="."]
-
-[node name="Heart" type="Sprite2D" parent="Life"]
-position = Vector2(870, 70)
-texture = ExtResource("3_g3awo")
-
-[node name="Heart2" type="Sprite2D" parent="Life"]
-position = Vector2(920, 70)
-texture = ExtResource("3_g3awo")
-
-[node name="Heart3" type="Sprite2D" parent="Life"]
-position = Vector2(970, 70)
-texture = ExtResource("3_g3awo")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

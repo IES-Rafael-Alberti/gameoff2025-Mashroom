@@ -10,6 +10,8 @@ var baseWindowsSize = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_width"),
 	ProjectSettings.get_setting("display/window/size/viewport_height")
 )
+func _ready():
+	loadScene(currentScene)
 
 func _enter_tree() -> void:
 	TranslationServer.set_locale("en")
@@ -21,12 +23,9 @@ func _on_language_option_button_item_selected(index: int) -> void:
 		1:
 			TranslationServer.set_locale("es")
 
-func _ready():
-	loadScene(currentScene)
-
 func loadSceneDialogic(scene: PackedScene, dialogic: String):
 	if health <= 0:
-		health = 1
+		HpUpdate(1)
 	currentScene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -40,7 +39,7 @@ func loadSceneDialogic(scene: PackedScene, dialogic: String):
 
 func loadScene(scene: PackedScene):
 	if health <= 0:
-		health = 1
+		HpUpdate(1)
 	currentScene = scene
 	
 	var scenes = $LoadedScene.get_children()
@@ -49,7 +48,9 @@ func loadScene(scene: PackedScene):
 			scenes[i].queue_free()
 			
 	$LoadedScene.add_child(scene.instantiate())
-
-func HpUpdate():
-	var heartsIcons = $GUI/Hearts
 	
+func HpUpdate(number: int):
+	if number > 3:
+		number = 3
+	health = number
+	var heartsIcons = $GUI/Hearts.updateIcons(number)
