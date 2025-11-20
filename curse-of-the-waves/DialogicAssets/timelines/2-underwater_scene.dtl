@@ -62,7 +62,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
 
-character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
+character_zach_human: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
 
 Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena. #id:31
@@ -81,7 +81,7 @@ leave character_eris_hidden [animation="Fade Out"]
 join character_eris (Joy) center [animation="Fade In"]
 [style name="Base_Dialogo"]
 
-character_eris_hidden: Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero! #id:36
+character_eris: Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero! #id:36
 
 character_zach: ¡¿...Q-Qué demonios eres?! #id:37
 update character_eris (Neutral)
@@ -99,33 +99,39 @@ character_eris: ¿Qué te pasa eh? Ya soy consciente de que soy hermosa, no hace
 
 De solo oírla hablar ya podía discernir que tenía el ego subido a más no poder… [b] Tengo que tener cuidado con lo que digo o puede que me arrepienta… [/b] #id:3c
 [style name="Base_Dialogo"]
+leave --All--
+join character_eris (Smug) center
 
-character_eris (Smug): Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
+character_eris: Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
 label Primera eleccion #id:43
 - ...E-Eres muy hermosa… #id:44
 	character_zach: ...E-Eres muy hermosa… #id:45
-	character_eris (Joy): ¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones! #id:46
+	join character_eris (Joy) center
+	character_eris: ¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones! #id:46
 	[style name="Base"]
 	
 	Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto… #id:47
 - Creo que voy a vomitar… #id:48
 	[style name="Base_Dialogo"]
-	character_eris (Neutral): Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
+	join character_eris (Neutral) center
+	character_eris: Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
 	# TODO: Vibración momentánea para simular el guantazo Añadir efecto de variable
 	update character_eris (Attack)
 	[style name="Base"]
 	En un instante ví como la bruja me abofeteó tan fuerte que me puso horizontal, rápidamente tuve que intentar nadar con mi nueva cola para ponerme correctamente. #id:4a
 	[style name="Base_Dialogo"]
+	join character_eris (Joy) center
 	
-	character_eris (Joy): ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
+	character_eris: ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
 	# Va a haber un cambio de sprite a partir de esto?
 	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
 [style name="Base_Dialogo"]
+join character_eris (Neutral) center
 
 
-character_eris (Neutral): Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje. #id:4d
+character_eris: Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje. #id:4d
 leave character_eris
 [style name="Base"]
 
@@ -138,15 +144,17 @@ join character_eris (Joy) center [animation="Fade In"]
 [style name="Base_Dialogo"]
 
 character_eris: ¡Mucho mejor! Ahora que estamos aquí vamos a hablar en condiciones… #id:51
+join character_eris (Neutral) center
 
-character_eris (Neutral): Cuéntame algo de ti esbirro, ¿Qué estúpida decisión te llevó a querer adentrarte en la mar? #id:52
+character_eris: Cuéntame algo de ti esbirro, ¿Qué estúpida decisión te llevó a querer adentrarte en la mar? #id:52
 
 character_zach: Ehh… pues… #id:53
 label Segunda eleccion #id:54
 - Es mi pasión... #id:55
 	character_zach: Es mi pasión… #id:56
+	join character_eris (Smug) center
 	
-	character_eris (Smug): ¿Tu pasión? ¿Qué clase de pasión es esa? ¿Acaso quieres morir? #id:57
+	character_eris: ¿Tu pasión? ¿Qué clase de pasión es esa? ¿Acaso quieres morir? #id:57
 	
 	character_zach: Practico un deporte llamado surf, te montas en una tabla e intentas montar olas por el mayor tiempo posible, me resulta emocionante. #id:58
 	
@@ -155,8 +163,9 @@ label Segunda eleccion #id:54
 	character_eris: El mar castiga a los incrédulos como tú, normal que hayas terminado aquí abajo conmigo, ¡jaja! #id:5a
 - Me ayuda a escapar… #id:5b
 	character_zach: Me ayuda a escapar… #id:5c
+	join character_eris (Smug) center
 	
-	character_eris (Smug): ¿Escapar? ¿De tus miedos e inseguridades? Cómo no, los humanos sois cobardes por naturaleza. #id:5d
+	character_eris: ¿Escapar? ¿De tus miedos e inseguridades? Cómo no, los humanos sois cobardes por naturaleza. #id:5d
 	
 	character_zach: Todos necesitamos escapar de vez en cuando, no lo entenderías… #id:5e
 	
@@ -165,8 +174,9 @@ label Segunda eleccion #id:54
 	
 	La bruja agarró un hueso y lo presionó contra mi pecho repetidas veces de manera burlona. #id:60
 	[style name="Base_Dialogo"]
+	join character_eris (Joy) center
 	
-	character_eris (Joy): Aunque para mi, esto solo son ventajas, serías más feliz simplemente siguiendo mis órdenes antes que volviendo a tu mundo de humanos, ¿a que sí? ¡jajajaja! #id:61
+	character_eris: Aunque para mi, esto solo son ventajas, serías más feliz simplemente siguiendo mis órdenes antes que volviendo a tu mundo de humanos, ¿a que sí? ¡jajajaja! #id:61
 	[style name="Base"]
 	
 	La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad… #id:62
@@ -182,23 +192,30 @@ label Segunda eleccion #id:54
 	character_zach: Soy sociable si, pero… La mayoría de amistades que he tenido a lo largo de mi vida terminaron separándose de mí por motivos fuera de mi control… #id:67
 	
 	character_zach: Por muy abierto que sea, siempre termino solo… #id:68
+	join character_eris (Smug) center
 	
-	character_eris (Smug): Ya veo… Que pena me das.. #id:69
+	character_eris: Ya veo… Que pena me das.. #id:69
+	join character_eris (Joy) center
 	
-	character_eris (Joy): Por suerte para tí ahora estás aquí abajo, posiblemente para siempre, por lo que ya sabes, ¡borrón y cuenta nueva! #id:6a
+	character_eris: Por suerte para tí ahora estás aquí abajo, posiblemente para siempre, por lo que ya sabes, ¡borrón y cuenta nueva! #id:6a
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): Además tus habilidades ‘sociables’ me serán de gran utilidad para mis planes, jejeje… #id:6b
+	character_eris: Además tus habilidades ‘sociables’ me serán de gran utilidad para mis planes, jejeje… #id:6b
 	
 	character_zach: ¿...Estás insinuando que quieres ser mi amiga-? #id:6c
+	join character_eris (Shock) center
 	
-	character_eris (Shock): ¿Qué? No te hagas ilusiones chaval yo no me junto con cualquiera y menos con humanos, como mucho vas a llegar a ser mi esbirro favorito, ¡jajaja! #id:6d
+	character_eris: ¿Qué? No te hagas ilusiones chaval yo no me junto con cualquiera y menos con humanos, como mucho vas a llegar a ser mi esbirro favorito, ¡jajaja! #id:6d
+[style name="Base"]
 
 
 Se estaba burlando de mí por completo… Decidí armarme de valor e intentar sonsacar algo de información de ella mientras podía. #id:6e
+[style name="Base_Dialogo"]
 
 character_zach: Vale… P-Pero no es justo que seas la única en preguntarme cosas, yo tengo muchas preguntas también, ¡y más aún ahora! #id:6f
+join character_eris (Annoyed) center
 
-character_eris (Annoyed): Ugh… Bien bien, tu confusión es entendible por mucho que me moleste, te permitiré que me preguntes cosas… Más vale que sea entretenido… #id:70
+character_eris: Ugh… Bien bien, tu confusión es entendible por mucho que me moleste, te permitiré que me preguntes cosas… Más vale que sea entretenido… #id:70
 [style name="Base"]
 
 Para supuestamente tenerme como un esbirro se muestra extrañamente cooperativa… Mejor no tiento a la suerte y aprovecho… #id:71
@@ -207,16 +224,19 @@ update character_eris (Neutral)
 - ¿Qué eres exactamente? #id:73
 	[style name="Base_Dialogo"]
 	character_zach: ¿Qué eres exactamente? #id:74
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): Soy lo que tu especie define como una ‘ningen’, somos una raza antigua proveniente de las profundidades de los mares árticos, aunque ya quedan muy pocos de nosotros, jeje… #id:75
+	character_eris: Soy lo que tu especie define como una ‘ningen’, somos una raza antigua proveniente de las profundidades de los mares árticos, aunque ya quedan muy pocos de nosotros, jeje… #id:75
 	
 	character_zach: Oh, lamento oir eso… #id:76
+	join character_eris (Joy) center
 	
-	character_eris (Joy): ¿Bromeas? ¡Eso significa menos competición para mi! Todos nuestros conocimientos arcanos eventualmente recaeran sobre mi una vez yo y mis padres seamos los últimos restantes. #id:77
+	character_eris: ¿Bromeas? ¡Eso significa menos competición para mi! Todos nuestros conocimientos arcanos eventualmente recaeran sobre mi una vez yo y mis padres seamos los últimos restantes. #id:77
 	
 	character_zach: ¿T-Tienes padres? #id:78
+	join character_eris (Smug) center
 	
-	character_eris (Smug): ¡Pues claro! ¿De dónde voy a salir yo sí no? ¿De la nada? #id:79
+	character_eris: ¡Pues claro! ¿De dónde voy a salir yo sí no? ¿De la nada? #id:79
 	
 	character_zach: Perdón, tampoco te tomaba como alguien con una relación sentimental hacia sus padres… #id:7a
 	
@@ -228,57 +248,69 @@ update character_eris (Neutral)
 - Por qué te haces llamar bruja? #id:7d
 	[style name="Base_Dialogo"]
 	character_zach: ¿Por qué te haces llamar bruja? #id:7e
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): Porque es mi oficio, obvio. #id:7f
+	character_eris: Porque es mi oficio, obvio. #id:7f
 	
 	character_zach: Pero no es un título algo… ¿despectivo? #id:80
+	join character_eris (Smug) center
 	
-	character_eris (Smug): Ya soy infame tanto para los otros habitantes de las profundidades como para los humanos, prefiero adoptar el título y hacerlo mío antes que negarlo, además, me queda de fábula. #id:81
+	character_eris: Ya soy infame tanto para los otros habitantes de las profundidades como para los humanos, prefiero adoptar el título y hacerlo mío antes que negarlo, además, me queda de fábula. #id:81
 	
 	character_zach: ¿Y para que tanto interés en ser vista como una bruja…? ¿Disfrutas de la miseria de los demás? #id:82
 	
 	character_eris: Pues ya ves que es obvio que si, ¡jajaja! Pero no tiene nada que ver con mis motivos. #id:83
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): Como cualquier estudiante de las fuerzas arcanas yo solo busco conocimiento y maneras de mejorarme por encima de los demás, si alguien sufre por ello no son nada más que bajas accidentales, minucias. #id:84
+	character_eris: Como cualquier estudiante de las fuerzas arcanas yo solo busco conocimiento y maneras de mejorarme por encima de los demás, si alguien sufre por ello no son nada más que bajas accidentales, minucias. #id:84
 	
 	character_zach: Eso es bastante cruel… #id:85
 	
 	character_eris: Tampoco es que vaya matando gente por diversión, todo es por un bien mayor, [pause=0.5]MI bien mayor. #id:86
+	join character_eris (Joy) center
 	
-	character_eris (Joy): Y eventualmente me volveré invencible, con un poder tan descomunal que nadie será capaz de plantarme cara, seré perfecta, ¡alabada como una diosa! #id:87
+	character_eris: Y eventualmente me volveré invencible, con un poder tan descomunal que nadie será capaz de plantarme cara, seré perfecta, ¡alabada como una diosa! #id:87
 	
 	character_zach: También podrías empezar por mejorar tu aspecto… #id:88
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): ¿Qué has dicho? #id:89
+	character_eris: ¿Qué has dicho? #id:89
 	
 	character_zach: ¡N-NADA-! #id:8a
 	jump Tercera eleccion
 - ¿Odias a los humanos? #id:8b
 	character_zach: ¿Odias a los humanos? #id:8b1
-	character_eris (Neutral): Nah, no los odio, pero eso no quita que no sean objetivamente inferiores. #id:8c
+	join character_eris (Neutral) center
+	character_eris: Nah, no los odio, pero eso no quita que no sean objetivamente inferiores. #id:8c
 	
 	character_zach: ¿Q-Qué nos hace inferiores exactamente? #id:8d
+	join character_eris (Smug) center
 	
-	character_eris (Smug): El hecho de que no tenéis conocimiento de las fuerzas arcanas por ejemplo, os habéis separado hasta tal punto de la naturaleza que se os han olvidado vuestras propias raíces. #id:8e
+	character_eris: El hecho de que no tenéis conocimiento de las fuerzas arcanas por ejemplo, os habéis separado hasta tal punto de la naturaleza que se os han olvidado vuestras propias raíces. #id:8e
 	
 	character_zach: Pero también hemos conseguido muchos otros logros, como ir al espacio… #id:8f
+	join character_eris (Joy) center
 	
-	character_eris (Joy): El espacio, ¡JA!, no habeis ni tan siquiera explorado la mayoría de los mares de este planeta y de verdad piensas que me voy a creer eso. #id:90
+	character_eris: El espacio, ¡JA!, no habeis ni tan siquiera explorado la mayoría de los mares de este planeta y de verdad piensas que me voy a creer eso. #id:90
 	
 	character_eris: ¡No podéis ni tan siquiera sobrevivir aquí abajo durante mucho tiempo, es patético! #id:91
 	
 	character_zach: Tú tampoco puedes sobrevivir en la superficie, ¿verdad? #id:92
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): ... #id:93
+	character_eris: ... #id:93
+	join character_eris (Annoyed) center
 	
-	character_eris (Annoyed): [pause=0.5]“...Touche.” #id:94
+	character_eris: [pause=0.5]“...Touche.” #id:94
 	jump Tercera eleccion
 - ¿Qué era esa criatura gigante de agua que me atacó? #id:95
 	character_zach: ¿Qué era esa criatura gigante de agua que me atacó? #id:96
+	join character_eris (Shock) center
 	
-	character_eris (Shock): ... #id:97
+	character_eris: ... #id:97
+	join character_eris (Smug) center
 	
-	character_eris (Smug): ... #id:98
+	character_eris: ... #id:98
 	[style name="Base"]
 	
 	La bruja me miró intensamente, parecía que se intentaba aguantar la risa… #id:99
@@ -298,20 +330,24 @@ update character_eris (Neutral)
 - ¿Te gusto? #id:9f
 	[style name="Base_Dialogo"]
 	character_zach: ¿Te gusto? #id:a0
+	join character_eris (Annoyed) center
 	
-	character_eris (Annoyed): ¿Qué? #id:a1
+	character_eris: ¿Qué? #id:a1
 	
 	character_zach: ...Bueno si tu normalmente despedazas a humanos para usarlos de ingredientes, ¿por qué no lo has hecho conmigo? #id:a2
+	join character_eris (Neutral) center
 	
-	character_eris (Neutral): ¡Ah! Porque me resultas más útil vivo en tu caso, tu sociabilidad humana es justo lo que necesito para hacerme con el ingrediente que me falta para mi poción. #id:a3
+	character_eris: ¡Ah! Porque me resultas más útil vivo en tu caso, tu sociabilidad humana es justo lo que necesito para hacerme con el ingrediente que me falta para mi poción. #id:a3
 	
 	character_zach: Y por eso me has puesto esta maldición… #id:a4
+	join character_eris (Smug) center
 	
-	character_eris (Smug): Ya lo vas pillando, te recomiendo que te acostumbres a seguir mis órdenes si quieres sobrevivir aquí abajo… #id:a5
+	character_eris: Ya lo vas pillando, te recomiendo que te acostumbres a seguir mis órdenes si quieres sobrevivir aquí abajo… #id:a5
 	
 	character_zach: A mi se me hace que tu también quieres compañía… #id:a6
+	join character_eris (Annoyed) center
 	
-	character_eris (Annoyed): ¡No intentes engatusarme con tus sentimentalidades humanas! ¡Solo eres una herramienta! ¡Un esbirro más! #id:a7
+	character_eris: ¡No intentes engatusarme con tus sentimentalidades humanas! ¡Solo eres una herramienta! ¡Un esbirro más! #id:a7
 	
 	character_zach: Si tu lo dices… #id:a8
 	jump Tercera eleccion
@@ -319,19 +355,24 @@ update character_eris (Neutral)
 	character_zach: ¿Cómo puedo volver a mi forma humana? #id:aa
 
 label Infodumped #id:ab
-character_eris (Smug): ¿Así que vuelves con esas eh? Bien, pues iré al grano… #id:ac
+join character_eris (Smug) center
+character_eris: ¿Así que vuelves con esas eh? Bien, pues iré al grano… #id:ac
+join character_eris (Neutral) center
 
-character_eris (Neutral): La única manera de quitar tu maldición es consiguiendo la misma poción que estoy intentando crear yo… Una poción formada por esencias de los sentimientos que habitan en criaturas inteligentes… #id:ad
+character_eris: La única manera de quitar tu maldición es consiguiendo la misma poción que estoy intentando crear yo… Una poción formada por esencias de los sentimientos que habitan en criaturas inteligentes… #id:ad
 
 character_eris: Ya tengo todos los ingredientes\: ira, alegría, tristeza, miedo, mucho miedo… Y solo me falta una esencia de sentimiento más, la más compleja de todas… #id:ae
 
 character_eris: La esencia del sentimiento del amor… Formada únicamente cuando una unión emocional de tal pureza se crea entre dos personas… #id:af
+join character_eris (Annoyed) center
 
-character_eris (Annoyed): Lo cuál requiere relacionarse con otras personas, caerles bien, hacer que le gustes, en fin muchos pasos complejos que no van conmigo. Además de que mi infamia ya me pone en desventaja. #id:b0
+character_eris: Lo cuál requiere relacionarse con otras personas, caerles bien, hacer que le gustes, en fin muchos pasos complejos que no van conmigo. Además de que mi infamia ya me pone en desventaja. #id:b0
+join character_eris (Neutral) center
 
-character_eris (Neutral): Y ahí entras TÚ mi querido esbirro, serás la nueva cara en este mar perdido, quiero que encuentres a alguien, quien sea, y que hagas que se enamoren de ti para obtener esa esencia. #id:b1
+character_eris: Y ahí entras TÚ mi querido esbirro, serás la nueva cara en este mar perdido, quiero que encuentres a alguien, quien sea, y que hagas que se enamoren de ti para obtener esa esencia. #id:b1
+join character_eris (Smug) center
 
-character_eris (Smug): Si quieres volver a ser humano no te queda otra que seguir mis instrucciones, jejeje… #id:b2
+character_eris: Si quieres volver a ser humano no te queda otra que seguir mis instrucciones, jejeje… #id:b2
 [style name="Base"]
 
 Sentí desesperación al escuchar sus palabras, ¿de verdad no tengo más elección que ayudarla? No quería creerlo, no quiero tener que ser un esclavo para esta bruja… #id:b3
@@ -342,14 +383,16 @@ character_zach: ...N-No… …N-No puede ser cierto, ¡tiene que haber otra mane
 character_eris: ¡Ja! Creeme, si la hubiera ya la hubiera utilizado yo, no tienes otra elección, yo ya tengo el resto de la poción preparada y solo falta ese ingrediente. #id:b5
 
 character_zach: ¡...M-Me niego! Tiene que haber otra manera allí afuera, y-y si no, entonces yo crearé la poción por mi cuenta, ¡no dejaré que me manipules! #id:b6
+join character_eris (Neutral) center
 
-character_eris (Neutral): Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera… #id:b7
+character_eris: Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera… #id:b7
 
 character_eris: Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b] #id:b8
 
 character_zach: ...Prefiero arriesgarme. #id:b9
+join character_eris (Joy) center
 
-character_eris (Joy): En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi… #id:ba
+character_eris: En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi… #id:ba
 join character_minion1 left [animation="Slide In Up"]
 join character_minion2 right [animation="Slide In Up"]
 
@@ -360,8 +403,9 @@ update character_minion2 [animation="Shake X" repeat="4"]
 
 Los esbirros de la bruja mordían hacia mi amenazantemente, magia extraña brotaba de sus manos… #id:bc
 [style name="Base_Dialogo"]
+join character_eris (Attack) center
 
-character_eris (Attack): ¿Y bien humano? ¿Qué harás? #id:bd
+character_eris: ¿Y bien humano? ¿Qué harás? #id:bd
 label Final choice #id:be
 - ¡Huir! #id:bf
 	set {canon_final} = true
