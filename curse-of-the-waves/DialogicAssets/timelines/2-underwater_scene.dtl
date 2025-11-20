@@ -43,7 +43,7 @@ update character_eris_hidden (eyes_smile)
 character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!! #id:29
 
 # [Mayor tamaño de letra, la pantalla vibra y hay un flash de color morado fuerte] (Sería un estilo)
-[style name="BASE_BIG"]
+[style name="New_File"]
 character_zach: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
@@ -60,7 +60,7 @@ label Cueva #id:42
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
 
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
-[style name="BASE_BIG"]
+[style name="New_File"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
