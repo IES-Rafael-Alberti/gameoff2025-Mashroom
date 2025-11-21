@@ -41,7 +41,9 @@ layout/style_directory={
 "": "res://DialogicAssets/styles/Base.tres",
 "BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
 "Base": "res://DialogicAssets/styles/Base.tres",
-"Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres"
+"Base_Dialogo": "res://DialogicAssets/styles/Base_Dialogo.tres",
+"Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres",
+"New_File": "res://DialogicAssets/styles/New_File.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -50,11 +52,11 @@ text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
-animations/join_default_length=0.5
+animations/join_default_length=0.0
 animations/join_default_wait=true
-animations/leave_default_length=0.5
+animations/leave_default_length=0.0
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -83,7 +85,7 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/Kumi_style.tres"]
+layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base_Dialogo.tres"]
 layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false
@@ -100,6 +102,9 @@ history/visited_event_history_enabled=true
 text/autocolor_names=true
 text/autoadvance_enabled=true
 text/autoadvance_fixed_delay=0.01
+animations/join_default="Instant In"
+animations/leave_default="Instant Out"
+text/input_action="dialogic_default_action"
 
 [display]
 
