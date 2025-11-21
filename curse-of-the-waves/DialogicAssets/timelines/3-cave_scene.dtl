@@ -1,5 +1,6 @@
+audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav"
 if {canon_final} == true:
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/Fondo_Under_The_Water.png" fade="0.0"]
 	Al fin logré escapar… Estoy fuera de la cueva… #id:c9
 	
 	Puedo escuchar los gritos de la bruja mientras me sigue buscando más adentro, pero ya he logrado escapar, por lo que no logrará encontrarme… #id:ca
@@ -41,6 +42,7 @@ else:
 	Eris es apuñalada en el cuello con la estalactita #id:d7
 	[style name="New_File"]
 	# [Letra grande, vibrando]
+	audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
 	character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
 	# cueva2
 	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]

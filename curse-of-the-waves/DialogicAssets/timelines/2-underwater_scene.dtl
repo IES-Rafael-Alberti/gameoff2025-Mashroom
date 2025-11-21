@@ -1,3 +1,4 @@
+audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav"
 [background arg="res://DialogicAssets/backgrounds/Fondo_Under_The_Water.png" fade="0.0"]
 
 No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
@@ -55,6 +56,7 @@ leave --All-- [animation="Fade Out" wait="true"]
 label Cueva #id:42
 
 [background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav"
 …Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua. #id:2d
 
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
@@ -139,6 +141,7 @@ leave character_eris
 Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco… #id:4e
 label Cueva pt2 #id:4f
 [background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+audio music "res://assets/Audio/Música/Novela visual/2/scary-horror2.wav"
 
 Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal. #id:50
 join character_eris (Joy) center [animation="Fade In"]
@@ -439,4 +442,3 @@ label Final choice #id:be
 	
 	La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
 	leave --All--
-audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav" [loop="true"]

@@ -18,6 +18,9 @@ var canBeDamaged = true
 var isMoving = false
 var isHidden = false
 
+func _ready():
+	AudioPlayer.musicMinijuegoCueva()
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

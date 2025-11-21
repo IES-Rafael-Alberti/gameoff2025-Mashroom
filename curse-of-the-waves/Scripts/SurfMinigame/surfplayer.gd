@@ -3,8 +3,9 @@ extends CharacterBody2D
 @export_group("Basics")
 @export var BaseSpeed = 800.0
 
-@onready var sonidoCaida = preload("res://assets/Audio/SFX/splash_effect.wav")
+@onready var sonidoCaida = preload("res://assets/Audio/SFX/Minijuego surf/efectoSplash.wav")
 @onready var anims = $Sprite2D
+@onready var sonidoGolpe = preload("res://assets/Audio/SFX/Minijuego surf/sonidoGolpe.wav")
 
 var speed = BaseSpeed
 var limitMin: float
@@ -58,6 +59,7 @@ func updHp(add: int):
 	return newHp
 
 func damage():
+	AudioPlayer.playSfx(sonidoGolpe)
 	anims.play("damaged")
 	canBeDamaged = false
 	canMove = false
@@ -69,10 +71,11 @@ func damage():
 	
 
 func death(): # Proceso de Muerte
+	AudioPlayer.playSfx(sonidoGolpe)
 	canMove = false
 	canBeDamaged = false
 	anims.play("death")
-	await get_tree().create_timer(0.999).timeout #para sfx de caida y que espere
+	await get_tree().create_timer(0.998).timeout #para sfx de caida y que espere
 	AudioPlayer.playSfx(sonidoCaida, -12.0)
 	await anims.animation_finished
 	# Temporal, para testeo
@@ -80,3 +83,4 @@ func death(): # Proceso de Muerte
 		AudioPlayer.stopMusic()
 		var GameManager = get_tree().get_root().get_node("Main/GameManager")
 		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+		
