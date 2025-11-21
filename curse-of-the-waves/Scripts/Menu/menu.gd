@@ -9,6 +9,7 @@ var changeButton: Button
 
 func _ready():
 	AudioPlayer.musicNivel()
+	startUpdateButtons()
 	$PlayButton.grab_focus()
 
 func _on_play_button_pressed() -> void:
@@ -51,6 +52,8 @@ func updateButton(button: Button, movement: String):
 
 func selectChange(button: Button, toggle: bool, movement: String):
 	if toggle:
+		if changeButton:
+			changeButton.button_pressed = false
 		changeControl = movement
 		changeButton = button
 		button.text = "ui_pressKey"
@@ -82,3 +85,11 @@ func _on_main_button_toggled(toggled_on):
 func _on_second_button_toggled(toggled_on):
 	var button = Controls.get_node("ActionVBox/SecondaryHBox/SecondButton")
 	selectChange(button, toggled_on, "SecondaryAction")
+
+func startUpdateButtons():
+	var Buttons = ["MovementVBox/UpHBox/UpButton", "MovementVBox/DownHBox/DownButton",
+	"MovementVBox/LeftHBox/LeftButton", "MovementVBox/RightHBox/RightButton",
+	"ActionVBox/MainHBox/MainButton", "ActionVBox/SecondaryHBox/SecondButton"]
+	for buttonURL in Buttons:
+		var button = Controls.get_node(buttonURL)
+		updateButton(button, button.text)

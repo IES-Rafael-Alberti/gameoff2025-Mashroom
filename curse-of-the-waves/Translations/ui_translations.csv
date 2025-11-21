@@ -4,6 +4,13 @@ ui_options,Options,Opciones
 ui_back,Back,Volver
 ui_language,Language,Idioma
 ui_volume,Volume,Volumen
-ui_main_volume, Master Volume, Volumen General
-ui_music_volume, Music Volume, Volumen de Música
-ui_sfx_volume, SFX Volume, Volumen de Efectos
+ui_main_volume,Master Volume,Volumen General
+ui_music_volume,Music Volume,Volumen de Música
+ui_sfx_volume,SFX Volume,Volumen de Efectos
+ui_pressKey,Press a Button,Pulsa un Botón
+ui_UpCtrlName,Up,Arriba
+ui_DownCtrlName,Down,Abajo
+ui_LeftCtrlName,Left,Izquierda
+ui_RightCtrlName,Right,Derecha
+ui_MainCtrlName,Main,Principal
+ui_SecCtrlName,Secondary,Secundario
