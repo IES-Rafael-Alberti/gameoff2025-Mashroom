@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://167ot86du27h"]
 
-[ext_resource type="Script" uid="uid://dhnhdk32epd8y" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
+[ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
@@ -307,4 +307,5 @@ libraries = {
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="item_selected" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,22 +1,20 @@
 extends CharacterBody2D
 
 @export_group("Basics")
-@export var Hp = 3
 @export var BaseSpeed = 800.0
 
 @onready var sonidoCaida = preload("res://assets/Audio/SFX/splash_effect.wav")
 @onready var anims = $Sprite2D
-@onready var heart_textures = {
-	"full": preload("res://assets/SurfMinigame/Heart.png"),
-	"broken": preload("res://assets/SurfMinigame/Broken-heart.png")
-}
 
 var speed = BaseSpeed
 var limitMin: float
 var limitMax: float
 var canMove = true
 var canBeDamaged = true
-	
+
+func _ready():
+	AudioPlayer.musicMinijuegoSurf()
+
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	if canMove:
@@ -48,19 +46,27 @@ func _on_hitbox_area_entered(area): # Detección al tocar un obstaculo (tiene qu
 	if area.is_in_group("Damage") and canBeDamaged:
 		area.queue_free()
 		
-		Hp -= 1
-		salud_ctrl()
-		if Hp <= 0:
+		if updHp(-1) <= 0:
 			death()
 		else:
-			anims.play("damaged")
-			canBeDamaged = false
-			canMove = false
-			await get_tree().create_timer(0.2).timeout
-			canMove = true
-			await anims.animation_finished
-			canBeDamaged = true
-			anims.play("default")
+			damage()
+
+func updHp(add: int):
+	var GameManager = get_tree().get_root().get_node("Main/GameManager")
+	var newHp = GameManager.health + add
+	GameManager.HpUpdate(newHp)
+	return newHp
+
+func damage():
+	anims.play("damaged")
+	canBeDamaged = false
+	canMove = false
+	await get_tree().create_timer(0.2).timeout
+	canMove = true
+	await anims.animation_finished
+	canBeDamaged = true
+	anims.play("default")
+	
 
 func death(): # Proceso de Muerte
 	canMove = false
@@ -71,27 +77,6 @@ func death(): # Proceso de Muerte
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
+		AudioPlayer.stopMusic()
 		var GameManager = get_tree().get_root().get_node("Main/GameManager")
 		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
-	
-func salud_ctrl():
-	match Hp:
-		3:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["full"]
-			$Life/Heart3.texture = heart_textures["full"]
-			
-		2:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["full"]
-			$Life/Heart3.texture = heart_textures["broken"]
-			
-		1:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["broken"]
-			$Life/Heart3.texture = heart_textures["broken"]
-			
-		0:
-			$Life/Heart.texture = heart_textures["broken"]
-			$Life/Heart2.texture = heart_textures["broken"]
-			$Life/Heart3.texture = heart_textures["broken"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppfbcdle6nb7"
-path="res://.godot/imported/Broken-heart.png-14b99a6266ecc4529797ca9dfa03bd7b.ctex"
+uid="uid://cgsoys62dclov"
+path="res://.godot/imported/Fondo_Playa.png-766ce3c336bb51b218270a694dead188.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Broken-heart.png"
-dest_files=["res://.godot/imported/Broken-heart.png-14b99a6266ecc4529797ca9dfa03bd7b.ctex"]
+source_file="res://DialogicAssets/backgrounds/Fondo_Playa.png"
+dest_files=["res://.godot/imported/Fondo_Playa.png-766ce3c336bb51b218270a694dead188.ctex"]
 
 [params]
 

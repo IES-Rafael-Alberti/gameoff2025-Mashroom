@@ -1,58 +1,57 @@
-[gd_scene load_steps=18 format=3 uid="uid://kg2yrh4ogamm"]
+[gd_scene load_steps=17 format=3 uid="uid://kg2yrh4ogamm"]
 
-[ext_resource type="Script" uid="uid://b4r3l2ukijbmj" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_f12qk"]
-[ext_resource type="Texture2D" uid="uid://bgq52jvnth3ht" path="res://assets/SurfMinigame/ZachSurfAnimations.png" id="3_bpsjh"]
-[ext_resource type="Texture2D" uid="uid://dmjumwwyis163" path="res://assets/SurfMinigame/Heart.png" id="3_y3qsp"]
+[ext_resource type="Script" uid="uid://byor8eyxyn80p" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_i56nu"]
+[ext_resource type="Texture2D" uid="uid://bgq52jvnth3ht" path="res://assets/SurfMinigame/ZachSurfAnimations.png" id="2_5iip6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f12qk"]
 size = Vector2(96, 78.6667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tcrgv"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(0, 800, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bm7fq"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(200, 800, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3qsp"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(0, 600, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpsjh"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(200, 600, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_advmg"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(400, 600, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jo03e"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(600, 600, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noxej"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(0, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sq27v"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(200, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dnjb"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(0, 400, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i30js"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(200, 400, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2frr"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(0, 200, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkadb"]
-atlas = ExtResource("3_bpsjh")
+atlas = ExtResource("2_5iip6")
 region = Rect2(200, 200, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_advmg"]
@@ -124,7 +123,7 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(920, 840)
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_f12qk")
+script = ExtResource("1_i56nu")
 metadata/_edit_group_ = true
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Damage"]]
@@ -142,19 +141,5 @@ sprite_frames = SubResource("SpriteFrames_advmg")
 animation = &"damaged"
 frame = 1
 frame_progress = 1.0
-
-[node name="Life" type="CanvasLayer" parent="."]
-
-[node name="Heart" type="Sprite2D" parent="Life"]
-position = Vector2(870, 70)
-texture = ExtResource("3_y3qsp")
-
-[node name="Heart2" type="Sprite2D" parent="Life"]
-position = Vector2(920, 70)
-texture = ExtResource("3_y3qsp")
-
-[node name="Heart3" type="Sprite2D" parent="Life"]
-position = Vector2(970, 70)
-texture = ExtResource("3_y3qsp")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
