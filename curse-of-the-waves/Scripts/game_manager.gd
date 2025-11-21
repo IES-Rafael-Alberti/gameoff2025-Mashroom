@@ -26,8 +26,9 @@ func changeLanguage(index: int):
 
 func loadSceneDialogic(scene: PackedScene, dialogic: String):
 	GuiShow(false)
+	$Camera.followPlayer = false
 	if health <= 0:
-		HpUpdate(1)
+		HpUpdate(3)
 	currentScene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -42,8 +43,9 @@ func loadSceneDialogic(scene: PackedScene, dialogic: String):
 
 func loadScene(scene: PackedScene):
 	GuiShow(false)
+	$Camera.followPlayer = false
 	if health <= 0:
-		HpUpdate(1)
+		HpUpdate(3)
 	currentScene = scene
 	
 	var scenes = $LoadedScene.get_children()
@@ -58,7 +60,7 @@ func HpUpdate(number: int):
 	if number > 3:
 		number = 3
 	health = number
-	var heartsIcons = $GUI/Hearts.updateIcons(number)
+	var heartsIcons = $Camera/GUI/Hearts.updateIcons(number)
 	
 func GuiShow(show: bool):
-	$GUI.visible = show
+	$Camera/GUI.visible = show

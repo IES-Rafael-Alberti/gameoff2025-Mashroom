@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_x2bdd"]
 script = ExtResource("2_1c7em")
 overrides = {
-"global_font_size": "80.0"
+"global_font_size": "50.0"
 }
 
 [sub_resource type="Resource" id="Resource_cswuu"]
@@ -23,6 +23,7 @@ script = ExtResource("2_1c7em")
 script = ExtResource("2_1c7em")
 overrides = {
 "box_animation_new_text": "1",
+"disabled": "true",
 "name_label_box_offset": "Vector2(0, -80)"
 }
 
@@ -54,4 +55,4 @@ layer_info = {
 "16": SubResource("Resource_gau7g"),
 "18": SubResource("Resource_osa7c")
 }
-metadata/_latest_layer = "18"
+metadata/_latest_layer = "13"

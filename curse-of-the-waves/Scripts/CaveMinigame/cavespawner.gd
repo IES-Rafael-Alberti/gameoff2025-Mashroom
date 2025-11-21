@@ -23,7 +23,10 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$SpawnTimer.start(BaseSpawnTime)
-	
+
+func _process(delta):
+	var GameCamera = get_tree().get_root().get_node("Main/GameManager/Camera")
+	position = GameCamera.global_position
 
 func _on_spawn_timer_timeout():
 	match randi_range(0,1):

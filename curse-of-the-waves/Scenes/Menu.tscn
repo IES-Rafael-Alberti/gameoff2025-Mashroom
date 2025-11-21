@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=11 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
-[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_s2c3o"]
+[ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
+[ext_resource type="Texture2D" uid="uid://20fp21ngqhwu" path="res://CurseoftheWavesTitle.svg" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
 
@@ -68,7 +69,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Background" type="Sprite2D" parent="BackgroundContainer"]
+position = Vector2(960, 541)
+texture = ExtResource("2_ma218")
+
+[node name="Logo" type="Sprite2D" parent="BackgroundContainer"]
+position = Vector2(968, 296.00003)
+scale = Vector2(0.5279098, 0.5279098)
+texture = ExtResource("3_idohh")
+
 [node name="LogoAspectRatio" type="AspectRatioContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.049000002
@@ -76,10 +87,11 @@ anchor_right = 1.0
 anchor_bottom = 0.39800003
 offset_top = 0.24799919
 offset_bottom = 0.09597778
+stretch_mode = 1
 
 [node name="LogoTexture" type="TextureRect" parent="LogoAspectRatio"]
 layout_mode = 2
-texture = ExtResource("2_s2c3o")
+texture = ExtResource("3_idohh")
 expand_mode = 1
 
 [node name="PlayButton" type="Button" parent="."]

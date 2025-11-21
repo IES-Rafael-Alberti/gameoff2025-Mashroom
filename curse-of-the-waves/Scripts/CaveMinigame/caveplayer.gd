@@ -18,12 +18,15 @@ var canBeDamaged = true
 var isMoving = false
 var isHidden = false
 
+func _ready():
+	AudioPlayer.musicMinijuegoCueva()
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravityMult
 	if canMove:
-		if Input.is_action_pressed("SecondaryAction"):
+		if Input.is_action_pressed("SecondaryAction") or Input.is_action_pressed("move_down"):
 			isHidden = true
 		else: 
 			isHidden = false
@@ -66,6 +69,12 @@ func _on_hitbox_area_entered(area):
 		velocity.x = area.PushPower
 		if canBeDamaged and not isHidden:
 			takeDamage()
+	elif area.is_in_group("Finish"):
+		finish()
+		
+func finish():
+	var GameManager = get_tree().get_root().get_node("Main/GameManager")
+	GameManager.loadSceneDialogic(preload("res://Scenes/FinishGame.tscn"), '3-cave_scene')
 	
 func takeDamage():
 	if updHp(-1) <= 0:
