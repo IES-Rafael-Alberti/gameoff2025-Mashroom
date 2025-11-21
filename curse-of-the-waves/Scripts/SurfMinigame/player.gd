@@ -53,6 +53,7 @@ func _on_hitbox_area_entered(body): # Detección al tocar un obstaculo (tiene qu
 		if Hp <= 0:
 			death()
 		else:
+			
 			anims.play("damaged")
 			canBeDamaged = false
 			canMove = false
