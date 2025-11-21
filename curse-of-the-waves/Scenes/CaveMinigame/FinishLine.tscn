@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqp8i6gt6j2oe"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ubtih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2nfk"]
+size = Vector2(192, 192)
+
+[node name="FinishLine" type="Area2D" groups=["Finish"]]
+position = Vector2(288, 160)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(192, 192)
+texture = SubResource("PlaceholderTexture2D_ubtih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a2nfk")
