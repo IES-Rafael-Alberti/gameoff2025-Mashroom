@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:curse-of-the-waves/assets/CaveMinigame/ZachCaveSpritesheet.png.import
 uid="uid://bic8c4xohaovd"
 path="res://.godot/imported/ZachCaveSpritesheet.png-b3f1db9bf6918cc8cf1f471b936dbbe6.ctex"
+========
+uid="uid://nmc7mhjsndyb"
+path="res://.godot/imported/StalactiteCutscene.png-a7ca80ead7e0946de39937098995f276.ctex"
+>>>>>>>> 1519d6e (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/backgrounds/StalactiteCutscene.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:curse-of-the-waves/assets/CaveMinigame/ZachCaveSpritesheet.png.import
 source_file="res://assets/CaveMinigame/ZachCaveSpritesheet.png"
 dest_files=["res://.godot/imported/ZachCaveSpritesheet.png-b3f1db9bf6918cc8cf1f471b936dbbe6.ctex"]
+========
+source_file="res://DialogicAssets/backgrounds/StalactiteCutscene.png"
+dest_files=["res://.godot/imported/StalactiteCutscene.png-a7ca80ead7e0946de39937098995f276.ctex"]
+>>>>>>>> 1519d6e (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/backgrounds/StalactiteCutscene.png.import
 
 [params]
 
