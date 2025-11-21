@@ -36,11 +36,10 @@ script = ExtResource("2_4at4m")
 scene = ExtResource("9_0xxk3")
 overrides = {
 "box_size": "Vector2(1200, 300)",
-"name_label_color_mode": "2",
+"name_label_color_mode": "1",
 "name_label_hide_when_no_character": "true",
 "portrait_position": "1",
-"portrait_stretch_factor": "0.5",
-"text_use_global_color": "false"
+"portrait_stretch_factor": "0.5"
 }
 
 [sub_resource type="Resource" id="Resource_3yed2"]
