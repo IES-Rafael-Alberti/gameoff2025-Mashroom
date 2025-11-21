@@ -5,7 +5,6 @@ No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en
 
 Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema. #id:18
 [style name="Base_Dialogo"]
-[style name="Base_Dialogo"]
 
 character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
 [style name="Base"]
@@ -138,7 +137,6 @@ label Primera eleccion #id:43
 	join character_eris (Joy) center
 	
 	character_eris: ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
-	# Va a haber un cambio de sprite a partir de esto?
 	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
