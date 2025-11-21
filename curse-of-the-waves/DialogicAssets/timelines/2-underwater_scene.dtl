@@ -44,7 +44,7 @@ character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita esc
 
 # [Mayor tamaño de letra, la pantalla vibra y hay un flash de color morado fuerte] (Sería un estilo)
 [style name="New_File"]
-character_zach: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
+character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
 Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extraña corriente de color morado, parecía fuera de este mundo… #id:2b
@@ -62,7 +62,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
 
-character_zach_human: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
+character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
 
 Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena. #id:31
@@ -105,6 +105,7 @@ join character_eris (Smug) center
 character_eris: Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
 label Primera eleccion #id:43
 - ...E-Eres muy hermosa… #id:44
+	[style name="Base_Dialogo"]
 	character_zach: ...E-Eres muy hermosa… #id:45
 	join character_eris (Joy) center
 	character_eris: ¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones! #id:46

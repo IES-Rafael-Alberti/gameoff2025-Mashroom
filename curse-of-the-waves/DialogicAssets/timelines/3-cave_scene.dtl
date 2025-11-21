@@ -71,7 +71,9 @@ else:
 	# [Kumi habla lentamente en todos sus diálogos y tiene letra de mayor tamaño y color distinto]
 	[style name="Kumi_style"]
 	character_kumi: ¿ACASO TE DOY MIEDO? #id:e7
-	character_kumi: …No puedo ni responder, no puedo hacer nada… #id:e8
+	[style name="Base"]
+	…No puedo ni responder, no puedo hacer nada… #id:e8
+	[style name="Base_Dialogo"]
 	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:e9
 	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:ea
 	character_kumi: ERES MUY VALIENTE… INCLUSO HAS ESCAPADO DE ERIS… #id:eb
