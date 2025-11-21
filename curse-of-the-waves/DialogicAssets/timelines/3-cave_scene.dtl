@@ -23,6 +23,7 @@ if {canon_final} == true:
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="1.5"]
 	
 	...La realidad me vuelve a caer como un bloque de hormigón… #id:d1
+	leave character_kumi [animation="Zoom Center Out" length="3.0" wait="true"]
 	
 	…Estoy perdido en las profundidades… (Fundido a negro) #id:d2
 else:

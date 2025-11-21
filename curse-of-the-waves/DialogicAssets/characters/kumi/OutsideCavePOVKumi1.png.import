@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuw0a2r6vslt"
-path="res://.godot/imported/Kumi.png-0c09a4fff01e7c2d286cc9eee86a6d00.ctex"
+uid="uid://cgsfqjc2fdwc"
+path="res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/kumi/Kumi.png"
-dest_files=["res://.godot/imported/Kumi.png-0c09a4fff01e7c2d286cc9eee86a6d00.ctex"]
+source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png"
+dest_files=["res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"]
 
 [params]
 

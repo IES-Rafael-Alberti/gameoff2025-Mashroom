@@ -36,6 +36,7 @@ scene = ExtResource("5_qx10r")
 script = ExtResource("2_wmmnd")
 scene = ExtResource("10_wmmnd")
 overrides = {
+"box_margin_bottom": "25.0",
 "box_size": "Vector2(1200, 300)"
 }
 
@@ -73,4 +74,4 @@ layer_info = {
 "16": SubResource("Resource_r87y2"),
 "18": SubResource("Resource_vsrf6")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"

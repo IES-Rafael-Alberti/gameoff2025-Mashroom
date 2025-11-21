@@ -10,7 +10,7 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "only_eyes",
+&"default_portrait": "icon",
 &"description": "",
 &"display_name": "???",
 &"mirror": false,
@@ -18,6 +18,15 @@
 &"offset": Vector2(0, 0),
 &"portraits": {
 "eyes_smile": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/AbyssPOV3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"icon": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
 },
@@ -28,7 +37,7 @@
 },
 "only_eyes": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
+"image": "\"res://DialogicAssets/characters/eris/AbyssPOV2.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

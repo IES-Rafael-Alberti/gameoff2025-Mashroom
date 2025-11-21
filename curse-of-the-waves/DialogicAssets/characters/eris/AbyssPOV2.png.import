@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnieqdbyqrq2"
-path="res://.godot/imported/Zachary.png-c85e35d0a329b4d0db738f6b239737dc.ctex"
+uid="uid://p7jipxcxq1yb"
+path="res://.godot/imported/AbyssPOV2.png-5e27a24da7b7347e7fadcfeb231818da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/zach/Zachary.png"
-dest_files=["res://.godot/imported/Zachary.png-c85e35d0a329b4d0db738f6b239737dc.ctex"]
+source_file="res://DialogicAssets/characters/eris/AbyssPOV2.png"
+dest_files=["res://.godot/imported/AbyssPOV2.png-5e27a24da7b7347e7fadcfeb231818da.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2nrx1uw72sm"
-path="res://.godot/imported/ZachHuman.png-04ba0722e645be6f6b5f655ad2d5cc0c.ctex"
+uid="uid://drkgpse741jdc"
+path="res://.godot/imported/AbyssPOV3.png-d127c7cd014e6aa9498b8a8509772b57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/zach/ZachHuman.png"
-dest_files=["res://.godot/imported/ZachHuman.png-04ba0722e645be6f6b5f655ad2d5cc0c.ctex"]
+source_file="res://DialogicAssets/characters/eris/AbyssPOV3.png"
+dest_files=["res://.godot/imported/AbyssPOV3.png-d127c7cd014e6aa9498b8a8509772b57.ctex"]
 
 [params]
 
