@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=12 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
@@ -13,6 +13,9 @@ shadow_size = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_ma218"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_idohh"]
+font_size = 30
 
 [sub_resource type="Animation" id="Animation_6pedr"]
 resource_name = "OptionsMenu"
@@ -51,7 +54,7 @@ _data = {
 &"RESET": SubResource("Animation_syfuq")
 }
 
-[node name="Menu" type="Control" node_paths=PackedStringArray("OptionsContainer")]
+[node name="Menu" type="Control" node_paths=PackedStringArray("OptionsContainer", "Controls")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,6 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_syfuq")
 OptionsContainer = NodePath("Options")
+Controls = NodePath("Options/OptionsBackground/Options/SettingsVBox/ControlHBox")
 
 [node name="BackgroundContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -151,10 +155,10 @@ offset_right = 0.12792969
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="Options/OptionsBackground"]
+[node name="Options" type="Control" parent="Options/OptionsBackground"]
 layout_mode = 2
 
-[node name="SettingsVBox" type="VBoxContainer" parent="Options/OptionsBackground/Control"]
+[node name="SettingsVBox" type="VBoxContainer" parent="Options/OptionsBackground/Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.066
@@ -166,14 +170,14 @@ offset_top = -0.079992294
 offset_right = 0.39196777
 offset_bottom = -0.12792969
 
-[node name="VolumeVBox" type="VBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox" node_paths=PackedStringArray("general", "musica", "efectos")]
+[node name="VolumeVBox" type="VBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox" node_paths=PackedStringArray("general", "musica", "efectos")]
 layout_mode = 2
 script = ExtResource("4_s2c3o")
 general = NodePath("MainHBox/General")
 musica = NodePath("MusicHBox/Musica")
 efectos = NodePath("SoundHBox/Sfx")
 
-[node name="VolumeLabel" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox"]
+[node name="VolumeLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/line_spacing = 3
@@ -181,42 +185,42 @@ text = "ui_volume"
 label_settings = SubResource("LabelSettings_s2c3o")
 horizontal_alignment = 1
 
-[node name="MainHBox" type="HBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox"]
+[node name="MainHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox"]
+[node name="Label" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MainHBox"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 text = "ui_main_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
-[node name="menosG" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox"]
+[node name="menosG" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MainHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "-"
 
-[node name="General" type="HSlider" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox"]
+[node name="General" type="HSlider" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MainHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
-[node name="masG" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MainHBox"]
+[node name="masG" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MainHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "+"
 
-[node name="MusicHBox" type="HBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox"]
+[node name="MusicHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox"]
+[node name="Label" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MusicHBox"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 theme_override_constants/line_spacing = 4
@@ -225,55 +229,55 @@ text = "ui_music_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
-[node name="menosM" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox"]
+[node name="menosM" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MusicHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "-"
 
-[node name="Musica" type="HSlider" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox"]
+[node name="Musica" type="HSlider" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MusicHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
-[node name="masM" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/MusicHBox"]
+[node name="masM" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/MusicHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "+"
 
-[node name="SoundHBox" type="HBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox"]
+[node name="SoundHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox"]
+[node name="Label" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/SoundHBox"]
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 text = "ui_sfx_volume"
 label_settings = SubResource("LabelSettings_ma218")
 horizontal_alignment = 2
 
-[node name="menosS" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox"]
+[node name="menosS" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/SoundHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "-"
 
-[node name="Sfx" type="HSlider" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox"]
+[node name="Sfx" type="HSlider" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/SoundHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 
-[node name="masS" type="Button" parent="Options/OptionsBackground/Control/SettingsVBox/VolumeVBox/SoundHBox"]
+[node name="masS" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/VolumeVBox/SoundHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "+"
 
-[node name="LanguageVBox" type="VBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox"]
+[node name="LanguageVBox" type="VBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox"]
 layout_mode = 2
 
-[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/LanguageVBox"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -283,7 +287,7 @@ label_settings = SubResource("LabelSettings_s2c3o")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="OptionButton" type="OptionButton" parent="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox"]
+[node name="OptionButton" type="OptionButton" parent="Options/OptionsBackground/Options/SettingsVBox/LanguageVBox"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -297,7 +301,133 @@ popup/item_0/id = 0
 popup/item_1/text = "Español"
 popup/item_1/id = 1
 
-[node name="BackButton" type="Button" parent="Options/OptionsBackground/Control"]
+[node name="ControlHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="MovementVBox" type="VBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox"]
+layout_mode = 2
+
+[node name="UpHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/UpHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_UpCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="UpButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/UpHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+
+[node name="DownHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/DownHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_DownCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DownButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/DownHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+
+[node name="LeftHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/LeftHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_LeftCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LeftButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/LeftHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+
+[node name="RightHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/RightHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_RightCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RightButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/RightHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+
+[node name="ActionVBox" type="VBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox"]
+layout_mode = 2
+
+[node name="MainHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/MainHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_MainCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MainButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/MainHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+
+[node name="SecondaryHBox" type="HBoxContainer" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/SecondaryHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_SecCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SecondButton" type="Button" parent="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/SecondaryHBox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "
+"
+
+[node name="BackButton" type="Button" parent="Options/OptionsBackground/Options"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.75600004
@@ -319,5 +449,11 @@ libraries = {
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="item_selected" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="item_selected" from="Options/OptionsBackground/Options/SettingsVBox/LanguageVBox/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/MovementVBox/RightHBox/RightButton" to="." method="_on_right_button_toggled"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/MainHBox/MainButton" to="." method="_on_main_button_toggled"]
+[connection signal="toggled" from="Options/OptionsBackground/Options/SettingsVBox/ControlHBox/ActionVBox/SecondaryHBox/SecondButton" to="." method="_on_second_button_toggled"]
+[connection signal="pressed" from="Options/OptionsBackground/Options/BackButton" to="." method="_on_back_button_pressed"]
