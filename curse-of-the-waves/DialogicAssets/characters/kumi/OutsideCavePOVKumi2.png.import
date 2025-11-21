@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi2.png.import
 uid="uid://hpvxvm75kpfm"
 path="res://.godot/imported/OutsideCavePOVKumi2.png-2d48f2e2eabe9240c144cee3f2bfb46c.ctex"
+========
+uid="uid://cgsfqjc2fdwc"
+path="res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"
+>>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi2.png.import
 source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi2.png"
 dest_files=["res://.godot/imported/OutsideCavePOVKumi2.png-2d48f2e2eabe9240c144cee3f2bfb46c.ctex"]
+========
+source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png"
+dest_files=["res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"]
+>>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png.import
 
 [params]
 
