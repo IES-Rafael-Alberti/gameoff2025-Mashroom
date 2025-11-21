@@ -74,7 +74,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 audio -
 join character_zach (revelation) center [animation="Slide In Down"]
 
-character_zach_human: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
+character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
 leave character_zach [animation="Fade Out Down" wait="true"]
 
