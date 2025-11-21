@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu8elmgd0rj03"
+path="res://.godot/imported/sonidoGolpe.wav-4e23633074313e01addb755578b66fcf.sample"
+
+[deps]
+
+source_file="res://assets/Audio/SFX/Minijuego surf/sonidoGolpe.wav"
+dest_files=["res://.godot/imported/sonidoGolpe.wav-4e23633074313e01addb755578b66fcf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
