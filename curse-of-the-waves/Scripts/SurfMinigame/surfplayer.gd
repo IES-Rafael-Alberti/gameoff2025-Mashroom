@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var sonidoCaida = preload("res://assets/Audio/SFX/Minijuego surf/efectoSplash.wav")
 @onready var anims = $Sprite2D
+@onready var sonidoGolpe = preload("res://assets/Audio/SFX/Minijuego surf/sonidoGolpe.wav")
 
 var speed = BaseSpeed
 var limitMin: float
@@ -58,6 +59,7 @@ func updHp(add: int):
 	return newHp
 
 func damage():
+	AudioPlayer.playSfx(sonidoGolpe)
 	anims.play("damaged")
 	canBeDamaged = false
 	canMove = false
@@ -69,6 +71,7 @@ func damage():
 	
 
 func death(): # Proceso de Muerte
+	AudioPlayer.playSfx(sonidoGolpe)
 	canMove = false
 	canBeDamaged = false
 	anims.play("death")
