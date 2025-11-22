@@ -1,5 +1,5 @@
 audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav"
-[background arg="res://DialogicAssets/backgrounds/Fondo_Under_The_Water.png" fade="0.0"]
+[background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="0.0"]
 
 No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
 
@@ -8,11 +8,11 @@ Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respi
 
 character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
 [style name="Base"]
+[background arg="res://DialogicAssets/backgrounds/AbyssPOV2.png" fade="1.6"]
 
 Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando… #id:1a
 
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
-join character_eris_hidden (only_eyes) center [animation="Fade In"]
 [style name="Base_Dialogo"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
@@ -39,7 +39,7 @@ character_eris_hidden: ¿...Perdona? #id:26
 character_zach_human: ...N-No quiero… llévame a casa… #id:27
 
 character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?! #id:28
-update character_eris_hidden (eyes_smile)
+[background arg="res://DialogicAssets/backgrounds/AbyssPOV3.png" fade="1.2"]
 
 character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!! #id:29
 
@@ -53,9 +53,10 @@ Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extr
 Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia… #id:2c
 leave --All-- [animation="Fade Out" wait="true"]
 # TODO: Buscar forma de que haya un fade negro pa q no se vea tan anticlimatico
+[background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="1.0"]
 label Cueva #id:42
 
-[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="2.0"]
 audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav"
 …Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua. #id:2d
 
