@@ -17,6 +17,15 @@
 &"nicknames": ["Minion"],
 &"offset": Vector2(0, 0),
 &"portraits": {
+"Cutscene1": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/zach/ZachCutscene1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -314),
+"scale": 0.62,
+"scene": ""
+},
 "Icon": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/zach/ZacharyIcon.png\""
@@ -24,6 +33,15 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
+"scene": ""
+},
+"Stalactite": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/zach/StalactiteCutscene.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -245),
+"scale": 0.8,
 "scene": ""
 }
 },
