@@ -422,6 +422,7 @@ label Final choice #id:be
 	[style name="Base_Dialogo"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
+	[end_timeline]
 - ¡Luchar! #id:c2
 	set {canon_final} = false
 	[style name="Base"]
@@ -439,6 +440,19 @@ label Final choice #id:be
 	character_eris: ¡PREPÁRATE A MORIR! #id:c7
 	[wait time="1.0"]
 	if {has_weapon} == true:
+		Usas la estalactita de antes para clavarsela en el cuello
+		update character_eris (Cutscene)
+		update character_eris (Hurt)
+		# Meter aqui versión de la cueva sin tanto grito pero más peces
+	else:
+		Eris te ha reventado
+		- Reintentar
+			jump Final choice
+			jump Final choice
+		- Me rindo
+			[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="0.0"]
+			# Mandar al menú
+	[end_timeline]
 	else:
 		# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
 		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
