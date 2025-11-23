@@ -41,7 +41,6 @@ else:
 	# [Letra grande, vibrando]
 	audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
 	character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
-	# cueva2
 	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
 	update character_eris (Hurt) center
 	[style name="Base"]
@@ -61,7 +60,7 @@ else:
 	[background arg="res://DialogicAssets/backgrounds/OpenSeaPOV.png" fade="0.0"]
 	…Llevo nadando durante varios minutos sin encontrar nada ni nadie… …Está todo tranquilo… #id:e2
 	No veo nada de tierra, ni rocas, solo agua… …creo que me he alejado demasiado de la cueva, no sé en qué dirección ir… #id:e3
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="0.0"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="0.0"]
 	… #id:e4
 	…Oh no… #id:e5
 	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:e6
@@ -73,17 +72,17 @@ else:
 	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:e9
 	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:ea
 	character_kumi: ERES MUY VALIENTE… INCLUSO HAS ESCAPADO DE ERIS… #id:eb
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
 	character_kumi: …TENGO CURIOSIDAD… #id:ec
 	character_kumi: ¿...HASTA CUANTO LLEGAN TUS LÍMITES, HUMANO? #id:ed
 	character_kumi: ¿...CREES QUE PODRÍAS SOBREVIVIR CONMIGO? #id:ee
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="2.2"]
 	character_kumi: …QUIERO AVERIGUARLO… #id:ef
 	[style name="Base"]
 	Una mano gigante compuesta por agua oscura me agarró el cuerpo completo, no tengo escapatoria… #id:f0
 	[style name="Kumi_style"]
 	character_kumi: …TU NUEVO CUERPO… …A LO MEJOR SERÁ CAPAZ DE AGUANTAR TODA LA PRESIÓN… #id:f1
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
 	character_kumi: …VAMOS A VERLO… …HEEHEE… #id:f2
 	[style name="Base"]
 	[background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="2.0"]
