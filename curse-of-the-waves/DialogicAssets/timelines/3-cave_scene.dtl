@@ -8,20 +8,17 @@ if {canon_final} == true:
 	Lo conseguí… ¡Soy libre otra vez! #id:cb
 	
 	Pero… #id:cc
-	# Se mira las manos [Background salida cueva 2 (mirando hacia abajo a sus manos)]
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/HandsEndingCutscene.png" fade="0.6" transition="Simple Fade"]
 	
 	Cierto… sigo atrapado en esta forma… No sé como conseguiré volver a la normalidad… No me queda otra que empezar a buscar soluciones… #id:cd
 	
 	…Pero… …si he logrado llegar tan lejos, seguro que podré encontrar una manera de volver a la normalidad… …sí, ¡puedo hacerlo-! #id:ce
-	# Mira adelante, los ojos del Umibozu lo miran desde la distancia (Es un Background en teoria)
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="0.5" transition="Simple Fade"]
 	
 	... #id:cf
 	
 	“...Siento ese terror de que mi muerte se aproxima nuevamente… #id:d0
-	# El Umibozu sonríe y lentamente se desvanece en la distancia (Es un Background en teoria)
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="1.5"]
 	
 	...La realidad me vuelve a caer como un bloque de hormigón… #id:d1
 	
