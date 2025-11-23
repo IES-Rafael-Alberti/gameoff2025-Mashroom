@@ -127,7 +127,6 @@ label Primera eleccion #id:43
 	join character_eris (Joy) center
 	
 	character_eris: ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
-	# Va a haber un cambio de sprite a partir de esto?
 	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
@@ -185,9 +184,11 @@ label Segunda eleccion #id:54
 	[style name="Base"]
 	
 	La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad… #id:62
-	# TODO: Añadir el cosito
+	join character_zach (Stalactite) right
+	set {has_weapon} = true
 	
 	Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… (+1 Estalactita) #id:63
+	leave character_zach
 - Quería nuevos amigos… #id:64
 	[style name="Base_Dialogo"]
 	character_zach: Quería nuevos amigos… #id:65
