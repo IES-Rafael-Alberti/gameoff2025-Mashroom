@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpw4ocssqapo5"
-path="res://.godot/imported/wave.png-16a8496fa74367fa8bbc0de922e0dc11.ctex"
+path="res://.godot/imported/wave1.png-609b5c6d35a324bd5ada46939b809c1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Ocean/wave.png"
-dest_files=["res://.godot/imported/wave.png-16a8496fa74367fa8bbc0de922e0dc11.ctex"]
+source_file="res://assets/SurfMinigame/Ocean/Phase1/wave1.png"
+dest_files=["res://.godot/imported/wave1.png-609b5c6d35a324bd5ada46939b809c1a.ctex"]
 
 [params]
 

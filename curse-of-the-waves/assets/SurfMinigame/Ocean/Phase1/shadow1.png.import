@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8kvrskg7m2av"
-path="res://.godot/imported/ocean2.png-545cd388a316e2c2088bd4d8e7bb0e57.ctex"
+uid="uid://v0dssg6hl7k3"
+path="res://.godot/imported/shadow1.png-c7d91678f7091d578af4d83dc3f04fba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Ocean/Phase2/ocean2.png"
-dest_files=["res://.godot/imported/ocean2.png-545cd388a316e2c2088bd4d8e7bb0e57.ctex"]
+source_file="res://assets/SurfMinigame/Ocean/Phase1/shadow1.png"
+dest_files=["res://.godot/imported/shadow1.png-c7d91678f7091d578af4d83dc3f04fba.ctex"]
 
 [params]
 
