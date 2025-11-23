@@ -1,4 +1,6 @@
 audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav"
+label final-canon
+
 if {canon_final} == true:
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOV.png" fade="0.0"]
 	Al fin logré escapar… Estoy fuera de la cueva… #id:c9
@@ -8,63 +10,59 @@ if {canon_final} == true:
 	Lo conseguí… ¡Soy libre otra vez! #id:cb
 	
 	Pero… #id:cc
-	# Se mira las manos [Background salida cueva 2 (mirando hacia abajo a sus manos)]
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/HandsEndingCutscene.png" fade="0.6" transition="Simple Fade"]
 	
 	Cierto… sigo atrapado en esta forma… No sé como conseguiré volver a la normalidad… No me queda otra que empezar a buscar soluciones… #id:cd
 	
 	…Pero… …si he logrado llegar tan lejos, seguro que podré encontrar una manera de volver a la normalidad… …sí, ¡puedo hacerlo-! #id:ce
-	# Mira adelante, los ojos del Umibozu lo miran desde la distancia (Es un Background en teoria)
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="0.5" transition="Simple Fade"]
 	
 	... #id:cf
 	
 	“...Siento ese terror de que mi muerte se aproxima nuevamente… #id:d0
-	# El Umibozu sonríe y lentamente se desvanece en la distancia (Es un Background en teoria)
-	[background arg="res://DialogicAssets/backgrounds/Colores_Surf.png" fade="0.0"]
+	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="1.5"]
 	
 	...La realidad me vuelve a caer como un bloque de hormigón… #id:d1
 	
 	…Estoy perdido en las profundidades… (Fundido a negro) #id:d2
 else:
-	join character_eris (Shock) center [animation="Fade In Up"]
-	[style name="Base_Dialogo"]
-	character_eris: URGH-! No lo haces mal… #id:d3
-	[style name="Base"]
-	Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:d4
-	leave character_eris [animation="Fade In Up"]
-	join character_zach (Stalactite) center
-	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-	Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:d5
-	¡Utilicé mi cola para cogerla y-! #id:d6
-	leave character_zach
-	join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
-	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-	[style name="New_File"]
-	# [Letra grande, vibrando]
-	audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
-	character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
-	# cueva2
-	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-	update character_eris (Hurt) center
-	[style name="Base"]
-	¡Lo conseguí! ¡La hice sangrar! #id:d9
-	[style name="Base_Dialogo"]
-	character_eris: “G-Ggghhh… [pause=0.2] I-Idiota… [pause=0.2] ¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?” #id:da
-	character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:db
-	character_eris: ...J-Jejejeje… [pause=0.2]…No tienes ni idea de lo que te depara… #id:dc
-	character_eris: Disfruta… [pause=0.2] de tu muerte… #id:dd
-	leave --All-- [animation="Fade Out"]
-	# Flash morado oscuro momentaneo
-	[style name="Base"]
-	La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:de
-	…Supongo que eso cuenta como haberla derrotado. #id:df
-	Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:e0
-	No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:e1
+	label final-fake-objects
+	if {has_weapon} == false:
+		join character_eris (Shock) center [animation="Fade In Up"]
+		[style name="Base_Dialogo"]
+		character_eris: URGH-! No lo haces mal… #id:d3
+		[style name="Base"]
+		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:d4
+		leave character_eris [animation="Fade In Up"]
+		join character_zach (Stalactite) center
+		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:d5
+		¡Utilicé mi cola para cogerla y-! #id:d6
+		leave character_zach
+		join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
+		[style name="New_File"]
+		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
+		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
+		update character_eris (Hurt) center
+		[style name="Base"]
+		¡Lo conseguí! ¡La hice sangrar! #id:d9
+		[style name="Base_Dialogo"]
+		character_eris: “G-Ggghhh… [pause=0.2] I-Idiota… [pause=0.2] ¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?” #id:da
+		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:db
+		character_eris: ...J-Jejejeje… [pause=0.2]…No tienes ni idea de lo que te depara… #id:dc
+		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:dd
+		leave --All-- [animation="Fade Out"]
+		# Flash morado oscuro momentaneo
+		[style name="Base"]
+		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:de
+		…Supongo que eso cuenta como haberla derrotado. #id:df
+		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:e0
+		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:e1
+	label final-fake
 	[background arg="res://DialogicAssets/backgrounds/OpenSeaPOV.png" fade="0.0"]
 	…Llevo nadando durante varios minutos sin encontrar nada ni nadie… …Está todo tranquilo… #id:e2
 	No veo nada de tierra, ni rocas, solo agua… …creo que me he alejado demasiado de la cueva, no sé en qué dirección ir… #id:e3
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="0.0"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="1.0"]
 	… #id:e4
 	…Oh no… #id:e5
 	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:e6
@@ -76,17 +74,17 @@ else:
 	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:e9
 	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:ea
 	character_kumi: ERES MUY VALIENTE… INCLUSO HAS ESCAPADO DE ERIS… #id:eb
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
 	character_kumi: …TENGO CURIOSIDAD… #id:ec
 	character_kumi: ¿...HASTA CUANTO LLEGAN TUS LÍMITES, HUMANO? #id:ed
 	character_kumi: ¿...CREES QUE PODRÍAS SOBREVIVIR CONMIGO? #id:ee
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="2.2"]
 	character_kumi: …QUIERO AVERIGUARLO… #id:ef
 	[style name="Base"]
 	Una mano gigante compuesta por agua oscura me agarró el cuerpo completo, no tengo escapatoria… #id:f0
 	[style name="Kumi_style"]
 	character_kumi: …TU NUEVO CUERPO… …A LO MEJOR SERÁ CAPAZ DE AGUANTAR TODA LA PRESIÓN… #id:f1
-	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="2.2"]
+	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
 	character_kumi: …VAMOS A VERLO… …HEEHEE… #id:f2
 	[style name="Base"]
 	[background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="2.0"]

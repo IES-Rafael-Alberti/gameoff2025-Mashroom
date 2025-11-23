@@ -52,10 +52,9 @@ Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extr
 
 Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia… #id:2c
 leave --All-- [animation="Fade Out" wait="true"]
-# TODO: Buscar forma de que haya un fade negro pa q no se vea tan anticlimatico
 label Cueva #id:42
 
-[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="2.0"]
+[background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="2.0"]
 audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav"
 …Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua. #id:2d
 
@@ -72,6 +71,7 @@ leave character_zach [animation="Fade Out Down" wait="true"]
 Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena. #id:31
 
 Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da. #id:32
+[background arg="res://DialogicAssets/backgrounds/EntradaCuevaEris.png" fade="0.0"]
 [style name="Base_Dialogo"]
 
 character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:33
@@ -80,6 +80,7 @@ character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:
 Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva. #id:34
 
 Ví como se acercaba, por fin pudiendo ver su verdadera apariencia… #id:35
+[background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="0.0"]
 join character_eris (Joy) center [animation="Fade In"]
 [style name="Base_Dialogo"]
 
@@ -126,7 +127,6 @@ label Primera eleccion #id:43
 	join character_eris (Joy) center
 	
 	character_eris: ¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva! #id:4b
-	# Va a haber un cambio de sprite a partir de esto?
 	[style name="Base"]
 	
 	Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial… #id:4c
@@ -184,9 +184,11 @@ label Segunda eleccion #id:54
 	[style name="Base"]
 	
 	La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad… #id:62
-	# TODO: Añadir el cosito
+	join character_zach (Stalactite) right
+	set {has_weapon} = true
 	
 	Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… (+1 Estalactita) #id:63
+	leave character_zach
 - Quería nuevos amigos… #id:64
 	[style name="Base_Dialogo"]
 	character_zach: Quería nuevos amigos… #id:65
@@ -420,6 +422,7 @@ label Final choice #id:be
 	[style name="Base_Dialogo"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
+	[end_timeline]
 - ¡Luchar! #id:c2
 	set {canon_final} = false
 	[style name="Base"]
@@ -432,13 +435,28 @@ label Final choice #id:be
 	character_zach: ¡I-Inténtalo entonces bruja! #id:c5
 	
 	character_eris: ¡Que así sea pues! #id:c6
-	[wait time="1.0"]
 	update character_eris [animation="Shake X" wait="true"]
 	[style name="BASE_BIG"]
 	character_eris: ¡PREPÁRATE A MORIR! #id:c7
-	# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
-	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-	[style name="Base"]
-	
-	La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
-	leave --All--
+	[wait time="1.0"]
+	if {has_weapon} == true:
+		Usas la estalactita de antes para clavarsela en el cuello
+		update character_eris (Cutscene)
+		update character_eris (Hurt)
+		# Meter aqui versión de la cueva sin tanto grito pero más peces
+	else:
+		Eris te ha reventado
+		- Reintentar
+			jump Final choice
+			jump Final choice
+		- Me rindo
+			[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="0.0"]
+			# Mandar al menú
+	[end_timeline]
+	else:
+		# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
+		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+		[style name="Base"]
+		
+		La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
+		leave --All--

@@ -88,7 +88,8 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base_Dialogo.tres"]
 layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
-"canon_final": false
+"canon_final": false,
+"has_weapon": false
 }
 translation/locales=["en", "es"]
 translation/id_counter=66
