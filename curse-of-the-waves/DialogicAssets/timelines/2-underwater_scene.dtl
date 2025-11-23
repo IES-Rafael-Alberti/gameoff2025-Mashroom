@@ -434,13 +434,15 @@ label Final choice #id:be
 	character_zach: ¡I-Inténtalo entonces bruja! #id:c5
 	
 	character_eris: ¡Que así sea pues! #id:c6
-	[wait time="1.0"]
 	update character_eris [animation="Shake X" wait="true"]
 	[style name="BASE_BIG"]
 	character_eris: ¡PREPÁRATE A MORIR! #id:c7
-	# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
-	[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-	[style name="Base"]
-	
-	La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
-	leave --All--
+	[wait time="1.0"]
+	if {has_weapon} == true:
+	else:
+		# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
+		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
+		[style name="Base"]
+		
+		La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
+		leave --All--
