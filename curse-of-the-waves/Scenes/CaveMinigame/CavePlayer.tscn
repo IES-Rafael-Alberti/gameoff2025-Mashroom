@@ -1,11 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://d17finaakavly"]
+[gd_scene load_steps=9 format=3 uid="uid://d17finaakavly"]
 
 [ext_resource type="Script" uid="uid://cxkq83jdb7cb5" path="res://Scripts/CaveMinigame/caveplayer.gd" id="1_ab5p2"]
-[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_lc2ww"]
+[ext_resource type="Texture2D" uid="uid://bic8c4xohaovd" path="res://assets/CaveMinigame/ZachCaveSpritesheet.png" id="2_ab5p2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xf71"]
-atlas = ExtResource("1_lc2ww")
-region = Rect2(0, 0, 128, 128)
+atlas = ExtResource("2_ab5p2")
+region = Rect2(0, 0, 350, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8evm"]
+atlas = ExtResource("2_ab5p2")
+region = Rect2(350, 0, 350, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt1v8"]
+atlas = ExtResource("2_ab5p2")
+region = Rect2(0, 350, 350, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x50a1"]
+atlas = ExtResource("2_ab5p2")
+region = Rect2(350, 350, 350, 350)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8evm"]
 animations = [{
@@ -15,6 +27,25 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8evm")
+}],
+"loop": true,
+"name": &"hide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt1v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x50a1")
+}],
+"loop": true,
+"name": &"move",
 "speed": 5.0
 }]
 
@@ -28,7 +59,10 @@ script = ExtResource("1_ab5p2")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_o8evm")
+animation = &"move"
+autoplay = "move"
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Damage"]]
 
