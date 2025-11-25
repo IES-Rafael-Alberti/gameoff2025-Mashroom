@@ -1,9 +1,12 @@
-
-<h1 align="center">Curse of the waves</h1>
+<div align="center">
+  <img src="curse-of-the-waves/CurseoftheWavesTitle.svg" alt="Curse of the waves"  height="420" />
+</div>
 
 ## Description
 
-Submission for [GitHub's GameOff 2025](https://itch.io/jam/game-off-2025)
+A narrative adventure game made with Godot Engine.
+
+> Submission for [GitHub's GameOff 2025](https://itch.io/jam/game-off-2025)
 
 ## Table of contents
 
@@ -19,15 +22,25 @@ This project is licensed under the MIT - see the [LICENSE](LICENSE) file for det
 
 ## Additional Licenses
 
-This project uses third-party assets whose licenses can be found in the following file:
+This project uses third-party assets whose licenses can be found in the following files and links:
 
 - Dialogic addon - [License](curse-of-the-waves/addons/dialogic/LICENSE)
-- High Tides Basic Pack by Kanpelle - [Itchio](https://kanpelle.itch.io/high-tides-asset-pack) - [License](curse-of-the-waves/assets/high_tides_basic_pack/README.txt)
-  - surfboards1.png its an edit from this pack
-- fondo mar.png - previously named pixil-frame-0 (82).png - [Itchio](https://gamer247.itch.io/cu-azul)
-- wooden crate - Free Objects for 2D Jump Games - [Itchio](https://free-game-assets.itch.io/free-objects-for-2d-jump-games) - [License](https://craftpix.net/file-licenses/)
+- Pixabay audio - [License](https://pixabay.com/es/service/license-summary/)
+  - **Night Paradise (Instrumental)** by Alex_MakeMusic - [Source](https://pixabay.com/es/music/optimista-night-paradise-instrumental-269040/)
+  - **Tense Cinematic Trailer** by Tunetank (AI) - [Source](https://pixabay.com/es/music/escena-de-terror-tense-cinematic-trailer-347631/)
+  - **Tension Dark CInematic** by NikitaKondrashev - [Source](https://pixabay.com/es/music/construir-escenas-tension-dark-cinematic-254405/)
+  - **Scary Horror Music** by SoundGalleryByDmitryTaras - [Source](https://pixabay.com/es/music/melod%c3%adas-de-miedo-para-ni%c3%b1os-scary-horror-music-118577/)
+  - **Panic Attack** by geoffharvey - [Source](https://pixabay.com/es/music/escena-del-crimen-panic-attack-427789/)
+  - **Light of the Void. Mystical Orchestral background music for video** by White_Records - [Source](https://pixabay.com/es/music/late-light-of-the-void-mystical-orchestral-background-music-for-video-348318/)
+  - **More Locks than Doors** by Tim_Kulig_Free_Music - [Source](https://pixabay.com/es/music/electr%c3%b3nico-more-locks-than-doors-360854/)
+  - **Splash Effect** by Universfield - [Source](https://pixabay.com/es/sound-effects/splash-effect-229315/)
+- **Ukelele Instumental Beat** by Zero a la izquierda beats - [Source](https://www.youtube.com/watch?v=pel4xECbv2o)
 
 ## Contact us
+
+<div align="center">
+  <img src="curse-of-the-waves/Imagotipo.png" alt="Mashroom Hive Logo"  height="200"/>
+</div>
 
 - Email: <mashroom.hive@gmail.com>
 - Issues: [GitHub Issues](https://github.com/IES-Rafael-Alberti/gameoff2025-Mashroom/issues)
@@ -37,4 +50,3 @@ This project uses third-party assets whose licenses can be found in the followin
 <div align="center">
   Made with ❤️ by <a href="https://github.com/salem404">@salem404</a>
 </div>
-

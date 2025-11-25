@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4gsjk0vvrubs"]
+
+[ext_resource type="PackedScene" uid="uid://d17finaakavly" path="res://Scenes/CaveMinigame/CavePlayer.tscn" id="1_qvq2s"]
+[ext_resource type="Script" uid="uid://cso658cos5o8x" path="res://Scenes/CaveMinigame/cavecamera.gd" id="2_mqivk"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qvq2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvq2s"]
+size = Vector2(38.4, 20.8)
+
+[node name="CaveGame" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qvq2s")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(504, 984)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(456.00006, 0)
+scale = Vector2(1920.0001, 208)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(455.99994, 0)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_qvq2s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(2424, 920)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(456.00006, 0)
+scale = Vector2(1920.0001, 208)
+texture = SubResource("PlaceholderTexture2D_qvq2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(455.99994, 0)
+scale = Vector2(50, 10)
+shape = SubResource("RectangleShape2D_qvq2s")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("objectToFollow", "BLMarker", "TRMarker")]
+position = Vector2(960, 552)
+script = ExtResource("2_mqivk")
+objectToFollow = NodePath("../Player")
+BLMarker = NodePath("BottomLeft")
+TRMarker = NodePath("TopRight")
+
+[node name="BottomLeft" type="Marker2D" parent="Camera2D"]
+top_level = true
+position = Vector2(0, 1088)
+
+[node name="TopRight" type="Marker2D" parent="Camera2D"]
+top_level = true
+position = Vector2(3840, 0)

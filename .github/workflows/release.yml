@@ -15,16 +15,43 @@ on:
          - minor
          - patch
      rebuild:
-       description: '🔨 Rebuild from scratch (slower, normally not needed)'
+       description: '🔨 Rebuild from scratch (defaults to true)'
        required: false
-       default: false
+       default: true
        type: boolean
+ workflow_run:
+   workflows: [Test Builds]
+   types:
+     - completed
+   branches:
+     - main
 
 permissions:
   contents: write
   actions: write
 
 jobs:
+ Confirm-Release:
+  runs-on: ubuntu-latest
+  if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+  outputs:
+    should-release: ${{ steps.confirm.outputs.should-release }}
+  steps:
+    - name: ✅ Tests Passed - Release Ready
+      id: confirm
+      shell: bash
+      run: |
+        echo "## 🧪 Tests Passed Successfully!" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Release will proceed automatically. The **Release** job will now:" >> $GITHUB_STEP_SUMMARY
+        echo "- Bump version (patch for fixes, minor for features, major for breaking changes)" >> $GITHUB_STEP_SUMMARY
+        echo "- Export builds for all platforms" >> $GITHUB_STEP_SUMMARY
+        echo "- Publish to GitHub Releases" >> $GITHUB_STEP_SUMMARY
+        echo "- Push to Itch.io" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Monitor the **Release** and **Publish** jobs below for progress." >> $GITHUB_STEP_SUMMARY
+        echo "should-release=true" >> $GITHUB_OUTPUT
+ 
  Detect-Platforms:
   runs-on: ubuntu-latest
   outputs:
@@ -134,8 +161,10 @@ jobs:
       
       echo "Matrix: {\"include\":$matrix_include}"
  Export:
-  needs: Detect-Platforms
-  if: needs.Detect-Platforms.outputs.has-platforms == 'true' && github.event.inputs.rebuild == 'true'
+  needs: [Detect-Platforms, Confirm-Release]
+  if: |
+    needs.Detect-Platforms.outputs.has-platforms == 'true' && 
+    (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'))
   runs-on: ubuntu-latest
   name: Export (${{ matrix.platform }})
   strategy:
@@ -194,6 +223,13 @@ jobs:
     shell: bash
     run: echo "$HOME/godot-bin" >> $GITHUB_PATH
 
+  - name: Import Project Files
+    shell: bash
+    run: |
+      PROJECT_PATH="${{ needs.Detect-Platforms.outputs.project-path }}"
+      echo "Importing project files for Dialogic..."
+      godot --headless --editor --quit --import --path "./$PROJECT_PATH"
+
   - name: Export ${{ matrix.platform }}
     shell: bash
     run: |
@@ -226,8 +262,10 @@ jobs:
      path: exports/${{ matrix.folder }}
   
  Release:
-  needs: [Detect-Platforms, Export]
-  if: always() && (needs.Export.result == 'success' || needs.Export.result == 'skipped')
+  needs: [Detect-Platforms, Export, Confirm-Release]
+  if: |
+    always() && (needs.Export.result == 'success' || needs.Export.result == 'skipped') && 
+    (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && needs.Confirm-Release.outputs.should-release == 'true'))
   runs-on: ubuntu-latest
   outputs:
     release-tag: ${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}
@@ -238,7 +276,7 @@ jobs:
         fetch-depth: 0  # Need full history for changelog
    
     - name: Get Existing Tag (if no bump)
-      if: github.event.inputs.bump_type == 'none'
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.bump_type == 'none'
       id: existing_tag
       shell: bash
       run: |
@@ -248,7 +286,7 @@ jobs:
         echo "changelog=Release for $LATEST_TAG (no version bump)" >> $GITHUB_OUTPUT
     
     - name: Create New Version Tag
-      if: github.event.inputs.bump_type != 'none'
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.bump_type != 'none' || github.event_name == 'workflow_run'
       id: new_tag
       uses: mathieudutour/github-tag-action@v6.2
       with:
@@ -257,7 +295,7 @@ jobs:
        release_branches: main
     
     - name: Verify Tag
-      if: github.event.inputs.bump_type != 'none' && !steps.new_tag.outputs.new_tag
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.bump_type != 'none' && !steps.new_tag.outputs.new_tag
       run: |
         echo "❌ ERROR: No version tag was created!"
         echo ""

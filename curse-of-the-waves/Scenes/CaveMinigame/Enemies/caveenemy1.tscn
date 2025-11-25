@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b01ah5q562863"]
+
+[ext_resource type="Script" uid="uid://qlro78g41gd5" path="res://Scripts/CaveMinigame/PointToPointMovement.gd" id="1_d63n4"]
+[ext_resource type="Texture2D" uid="uid://bj6fs5vl87h7x" path="res://assets/CaveMinigame/evol fish.png" id="1_wom18"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ki0f6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wom18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcc2f"]
+radius = 16.0
+height = 64.0
+
+[node name="Enemy" type="Area2D" groups=["Damage"]]
+position = Vector2(800, 480)
+script = ExtResource("1_d63n4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ki0f6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qcc2f")

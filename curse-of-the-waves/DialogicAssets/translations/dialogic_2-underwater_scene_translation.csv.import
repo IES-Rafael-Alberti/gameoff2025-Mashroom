@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://tehf4njl7cwy"
+
+[deps]
+
+files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation"]
+
+source_file="res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.csv"
+dest_files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

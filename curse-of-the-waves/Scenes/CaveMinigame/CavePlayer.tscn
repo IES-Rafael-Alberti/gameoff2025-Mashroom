@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://d17finaakavly"]
+
+[ext_resource type="Script" uid="uid://cxkq83jdb7cb5" path="res://Scripts/CaveMinigame/caveplayer.gd" id="1_ab5p2"]
+[ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="1_lc2ww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xf71"]
+atlas = ExtResource("1_lc2ww")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8evm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xf71")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ab5p2"]
+radius = 48.0
+height = 128.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(512, 576)
+script = ExtResource("1_ab5p2")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_o8evm")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Damage"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1.9073486e-06)
+shape = SubResource("CapsuleShape2D_ab5p2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ab5p2")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
