@@ -12,6 +12,9 @@ extends CharacterBody2D
 @export var maxJumpSpeed = -500
 @export var maxFallSpeed = 300
 
+
+@onready var anims: AnimatedSprite2D = $Sprite2D
+
 var speed = BaseSpeed
 var canMove = true
 var canBeDamaged = true
@@ -25,23 +28,36 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta * gravityMult
+	# Input handling (movement, jump, hide)
 	if canMove:
 		if Input.is_action_pressed("SecondaryAction") or Input.is_action_pressed("move_down"):
 			isHidden = true
-		else: 
+		else:
 			isHidden = false
-			# Handle jump.
 			if Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("move_up"):
 				if velocity.y > 0:
 					velocity.y = 0
 				velocity.y += JumpPower
-			# Handle Left-Right
-			
+
 	var direction = Input.get_axis("move_left", "move_right")
+	var desired_anim = "default"
 	if direction and not isHidden:
 		velocity.x = direction * speed
+		desired_anim = "move"
+		if velocity.x > 0:
+			anims.flip_h = true
+		elif velocity.x < 0:
+			anims.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+
+	# Hidden state overrides other animations
+	if isHidden:
+		desired_anim = "hide"
+
+	# Play animation only when it changes so frames can advance
+	if anims.animation != desired_anim:
+		anims.play(desired_anim)
 				
 	# Limit the Vertical Movement
 	if velocity.y > maxFallSpeed:
@@ -57,8 +73,12 @@ func _physics_process(delta):
 		isMoving = false
 		
 	# Temporal (to know when hidden)
-	if isHidden: $Sprite2D.flip_v = true
-	else: $Sprite2D.flip_v = false
+	if isHidden:
+		# ensure hide animation shows
+		if anims.animation != "hide":
+			anims.play("hide")
+	else:
+		anims.flip_v = false
 
 
 
