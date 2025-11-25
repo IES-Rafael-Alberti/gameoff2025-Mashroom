@@ -52,7 +52,7 @@ character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita esc
 
 #  flash de color morado fuerte
 [style name="New_File"]
-audio -
+audio "-"
 character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
