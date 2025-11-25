@@ -17,7 +17,7 @@ func play_music(musica: AudioStream, vol = 0.0):
 
 func musicNivel():
 	play_music(musica1)
-
+	
 func musicMinijuegoSurf():
 	play_music(musica2)
 
@@ -50,6 +50,7 @@ func playSfx(stream: AudioStream, vol = 0.0):
 	sfx.stream = stream
 	sfx.name = "SFX"
 	sfx.volume_db = vol
+	sfx.bus = "SFX"
 	add_child(sfx)
 	sfx.play()
 	

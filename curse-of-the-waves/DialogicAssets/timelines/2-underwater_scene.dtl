@@ -1,8 +1,6 @@
 audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav"
 [background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="0.0"]
 
-No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
-
 Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema. #id:18
 [style name="Base_Dialogo"]
 
