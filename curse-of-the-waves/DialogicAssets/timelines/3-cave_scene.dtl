@@ -44,6 +44,7 @@ else:
 		[style name="New_File"]
 		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
+		jump 
 		update character_eris (Hurt) center
 		[style name="Base"]
 		¡Lo conseguí! ¡La hice sangrar! #id:d9
