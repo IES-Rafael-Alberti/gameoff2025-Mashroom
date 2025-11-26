@@ -1,12 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4gsjk0vvrubs"]
 
 [ext_resource type="PackedScene" uid="uid://d17finaakavly" path="res://Scenes/CaveMinigame/CavePlayer.tscn" id="1_qvq2s"]
-[ext_resource type="Script" uid="uid://cew6ujsgeswek" path="res://Scenes/CaveMinigame/CaveGame.gd" id="1_si7a0"]
+[ext_resource type="Script" path="res://Scenes/CaveMinigame/CaveGame.gd" id="1_si7a0"]
 [ext_resource type="Script" uid="uid://bes152j6yk3ek" path="res://Scripts/CaveMinigame/cavespawner.gd" id="3_n6d1v"]
 [ext_resource type="PackedScene" uid="uid://0qnx8svp35pe" path="res://Scenes/CaveMinigame/Enemies/SoundWave.tscn" id="4_upos3"]
 [ext_resource type="PackedScene" uid="uid://b01ah5q562863" path="res://Scenes/CaveMinigame/Enemies/caveenemy1.tscn" id="5_si7a0"]
 [ext_resource type="PackedScene" uid="uid://cqp8i6gt6j2oe" path="res://Scenes/CaveMinigame/FinishLine.tscn" id="6_pxwp0"]
-
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qvq2s"]
 

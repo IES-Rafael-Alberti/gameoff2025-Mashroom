@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bx7kvel05qw6a"
-path="res://.godot/imported/antesSFXOnda.wav-094865b0c48d0efa2d84fa26e873668a.sample"
+path="res://.godot/imported/antesSFXOnda.wav-d6307431ed4418ad8d3088a97a17a6b3.sample"
 
 [deps]
 
-source_file="res://assets/Audio/SFX/Minijuego cueva/antesSFXOnda.wav"
-dest_files=["res://.godot/imported/antesSFXOnda.wav-094865b0c48d0efa2d84fa26e873668a.sample"]
+source_file="res://assets/Audio/SFX/Minijuego cueva/Ondas/antesSFXOnda.wav"
+dest_files=["res://.godot/imported/antesSFXOnda.wav-d6307431ed4418ad8d3088a97a17a6b3.sample"]
 
 [params]
 

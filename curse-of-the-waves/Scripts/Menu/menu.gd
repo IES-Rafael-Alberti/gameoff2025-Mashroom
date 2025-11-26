@@ -4,7 +4,7 @@ extends Control
 @export var OptionsContainer: Control
 
 func _ready():
-	AudioPlayer.musicNivel()
+	AudioPlayer.musicNivel(-3.0)
 	$PlayButton.grab_focus()
 
 func _on_play_button_pressed() -> void:

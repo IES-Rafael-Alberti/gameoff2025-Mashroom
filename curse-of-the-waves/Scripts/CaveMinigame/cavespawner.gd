@@ -35,12 +35,21 @@ func _on_spawn_timer_timeout():
 	$SpawnTimer.start(BaseSpawnTime)
 	
 func spawnGroupSoundWave():
+	AudioPlayer.sfxAntesOndita()
 	for i in range(0,3):
+	#onditas pequeñas
+		await get_tree().create_timer(1).timeout #sfx antes de la onda y se espera
+		AudioPlayer.sfxOndita(3.0) #bajarle volumen a esta para subir el de la grande
 		var spawnPos = Vector2(SpawnPoint.global_position.x,randf_range(BottomSpawn.position.y,TopSpawn.position.y))
 		spawnSoundWave(SWSpeed, SWDespawnTime, SWScale, SWPushPower, spawnPos)
 		await get_tree().create_timer(SWGroupCd).timeout 
 
 func spawnBigSoundWave():
+	#onda grande, que sea mas grave y fuerte que la pequeña
+	#este mismo sonido pero para la pequeña y + agudo 
+	AudioPlayer.sfxAntesOnda()
+	await get_tree().create_timer(1).timeout
+	AudioPlayer.sfxOnda(7.0)
 	spawnSoundWave(SWBigSpeed, SWBigDespawnTime, SWBigScale, SWBigPushPower, SpawnPoint.global_position)
 	
 func spawnSoundWave(Speed: float, Dp: float, Scale: float, PushPower: float, pos: Vector2):

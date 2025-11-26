@@ -40,6 +40,7 @@ else:
 		¡Utilicé mi cola para cogerla y-! #id:d6
 		leave character_zach
 		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
+		audio "res://assets/Audio/SFX/sfxGritoBruja2.wav" [bus="SFX"]
 		join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
 		[style name="New_File"]
 		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
