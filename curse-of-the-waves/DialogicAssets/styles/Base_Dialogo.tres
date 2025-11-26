@@ -35,7 +35,7 @@ scene = ExtResource("5_6pgj3")
 script = ExtResource("2_0h4d2")
 scene = ExtResource("6_mp5ve")
 overrides = {
-"box_size": "Vector2(1200, 300)",
+"box_size": "Vector2(1160, 300)",
 "name_label_color_mode": "1",
 "name_label_hide_when_no_character": "true",
 "portrait_bg_modulate": "Color(0, 0, 0, 0)",
@@ -69,4 +69,4 @@ layer_info = {
 "16": SubResource("Resource_8blpf"),
 "18": SubResource("Resource_c6upr")
 }
-metadata/_latest_layer = "18"
+metadata/_latest_layer = "14"
