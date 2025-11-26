@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
 [ext_resource type="Texture2D" uid="uid://20fp21ngqhwu" path="res://CurseoftheWavesTitle.svg" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
+[ext_resource type="Theme" uid="uid://dscponihkcj3x" path="res://assets/Temas/themeButton.tres" id="4_idohh"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
 
 [sub_resource type="Theme" id="Theme_ma218"]
@@ -113,19 +114,27 @@ anchor_right = 0.8
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
-
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 50
 text = "ui_play"
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.725
+anchor_right = 0.59800005
+anchor_bottom = 0.83500004
+offset_left = -0.104003906
+offset_top = 0.19998169
+offset_right = 0.10394287
+offset_bottom = -0.08001709
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
-[node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
+[node name="Options" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
