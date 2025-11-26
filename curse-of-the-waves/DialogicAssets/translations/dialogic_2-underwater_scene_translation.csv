@@ -184,40 +184,40 @@ Choice/c2/disabled_text,,
 Text/c3/text,"Me pongo en posición de combate, enseñando mis dientes y puños sin miedo."," I get in a fighting stance, showing my sharp teeth and fists without fear."
 Text/c4/text,"...¡JAJAJAJA! ¡¿Es en serio?! ¡No tienes ni idea del poder que tengo, te podría matar en un instante!","...KYAHAHAHA! Are you serious?! You have no idea of the sheer power I hold, I could kill you in an instant!"
 Text/c5/text,¡I-Inténtalo entonces bruja!,T-Try it then witch!
-Text/c6/text,¡Que así sea pues!,So be it!
-Text/c7/text,"Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma.", PREPARE TO DIE!
+Text/c6/text,¡Que así sea pues! [pause=0.2] ¡PREPÁRATE A MORIR!,So be it! [pause=0.2] PREPARE TO DIE!
+Text/c7/text,"Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma.","I quickly lunged at the witch, attacking her with scratches and bites thanks to my new form."
 Label/4a/display_name,,
-Text/4b/text,URGH-! No lo haces mal…,"Kyahahaha! Oh this is lovely, you should’ve seen the look on your face! You swim like an adrift manatee!"
-Text/4c/text,"Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro.","I was rubbing my wound as the witch mocked me, now part of my face was all swollen, great…"
-Text/4d/text,"Por suerte, vi mi oportunidad: una estalactita caída en el suelo.","Alright, let’s continue this conversation in my living room, I am quite intrigued to learn more about my new minion, hehe."
-Text/4e/text,¡Utilicé mi cola para cogerla y-!,"Eris lead me through her cave, I used the opportunity to learn to swim better with my new tail, it was hard, but I felt that I was starting to get used to it…"
-Text/4f/text,¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!!,
-Text/50/text,¡Lo conseguí! ¡La hice sangrar!,"We arrived at the ‘living room’, there were several rock shelves with strange items and other body parts, in the middle there was a volcanic crater that constantly let out dense steam as if it were a cauldron, it was very hot and smelled horrible."
-Text/51/text,G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?,Much better! Now we can talk properly…
-Text/52/text,Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más…,"Tell me about yourself minion, what sort of stupid decision made you want to go so far into the sea?"
-Text/53/text,...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara…,Erm… well…
-Text/54/text,Disfruta… [pause=0.2] de tu muerte…,
-Text/55/text,"La bruja entonces se desvaneció en una nube oscura, sin dejar rastro…",
-Text/56/text,…Supongo que eso cuenta como haberla derrotado.,It's my passion…
-Text/57/text,"Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas…",Your passion? What sort of passion is that? You got a death wish or something?
-Text/58/text,No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo…,"I practice a sport known as surfing, you get on a board and try to ride waves for as long as possible, I find it quite enjoyable."
+Text/4b/text,URGH-! No lo haces mal…,"URGH-! Not too shabby…"
+Text/4c/text,"Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro.","I managed to corner the witch, we gripped each other, trying to overpower one another."
+Text/4d/text,"Por suerte, vi mi oportunidad: una estalactita caída en el suelo.","Luckily, I saw my opportunity: a broken stalactite on the ground."
+Text/4e/text,¡Utilicé mi cola para cogerla y-!,"I used my tail to snatch it and-!"
+Text/4f/text,¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!!,¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!!
+Text/50/text,¡Lo conseguí! ¡La hice sangrar!,"I did it! I made her bleed!"
+Text/51/text,G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?,G-Ggghhh… [pause=0.2] Y-You idiot… [pause=0.2] …D-Don’t you see i’m the only one keeping you alive down h-here…?
+Text/52/text,Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más…,"I’d rather live on my own accord… You won’t hurt anyone else anymore…"
+Text/53/text,...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara…,...K-Kehehehe… [pause=0.2] …You have no idea what awaits you…
+Text/54/text,Disfruta… [pause=0.2] de tu muerte…,Enjoy… [Mini pausa] your demise…
+Text/55/text,"La bruja entonces se desvaneció en una nube oscura, sin dejar rastro…","The witch then vanished in a purple smog cloud, leaving no trace…"
+Text/56/text,…Supongo que eso cuenta como haberla derrotado.,…I guess that counts as beating her.
+Text/57/text,"Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas…","I stared into the volcanic crater she used as a cauldron, the mixture of essences was inside of it, but I had no idea of how to use them, or handle them…"
+Text/58/text,No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo…,"I have no choice but to leave and try to find another way back to normal… With some luck I'll manage to get that missing essence or something…"
 Label/59/display_name,,
-Text/5a/text,¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo!,"The sea punishes idiots like you, no wonder you ended up down here with me, haha!"
-Text/5b/text,¡¡¡Sin embargo…!!!,
-Text/5c/text,"La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos.",It helps me escape…
-Text/5d/text,"Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor.","Escape? From your fears and insecurities? Of course, you humans are cowards by nature."
-Text/5e/text,"¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato.","We all need to escape once in a while, you wouldn’t understand…"
-Text/5f/text,N-Nnngghh… N-No puede ser…,"And what use is escaping if you end up running back afterwards? It only shows you’re a fool with no backbone, unable to see anything in yourself."
-Text/60/text,"Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar…",The witch grabbed a nearby bone and tapped my chest repeatedly with it in a mocking manner.
-Text/61/text,Voy a asegurarme de que no vuelvas a desobedecerme nunca.,"Though to me its all advantages, you’d be much happier just by following my orders rather than going back to your human world, wouldn’t you? Kyahahaha!"
-Text/62/text,"Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero…","The witch tossed the bone casually as she cackled, accidentally hitting the cave’s ceiling in the process, she’s got quite the throwing arm…"
-Text/63/text,Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía…,"I saw a stalactite break off after having been hit by the bone; I used my chance while the witch was distracted and cautiously snatched it from the ground, it might come in handy in the future…"
-Text/64/text,"En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer…",
-Text/65/text,Como un animal salvaje… Comer… comer…,I wanted to find new friends…
-Text/66/text,"¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~!",Friends? I thought you humans were meant to be social creatures or something like that.
-Text/67/text,Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer…,"I’m sociable yes, but… Most of the friendships i’ve had throughout my life ended up distancing themselves from me due to reasons outside of my control…"
-Text/68/text,Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto…,"Doesn’t matter how open or extroverted I am, I always end up alone by the end…"
-Choice/69/text,Reintentar,
+Text/5a/text,¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo!,"Nrgh-! Not too bad for someone who was only transformed a bit ago!"
+Text/5b/text,¡¡¡Sin embargo…!!!,However…!!!
+Text/5c/text,"La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos.","The witch grabbed me by the neck and slammed me into the wall, making me lose control of my body for a moment."
+Text/5d/text,"Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor.","It was in those few seconds that the witch’s minions clamped down on me, biting my wrists and my tail to trap me, making me wail in pain."
+Text/5e/text,"¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato.","Not so brave now huh? Don’t underestimate me just because of my squalid appearance, idiot."
+Text/5f/text,N-Nnngghh… N-No puede ser…,"N-Nnngghh… I-It can’t be…"
+Text/60/text,"Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar…","It seems I won this round, and now that I'm well aware that you refuse to cooperate…"
+Text/61/text,[b]Voy a asegurarme de que no vuelvas a desobedecerme nunca.[/b],"[b]I’m going to make sure you will never disobey me again.[/b]"
+Text/62/text,"Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero…","The last thing I saw was how the witch shot another spell at me, a far more painful one than the first…"
+Text/63/text,Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía…,"I felt my entire body squirm in agony as I was newly transformed for my boldness…"
+Text/64/text,"En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer…","In a matter of minutes, I had been turned into something far more insignificant, I was unable to process what I had become, my intelligence had been reduced to a point that I could only think about eating…"
+Text/65/text,Como un animal salvaje… Comer… comer…,Like a wild animal… Eat… eat…
+Text/66/text,"¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~!","Maybe this new form is more to your liking, kyahahaha! Enjoy being an abyssal leech, minion~!"
+Text/67/text,Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer…,"I’m only… another minion now… I can’t think for myself… only eat… obey…"
+Text/68/text,Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto…,"If only I… had something to defend myself then… maybe things would’ve been different…"
+Choice/69/text,Reintentar,Retry
 Choice/69/disabled_text,,
-Choice/6a/text,Me rindo,
+Choice/6a/text,Me rindo,I surrender
 Choice/6a/disabled_text,,
