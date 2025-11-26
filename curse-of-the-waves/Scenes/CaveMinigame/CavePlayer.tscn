@@ -60,8 +60,8 @@ script = ExtResource("1_ab5p2")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -32)
+scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_o8evm")
-animation = &"move"
 autoplay = "move"
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Damage"]]
