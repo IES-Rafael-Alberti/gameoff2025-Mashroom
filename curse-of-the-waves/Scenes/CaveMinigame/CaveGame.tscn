@@ -302,17 +302,17 @@ position = Vector2(976, -448)
 
 [node name="Point0" type="Marker2D" parent="Enemies/Enemy13"]
 
-[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("SpawnPoint", "TopSpawn", "BottomSpawn")]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_point", "top_spawn", "bottom_spawn")]
 z_index = 2
 position = Vector2(960, 540)
 script = ExtResource("3_n6d1v")
-SWBigSpeed = 4000
-SWBigScale = 30
-SWSpeed = 3000
-SpawnPoint = NodePath("SpawnPoint")
-SoundWave = ExtResource("4_upos3")
-TopSpawn = NodePath("../TopRight")
-BottomSpawn = NodePath("../BottomLeft")
+sw_big_speed = 4000
+sw_big_scale = 30
+sw_speed = 3000
+spawn_point = NodePath("SpawnPoint")
+sound_wave = ExtResource("4_upos3")
+top_spawn = NodePath("../TopRight")
+bottom_spawn = NodePath("../BottomLeft")
 
 [node name="SpawnPoint" type="Marker2D" parent="Spawner"]
 position = Vector2(2000, 0)

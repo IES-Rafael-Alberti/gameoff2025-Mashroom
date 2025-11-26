@@ -59,7 +59,7 @@ _data = {
 &"RESET": SubResource("Animation_syfuq")
 }
 
-[node name="Menu" type="Control" node_paths=PackedStringArray("OptionsContainer", "Options", "Controls")]
+[node name="Menu" type="Control" node_paths=PackedStringArray("options_container", "options", "controls")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,9 +67,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_syfuq")
-OptionsContainer = NodePath("OptionsMenu")
-Options = NodePath("OptionsMenu/OptionsBackground/Options")
-Controls = NodePath("OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls")
+options_container = NodePath("OptionsMenu")
+options = NodePath("OptionsMenu/OptionsBackground/Options")
+controls = NodePath("OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls")
 
 [node name="BackgroundContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -125,7 +125,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
-[node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
+[node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +137,7 @@ offset_bottom = 101.999756
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_ma218")
-OptionAnim = NodePath("OptionsAnimation")
+option_anim = NodePath("OptionsAnimation")
 
 [node name="OptionsBackground" type="PanelContainer" parent="OptionsMenu"]
 layout_mode = 1
