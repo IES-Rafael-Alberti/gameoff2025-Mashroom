@@ -1,19 +1,19 @@
 extends Control
 
 @export_group("Objects")
-@export var OptionAnim: AnimationPlayer
+@export var option_anim: AnimationPlayer
 
 
 func _ready():
 	hide()
-	
-func showOptionMenu(show: bool):
-	if show:
+
+
+func show_option_menu(show_menu: bool):
+	if show_menu:
 		show()
-		OptionAnim.play("OptionsMenu")
-		$OptionsBackground/Control/BackButton.grab_focus()
+		option_anim.play("OptionsMenu")
+		$OptionsBackground/Options/ExitButton.grab_focus()
 	else:
-		OptionAnim.play_backwards("OptionsMenu")
-		await OptionAnim.animation_finished
+		option_anim.play_backwards("OptionsMenu")
+		await option_anim.animation_finished
 		hide()
-		

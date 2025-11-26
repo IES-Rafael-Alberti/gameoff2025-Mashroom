@@ -2,65 +2,72 @@ extends Node
 
 
 @export var health = 3
-@export var objects : Dictionary
-@export var currentScene: PackedScene
-@export var FullHP: CompressedTexture2D
+@export var objects: Dictionary
+@export var current_scene: PackedScene
+@export var full_hp: CompressedTexture2D
 
-var baseWindowsSize = Vector2(
+var base_windows_size = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_width"),
 	ProjectSettings.get_setting("display/window/size/viewport_height")
 )
+
+
 func _ready():
-	loadScene(currentScene)
-	GuiShow(false)
+	load_scene(current_scene)
+	_gui_show(false)
+
 
 func _enter_tree() -> void:
 	TranslationServer.set_locale("en")
 
-func changeLanguage(index: int):
+
+func change_language(index: int):
 	match index:
 		0:
 			TranslationServer.set_locale("en")
 		1:
 			TranslationServer.set_locale("es")
 
-func loadSceneDialogic(scene: PackedScene, dialogic: String):
-	GuiShow(false)
-	$Camera.followPlayer = false
+
+func load_scene_dialogic(scene: PackedScene, dialogic: String):
+	_gui_show(false)
+	$Camera.follow_player = false
 	if health <= 0:
-		HpUpdate(3)
-	currentScene = scene
+		hp_update(3)
+	current_scene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
 	if scenes:
-		for i in range(0,scenes.size()):
+		for i in range(0, scenes.size()):
 			scenes[i].queue_free()
-	
+
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(scene.instantiate())
-	GuiShow(true)
-	
+	_gui_show(true)
 
-func loadScene(scene: PackedScene):
-	GuiShow(false)
-	$Camera.followPlayer = false
+
+func load_scene(scene: PackedScene):
+	_gui_show(false)
+	$Camera.follow_player = false
 	if health <= 0:
-		HpUpdate(3)
-	currentScene = scene
-	
+		hp_update(3)
+	current_scene = scene
+
 	var scenes = $LoadedScene.get_children()
 	if scenes:
-		for i in range(0,scenes.size()):
+		for i in range(0, scenes.size()):
 			scenes[i].queue_free()
-			
+
 	$LoadedScene.add_child(scene.instantiate())
-	GuiShow(true)
-	
-func HpUpdate(number: int):
+	_gui_show(true)
+
+
+func hp_update(number: int):
 	if number > 3:
 		number = 3
 	health = number
-	var heartsIcons = $Camera/GUI/Hearts.updateIcons(number)
-	
-func GuiShow(show: bool):
-	$Camera/GUI.visible = show
+	$Camera/GUI/Hearts.update_icons(number)
+
+
+func _gui_show(visible: bool):
+	$Camera/GUI.visible = visible
