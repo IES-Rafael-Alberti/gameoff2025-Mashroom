@@ -15,11 +15,9 @@ Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de col
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
 join character_eris_hidden (only_eyes) center [animation="Fade In"]
 [style name="Base_Dialogo"]
-join character_eris_hidden (only_eyes) center [animation="Instant In" length="2.0" wait="true"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
 character_zach_human: ¿...Q-Quién eres…? #id:1d
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: Oh no te preocupes, eso lo descubrirás dentro de poco humano, primero tengo una oferta para tí… #id:1e
 
@@ -28,22 +26,18 @@ character_eris_hidden: Mi magia ahora mismo es lo único que te mantiene con vid
 character_eris_hidden: Necesito que me ayudes a recolectar algunas… emociones, de algunas personas de por aquí, nada forzoso, solo un poco de… manipulación emocional. #id:20
 
 character_zach_human: ¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…? #id:21
-join character_eris_hidden (only_eyes) center [length="2.0" wait="true"]
 
 character_eris_hidden: Oooh mucha más de la que tu crees chaval, el mar es todo un mundo... #id:22
 
 character_zach_human: ...Ll-Llévame a casa… #id:23
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: Ooh, ¿exigiéndome a pesar de que te acabo de salvar la vida? Los humanos sois todos unos ingratos. Si quieres volver a casa tendrás que obedecerme… #id:24
 
 character_zach_human: ...N-No… #id:25
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: ¿...Perdona? #id:26
 
 character_zach_human: ...N-No quiero… llévame a casa… #id:27
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?! #id:28
 [background arg="res://DialogicAssets/backgrounds/AbyssPOV3.png" fade="1.2"]
@@ -87,7 +81,6 @@ character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:
 [style name="Base"]
 
 Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva. #id:34
-leave character_eris_hidden [animation="Slide To Right" wait="true"]
 
 Ví como se acercaba, por fin pudiendo ver su verdadera apariencia… #id:35
 [background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="0.0"]
