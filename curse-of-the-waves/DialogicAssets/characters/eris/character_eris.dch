@@ -46,7 +46,7 @@
 },
 "Hurt": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/eris/ErisHurtCutscene.png\""
+"image": "\"res://DialogicAssets/characters/eris/ErisExpressionHurt.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -92,15 +92,6 @@
 "Smug": {
 "export_overrides": {
 "image": "\"res://DialogicAssets/characters/eris/ErisExpressionSmug.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"wound": {
-"export_overrides": {
-"image": "\"res://DialogicAssets/characters/eris/ErisExpressionHurt.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
