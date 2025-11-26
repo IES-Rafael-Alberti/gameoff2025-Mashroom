@@ -5,19 +5,25 @@ extends Control
 @export var Options: Control
 @export var Controls: Control
 
+@onready var play_button: Button = $PlayButton
+@onready var options_button: Button = $OptionsButton
+
 var changeControl = ""
 var changeButton: Button
 
 func _ready():
 	AudioPlayer.musicNivel()
 	startUpdateButtons()
-	$PlayButton.grab_focus()
+	if play_button:
+		play_button.grab_focus()
 
 func _on_play_button_pressed() -> void:
 	AudioPlayer.stopMusic()
 	AudioPlayer.pulsarBtn()
-	$PlayButton.focus_mode  = Control.FOCUS_NONE
-	$OptionsButton.focus_mode  = Control.FOCUS_NONE
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_NONE
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_NONE
 	var GameManager = get_tree().get_root().get_node("Main/GameManager")
 	GameManager.loadSceneDialogic(preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue')
 	#GameManager.loadScene(preload("res://Scenes/CaveMinigame/CaveGame.tscn"))
@@ -25,16 +31,19 @@ func _on_play_button_pressed() -> void:
 func _on_options_button_pressed():
 	AudioPlayer.pulsarBtn()
 	OptionsContainer.showOptionMenu(true)
-	$PlayButton.focus_mode  = Control.FOCUS_NONE
-	$OptionsButton.focus_mode  = Control.FOCUS_NONE
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_NONE
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_NONE
 	
 func _on_exit_button_pressed():
 	AudioPlayer.pulsarBtn()
 	await OptionsContainer.showOptionMenu(false)
-	$PlayButton.focus_mode  = Control.FOCUS_ALL
-	$OptionsButton.focus_mode  = Control.FOCUS_ALL 
-	$OptionsButton.grab_focus()
-	_on_back_button_pressed()
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_ALL
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_ALL 
+		options_button.grab_focus()
 	
 
 func _on_option_button_item_selected(index):
@@ -135,19 +144,9 @@ func startUpdateButtons():
 	var Buttons = ["UpHBox/UpButton", "DownHBox/DownButton",
 	"LeftHBox/LeftButton", "RightHBox/RightButton",
 	"MainHBox/MainButton"]
-	var path = "ControlsVBox/ControlsHbox"
+	var path = "ControlsHbox"
 	for buttonURL in Buttons:
 		var buttonKeyBoard = Controls.get_node(path + "/KeyControlsVBox/" + buttonURL)
 		updateButton(buttonKeyBoard, buttonKeyBoard.text)
 		var buttonJoystick = Controls.get_node(path + "/JoystickControlsVBox/" + buttonURL)
 		updateButton(buttonJoystick, buttonJoystick.text)
-
-func _on_controls_button_pressed():
-	Options.visible = false
-	Controls.visible = true
-	$OptionsMenu/OptionsBackground/Controls/BackButton.grab_focus()
-
-func _on_back_button_pressed():
-	Options.visible = true
-	Controls.visible = false
-	$OptionsMenu/OptionsBackground/Options/ControlsButton.grab_focus()
