@@ -1,9 +1,20 @@
 keys,en,es
 ui_play,Play,Jugar
 ui_options,Options,Opciones
+ui_exit,Exit,Salir
 ui_back,Back,Volver
 ui_language,Language,Idioma
 ui_volume,Volume,Volumen
-ui_main_volume, Master Volume, Volumen General
-ui_music_volume, Music Volume, Volumen de Música
-ui_sfx_volume, SFX Volume, Volumen de Efectos
+ui_main_volume,Master Volume,Volumen General
+ui_music_volume,Music Volume,Volumen de Música
+ui_sfx_volume,SFX Volume,Volumen de Efectos
+ui_pressKey,Press a Button,Pulsa un Botón
+ui_controls,Controls,Controles
+ui_UpCtrlName,Up,Arriba
+ui_DownCtrlName,Down,Abajo
+ui_LeftCtrlName,Left,Izquierda
+ui_RightCtrlName,Right,Derecha
+ui_MainCtrlName,Action,Actuar
+ui_SecCtrlName,Secondary,Secundario
+ui_Joystick,Joystick,Mando
+ui_Keyboard,Keyboard,Teclado
