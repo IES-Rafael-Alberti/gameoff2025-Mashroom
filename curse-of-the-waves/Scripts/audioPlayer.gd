@@ -4,6 +4,8 @@ const musica1 = preload("res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
 const musica2 = preload("res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
 const sfx1 = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
 const musica3 = preload("res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
+const onda = preload("res://assets/Audio/SFX/Minijuego cueva/SFXOnda.wav")
+const antesOnda = preload("res://assets/Audio/SFX/Minijuego cueva/antesSFXOnda.wav")
 
 var velFade = 1.0
 var fade = false
@@ -26,6 +28,12 @@ func pulsarBtn():
 
 func musicMinijuegoCueva():
 	play_music(musica3)
+
+func sfxOndita():
+	playSfx(onda)
+
+func sfxAntesOnda():
+	playSfx(antesOnda)
 
 func stopMusic(): #con fade
 	if fade:
