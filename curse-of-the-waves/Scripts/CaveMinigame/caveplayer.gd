@@ -34,7 +34,7 @@ func _physics_process(delta):
 			isHidden = true
 		else:
 			isHidden = false
-			if Input.is_action_just_pressed("jump") or Input.is_action_just_pressed("move_up"):
+			if Input.is_action_just_pressed("move_up"):
 				if velocity.y > 0:
 					velocity.y = 0
 				velocity.y += JumpPower

@@ -93,9 +93,17 @@ func changeInput(event, type):
 func updateButton(button: Button, movement: String):
 	var events = InputMap.action_get_events(movement)
 	var type = getControlType(button)
-	if events.size() > type:
-		button.text = events[type].as_text()
-	else: button.text = ""
+	button.text = ""
+	
+	for event in events:
+		# Type 0 = Keyboard, Type 1 = Joystick
+		if type == 0 and event is InputEventKey:
+			button.text = event.as_text()
+			break
+		elif type == 1 and (event is InputEventJoypadButton or event is InputEventJoypadMotion):
+			button.text = event.as_text()
+			break
+	
 	button.button_pressed = false
 
 func selectChange(button: Button, toggle: bool, movement: String):
