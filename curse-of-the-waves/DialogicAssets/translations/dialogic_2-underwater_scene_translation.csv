@@ -17,7 +17,7 @@ Text/25/text,...N-No…,...N-No…
 Text/26/text,¿...Perdona?,...Excuse me?
 Text/27/text,...N-No quiero… llévame a casa…,..I-I don’t want to… …take me back home…
 Text/28/text,¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?!,W-Why you-!! Don’t you understand you belong to ME now?!
-Text/29/text,¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!!,"“Let me show you what you’re dealing with, scum!!!"
+Text/29/text,¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!!,"Let me show you what you’re dealing with, scum!!!"
 Text/2a/text,¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!!,AAAAAGGGGGGGGHHHHHHHH!!!
 Text/2b/text,"Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extraña corriente de color morado, parecía fuera de este mundo…","I felt a powerful surge run through my whole body, she had shocked me with some strange purple lightning, it looked out of this world…"
 Text/2c/text,"Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia…","All my body felt cold, I fainted yet again…"
@@ -129,11 +129,11 @@ Text/90/text,"El espacio, ¡JA!, no habeis ni tan siquiera explorado la mayoría
 Text/91/text,"¡No podéis ni tan siquiera sobrevivir aquí abajo durante mucho tiempo, es patético!","You can’t even survive down here for long, it's pathetic!"
 Text/92/text,"Tú tampoco puedes sobrevivir en la superficie, ¿verdad?","You can’t survive on the surface either, can you?"
 Text/93/text,...,...
-Text/94/text,[pause=0.5]“...Touche.”,[pause=0.5]“...Touche.
+Text/94/text,[pause=0.5]...Touche.,[pause=0.5]...Touche.
 Choice/95/text,¿Qué era esa criatura gigante de agua que me atacó?,What was that giant water creature that attacked me?
 Choice/95/disabled_text,,
 Text/96/text,¿Qué era esa criatura gigante de agua que me atacó?,What was that giant water creature that attacked me?
-Text/97/text,[pause=3.0]...,...
+Text/97/text,[pause=3.0]...,[pause=3.0]...
 Text/98/text,...,...
 Text/99/text,"La bruja me miró intensamente, parecía que se intentaba aguantar la risa…","The witch stared at me intensely, she looked as if she was holding back her laughter…"
 Text/9a/text,¿...Y bien?,...So?
