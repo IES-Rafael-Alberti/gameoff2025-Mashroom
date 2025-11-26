@@ -35,13 +35,13 @@
 "scale": 1,
 "scene": ""
 },
-"revelation": {
+"Stalactite": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/zach/ZachCutscene1.png\""
+"image": "\"res://DialogicAssets/characters/zach/StalactiteCutscene.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
+"offset": Vector2(100, -350),
+"scale": 0.4,
 "scene": ""
 }
 },

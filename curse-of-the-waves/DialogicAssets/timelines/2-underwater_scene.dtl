@@ -15,11 +15,9 @@ Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de col
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
 join character_eris_hidden (only_eyes) center [animation="Fade In"]
 [style name="Base_Dialogo"]
-join character_eris_hidden (only_eyes) center [animation="Instant In" length="2.0" wait="true"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
 character_zach_human: ¿...Q-Quién eres…? #id:1d
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: Oh no te preocupes, eso lo descubrirás dentro de poco humano, primero tengo una oferta para tí… #id:1e
 
@@ -28,22 +26,18 @@ character_eris_hidden: Mi magia ahora mismo es lo único que te mantiene con vid
 character_eris_hidden: Necesito que me ayudes a recolectar algunas… emociones, de algunas personas de por aquí, nada forzoso, solo un poco de… manipulación emocional. #id:20
 
 character_zach_human: ¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…? #id:21
-join character_eris_hidden (only_eyes) center [length="2.0" wait="true"]
 
 character_eris_hidden: Oooh mucha más de la que tu crees chaval, el mar es todo un mundo... #id:22
 
 character_zach_human: ...Ll-Llévame a casa… #id:23
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: Ooh, ¿exigiéndome a pesar de que te acabo de salvar la vida? Los humanos sois todos unos ingratos. Si quieres volver a casa tendrás que obedecerme… #id:24
 
 character_zach_human: ...N-No… #id:25
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: ¿...Perdona? #id:26
 
 character_zach_human: ...N-No quiero… llévame a casa… #id:27
-join character_eris_hidden (only_eyes) center
 
 character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?! #id:28
 [background arg="res://DialogicAssets/backgrounds/AbyssPOV3.png" fade="1.2"]
@@ -59,7 +53,6 @@ character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extraña corriente de color morado, parecía fuera de este mundo… #id:2b
 
 Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia… #id:2c
-leave --All-- [animation="Fade Out" wait="true"]
 label Cueva #id:42
 
 [background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="2.0"]
@@ -71,7 +64,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
-join character_zach (revelation) center [animation="Slide In Down"]
+join character_zach (Cutscene1) center [animation="Slide In Down"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
@@ -81,14 +74,13 @@ Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el to
 
 Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da. #id:32
 leave character_zach [animation="Slide To Left" wait="true"]
-join character_eris_hidden (eyes_smile) center [animation="Slide From Right" wait="true"]
+[background arg="res://DialogicAssets/backgrounds/EntradaCuevaEris.png" fade="0.0"]
 [style name="Base_Dialogo"]
 
 character_eris_hidden: Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval? #id:33
 [style name="Base"]
 
 Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva. #id:34
-leave character_eris_hidden [animation="Slide To Right" wait="true"]
 
 Ví como se acercaba, por fin pudiendo ver su verdadera apariencia… #id:35
 [background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="0.0"]
@@ -424,9 +416,11 @@ update character_minion2 [animation="Shake X" repeat="4"]
 
 Los esbirros de la bruja mordían hacia mi amenazantemente, magia extraña brotaba de sus manos… #id:bc
 [style name="Base_Dialogo"]
-join character_eris (Attack) center
+update character_eris (Attack) [animation="Heartbeat" wait="true"]
 
 character_eris: ¿Y bien humano? ¿Qué harás? #id:bd
+leave character_minion1
+leave character_minion2
 label Final choice #id:be
 - ¡Huir! #id:bf
 	set {canon_final} = true
@@ -435,6 +429,7 @@ label Final choice #id:be
 	¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida! #id:c0
 	update character_eris [animation="Shake X"]
 	[style name="Base_Dialogo"]
+	update character_eris [animation="Tada"]
 	
 	character_eris: ¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL! #id:c1
 	[end_timeline]
@@ -450,26 +445,73 @@ label Final choice #id:be
 	character_zach: ¡I-Inténtalo entonces bruja! #id:c5
 	
 	character_eris: ¡Que así sea pues! #id:c6
-	character_eris: ¡PREPÁRATE A MORIR! #id:c7
+	update character_eris (Attack) [animation="Heartbeat" wait="true"]
+	character_eris: Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma. #id:c7
+	leave 
 	[wait time="1.0"]
+	label con-estalactita #id:4a
 	if {has_weapon} == true:
-		Usas la estalactita de antes para clavarsela en el cuello
-		update character_eris (Cutscene)
-		update character_eris (Hurt)
-		# Meter aqui versión de la cueva sin tanto grito pero más peces
+		[style name="Base_Dialogo"]
+		character_eris: URGH-! No lo haces mal… #id:4b
+		[style name="Base"]
+		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:4c
+		join character_zach (Stalactite) right
+		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:4d
+		¡Utilicé mi cola para cogerla y-! #id:4e
+		[background arg="res://DialogicAssets/backgrounds/Edited_CaveLairScene.png" fade="0.0"]
+		leave character_zach
+		join character_eris (Cutscene) center
+		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
+		[style name="Base_Dialogo"]
+		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:4f
+		[style name="Base"]
+		leave character_eris
+		join character_eris (Hurt) center
+		¡Lo conseguí! ¡La hice sangrar! #id:50
+		[style name="Base_Dialogo"]
+		character_eris: G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…? #id:51
+		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:52
+		character_eris: ...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara… #id:53
+		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:54
+		#  [Flash morado oscuro momentaneo, Eris exit] 
+		leave character_eris
+		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:55
+		…Supongo que eso cuenta como haberla derrotado. #id:56
+		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:57
+		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:58
+		jump 3-cave_scene/final-fake
+	label sin-estalactita #id:59
 	else:
-		Eris te ha reventado
-		- Reintentar
+		update character_eris (Attack) [animation="Heartbeat" wait="true"]
+		[style name="Base_Dialogo"]
+		character_eris: ¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo! #id:5a
+		character_eris: ¡¡¡Sin embargo…!!! #id:5b
+		[style name="Base"]
+		La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos. #id:5c
+		Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor. #id:5d
+		update character_eris (Joy)
+		[style name="Base_Dialogo"]
+		character_eris: ¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato. #id:5e
+		character_zach: N-Nnngghh… N-No puede ser… #id:5f
+		character_eris: Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar… #id:60
+		update character_eris (Attack) [animation="Heartbeat" wait="true"]
+		[style name="Base"]
+		Voy a asegurarme de que no vuelvas a desobedecerme nunca. #id:61
+		Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero… #id:62
+		Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía… #id:63
+		En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer… #id:64
+		Como un animal salvaje… Comer… comer… #id:65
+		update character_eris (Joy)
+		[style name="Base_Dialogo"]
+		character_eris: ¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~! #id:66
+		[style name="Base"]
+		Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer… #id:67
+		Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto… #id:68
+		- Reintentar #id:69
 			jump Final choice
 			jump Final choice
-		- Me rindo
+		- Me rindo #id:6a
 			[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="0.0"]
 			# Mandar al menú
-	[end_timeline]
-	else:
-		# [Flash azul/celeste flojo, cambia el fondo al primero de la cueva] 
-		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-		[style name="Base"]
-		
-		La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla! #id:c8
 		leave --All--
+[end_timeline]
