@@ -30,7 +30,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta * gravityMult
 	# Input handling (movement, jump, hide)
 	if canMove:
-		if Input.is_action_pressed("SecondaryAction") or Input.is_action_pressed("move_down"):
+		if Input.is_action_pressed("MainAction"):
 			isHidden = true
 		else:
 			isHidden = false
