@@ -13,7 +13,7 @@ config_version=5
 config/name="Curse of the waves"
 run/main_scene="uid://wt4d5ycbn3af"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://bi355hh78qric"
+boot_splash/image="uid://ddg81l5wp8gij"
 config/icon="uid://20fp21ngqhwu"
 
 [autoload]
