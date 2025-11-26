@@ -70,12 +70,11 @@ position = Vector2(960, 540)
 texture = ExtResource("8_nv0eg")
 
 [node name="Clouds" type="Sprite2D" parent="Oleaje/BackGround"]
-position = Vector2(960, 125)
+position = Vector2(960, 540)
 texture = ExtResource("9_kkn7c")
 
 [node name="Water" type="Sprite2D" parent="Oleaje/BackGround"]
-position = Vector2(960, 715.5)
-scale = Vector2(1, 1.0534682)
+position = Vector2(960, 504)
 texture = ExtResource("10_16ybj")
 
 [node name="Foreground" type="Node2D" parent="Oleaje"]
@@ -83,12 +82,11 @@ z_index = 5
 position = Vector2(0, 96)
 
 [node name="Shadow" type="Sprite2D" parent="Oleaje/Foreground"]
-position = Vector2(960, 745.901)
+position = Vector2(960, 520)
 texture = ExtResource("11_1dovv")
 
 [node name="Wave" type="Sprite2D" parent="Oleaje/Foreground"]
-position = Vector2(960, 870.25)
-scale = Vector2(1, 1.07289)
+position = Vector2(960, 520)
 texture = ExtResource("12_nv0eg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
