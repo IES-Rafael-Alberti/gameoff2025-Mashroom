@@ -1,4 +1,4 @@
-audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav"
+audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav" [fade="2.5" bus="Musica" loop="true"]
 label final-canon
 
 if {canon_final} == true:
@@ -39,9 +39,9 @@ else:
 		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:d5
 		¡Utilicé mi cola para cogerla y-! #id:d6
 		leave character_zach
+		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 		join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
 		[style name="New_File"]
-		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav"
 		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
 		update character_eris (Hurt) center
 		[style name="Base"]
