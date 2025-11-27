@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2nrx1uw72sm"
-path="res://.godot/imported/ZachHuman.png-04ba0722e645be6f6b5f655ad2d5cc0c.ctex"
+uid="uid://ov0fnoukaxmy"
+path="res://.godot/imported/OutsideCavePOVKumi2.png-2d48f2e2eabe9240c144cee3f2bfb46c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/zach/ZachHuman.png"
-dest_files=["res://.godot/imported/ZachHuman.png-04ba0722e645be6f6b5f655ad2d5cc0c.ctex"]
+source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi2.png"
+dest_files=["res://.godot/imported/OutsideCavePOVKumi2.png-2d48f2e2eabe9240c144cee3f2bfb46c.ctex"]
 
 [params]
 

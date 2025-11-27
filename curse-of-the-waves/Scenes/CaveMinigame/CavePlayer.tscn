@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d17finaakavly"]
 
 [ext_resource type="Script" uid="uid://cxkq83jdb7cb5" path="res://Scripts/CaveMinigame/caveplayer.gd" id="1_ab5p2"]
-[ext_resource type="Texture2D" uid="uid://bic8c4xohaovd" path="res://assets/CaveMinigame/ZachCaveSpritesheet.png" id="2_ab5p2"]
+[ext_resource type="Texture2D" uid="uid://bv50v2kxf0l13" path="res://assets/CaveMinigame/ZachCaveSpritesheet.png" id="2_ab5p2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xf71"]
 atlas = ExtResource("2_ab5p2")

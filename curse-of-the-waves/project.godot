@@ -38,8 +38,7 @@ directories/dtl_directory={
 "3-cave_scene": "res://DialogicAssets/timelines/3-cave_scene.dtl"
 }
 layout/style_directory={
-"": "res://DialogicAssets/styles/Base.tres",
-"BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
+"": "res://DialogicAssets/styles/Base_Dialogo.tres",
 "Base": "res://DialogicAssets/styles/Base.tres",
 "Base_Dialogo": "res://DialogicAssets/styles/Base_Dialogo.tres",
 "Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres",
@@ -85,8 +84,8 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base_Dialogo.tres"]
-layout/default_style="res://DialogicAssets/styles/Base.tres"
+layout/style_list=["res://DialogicAssets/styles/Base_Dialogo.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base.tres"]
+layout/default_style="res://DialogicAssets/styles/Base_Dialogo.tres"
 variables={
 "canon_final": false,
 "has_weapon": false
@@ -195,6 +194,13 @@ MainAction={
 SecondaryAction={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":79,"key_label":0,"unicode":111,"location":0,"echo":false,"script":null)
+]
+}
+dialogic_fast_forward={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
 ]
 }
 
