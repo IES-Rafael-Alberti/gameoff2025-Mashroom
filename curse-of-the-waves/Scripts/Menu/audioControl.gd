@@ -7,8 +7,6 @@ extends VBoxContainer
 @export var general: HSlider
 @export var musica: HSlider
 @export var efectos: HSlider
-@export var testSonido: AudioStream #sonido de prueba
-@export var audioPlayer: AudioStreamPlayer
 
 @onready var menosG = $MainHBox/menosG
 @onready var masG = $MainHBox/masG
@@ -16,7 +14,6 @@ extends VBoxContainer
 @onready var masM = $MusicHBox/masM
 @onready var menosS = $SoundHBox/menosS
 @onready var masS = $SoundHBox/masS
-#@onready var pruebaSFX = preload("res://assets/Audio/SFX/sfxBarraVol.wav")
 
 const minDeci = -60.0
 const maxDeci = 0.0
@@ -69,7 +66,6 @@ func volMusica(value: float):
 	
 func volSfx(value: float):
 	volumen("SFX", value)
-	playSfx()
 
 func btnMenosG():
 	general.value = clamp(general.value - vol, 0.0, 100.0)
@@ -85,9 +81,3 @@ func btnMenosS():
 	efectos.value = clamp(efectos.value - vol, 0.0, 100.0)
 func btnMasS():
 	efectos.value = clamp(efectos.value + vol, 0.0, 100.0)
-
-#metodo para que suene algo que indique cuan alto o bajo esta el volumen de sfx
-func playSfx():
-	if audioPlayer and testSonido:
-		audioPlayer.stream = testSonido
-		audioPlayer.play()
