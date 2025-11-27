@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dneu4jd8hripl"
-path="res://.godot/imported/ZachSurfSpritesheet.png-14d9313e18d5b314a19fdd042e26e398.ctex"
+uid="uid://car3vt346g2kc"
+path="res://.godot/imported/BackgroundMedio.png-bd524c5c64a731c466a2ec269f70f500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Zach/ZachSurfSpritesheet.png"
-dest_files=["res://.godot/imported/ZachSurfSpritesheet.png-14d9313e18d5b314a19fdd042e26e398.ctex"]
+source_file="res://assets/CaveMinigame/BackgroundMedio.png"
+dest_files=["res://.godot/imported/BackgroundMedio.png-bd524c5c64a731c466a2ec269f70f500.ctex"]
 
 [params]
 
