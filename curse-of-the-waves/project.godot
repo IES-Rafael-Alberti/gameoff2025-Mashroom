@@ -84,7 +84,7 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base_Dialogo.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/New_File.tres", null]
+layout/style_list=["res://DialogicAssets/styles/Base_Dialogo.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base.tres"]
 layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false,

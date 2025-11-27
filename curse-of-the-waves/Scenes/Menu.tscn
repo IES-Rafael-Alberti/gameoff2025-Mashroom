@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
 [ext_resource type="Texture2D" uid="uid://dx6y7w4tm7ci0" path="res://assets/CotW.png" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
+[ext_resource type="Theme" uid="uid://dscponihkcj3x" path="res://assets/Temas/themeButton.tres" id="4_idohh"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
 [ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="6_idohh"]
 
@@ -105,11 +106,13 @@ alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
@@ -160,9 +163,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_ma218")
+theme_override_font_sizes/font_size = 35
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="ui_language" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer"]
 layout_mode = 2
@@ -334,6 +337,7 @@ metadata/_tab_index = 2
 [node name="ControlsLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.02745098, 0.26666668, 0.33333334, 1)
 theme_override_constants/line_spacing = 3
 text = "ui_controls"
 label_settings = SubResource("LabelSettings_s2c3o")
@@ -613,6 +617,7 @@ offset_left = -0.94311523
 offset_top = -0.34753418
 offset_right = 0.059448242
 offset_bottom = 0.14837646
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_exit"
 

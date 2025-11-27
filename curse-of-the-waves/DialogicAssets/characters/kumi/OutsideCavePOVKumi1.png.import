@@ -2,16 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png.import
 uid="uid://1whs68p488ni"
 path="res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"
+========
+uid="uid://nmc7mhjsndyb"
+path="res://.godot/imported/StalactiteCutscene.png-a7ca80ead7e0946de39937098995f276.ctex"
+>>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/backgrounds/StalactiteCutscene.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<<< HEAD:curse-of-the-waves/DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png.import
 source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png"
 dest_files=["res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"]
+========
+source_file="res://DialogicAssets/backgrounds/StalactiteCutscene.png"
+dest_files=["res://.godot/imported/StalactiteCutscene.png-a7ca80ead7e0946de39937098995f276.ctex"]
+>>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/backgrounds/StalactiteCutscene.png.import
 
 [params]
 

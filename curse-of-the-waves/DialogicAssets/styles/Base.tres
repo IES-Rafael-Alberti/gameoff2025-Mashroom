@@ -60,14 +60,14 @@ script = ExtResource("11_ats0v")
 name = "Base"
 layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
 layer_info = {
-"": SubResource("Resource_base"),
-"10": SubResource("Resource_bg"),
-"11": SubResource("Resource_portrait"),
-"12": SubResource("Resource_input"),
-"13": SubResource("Resource_textbox"),
-"14": SubResource("Resource_glossary"),
-"15": SubResource("Resource_choices"),
-"16": SubResource("Resource_textinput"),
-"17": SubResource("Resource_history")
+"": SubResource("Resource_430mb"),
+"10": SubResource("Resource_fnlu8"),
+"11": SubResource("Resource_qx10r"),
+"12": SubResource("Resource_sgkk8"),
+"13": SubResource("Resource_cbjkb"),
+"14": SubResource("Resource_tc2ja"),
+"15": SubResource("Resource_v2k1h"),
+"16": SubResource("Resource_348ll"),
+"17": SubResource("Resource_ats0v")
 }
 metadata/_latest_layer = ""
