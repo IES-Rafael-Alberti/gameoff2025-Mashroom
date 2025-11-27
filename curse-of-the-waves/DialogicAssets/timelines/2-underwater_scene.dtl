@@ -45,8 +45,8 @@ character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me pertene
 character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!! #id:29
 
 #  flash de color morado fuerte
+audio "res://assets/Audio/SFX/golpes/sfxDescarga.wav" [volume="6.0" bus="SFX"]
 [style name="New_File"]
-audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
