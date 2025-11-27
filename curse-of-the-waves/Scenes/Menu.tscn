@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=15 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
 [ext_resource type="Texture2D" uid="uid://20fp21ngqhwu" path="res://CurseoftheWavesTitle.svg" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
+[ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="6_idohh"]
 
 [sub_resource type="Theme" id="Theme_ma218"]
 default_font_size = 40
@@ -129,6 +130,8 @@ text = "ui_options"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "ui_credits"
+[node name="audioPlayer" type="AudioStreamPlayer" parent="VBoxContainer"]
+bus = &"SFX"
 
 [node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
 visible = false
@@ -448,13 +451,15 @@ theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "MainAction"
 
-[node name="ui_volume" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer" node_paths=PackedStringArray("general", "musica", "efectos")]
+[node name="ui_volume" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer" node_paths=PackedStringArray("general", "musica", "efectos", "audioPlayer")]
 visible = false
 layout_mode = 2
 script = ExtResource("4_s2c3o")
 general = NodePath("MainHBox/General")
 musica = NodePath("MusicHBox/Musica")
 efectos = NodePath("SoundHBox/Sfx")
+testSonido = ExtResource("6_idohh")
+audioPlayer = NodePath("../../../../../VBoxContainer/audioPlayer")
 metadata/_tab_index = 1
 
 [node name="VolumeLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume"]

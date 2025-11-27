@@ -7,6 +7,10 @@ const MUSICA_SURF = preload("res://assets/Audio/Música/" +
 const SFX_BTN = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
 const MUSICA_CUEVA = preload(
 	"res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
+const ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/SFXOnda.wav")
+const onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxOndaGrave2.wav")
+const antes_ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/sfxAntesOndita2.wav")
+const antes_onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxAntesOndaGrave2.wav")
 
 var vel_fade = 1.0
 var fade = false
@@ -20,8 +24,8 @@ func play_music(musica: AudioStream, vol = 0.0):
 	play()
 
 
-func music_nivel():
-	play_music(MUSICA_MENU)
+func music_nivel(vol = 0.0):
+	play_music(MUSICA_MENU, vol)
 
 
 func music_minijuego_surf():
@@ -35,6 +39,17 @@ func pulsar_btn():
 func music_minijuego_cueva():
 	play_music(MUSICA_CUEVA)
 
+func sfxOndita(vol = 0.0):
+	play_sfx(ondita, vol)
+
+func sfxAntesOndita(vol = 0.0):
+	play_sfx(antes_ondita, vol)
+
+func sfxOnda(vol = 0.0):
+	play_sfx(onda, vol)
+
+func sfxAntesOnda(vol = 0.0):
+	play_sfx(antes_onda, vol)
 
 func stop_music():  # con fade
 	if fade:
@@ -60,6 +75,7 @@ func play_sfx(audio_stream: AudioStream, vol = 0.0):
 	sfx.stream = audio_stream
 	sfx.name = "SFX"
 	sfx.volume_db = vol
+	sfx.bus = "SFX"
 	add_child(sfx)
 	sfx.play()
 
