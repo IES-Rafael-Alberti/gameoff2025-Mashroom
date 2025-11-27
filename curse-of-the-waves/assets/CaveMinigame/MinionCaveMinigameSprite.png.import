@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnp2640ybc13"
-path="res://.godot/imported/Eris.png-3307fbbe14b9bb18fae9c0cc1233e88a.ctex"
+uid="uid://cmvvil3y1hb65"
+path="res://.godot/imported/MinionCaveMinigameSprite.png-e37052fa838ffa80f0b6450edfbee683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/eris/Eris.png"
-dest_files=["res://.godot/imported/Eris.png-3307fbbe14b9bb18fae9c0cc1233e88a.ctex"]
+source_file="res://assets/CaveMinigame/MinionCaveMinigameSprite.png"
+dest_files=["res://.godot/imported/MinionCaveMinigameSprite.png-e37052fa838ffa80f0b6450edfbee683.ctex"]
 
 [params]
 

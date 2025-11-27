@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnieqdbyqrq2"
-path="res://.godot/imported/Zachary.png-c85e35d0a329b4d0db738f6b239737dc.ctex"
+uid="uid://d1y5lwlet03kk"
+path="res://.godot/imported/Edited_CaveLairScene.png-cb6e7501d99e3bf741d1074e3e1ce75a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/zach/Zachary.png"
-dest_files=["res://.godot/imported/Zachary.png-c85e35d0a329b4d0db738f6b239737dc.ctex"]
+source_file="res://DialogicAssets/backgrounds/Edited_CaveLairScene.png"
+dest_files=["res://.godot/imported/Edited_CaveLairScene.png-cb6e7501d99e3bf741d1074e3e1ce75a.ctex"]
 
 [params]
 

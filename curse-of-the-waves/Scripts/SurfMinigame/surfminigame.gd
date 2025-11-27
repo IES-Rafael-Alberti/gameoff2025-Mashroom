@@ -1,19 +1,19 @@
 extends Node2D
 
 @export_group("Objects")
-@export var Player: CharacterBody2D
-@export var Spawner: Node2D
-@export var MinPos: Marker2D
-@export var MaxPos: Marker2D
+@export var player: CharacterBody2D
+@export var spawner: Node2D
+@export var min_pos: Marker2D
+@export var max_pos: Marker2D
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	Player.limitMin = MinPos.position.x
-	Player.limitMax = MaxPos.position.x
-	Spawner.limitMin = MinPos.position.x
-	Spawner.limitMax = MaxPos.position.x
-	Spawner.heightStart = MinPos.position.y
-	Spawner.heightEnd = MaxPos.position.y
+	player.limit_min = min_pos.position.x
+	player.limit_max = max_pos.position.x
+	spawner.limit_min = min_pos.position.x
+	spawner.limit_max = max_pos.position.x
+	spawner.height_start = min_pos.position.y
+	spawner.height_end = max_pos.position.y
 
 	# Start automatic background/asset transitions for the surf minigame.
 	# This will cycle the Sky, Clouds and Ocean sprites through phase textures

@@ -1,35 +1,36 @@
 extends Camera2D
 
-var objectToFollow: Node2D
-var BLMarker: Marker2D
-var TRMarker: Marker2D
+var object_to_follow: Node2D
+var bl_marker: Marker2D
+var tr_marker: Marker2D
 
-@onready var cameraSize = get_viewport().get_visible_rect().size/zoom
-@onready var camWidth = cameraSize.x
-@onready var camHeight = cameraSize.y
+@onready var camera_size = get_viewport().get_visible_rect().size / zoom
+@onready var cam_width = camera_size.x
+@onready var cam_height = camera_size.y
 
-var followPlayer = false
+var follow_player = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if followPlayer:
-		position.x = objectToFollow.position.x
-		position.y = objectToFollow.position.y
-		
-		if position.x < BLMarker.global_position.x+camWidth/2:
-			position.x = BLMarker.global_position.x+camWidth/2
-		elif position.x > TRMarker.global_position.x-camWidth/2:
-			position.x = TRMarker.global_position.x-camWidth/2 
-			
-		if position.y > BLMarker.position.y-camHeight/2:
-			position.y = BLMarker.position.y-camHeight/2
-		elif position.y < TRMarker.position.y+camHeight/2:
-			position.y = TRMarker.position.y+camHeight/2 
+
+func _process(_delta):
+	if follow_player:
+		position.x = object_to_follow.position.x
+		position.y = object_to_follow.position.y
+
+		if position.x < bl_marker.global_position.x + cam_width / 2:
+			position.x = bl_marker.global_position.x + cam_width / 2
+		elif position.x > tr_marker.global_position.x - cam_width / 2:
+			position.x = tr_marker.global_position.x - cam_width / 2
+
+		if position.y > bl_marker.position.y - cam_height / 2:
+			position.y = bl_marker.position.y - cam_height / 2
+		elif position.y < tr_marker.position.y + cam_height / 2:
+			position.y = tr_marker.position.y + cam_height / 2
 	else:
 		position = Vector2(960, 540)
 
-func startFollow(follow: Node2D, BLMark: Marker2D, TRMark: Marker2D):
-	objectToFollow = follow
-	BLMarker = BLMark
-	TRMarker = TRMark
-	followPlayer = true
+
+func start_follow(follow: Node2D, bl_mark: Marker2D, tr_mark: Marker2D):
+	object_to_follow = follow
+	bl_marker = bl_mark
+	tr_marker = tr_mark
+	follow_player = true

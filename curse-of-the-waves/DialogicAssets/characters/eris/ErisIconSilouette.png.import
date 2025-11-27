@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuw0a2r6vslt"
-path="res://.godot/imported/Kumi.png-0c09a4fff01e7c2d286cc9eee86a6d00.ctex"
+uid="uid://djr10we2fc0y7"
+path="res://.godot/imported/ErisIconSilouette.png-7b5900eafc867fc7480832ed7798dd29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/kumi/Kumi.png"
-dest_files=["res://.godot/imported/Kumi.png-0c09a4fff01e7c2d286cc9eee86a6d00.ctex"]
+source_file="res://DialogicAssets/characters/eris/ErisIconSilouette.png"
+dest_files=["res://.godot/imported/ErisIconSilouette.png-7b5900eafc867fc7480832ed7798dd29.ctex"]
 
 [params]
 
