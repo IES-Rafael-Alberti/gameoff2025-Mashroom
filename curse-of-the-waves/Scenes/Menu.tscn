@@ -125,6 +125,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ui_credits"
+
 [node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
 layout_mode = 1
 anchors_preset = 15
@@ -573,6 +578,7 @@ libraries = {
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled" flags=18]
 [connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled" flags=18]
 [connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled" flags=18]

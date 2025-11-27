@@ -7,6 +7,7 @@ extends Control
 
 @onready var play_button: Button = $VBoxContainer/PlayButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
+@onready var game_manager = get_tree().get_root().get_node("Main/GameManager")
 
 var change_control := ""
 var change_button: Button
@@ -26,9 +27,8 @@ func _on_play_button_pressed() -> void:
 		play_button.focus_mode = Control.FOCUS_NONE
 	if options_button:
 		options_button.focus_mode = Control.FOCUS_NONE
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
-	game_manager.load_scene_dialogic(
-		preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue')
+	game_manager.load_scene(
+		load("res://Scenes/SurfMinigame/SurfMinigame.tscn"), true)
 
 
 func _on_options_button_pressed():
@@ -51,7 +51,6 @@ func _on_exit_button_pressed():
 
 
 func _on_option_button_item_selected(index):
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.change_language(index)
 
 
@@ -187,3 +186,8 @@ func _start_update_buttons():
 		_update_button(button_keyboard, button_keyboard.text)
 		var button_joystick = controls.get_node(path + "/JoystickControlsVBox/" + button_url)
 		_update_button(button_joystick, button_joystick.text)
+
+
+func _on_credits_button_pressed():
+	game_manager.load_scene(
+		load("res://Scenes/Credits.tscn"), false)

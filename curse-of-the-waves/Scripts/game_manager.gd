@@ -13,7 +13,7 @@ var base_windows_size = Vector2(
 
 
 func _ready():
-	load_scene(current_scene)
+	load_scene(current_scene, false)
 	_gui_show(false)
 
 
@@ -29,7 +29,7 @@ func change_language(index: int):
 			TranslationServer.set_locale("es")
 
 
-func load_scene_dialogic(scene: PackedScene, dialogic: String):
+func load_scene_dialogic(scene: PackedScene, dialogic: String, isGame: bool):
 	_gui_show(false)
 	$Camera.follow_player = false
 	if health <= 0:
@@ -43,10 +43,10 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String):
 
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(scene.instantiate())
-	_gui_show(true)
+	_gui_show(isGame)
 
 
-func load_scene(scene: PackedScene):
+func load_scene(scene: PackedScene, isGame: bool):
 	_gui_show(false)
 	$Camera.follow_player = false
 	if health <= 0:
@@ -59,7 +59,7 @@ func load_scene(scene: PackedScene):
 			scenes[i].queue_free()
 
 	$LoadedScene.add_child(scene.instantiate())
-	_gui_show(true)
+	_gui_show(isGame)
 
 
 func hp_update(number: int):
