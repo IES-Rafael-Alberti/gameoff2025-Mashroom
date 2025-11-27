@@ -2,6 +2,8 @@ extends Node2D
 
 @export_group("Base")
 @export var base_spawn_time = 3.0
+@export var witch_killed = false
+@export var WK_spawn_time = 10.0
 
 @export_group("SoundWaves")
 @export var sw_big_speed = 3000
@@ -22,10 +24,12 @@ extends Node2D
 
 
 func _ready():
-	$SpawnTimer.start(base_spawn_time)
+	$SpawnTimer.start(5)
 
 
 func _process(_delta):
+	if witch_killed:
+		base_spawn_time = 10
 	var game_camera = get_tree().get_root().get_node("Main/GameManager/Camera")
 	position = game_camera.global_position
 
@@ -36,7 +40,7 @@ func _on_spawn_timer_timeout():
 			await _spawn_big_sound_wave()
 		1:
 			await _spawn_group_sound_wave()
-	$SpawnTimer.start(base_spawn_time)
+	$SpawnTimer.start(base_spawn_time if not witch_killed else WK_spawn_time)
 
 
 func _spawn_group_sound_wave():

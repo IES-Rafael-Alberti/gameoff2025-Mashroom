@@ -302,6 +302,159 @@ position = Vector2(976, -448)
 
 [node name="Point0" type="Marker2D" parent="Enemies/Enemy13"]
 
+[node name="EnemiesWitchKilled" type="Node2D" parent="."]
+visible = false
+
+[node name="Enemy" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-1264, 800)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy"]
+position = Vector2(1088, 0)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy"]
+position = Vector2(-32, 0)
+
+[node name="Enemy8" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-11856, 32)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy8" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy8"]
+position = Vector2(624, 0)
+
+[node name="Point2" type="Marker2D" parent="EnemiesWitchKilled/Enemy8"]
+position = Vector2(624, -192)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy8"]
+position = Vector2(-32, 0)
+
+[node name="Enemy7" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-9808, 160)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy7" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy7"]
+position = Vector2(944, 0)
+
+[node name="Point2" type="Marker2D" parent="EnemiesWitchKilled/Enemy7"]
+position = Vector2(816, -512)
+
+[node name="Point3" type="Marker2D" parent="EnemiesWitchKilled/Enemy7"]
+position = Vector2(-32, -448)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy7"]
+position = Vector2(-32, 0)
+
+[node name="Enemy6" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-7376, 96)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy6" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy6"]
+position = Vector2(424, -632)
+
+[node name="Point2" type="Marker2D" parent="EnemiesWitchKilled/Enemy6"]
+position = Vector2(-32, -704)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy6"]
+position = Vector2(-32, 0)
+
+[node name="Enemy5" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-5712, 544)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy5" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-32, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4"), NodePath("../Point5")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(1088, 0)
+
+[node name="Point2" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(1072, -320)
+
+[node name="Point3" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(528, -184)
+
+[node name="Point4" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(528, -512)
+
+[node name="Point5" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(-24, -320)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
+position = Vector2(-32, 0)
+
+[node name="Enemy2" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-656, 736)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy2" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-48, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy2"]
+position = Vector2(-48, -544)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy2"]
+position = Vector2(-48, 0)
+
+[node name="Enemy3" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-2752, 736)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy3" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-64, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy3"]
+position = Vector2(576, -608)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy3"]
+position = Vector2(-64, 0)
+
+[node name="Enemy4" type="Node2D" parent="EnemiesWitchKilled"]
+position = Vector2(-4896, 736)
+
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy4" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+position = Vector2(-64, 0)
+scale = Vector2(2, 2)
+Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+metadata/_edit_group_ = true
+
+[node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy4"]
+position = Vector2(1784, 0)
+
+[node name="Point2" type="Marker2D" parent="EnemiesWitchKilled/Enemy4"]
+position = Vector2(1792, -568)
+
+[node name="Point3" type="Marker2D" parent="EnemiesWitchKilled/Enemy4"]
+position = Vector2(1784, 0)
+
+[node name="Point0" type="Marker2D" parent="EnemiesWitchKilled/Enemy4"]
+position = Vector2(-64, 0)
+
 [node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_point", "top_spawn", "bottom_spawn")]
 z_index = 2
 position = Vector2(960, 540)
