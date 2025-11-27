@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppj04eqx88e3"
-path="res://.godot/imported/ErisIconSilouette.png-7b5900eafc867fc7480832ed7798dd29.ctex"
+uid="uid://dx6y7w4tm7ci0"
+path="res://.godot/imported/CotW.png-8357fbded7823f452bc41f5f4b198865.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/eris/ErisIconSilouette.png"
-dest_files=["res://.godot/imported/ErisIconSilouette.png-7b5900eafc867fc7480832ed7798dd29.ctex"]
+source_file="res://assets/CotW.png"
+dest_files=["res://.godot/imported/CotW.png-8357fbded7823f452bc41f5f4b198865.ctex"]
 
 [params]
 

@@ -19,6 +19,15 @@
 &"portraits": {
 "icon": {
 "export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/AbyssPOV3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"icon": {
+"export_overrides": {
 "image": "\"res://DialogicAssets/characters/eris/ErisIconSilouette.png\""
 },
 "mirror": false,

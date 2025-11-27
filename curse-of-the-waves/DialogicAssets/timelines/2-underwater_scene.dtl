@@ -13,8 +13,8 @@ character_zach_human: ¿...Q-Qué…? ¿...Cómo estoy-…? #id:19
 Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando… #id:1a
 
 Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando? #id:1b
-join character_eris_hidden (only_eyes) center [animation="Fade In"]
 [style name="Base_Dialogo"]
+[background arg="res://DialogicAssets/backgrounds/AbyssPOV2.png" fade="0.0"]
 character_eris_hidden: Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje… #id:1c
 
 character_zach_human: ¿...Q-Quién eres…? #id:1d
@@ -45,8 +45,8 @@ character_eris_hidden: ¡¡P-Pero serás-!! ¡¿Qué no entiendes que me pertene
 character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!! #id:29
 
 #  flash de color morado fuerte
+audio "res://assets/Audio/SFX/golpes/sfxDescarga.wav" [volume="6.0" bus="SFX"]
 [style name="New_File"]
-audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
@@ -64,11 +64,11 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
-join character_zach (Cutscene1) center [animation="Slide In Down"]
+join character_zach (Cutscene1) center [animation="Fade In Up" wait="true"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
-leave character_zach [animation="Fade Out Down" wait="true"]
+leave character_zach [animation="Fade Out Down"]
 
 Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena. #id:31
 
@@ -92,7 +92,7 @@ character_eris: Bienvenido a mi humilde morada, ahora eres parte de este mundo g
 character_zach: ¡¿...Q-Qué demonios eres?! #id:37
 update character_eris (Neutral)
 
-character_eris_hidden: Ah cierto, no me llegué a presentar… #id:38
+character_eris: Ah cierto, no me llegué a presentar… #id:38
 
 character_eris: Me llamo Eris, y soy una infame bruja marina, que suerte la tuya al haber sido rescatado por una anfitriona tan buena como yo, jeje. #id:39
 [style name="Base"]
@@ -401,6 +401,7 @@ join character_eris (Neutral) center
 character_eris: Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera… #id:b7
 
 character_eris: Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b] #id:b8
+audio music "res://assets/Audio/Música/Novela visual/3/panic-attack2.wav" [fade="1.0" bus="Musica" loop="true"]
 
 character_zach: ...Prefiero arriesgarme. #id:b9
 join character_eris (Joy) center
@@ -444,7 +445,7 @@ label Final choice #id:be
 	
 	character_zach: ¡I-Inténtalo entonces bruja! #id:c5
 	
-	character_eris: ¡Que así sea pues! #id:c6
+	character_eris: ¡Que así sea pues! [pause=0.2] ¡PREPÁRATE A MORIR! #id:c6
 	update character_eris (Attack) [animation="Heartbeat" wait="true"]
 	character_eris: Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma. #id:c7
 	leave 
