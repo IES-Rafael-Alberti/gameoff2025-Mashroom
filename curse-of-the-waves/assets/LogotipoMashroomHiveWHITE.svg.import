@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb8l7seiqaky0"
-path="res://.godot/imported/LogotipoMashroomHiveWHITE.svg-afccd57e17d2bddbb52b33e005b01d96.ctex"
+path="res://.godot/imported/LogotipoMashroomHiveWHITE.svg-295e3a0be53918c05c051be3d8a52fe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LogotipoMashroomHiveWHITE.svg"
-dest_files=["res://.godot/imported/LogotipoMashroomHiveWHITE.svg-afccd57e17d2bddbb52b33e005b01d96.ctex"]
+source_file="res://assets/LogotipoMashroomHiveWHITE.svg"
+dest_files=["res://.godot/imported/LogotipoMashroomHiveWHITE.svg-295e3a0be53918c05c051be3d8a52fe8.ctex"]
 
 [params]
 

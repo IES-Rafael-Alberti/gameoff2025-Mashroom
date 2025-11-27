@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
-[ext_resource type="Texture2D" uid="uid://20fp21ngqhwu" path="res://CurseoftheWavesTitle.svg" id="3_idohh"]
+[ext_resource type="Texture2D" uid="uid://dx6y7w4tm7ci0" path="res://assets/CotW.png" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
 [ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="6_idohh"]
@@ -74,36 +74,19 @@ controls = NodePath("OptionsMenu/OptionsBackground/Options/TabContainer/ui_contr
 
 [node name="BackgroundContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Background" type="Sprite2D" parent="BackgroundContainer"]
+modulate = Color(0.05490196, 0.1254902, 0.20392157, 1)
 position = Vector2(960, 541)
 texture = ExtResource("2_ma218")
 
 [node name="Logo" type="Sprite2D" parent="BackgroundContainer"]
-position = Vector2(968, 296.00003)
-scale = Vector2(0.5279098, 0.5279098)
+position = Vector2(944, 328)
+scale = Vector2(0.6031771, 0.59842646)
 texture = ExtResource("3_idohh")
-
-[node name="LogoAspectRatio" type="AspectRatioContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.049000002
-anchor_right = 1.0
-anchor_bottom = 0.39800003
-offset_top = 0.24799919
-offset_bottom = 0.09597778
-stretch_mode = 1
-
-[node name="LogoTexture" type="TextureRect" parent="LogoAspectRatio"]
-layout_mode = 2
-texture = ExtResource("3_idohh")
-expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -112,6 +95,10 @@ anchor_left = 0.2
 anchor_top = 0.3
 anchor_right = 0.8
 anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 360.0
+offset_right = -90.0
+offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
