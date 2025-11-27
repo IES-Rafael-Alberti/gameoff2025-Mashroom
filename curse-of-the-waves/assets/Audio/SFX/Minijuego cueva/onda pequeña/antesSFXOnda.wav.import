@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di65tbsnl13ln"
+path="res://.godot/imported/antesSFXOnda.wav-0adefe7dff6d3727aeb6b1b952a81f9d.sample"
+
+[deps]
+
+source_file="res://assets/Audio/SFX/Minijuego cueva/onda pequeña/antesSFXOnda.wav"
+dest_files=["res://.godot/imported/antesSFXOnda.wav-0adefe7dff6d3727aeb6b1b952a81f9d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

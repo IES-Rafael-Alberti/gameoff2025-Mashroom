@@ -10,7 +10,7 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Neutral",
+&"default_portrait": "Icon",
 &"description": "",
 &"display_name": "Eris",
 &"mirror": false,
@@ -33,6 +33,15 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
+"scene": ""
+},
+"Cutscene": {
+"export_overrides": {
+"image": "\"res://DialogicAssets/characters/eris/ErisHurtCutscene.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -245),
+"scale": 0.7,
 "scene": ""
 },
 "Hurt": {

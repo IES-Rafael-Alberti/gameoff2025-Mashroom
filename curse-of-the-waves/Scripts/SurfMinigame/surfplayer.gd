@@ -1,24 +1,27 @@
 extends CharacterBody2D
 
 @export_group("Basics")
-@export var BaseSpeed = 800.0
+@export var base_speed = 800.0
 
-@onready var sonidoCaida = preload("res://assets/Audio/SFX/splash_effect.wav")
+@onready var sonido_caida = preload("res://assets/Audio/SFX/Minijuego surf/efectoSplash.wav")
 @onready var anims = $Sprite2D
+@onready var sonido_golpe = preload("res://assets/Audio/SFX/Minijuego surf/sonidoGolpe.wav")
 
-var speed = BaseSpeed
-var limitMin: float
-var limitMax: float
-var canMove = true
-var canBeDamaged = true
+var speed = base_speed
+var limit_min: float
+var limit_max: float
+var can_move = true
+var can_be_damaged = true
+
 
 func _ready():
-	AudioPlayer.musicMinijuegoSurf()
+	AudioPlayer.music_minijuego_surf()
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
-	if canMove:
-		
+	if can_move:
+
 		var direction = Input.get_axis("move_left", "move_right") # Player Movement
 		if direction:
 			velocity.x = direction * speed
@@ -26,57 +29,64 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, speed)
 
 		move_and_slide()
-		
-		if position.x > limitMax: # Pone limites de movimiento
-			position.x = limitMax
+
+		if position.x > limit_max: # Pone limites de movimiento
+			position.x = limit_max
 			velocity.x = 0
-		elif position.x < limitMin:
-			position.x = limitMin
+		elif position.x < limit_min:
+			position.x = limit_min
 			velocity.x = 0
-			
-		if canBeDamaged:
+
+		if can_be_damaged:
 			if velocity.x == 0:  # Pone animaciones segun su movimiento
 				anims.play("default")
 			elif velocity.x > 0:
 				anims.play("turning_right")
 			elif velocity.x < 0:
 				anims.play("turning_left")
-	
-func _on_hitbox_area_entered(area): # Detección al tocar un obstaculo (tiene que ser Area2D)
-	if area.is_in_group("Damage") and canBeDamaged:
+
+
+func _on_hitbox_area_entered(area):
+	if area.is_in_group("Damage") and can_be_damaged:
 		area.queue_free()
-		
-		if updHp(-1) <= 0:
-			death()
+
+		if _upd_hp(-1) <= 0:
+			_death()
 		else:
-			damage()
+			_damage()
 
-func updHp(add: int):
-	var GameManager = get_tree().get_root().get_node("Main/GameManager")
-	var newHp = GameManager.health + add
-	GameManager.HpUpdate(newHp)
-	return newHp
 
-func damage():
+func _upd_hp(add: int):
+	var game_manager = get_tree().get_root().get_node("Main/GameManager")
+	var new_hp = game_manager.health + add
+	game_manager.hp_update(new_hp)
+	return new_hp
+
+
+func _damage():
+	AudioPlayer.play_sfx(sonido_golpe)
 	anims.play("damaged")
-	canBeDamaged = false
-	canMove = false
+	can_be_damaged = false
+	can_move = false
 	await get_tree().create_timer(0.2).timeout
-	canMove = true
+	can_move = true
 	await anims.animation_finished
-	canBeDamaged = true
+	can_be_damaged = true
 	anims.play("default")
-	
 
-func death(): # Proceso de Muerte
-	canMove = false
-	canBeDamaged = false
+
+func _death():
+	AudioPlayer.play_sfx(sonido_golpe)
+	can_move = false
+	can_be_damaged = false
 	anims.play("death")
-	await get_tree().create_timer(0.999).timeout #para sfx de caida y que espere
-	AudioPlayer.playSfx(sonidoCaida, -12.0)
+	await get_tree().create_timer(0.998).timeout #para sfx de caida y que espere
+	AudioPlayer.play_sfx(sonido_caida, -12.0)
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
-		AudioPlayer.stopMusic()
-		var GameManager = get_tree().get_root().get_node("Main/GameManager")
-		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+		AudioPlayer.stop_music()
+		var game_manager = get_tree().get_root().get_node("Main/GameManager")
+		game_manager.load_scene_dialogic(
+			preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+		

@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "40",
-&"color": Color(0.10980392, 0.21176471, 0.18431373, 1),
+&"color": Color(0.22805786, 0.55078125, 0.46389425, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -28,7 +28,7 @@
 },
 "Joy": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/kumi/KumiIcon.png\""
+"image": "\"res://DialogicAssets/characters/kumi/OutsideCavePOVKumi2.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/kumi/Kumi.png\""
+"image": "\"res://DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

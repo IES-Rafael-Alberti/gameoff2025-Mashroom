@@ -1,6 +1,6 @@
 [background arg="res://DialogicAssets/backgrounds/Fondo_Playa.png" fade="0.0"]
-# TODO: Cambiar por playa
-audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3"
+audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3" [fade="0.3" loop="true"]
+audio "res://assets/Audio/SFX/Minijuego surf/oceanWaves.wav" [volume="-0.4" bus="SFX"]
 
 Era una tarde de verano, de esas en las que no tienes ni idea de lo que hacer con tu vida; estaba soleado y el oleaje resplandecía con posibilidades, una buena manera de poder alejarme de mis preocupaciones. #id:11
 
@@ -9,8 +9,11 @@ Bueno lo suyo sería presentarme, mi nombre es Zachary, un universitario promedi
 Poder ir sobre las olas me ayuda a despejar la mente, me hace falta más que nunca con todos los cambios que están pasando en mi vida últimamente. Que bueno que la playa parece relativamente relajada hoy. #id:13
 
 Respiré hondo, mi tabla de surf en mano mientras me dirija derecho hacia el mar. #id:14
+[style name="Base_Dialogo"]
+join  center
 
-character_zach_human (Neutral): ...Bueno, vamos a darlo todo. #id:15
+character_zach_human (Icon): ...Bueno, vamos a darlo todo. #id:15
+[style name="Base"]
 
 Solo metiéndome lo suficiente en el mar ya empezaron a brotar olas de tamaño adecuado para surfear, ¡cogí impulso y me dispuse a montar la ola! #id:16
 [end_timeline]

@@ -1,12 +1,20 @@
 extends AudioStreamPlayer
 
-const musica1 = preload("res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
-const musica2 = preload("res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
-const sfx1 = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
-#para otra cancion prueba a hacer lo mismo que en 3
+const MUSICA_MENU = preload(
+	"res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
+const MUSICA_SURF = preload("res://assets/Audio/Música/" +
+	"Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
+const SFX_BTN = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
+const MUSICA_CUEVA = preload(
+	"res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
+const ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/SFXOnda.wav")
+const onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxOndaGrave2.wav")
+const antes_ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/sfxAntesOndita2.wav")
+const antes_onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxAntesOndaGrave2.wav")
 
-var velFade = 1.0
+var vel_fade = 1.0
 var fade = false
+
 
 func play_music(musica: AudioStream, vol = 0.0):
 	if stream == musica:
@@ -15,41 +23,61 @@ func play_music(musica: AudioStream, vol = 0.0):
 	volume_db = vol
 	play()
 
-func musicNivel():
-	play_music(musica1)
 
-func musicMinijuegoSurf():
-	play_music(musica2)
+func music_nivel(vol = 0.0):
+	play_music(MUSICA_MENU, vol)
 
-func pulsarBtn():
-	playSfx(sfx1)
 
-func stopMusic(): #con fade
+func music_minijuego_surf():
+	play_music(MUSICA_SURF)
+
+
+func pulsar_btn():
+	play_sfx(SFX_BTN)
+
+
+func music_minijuego_cueva():
+	play_music(MUSICA_CUEVA)
+
+func sfxOndita(vol = 0.0):
+	play_sfx(ondita, vol)
+
+func sfxAntesOndita(vol = 0.0):
+	play_sfx(antes_ondita, vol)
+
+func sfxOnda(vol = 0.0):
+	play_sfx(onda, vol)
+
+func sfxAntesOnda(vol = 0.0):
+	play_sfx(antes_onda, vol)
+
+func stop_music():  # con fade
 	if fade:
 		return
 	fade = true
 	var tween = create_tween()
-	tween.tween_property(self, "volume_db", -80.0, velFade)
-	tween.tween_callback(func(): stop(); volume_db = 0.0; fade = false)  #para y resetea
+	tween.tween_property(self, "volume_db", -80.0, vel_fade)
+	tween.tween_callback(func(): stop(); volume_db = 0.0; fade = false)  # para y resetea
 
-#para empezar con la musica suavito
-func musicFade(musica: AudioStream, vol = 0.0):
+
+func music_fade(musica: AudioStream, vol = 0.0):  # para empezar con la musica suavito
 	if stream == musica:
 		return
 	stream = musica
-	volume_db  = -70.0 
+	volume_db = -70.0
 	play()
 	var tween = create_tween()
-	tween.tween_property(self, "volume_db", vol, velFade)
+	tween.tween_property(self, "volume_db", vol, vel_fade)
 
-func playSfx(stream: AudioStream, vol = 0.0):
+
+func play_sfx(audio_stream: AudioStream, vol = 0.0):
 	var sfx = AudioStreamPlayer.new()
-	sfx.stream = stream
-	sfx.name = "SFX_Jugador"
+	sfx.stream = audio_stream
 	sfx.name = "SFX"
 	sfx.volume_db = vol
+	sfx.bus = "SFX"
 	add_child(sfx)
 	sfx.play()
-	
+
 	await sfx.finished
 	sfx.queue_free()
