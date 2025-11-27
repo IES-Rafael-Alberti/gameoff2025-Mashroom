@@ -56,13 +56,6 @@ height = 128.0
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(512, 576)
 script = ExtResource("1_ab5p2")
-base_speed = null
-jump_power = null
-iframes = null
-gravity_mult = null
-release_jump_power = null
-max_jump_speed = null
-max_fall_speed = null
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true

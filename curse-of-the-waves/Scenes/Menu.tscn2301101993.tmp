@@ -131,7 +131,6 @@ theme_override_font_sizes/font_size = 50
 text = "ui_credits"
 
 [node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -217,8 +216,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_right = NodePath("../../../JoystickControlsVBox/UpHBox/UpButton")
-focus_neighbor_bottom = NodePath("../../DownHBox/DownButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_up"
@@ -240,9 +237,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../UpHBox/UpButton")
-focus_neighbor_right = NodePath("../../../JoystickControlsVBox/DownHBox/DownButton")
-focus_neighbor_bottom = NodePath("../../LeftHBox/LeftButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_down"
@@ -264,9 +258,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../DownHBox/DownButton")
-focus_neighbor_right = NodePath("../../../JoystickControlsVBox/LeftHBox/LeftButton")
-focus_neighbor_bottom = NodePath("../../RightHBox/RightButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_left"
@@ -288,9 +279,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../LeftHBox/LeftButton")
-focus_neighbor_right = NodePath("../../../JoystickControlsVBox/RightHBox/RightButton")
-focus_neighbor_bottom = NodePath("../../MainHBox/MainButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_right"
@@ -312,9 +300,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../RightHBox/RightButton")
-focus_neighbor_right = NodePath("../../../JoystickControlsVBox/MainHBox/MainButton")
-focus_neighbor_bottom = NodePath("../../../../../../ExitButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "MainAction"
@@ -346,9 +331,7 @@ vertical_alignment = 2
 [node name="UpButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/UpHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../KeyControlsVBox/UpHBox/UpButton")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../DownHBox/DownButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_up"
@@ -369,10 +352,7 @@ vertical_alignment = 2
 [node name="DownButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/DownHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../KeyControlsVBox/DownHBox/DownButton")
-focus_neighbor_top = NodePath("../../UpHBox/UpButton")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../LeftHBox/LeftButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_down"
@@ -393,10 +373,7 @@ vertical_alignment = 2
 [node name="LeftButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/LeftHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../KeyControlsVBox/LeftHBox/LeftButton")
-focus_neighbor_top = NodePath("../../DownHBox/DownButton")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../RightHBox/RightButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_left"
@@ -417,10 +394,7 @@ vertical_alignment = 2
 [node name="RightButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/RightHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../KeyControlsVBox/RightHBox/RightButton")
-focus_neighbor_top = NodePath("../../LeftHBox/LeftButton")
 focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../MainHBox/MainButton")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
 text = "move_right"
@@ -441,8 +415,6 @@ vertical_alignment = 2
 [node name="MainButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/MainHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../KeyControlsVBox/MainHBox/MainButton")
-focus_neighbor_top = NodePath("../../RightHBox/RightButton")
 focus_neighbor_right = NodePath(".")
 theme_override_font_sizes/font_size = 30
 toggle_mode = true
@@ -481,23 +453,16 @@ horizontal_alignment = 2
 [node name="menosG" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MainHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_right = NodePath("../masG")
-focus_neighbor_bottom = NodePath("../../MusicHBox/menosM")
 theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="General" type="HSlider" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MainHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_mode = 0
 
 [node name="masG" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MainHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../menosG")
-focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../MusicHBox/masM")
 theme_override_font_sizes/font_size = 30
 text = "+"
 
@@ -519,25 +484,16 @@ horizontal_alignment = 2
 [node name="menosM" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MusicHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../MainHBox/menosG")
-focus_neighbor_right = NodePath("../masM")
-focus_neighbor_bottom = NodePath("../../SoundHBox/menosS")
 theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="Musica" type="HSlider" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MusicHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_mode = 0
 
 [node name="masM" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/MusicHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../menosM")
-focus_neighbor_top = NodePath("../../MainHBox/masG")
-focus_neighbor_right = NodePath(".")
-focus_neighbor_bottom = NodePath("../../SoundHBox/masS")
 theme_override_font_sizes/font_size = 30
 text = "+"
 
@@ -557,23 +513,16 @@ horizontal_alignment = 2
 [node name="menosS" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/SoundHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../../MusicHBox/menosM")
-focus_neighbor_right = NodePath("../masS")
 theme_override_font_sizes/font_size = 30
 text = "-"
 
 [node name="Sfx" type="HSlider" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/SoundHBox"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-focus_mode = 0
 
 [node name="masS" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume/SoundHBox"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-focus_neighbor_left = NodePath("../menosS")
-focus_neighbor_top = NodePath("../../MusicHBox/masM")
-focus_neighbor_right = NodePath(".")
 theme_override_font_sizes/font_size = 30
 text = "+"
 
@@ -596,8 +545,6 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_left = NodePath(".")
-focus_neighbor_right = NodePath(".")
 theme = SubResource("Theme_idohh")
 theme_override_font_sizes/font_size = 50
 alignment = 1

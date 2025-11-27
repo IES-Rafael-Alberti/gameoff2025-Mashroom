@@ -3,18 +3,19 @@ extends CharacterBody2D
 
 @export_group("Basics")
 @export var base_speed = 400.0
-@export var jump_power = -200
+@export var jump_power = -20
 @export var iframes = 1
 
 @export_group("Complex")
 @export var gravity_mult = 0.5
 @export var release_jump_power = -200
-@export var max_jump_speed = -500
+@export var max_jump_speed = -300
 @export var max_fall_speed = 300
 
 
 @onready var anims: AnimatedSprite2D = $Sprite2D
 
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var speed = base_speed
 var can_move = true
 var can_be_damaged = true
@@ -27,22 +28,23 @@ func _ready():
 
 
 func _physics_process(delta):
+	var desired_anim = "default"
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * gravity_mult
+		velocity += Vector2(0,gravity) * delta * gravity_mult
 	# Input handling (movement, jump, hide)
 	if can_move:
 		if Input.is_action_pressed("MainAction"):
 			is_hidden = true
 		else:
 			is_hidden = false
-			if Input.is_action_just_pressed("move_up"):
+			if Input.is_action_pressed("move_up"):
+				desired_anim = "move"
 				if velocity.y > 0:
 					velocity.y = 0
 				velocity.y += jump_power
 
 	var direction = Input.get_axis("move_left", "move_right")
-	var desired_anim = "default"
 	if direction and not is_hidden:
 		velocity.x = direction * speed
 		desired_anim = "move"
@@ -96,7 +98,7 @@ func _on_hitbox_area_entered(area):
 
 func _finish():
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
-	game_manager.load_scene_dialogic(preload("res://Scenes/FinishGame.tscn"), '3-cave_scene', false)
+	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', false)
 
 
 func _take_damage():
@@ -124,4 +126,4 @@ func _death():
 		#Dialogic.start('2-underwater_scene')
 		#await Dialogic.timeline_ended
 		var game_manager = get_tree().get_root().get_node("Main/GameManager")
-		game_manager.call_deferred("load_scene", load("res://Scenes/CaveMinigame/CaveGame.tscn"))
+		game_manager.call_deferred("load_scene", load("res://Scenes/CaveMinigame/CaveGame.tscn"), true)
