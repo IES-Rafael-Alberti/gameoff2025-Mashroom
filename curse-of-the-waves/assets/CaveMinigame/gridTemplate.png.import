@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:curse-of-the-waves/assets/CaveMinigame/gridTemplate.png.import
-uid="uid://dlmjh88v0crff"
+uid="uid://bjgobp1t3anak"
 path="res://.godot/imported/gridTemplate.png-4bb932070b56616d55b5e102c9a5cf9c.ctex"
-========
-uid="uid://drkgpse741jdc"
-path="res://.godot/imported/AbyssPOV3.png-d127c7cd014e6aa9498b8a8509772b57.ctex"
->>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/characters/eris/AbyssPOV3.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:curse-of-the-waves/assets/CaveMinigame/gridTemplate.png.import
 source_file="res://assets/CaveMinigame/gridTemplate.png"
 dest_files=["res://.godot/imported/gridTemplate.png-4bb932070b56616d55b5e102c9a5cf9c.ctex"]
-========
-source_file="res://DialogicAssets/characters/eris/AbyssPOV3.png"
-dest_files=["res://.godot/imported/AbyssPOV3.png-d127c7cd014e6aa9498b8a8509772b57.ctex"]
->>>>>>>> 4025d7c (fix: cambios dialogic):curse-of-the-waves/DialogicAssets/characters/eris/AbyssPOV3.png.import
 
 [params]
 

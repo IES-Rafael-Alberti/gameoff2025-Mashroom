@@ -106,13 +106,13 @@ alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_wfhf6")
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 50
 text = "ui_play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_wfhf6")
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
@@ -617,7 +617,7 @@ offset_left = -0.94311523
 offset_top = -0.34753418
 offset_right = 0.059448242
 offset_bottom = 0.14837646
-theme = ExtResource("4_wfhf6")
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 50
 text = "ui_exit"
 
