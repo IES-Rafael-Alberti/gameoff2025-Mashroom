@@ -1,6 +1,5 @@
 [background arg="res://DialogicAssets/backgrounds/Fondo_Playa.png" fade="0.0"]
-audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3" [fade="0.3" volume="-1.6" bus="Musica" loop="true"]
-audio "res://assets/Audio/SFX/Minijuego surf/oceanWaves.wav" [volume="-0.4" bus="SFX"]
+audio music "res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3"
 
 Era una tarde de verano, de esas en las que no tienes ni idea de lo que hacer con tu vida; estaba soleado y el oleaje resplandecía con posibilidades, una buena manera de poder alejarme de mis preocupaciones. #id:11
 

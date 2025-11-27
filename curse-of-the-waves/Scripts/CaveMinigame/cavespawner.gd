@@ -31,34 +31,35 @@ func _process(_delta):
 
 
 func _on_spawn_timer_timeout():
-	match randi_range(0,1):
-		0: await spawnBigSoundWave()
-		1: await spawnGroupSoundWave()
-	$SpawnTimer.start(BaseSpawnTime)
-	
-func spawnGroupSoundWave():
-	AudioPlayer.sfxAntesOndita()
-	for i in range(0,3):
-	#onditas pequeñas
-		await get_tree().create_timer(1).timeout #sfx antes de la onda y se espera
-		AudioPlayer.sfxOndita(3.0) #bajarle volumen a esta para subir el de la grande
-		var spawnPos = Vector2(SpawnPoint.global_position.x,randf_range(BottomSpawn.position.y,TopSpawn.position.y))
-		spawnSoundWave(SWSpeed, SWDespawnTime, SWScale, SWPushPower, spawnPos)
-		await get_tree().create_timer(SWGroupCd).timeout 
+	match randi_range(0, 1):
+		0:
+			await _spawn_big_sound_wave()
+		1:
+			await _spawn_group_sound_wave()
+	$SpawnTimer.start(base_spawn_time)
 
-func spawnBigSoundWave():
-	#onda grande, que sea mas grave y fuerte que la pequeña
-	#este mismo sonido pero para la pequeña y + agudo 
-	AudioPlayer.sfxAntesOnda()
-	await get_tree().create_timer(1).timeout
-	AudioPlayer.sfxOnda(7.0)
-	spawnSoundWave(SWBigSpeed, SWBigDespawnTime, SWBigScale, SWBigPushPower, SpawnPoint.global_position)
-	
-func spawnSoundWave(Speed: float, Dp: float, Scale: float, PushPower: float, pos: Vector2):
-	var SWInstance = SoundWave.instantiate()
-	SWInstance.Speed = Speed
-	SWInstance.DespawnTime = Dp
-	SWInstance.scale *= Scale
-	SWInstance.PushPower = PushPower
-	SWInstance.position = pos
-	add_child(SWInstance)
+
+func _spawn_group_sound_wave():
+	for i in range(0, 3):
+		var spawn_pos = Vector2(
+			spawn_point.global_position.x,
+			randf_range(bottom_spawn.position.y, top_spawn.position.y))
+		_spawn_sound_wave(sw_speed, sw_despawn_time, sw_scale, sw_push_power, spawn_pos)
+		await get_tree().create_timer(sw_group_cd).timeout
+
+
+func _spawn_big_sound_wave():
+	_spawn_sound_wave(
+		sw_big_speed, sw_big_despawn_time, sw_big_scale,
+		sw_big_push_power, spawn_point.global_position)
+
+
+func _spawn_sound_wave(speed: float, dp: float, sw_scale_val: float,
+		push_power: float, pos: Vector2):
+	var sw_instance = sound_wave.instantiate()
+	sw_instance.Speed = speed
+	sw_instance.DespawnTime = dp
+	sw_instance.scale *= sw_scale_val
+	sw_instance.PushPower = push_power
+	sw_instance.position = pos
+	add_child(sw_instance)

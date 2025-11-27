@@ -13,8 +13,11 @@ var change_button: Button
 
 
 func _ready():
-	AudioPlayer.musicNivel(-3.0)
-	$PlayButton.grab_focus()
+	AudioPlayer.music_nivel()
+	_start_update_buttons()
+	if play_button:
+		play_button.grab_focus()
+
 
 func _on_play_button_pressed() -> void:
 	AudioPlayer.stop_music()

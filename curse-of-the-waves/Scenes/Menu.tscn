@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://20fp21ngqhwu" path="res://CurseoftheWavesTitle.svg" id="3_idohh"]
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
-[ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="5_ma218"]
-[ext_resource type="PackedScene" uid="uid://difphsgi8dkpl" path="res://Scenes/AudioPlayer.tscn" id="6_idohh"]
 
 [sub_resource type="Theme" id="Theme_ma218"]
 default_font_size = 40
@@ -209,14 +207,222 @@ label_settings = SubResource("LabelSettings_idohh")
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="VolumeVBox" type="VBoxContainer" parent="Options/OptionsBackground/Control/SettingsVBox" node_paths=PackedStringArray("general", "musica", "efectos", "audioPlayer")]
+[node name="UpButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/UpHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_up"
+
+[node name="DownHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/DownHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_DownCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DownButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/DownHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_down"
+
+[node name="LeftHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/LeftHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_LeftCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LeftButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/LeftHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_left"
+
+[node name="RightHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/RightHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_RightCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RightButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/RightHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_right"
+
+[node name="MainHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/MainHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_MainCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MainButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/MainHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "MainAction"
+
+[node name="JoystickControlsVBox" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox"]
+layout_mode = 2
+
+[node name="ControlsLabel3" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_Joystick"
+label_settings = SubResource("LabelSettings_s2c3o")
+horizontal_alignment = 1
+
+[node name="UpHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/UpHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_UpCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="UpButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/UpHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_up"
+
+[node name="DownHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/DownHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_DownCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DownButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/DownHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_down"
+
+[node name="LeftHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/LeftHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_LeftCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LeftButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/LeftHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_left"
+
+[node name="RightHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/RightHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_RightCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RightButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/RightHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "move_right"
+
+[node name="MainHBox" type="HBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox"]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/MainHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 3
+text = "ui_MainCtrlName"
+label_settings = SubResource("LabelSettings_idohh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MainButton" type="Button" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/MainHBox"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+focus_neighbor_right = NodePath(".")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "MainAction"
+
+[node name="ui_volume" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer" node_paths=PackedStringArray("general", "musica", "efectos")]
+visible = false
 layout_mode = 2
 script = ExtResource("4_s2c3o")
 general = NodePath("MainHBox/General")
 musica = NodePath("MusicHBox/Musica")
 efectos = NodePath("SoundHBox/Sfx")
-testSonido = ExtResource("5_ma218")
-audioPlayer = NodePath("../../../../../AudioPlayer")
+metadata/_tab_index = 1
 
 [node name="VolumeLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume"]
 layout_mode = 2
@@ -365,10 +571,17 @@ libraries = {
 &"": SubResource("AnimationLibrary_s2c3o")
 }
 
-[node name="AudioPlayer" parent="." instance=ExtResource("6_idohh")]
-bus = &"SFX"
-
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="item_selected" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/RightHBox/RightButton" to="." method="_on_right_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/MainHBox/MainButton" to="." method="_on_main_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/RightHBox/RightButton" to="." method="_on_right_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/MainHBox/MainButton" to="." method="_on_main_button_toggled" flags=18]
+[connection signal="item_selected" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_language/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="OptionsMenu/OptionsBackground/Options/ExitButton" to="." method="_on_exit_button_pressed"]
