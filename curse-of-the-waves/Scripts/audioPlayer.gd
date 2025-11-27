@@ -1,12 +1,13 @@
 extends AudioStreamPlayer
 
-const MUSICA_MENU = preload(
-	"res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
-const MUSICA_SURF = preload("res://assets/Audio/Música/" +
-	"Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
-const SFX_BTN = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
-const MUSICA_CUEVA = preload(
-	"res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
+const musica1 = preload("res://assets/Audio/Música/Para menú/ukeleleMenu.wav")
+const musica2 = preload("res://assets/Audio/Música/Minijuego surf + cutsceneInicial/night-paradise-instrumental-269040.mp3")
+const sfx1 = preload("res://assets/Audio/SFX/recogeObjetoAgudo.wav")
+const musica3 = preload("res://assets/Audio/Música/Minijuego cueva/lightVoid-mystical-orchestral.wav")
+const ondita = preload("res://assets/Audio/SFX/Minijuego cueva/Ondas/SFXOnda.wav") #pequeña
+const antesOndita = preload("res://assets/Audio/SFX/Minijuego cueva/Ondas/antesSFXOnda.wav")
+const onda = preload("res://assets/Audio/SFX/Minijuego cueva/Ondas/sfxOndaGrave2.wav") #grande/enorme
+const antesOnda = preload("res://assets/Audio/SFX/Minijuego cueva/Ondas/sfxAntesOndaGrave2.wav")
 
 var vel_fade = 1.0
 var fade = false
@@ -19,24 +20,29 @@ func play_music(musica: AudioStream, vol = 0.0):
 	volume_db = vol
 	play()
 
-
-func music_nivel():
-	play_music(MUSICA_MENU)
-
-
-func music_minijuego_surf():
-	play_music(MUSICA_SURF)
-
-
-func pulsar_btn():
-	play_sfx(SFX_BTN)
+func musicNivel(vol = 0.0):
+	play_music(musica1, vol)
+	
+func musicMinijuegoSurf():
+	play_music(musica2)
 
 
 func music_minijuego_cueva():
 	play_music(MUSICA_CUEVA)
 
+func sfxOndita(vol = 0.0):
+	playSfx(ondita, vol)
 
-func stop_music():  # con fade
+func sfxAntesOndita():
+	playSfx(antesOndita)
+
+func sfxOnda(vol = 0.0):
+	playSfx(onda, vol)
+
+func sfxAntesOnda():
+	playSfx(antesOnda)
+
+func stopMusic(): #con fade
 	if fade:
 		return
 	fade = true
@@ -60,6 +66,7 @@ func play_sfx(audio_stream: AudioStream, vol = 0.0):
 	sfx.stream = audio_stream
 	sfx.name = "SFX"
 	sfx.volume_db = vol
+	sfx.bus = "SFX"
 	add_child(sfx)
 	sfx.play()
 

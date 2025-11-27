@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnbw4a2re15di"]
+[gd_scene load_steps=5 format=3 uid="uid://0qnx8svp35pe"]
 
 [ext_resource type="Script" uid="uid://dirh2j205weas" path="res://Scripts/CaveMinigame/cavesound_wave.gd" id="1_hctn7"]
 [ext_resource type="Texture2D" uid="uid://bhos4c5rfutaq" path="res://assets/CaveMinigame/SoundWave.png" id="2_0i3x4"]
