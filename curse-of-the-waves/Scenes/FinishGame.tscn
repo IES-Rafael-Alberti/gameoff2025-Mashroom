@@ -1,16 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm45piv6herry"]
 
-<<<<<<< Updated upstream:curse-of-the-waves/Scenes/FinishGame.tscn
 [ext_resource type="Texture2D" uid="uid://bg43e4rtyck8g" path="res://assets/SurfMinigame/Ocean/Phase4/sky4.png" id="1_i0qbv"]
-=======
-[ext_resource type="Script" uid="uid://dpo2xlq1xyre0" path="res://Scenes/credits.gd" id="1_i8h6y"]
->>>>>>> Stashed changes:curse-of-the-waves/Scenes/Credits.tscn
 
 [sub_resource type="LabelSettings" id="LabelSettings_5rw4s"]
 font_size = 50
 
 [node name="FinishGame" type="Node2D"]
-script = ExtResource("1_i8h6y")
 
 [node name="Credits" type="Control" parent="."]
 layout_mode = 3
@@ -40,18 +35,4 @@ David López Carrasco - Programming
 Santiago García Guzmán - Programming
 Paula Rumeu Romero - Production"
 label_settings = SubResource("LabelSettings_5rw4s")
-<<<<<<< Updated upstream:curse-of-the-waves/Scenes/FinishGame.tscn
 horizontal_alignment = 1
-=======
-
-[node name="PlayButton" type="Button" parent="Credits"]
-layout_mode = 0
-offset_left = 672.0
-offset_top = 872.0
-offset_right = 1248.0
-offset_bottom = 960.0
-theme_override_font_sizes/font_size = 50
-text = "ui_menu"
-
-[connection signal="pressed" from="Credits/PlayButton" to="." method="_on_play_button_pressed"]
->>>>>>> Stashed changes:curse-of-the-waves/Scenes/Credits.tscn
