@@ -18,3 +18,10 @@ ui_MainCtrlName,Action,Actuar
 ui_SecCtrlName,Secondary,Secundario
 ui_Joystick,Joystick,Mando
 ui_Keyboard,Keyboard,Teclado
+ui_menu,Main menu,Menú Principal
+ui_credits,Credits,Créditos
+
+cr_design,Designer,Diseño
+cr_art,Art,Arte
+cr_audio,Audio,Sonido
+cr_program,Programming,Programación

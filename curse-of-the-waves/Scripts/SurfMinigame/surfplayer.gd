@@ -88,5 +88,5 @@ func _death():
 		AudioPlayer.stop_music()
 		var game_manager = get_tree().get_root().get_node("Main/GameManager")
 		game_manager.load_scene_dialogic(
-			preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+			preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene', true)
 		

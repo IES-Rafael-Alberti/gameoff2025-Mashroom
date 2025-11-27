@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm45piv6herry"]
+
+[ext_resource type="Texture2D" uid="uid://bg43e4rtyck8g" path="res://assets/SurfMinigame/Ocean/Phase4/sky4.png" id="1_i0qbv"]
+[ext_resource type="Script" uid="uid://dpo2xlq1xyre0" path="res://Scenes/credits.gd" id="1_xbebw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xbebw"]
+font_size = 40
+
+[node name="FinishGame" type="Node2D"]
+script = ExtResource("1_xbebw")
+
+[node name="Credits" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits"]
+position = Vector2(960, 540)
+texture = ExtResource("1_i0qbv")
+
+[node name="CreditsButton" type="Button" parent="Credits"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 936.0
+offset_right = 1408.0
+offset_bottom = 1024.0
+theme_override_font_sizes/font_size = 50
+text = "ui_menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.16700001
+anchor_bottom = 0.26700002
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 1151.36
+offset_bottom = 607.64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Lola Cáceres Fernández - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_design"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Manuel Amaya Orozco - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_art"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Cristina Morgado Núñez - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_audio"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "David López Carrasco - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_program"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Santiago García Guzmán - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_program"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Credits/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Person" type="Label" parent="Credits/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "Paula Rumeu Romero - "
+label_settings = SubResource("LabelSettings_xbebw")
+
+[node name="Part" type="Label" parent="Credits/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "cr_program"
+label_settings = SubResource("LabelSettings_xbebw")
+
+[connection signal="pressed" from="Credits/CreditsButton" to="." method="_on_credits_button_pressed"]
