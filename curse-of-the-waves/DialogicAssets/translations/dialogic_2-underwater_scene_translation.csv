@@ -1,188 +1,223 @@
-keys,en,es
-Text/17/text,"I don’t know how much time has passed, I was completely disoriented, submerged in the water and staring off into the abyss below","No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo."
-Text/18/text,"Without even noticing, I was breathing, I coughed hard thinking I just inhaled a bunch of water, but for some reason my lungs weren’t flooding, I was breathing just fine.","Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema."
-Text/19/text,...W-What…? …H-How am I…?,¿...Q-Qué…? ¿...Cómo estoy-…?
-Text/1a/text,"At that moment, I noticed something shining from within the depths of the abyss, a bright blue hue, it was getting closer…","Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando…"
-Text/1b/text,"It was a pair of eyes, not like the ones I witnessed before, but they still didn’t seem safe to be around… What was going on…?","Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando?"
-Text/1c/text,"Well well, you’re finally awake, you’re lucky I noticed you before you could be swallowed by the abyss, hehehe…","Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje…"
-Text/1d/text,...W-Who are you…?,¿...Q-Quién eres…?
-Text/1e/text,"Oh don’t worry about that, you’ll find out soon enough human, I got an offer for you first…","Oh no te preocupes, eso lo descubrirás dentro de poco humano, primero tengo una oferta para tí…"
-Text/1f/text,"My magic is currently the only thing keeping you alive, so I recommend that you cooperate and don’t do anything stupid.","Mi magia ahora mismo es lo único que te mantiene con vida, así que por tu bien te sugiéro que cooperes y no hagas nada estúpido."
-Text/20/text,"I need you to help me gather some… emotions, from some people around here, nothing brash of couse, just some… emotional manipulation.","Necesito que me ayudes a recolectar algunas… emociones, de algunas personas de por aquí, nada forzoso, solo un poco de… manipulación emocional."
-Text/21/text,...W-What are you talking about…? What kind of people are down here…?,¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…?
-Text/22/text,"Oooh much more than you think boy, the sea is a whole new world…","Oooh mucha más de la que tu crees chaval, el mar es todo un mundo..."
-Text/23/text,...T-Take me back home…,...Ll-Llévame a casa…
-Text/24/text,"Ooh, ordering me around despite me just saving your life? You humans really are an ungrateful bunch. If you want to go back home you’ll have to obey me…","Ooh, ¿exigiéndome a pesar de que te acabo de salvar la vida? Los humanos sois todos unos ingratos. Si quieres volver a casa tendrás que obedecerme…"
+keys,en,en
+Text/17/text,"No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo.","I don’t know how much time has passed, I was completely disoriented, submerged in the water and staring off into the abyss below"
+Text/18/text,"Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema.","Without even noticing, I was breathing, I coughed hard thinking I just inhaled a bunch of water, but for some reason my lungs weren’t flooding, I was breathing just fine."
+Text/19/text,¿...Q-Qué…? ¿...Cómo estoy-…?,...W-What…? …H-How am I…?
+Text/1a/text,"Justo en ese momento, noté algo brillando desde la oscuridad del abismo, de color azul claro brillante, se estaba acercando…","At that moment, I noticed something shining from within the depths of the abyss, a bright blue hue, it was getting closer…"
+Text/1b/text,"Eran un par de ojos, no como los de antes, pero aún así no me transmitían seguridad… ¿Qué estaba pasando?","It was a pair of eyes, not like the ones I witnessed before, but they still didn’t seem safe to be around… What was going on…?"
+Text/1c/text,"Vaya vaya, al fin despiertas, tienes suerte de que me percaté de tu presencia antes de que fueras engullido hacia el abismo, jejeje…","Well well, you’re finally awake, you’re lucky I noticed you before you could be swallowed by the abyss, hehehe…"
+Text/1d/text,¿...Q-Quién eres…?,...W-Who are you…?
+Text/1e/text,"Oh no te preocupes, eso lo descubrirás dentro de poco humano, primero tengo una oferta para tí…","Oh don’t worry about that, you’ll find out soon enough human, I got an offer for you first…"
+Text/1f/text,"Mi magia ahora mismo es lo único que te mantiene con vida, así que por tu bien te sugiéro que cooperes y no hagas nada estúpido.","My magic is currently the only thing keeping you alive, so I recommend that you cooperate and don’t do anything stupid."
+Text/20/text,"Necesito que me ayudes a recolectar algunas… emociones, de algunas personas de por aquí, nada forzoso, solo un poco de… manipulación emocional.","I need you to help me gather some… emotions, from some people around here, nothing brash of couse, just some… emotional manipulation."
+Text/21/text,¿...D-De qué hablas…? ¿Qué clase de gente hay aquí abajo…?,...W-What are you talking about…? What kind of people are down here…?
+Text/22/text,"Oooh mucha más de la que tu crees chaval, el mar es todo un mundo...","Oooh much more than you think boy, the sea is a whole new world…"
+Text/23/text,...Ll-Llévame a casa…,...T-Take me back home…
+Text/24/text,"Ooh, ¿exigiéndome a pesar de que te acabo de salvar la vida? Los humanos sois todos unos ingratos. Si quieres volver a casa tendrás que obedecerme…","Ooh, ordering me around despite me just saving your life? You humans really are an ungrateful bunch. If you want to go back home you’ll have to obey me…"
 Text/25/text,...N-No…,...N-No…
-Text/26/text,...Excuse me?,¿...Perdona?
-Text/27/text,..I-I don’t want to… …take me back home…,...N-No quiero… llévame a casa…
-Text/28/text,W-Why you-!! Don’t you understand you belong to ME now?!,¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?!
-Text/29/text,"“Let me show you what you’re dealing with, scum!!!",¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!!
-Text/2a/text,AAAAAGGGGGGGGHHHHHHHH!!!,¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!!
-Text/2b/text,"I felt a powerful surge run through my whole body, she had shocked me with some strange purple lightning, it looked out of this world…","Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extraña corriente de color morado, parecía fuera de este mundo…"
-Text/2c/text,"All my body felt cold, I fainted yet again…","Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia…"
+Text/26/text,¿...Perdona?,...Excuse me?
+Text/27/text,...N-No quiero… llévame a casa…,..I-I don’t want to… …take me back home…
+Text/28/text,¡¡P-Pero serás-!! ¡¿Qué no entiendes que me perteneces ahora?!,W-Why you-!! Don’t you understand you belong to ME now?!
+Text/29/text,¡¡¡Déjame mostrarte a lo que te enfrentas maldita escoria!!!,"Let me show you what you’re dealing with, scum!!!"
+Text/2a/text,¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!!,AAAAAGGGGGGGGHHHHHHHH!!!
+Text/2b/text,"Sentí una fuerte descarga correr por todo mi cuerpo, me había lanzado una extraña corriente de color morado, parecía fuera de este mundo…","I felt a powerful surge run through my whole body, she had shocked me with some strange purple lightning, it looked out of this world…"
+Text/2c/text,"Todo mi cuerpo se sentía frío, nuevamente perdí la conciencia…","All my body felt cold, I fainted yet again…"
 Label/42/display_name,,
-Text/2d/text,"When I opened my eyes, I found myself in a strange dark, viscous cave, my body was still floating so I knew I was still underwater.","…Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua."
-Text/2e/text,I slowly put my hand on my head… Why did it feel so sticky?,Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa?
-Text/2f/text,And why did I have webbings on my hands?!,¡¿...Y por qué tenía manos palmeadas?!
-Text/30/text,...W-WHAT IS THIIIIIS?!,¡¿...Q-QUÉ ES ESTOOOO?!
-Text/31/text,"My whole body was covered in scales, I had gills on my neck and torso, not to mention my legs had been replaced by a mermaid tail.","Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena."
-Text/32/text,I had been turned into a fish man… …triton? Well you know what I mean.,Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da.
-Text/33/text,"Kehehehe… Enjoying your new body, punk?",Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval?
-Text/34/text,"That was the same voice as before, I turned around to see those very same eyes as before observing me from a dark passage within the cave.","Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva."
-Text/35/text," I watched as it moved closer, finally being able to see its true appearance…","Ví como se acercaba, por fin pudiendo ver su verdadera apariencia…"
-Text/36/text,"Welcome to my humble abode, now you’re part of this world thanks to my curse, so i’m afraid you’re trapped down here with me, Kyahahahaha! That’s what you get for being an ingrate!","Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero!"
-Text/37/text,...W-What the hell are you?!,¡¿...Q-Qué demonios eres?!
-Text/38/text,"Ah yes, I never introduced myself did I…?","Ah cierto, no me llegué a presentar…"
-Text/39/text,"My name is Eris, i’m an infamous sea witch, how fortunate you are to have been rescued by such a wonderful hostess, hehe.","Me llamo Eris, y soy una infame bruja marina, que suerte la tuya al haber sido rescatado por una anfitriona tan buena como yo, jeje."
-Text/3a/text,"I could hardly look at her face, her eyes and grin made my blood run cold…","Casi ni podía mirarle a la cara, sus ojos y su sonrisa me helaban la sangre…"
-Text/3b/text,"What’s wrong huh? I’m well aware of how beautiful I am, no need to look away now, kyahaha!","¿Qué te pasa eh? Ya soy consciente de que soy hermosa, no hace falta que apartes la vista, ¡jajaja!"
-Text/3c/text,Just hearing her talk let me know how much of an ego she had… [b] I need to be careful with what I say or I may regret it… [/b],De solo oírla hablar ya podía discernir que tenía el ego subido a más no poder… [b] Tengo que tener cuidado con lo que digo o puede que me arrepienta… [/b]
-Text/3d/text,"C’mon boy, speak up already, its quite rude to leave a lady hangin’, am I not beautiful or what?","Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh?"
+Text/2d/text,"…Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua.","When I opened my eyes, I found myself in a strange dark, viscous cave, my body was still floating so I knew I was still underwater."
+Text/2e/text,Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa?,I slowly put my hand on my head… Why did it feel so sticky?
+Text/2f/text,¡¿...Y por qué tenía manos palmeadas?!,And why did I have webbings on my hands?!
+Text/30/text,¡¿...Q-QUÉ ES ESTOOOO?!,...W-WHAT IS THIIIIIS?!
+Text/31/text,"Todo mi cuerpo estaba cubierto de escamas, tenía branquias en el cuello y el torso, por no mencionar que mis piernas habían sido reemplazadas por una cola como una sirena.","My whole body was covered in scales, I had gills on my neck and torso, not to mention my legs had been replaced by a mermaid tail."
+Text/32/text,Me había transformado en un hombre pez… ¿...Tritón? …Bueno qué más da.,I had been turned into a fish man… …triton? Well you know what I mean.
+Text/33/text,Jejejeje… ¿Disfrutando de tu nuevo cuerpo chaval?,"Kehehehe… Enjoying your new body, punk?"
+Text/34/text,"Esa era la misma voz de antes, giré para ver esos mismos ojos azules observándome desde un pasaje oscuro de la cueva.","That was the same voice as before, I turned around to see those very same eyes as before observing me from a dark passage within the cave."
+Text/35/text,"Ví como se acercaba, por fin pudiendo ver su verdadera apariencia…"," I watched as it moved closer, finally being able to see its true appearance…"
+Text/36/text,"Bienvenido a mi humilde morada, ahora eres parte de este mundo gracias a mi maldición, por lo que me temo que estás atrapado aquí abajo conmigo, ¡Jajajajaja! ¡Te pasa por embustero!","Welcome to my humble abode, now you’re part of this world thanks to my curse, so i’m afraid you’re trapped down here with me, Kyahahahaha! That’s what you get for being an ingrate!"
+Text/37/text,¡¿...Q-Qué demonios eres?!,...W-What the hell are you?!
+Text/38/text,"Ah cierto, no me llegué a presentar…","Ah yes, I never introduced myself did I…?"
+Text/39/text,"Me llamo Eris, y soy una infame bruja marina, que suerte la tuya al haber sido rescatado por una anfitriona tan buena como yo, jeje.","My name is Eris, i’m an infamous sea witch, how fortunate you are to have been rescued by such a wonderful hostess, hehe."
+Text/3a/text,"Casi ni podía mirarle a la cara, sus ojos y su sonrisa me helaban la sangre…","I could hardly look at her face, her eyes and grin made my blood run cold…"
+Text/3b/text,"¿Qué te pasa eh? Ya soy consciente de que soy hermosa, no hace falta que apartes la vista, ¡jajaja!","What’s wrong huh? I’m well aware of how beautiful I am, no need to look away now, kyahaha!"
+Text/3c/text,De solo oírla hablar ya podía discernir que tenía el ego subido a más no poder… [b] Tengo que tener cuidado con lo que digo o puede que me arrepienta… [/b],Just hearing her talk let me know how much of an ego she had… [b] I need to be careful with what I say or I may regret it… [/b]
+Text/3d/text,"Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh?","C’mon boy, speak up already, its quite rude to leave a lady hangin’, am I not beautiful or what?"
 Label/43/display_name,,
-Choice/44/text,...Y-You’re very beautiful…,...E-Eres muy hermosa…
+Choice/44/text,...E-Eres muy hermosa…,...Y-You’re very beautiful…
 Choice/44/disabled_text,,
-Text/45/text,...Y-You’re very beautiful…,...E-Eres muy hermosa…
-Text/46/text,"Kyahaha! That’s what I like to hear, so obedient and flattering! Better be grateful ‘cause most humans that end up here had already been turned into ingredients for my potions by now!","¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones!"
-Text/47/text,"She was toying with me, testing me as if I were a pet… This is the most humiliating moment of my life, but I suppose its better than being dead…","Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto…"
-Choice/48/text,I think i’m about to puke…,Creo que voy a vomitar…
+Text/45/text,...E-Eres muy hermosa…,...Y-You’re very beautiful…
+Text/46/text,"¡Jajaja! ¡Así me gusta, obediente y halagador! Estáte agradecido ya que la mayoría de humanos que han venido aquí ya terminaron como ingredientes para mis pociones!","Kyahaha! That’s what I like to hear, so obedient and flattering! Better be grateful ‘cause most humans that end up here had already been turned into ingredients for my potions by now!"
+Text/47/text,"Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto…","She was toying with me, testing me as if I were a pet… This is the most humiliating moment of my life, but I suppose its better than being dead…"
+Choice/48/text,Creo que voy a vomitar…,I think i’m about to puke…
 Choice/48/disabled_text,,
-Text/49/text,"Oh, so that’s how it is huh? You still don’t get the situation you’re in?",Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás?
-Text/4a/text,"In an instant the witch smacked me across the face so hard that I ended up floating horizontally like a dead fish, I had to quickly swim with my new tail just to get myself back upright.","En un instante ví como la bruja me abofeteó tan fuerte que me puso horizontal, rápidamente tuve que intentar nadar con mi nueva cola para ponerme correctamente."
-Text/4b/text,"Kyahahaha! Oh this is lovely, you should’ve seen the look on your face! You swim like an adrift manatee!","¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva!"
-Text/4c/text,"I was rubbing my wound as the witch mocked me, now part of my face was all swollen, great…","Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial…"
-Text/4d/text,"Alright, let’s continue this conversation in my living room, I am quite intrigued to learn more about my new minion, hehe.","Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje."
-Text/4e/text,"Eris lead me through her cave, I used the opportunity to learn to swim better with my new tail, it was hard, but I felt that I was starting to get used to it…","Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco…"
+Text/49/text,Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás?,"Oh, so that’s how it is huh? You still don’t get the situation you’re in?"
+Text/4a/text,"En un instante ví como la bruja me abofeteó tan fuerte que me puso horizontal, rápidamente tuve que intentar nadar con mi nueva cola para ponerme correctamente.","In an instant the witch smacked me across the face so hard that I ended up floating horizontally like a dead fish, I had to quickly swim with my new tail just to get myself back upright."
+Text/4b/text,"¡Jajajaja! Oh esto es increíble, deberías haber visto tu cara! ¡Nadas como un manatí a la deriva!","Kyahahaha! Oh this is lovely, you should’ve seen the look on your face! You swim like an adrift manatee!"
+Text/4c/text,"Me estaba rozando la herida con la mano mientras la bruja se burlaba de mí, ahora tenía una parte de mi cara hinchada, genial…","I was rubbing my wound as the witch mocked me, now part of my face was all swollen, great…"
+Text/4d/text,"Bien, continuemos esta conversación en mi sala de estar, tengo interés por conocer más a fondo a mi nuevo esbirro, jeje.","Alright, let’s continue this conversation in my living room, I am quite intrigued to learn more about my new minion, hehe."
+Text/4e/text,"Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco…","Eris lead me through her cave, I used the opportunity to learn to swim better with my new tail, it was hard, but I felt that I was starting to get used to it…"
 Label/4f/display_name,,
-Text/50/text,"We arrived at the ‘living room’, there were several rock shelves with strange items and other body parts, in the middle there was a volcanic crater that constantly let out dense steam as if it were a cauldron, it was very hot and smelled horrible.","Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal."
-Text/51/text,Much better! Now we can talk properly…,¡Mucho mejor! Ahora que estamos aquí vamos a hablar en condiciones…
-Text/52/text,"Tell me about yourself minion, what sort of stupid decision made you want to go so far into the sea?","Cuéntame algo de ti esbirro, ¿Qué estúpida decisión te llevó a querer adentrarte en la mar?"
-Text/53/text,Erm… well…,Ehh… pues…
+Text/50/text,"Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal.","We arrived at the ‘living room’, there were several rock shelves with strange items and other body parts, in the middle there was a volcanic crater that constantly let out dense steam as if it were a cauldron, it was very hot and smelled horrible."
+Text/51/text,¡Mucho mejor! Ahora que estamos aquí vamos a hablar en condiciones…,Much better! Now we can talk properly…
+Text/52/text,"Cuéntame algo de ti esbirro, ¿Qué estúpida decisión te llevó a querer adentrarte en la mar?","Tell me about yourself minion, what sort of stupid decision made you want to go so far into the sea?"
+Text/53/text,Ehh… pues…,Erm… well…
 Label/54/display_name,,
-Choice/55/text,It's my passion…,Es mi pasión...
+Choice/55/text,Es mi pasión...,It's my passion…
 Choice/55/disabled_text,,
-Text/56/text,It's my passion…,Es mi pasión…
-Text/57/text,Your passion? What sort of passion is that? You got a death wish or something?,¿Tu pasión? ¿Qué clase de pasión es esa? ¿Acaso quieres morir?
-Text/58/text,"I practice a sport known as surfing, you get on a board and try to ride waves for as long as possible, I find it quite enjoyable.","Practico un deporte llamado surf, te montas en una tabla e intentas montar olas por el mayor tiempo posible, me resulta emocionante."
-Text/59/text,"Pfft… enjoyable? Yes I suppose I can see it, if you find trying to dominate the sea and failing hilariously as something enjoyable.","Pfft… ¿Emocionante? Si, supongo que puedo verlo, si por emocionante te refieres a intentar dominar el mar y fallar estrepitosamente."
-Text/5a/text,"The sea punishes idiots like you, no wonder you ended up down here with me, haha!","El mar castiga a los incrédulos como tú, normal que hayas terminado aquí abajo conmigo, ¡jaja!"
-Choice/5b/text,It helps me escape…,Me ayuda a escapar…
+Text/56/text,Es mi pasión…,It's my passion…
+Text/57/text,¿Tu pasión? ¿Qué clase de pasión es esa? ¿Acaso quieres morir?,Your passion? What sort of passion is that? You got a death wish or something?
+Text/58/text,"Practico un deporte llamado surf, te montas en una tabla e intentas montar olas por el mayor tiempo posible, me resulta emocionante.","I practice a sport known as surfing, you get on a board and try to ride waves for as long as possible, I find it quite enjoyable."
+Text/59/text,"Pfft… ¿Emocionante? Si, supongo que puedo verlo, si por emocionante te refieres a intentar dominar el mar y fallar estrepitosamente.","Pfft… enjoyable? Yes I suppose I can see it, if you find trying to dominate the sea and failing hilariously as something enjoyable."
+Text/5a/text,"El mar castiga a los incrédulos como tú, normal que hayas terminado aquí abajo conmigo, ¡jaja!","The sea punishes idiots like you, no wonder you ended up down here with me, haha!"
+Choice/5b/text,Me ayuda a escapar…,It helps me escape…
 Choice/5b/disabled_text,,
-Text/5c/text,It helps me escape…,Me ayuda a escapar…
-Text/5d/text,"Escape? From your fears and insecurities? Of course, you humans are cowards by nature.","¿Escapar? ¿De tus miedos e inseguridades? Cómo no, los humanos sois cobardes por naturaleza."
-Text/5e/text,"We all need to escape once in a while, you wouldn’t understand…","Todos necesitamos escapar de vez en cuando, no lo entenderías…"
-Text/5f/text,"And what use is escaping if you end up running back afterwards? It only shows you’re a fool with no backbone, unable to see anything in yourself.","¿Y de que te sirve escapar si al final terminas volviendo? Solo me da a entender que eres un inseguro, incapaz de ver nada en sí mismo."
-Text/60/text,The witch grabbed a nearby bone and tapped my chest repeatedly with it in a mocking manner.,La bruja agarró un hueso y lo presionó contra mi pecho repetidas veces de manera burlona.
-Text/61/text,"Though to me its all advantages, you’d be much happier just by following my orders rather than going back to your human world, wouldn’t you? Kyahahaha!","Aunque para mi, esto solo son ventajas, serías más feliz simplemente siguiendo mis órdenes antes que volviendo a tu mundo de humanos, ¿a que sí? ¡jajajaja!"
-Text/62/text,"The witch tossed the bone casually as she cackled, accidentally hitting the cave’s ceiling in the process, she’s got quite the throwing arm…","La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad…"
-Text/63/text,"I saw a stalactite break off after having been hit by the bone; I used my chance while the witch was distracted and cautiously snatched it from the ground, it might come in handy in the future…","Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro…"
-Choice/64/text,I wanted to find new friends…,Quería nuevos amigos…
+Text/5c/text,Me ayuda a escapar…,It helps me escape…
+Text/5d/text,"¿Escapar? ¿De tus miedos e inseguridades? Cómo no, los humanos sois cobardes por naturaleza.","Escape? From your fears and insecurities? Of course, you humans are cowards by nature."
+Text/5e/text,"Todos necesitamos escapar de vez en cuando, no lo entenderías…","We all need to escape once in a while, you wouldn’t understand…"
+Text/5f/text,"¿Y de que te sirve escapar si al final terminas volviendo? Solo me da a entender que eres un inseguro, incapaz de ver nada en sí mismo.","And what use is escaping if you end up running back afterwards? It only shows you’re a fool with no backbone, unable to see anything in yourself."
+Text/60/text,La bruja agarró un hueso y lo presionó contra mi pecho repetidas veces de manera burlona.,The witch grabbed a nearby bone and tapped my chest repeatedly with it in a mocking manner.
+Text/61/text,"Aunque para mi, esto solo son ventajas, serías más feliz simplemente siguiendo mis órdenes antes que volviendo a tu mundo de humanos, ¿a que sí? ¡jajajaja!","Though to me its all advantages, you’d be much happier just by following my orders rather than going back to your human world, wouldn’t you? Kyahahaha!"
+Text/62/text,"La bruja tiró el hueso sin pensarlo mientras soltaba carcajadas, accidentalmente golpeando el techo de la cueva en el proceso, menuda habilidad…","The witch tossed the bone casually as she cackled, accidentally hitting the cave’s ceiling in the process, she’s got quite the throwing arm…"
+Text/63/text,"Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… (+1 Estalactita)","I saw a stalactite break off after having been hit by the bone; I used my chance while the witch was distracted and cautiously snatched it from the ground, it might come in handy in the future…"
+Choice/64/text,Quería nuevos amigos…,I wanted to find new friends…
 Choice/64/disabled_text,,
-Text/65/text,I wanted to find new friends…,Quería nuevos amigos…
-Text/66/text,Friends? I thought you humans were meant to be social creatures or something like that.,¿Amigos? ¿No se supone que los humanos sois sociables o algo así?
-Text/67/text,"I’m sociable yes, but… Most of the friendships i’ve had throughout my life ended up distancing themselves from me due to reasons outside of my control…","Soy sociable si, pero… La mayoría de amistades que he tenido a lo largo de mi vida terminaron separándose de mí por motivos fuera de mi control…"
-Text/68/text,"Doesn’t matter how open or extroverted I am, I always end up alone by the end…","Por muy abierto que sea, siempre termino solo…"
-Text/69/text,I see… How pitiful…,Ya veo… Que pena me das..
-Text/6a/text,"Luckily for you though you’re down here now, possibly forever, so you know, no better time to turn a new leaf!","Por suerte para tí ahora estás aquí abajo, posiblemente para siempre, por lo que ya sabes, ¡borrón y cuenta nueva!"
-Text/6b/text,"Not to mention just how useful your ‘social skills’ will be for my plans, kehehe…","Además tus habilidades ‘sociables’ me serán de gran utilidad para mis planes, jejeje…"
-Text/6c/text,...Are you implying you want to be my friend?,¿...Estás insinuando que quieres ser mi amiga-?
-Text/6d/text,"What? Don’t kid yourself punk, I don’t hang out with just anyone much less humans like you, you’ll get to be my favorite minion at most, kyahaha!","¿Qué? No te hagas ilusiones chaval yo no me junto con cualquiera y menos con humanos, como mucho vas a llegar a ser mi esbirro favorito, ¡jajaja!"
-Text/6e/text,She was making a mockery of me… I decided to brace myself and try to draw out some info out of her while I still could.,Se estaba burlando de mí por completo… Decidí armarme de valor e intentar sonsacar algo de información de ella mientras podía.
-Text/6f/text,"Alright… B-But it’s not fair that you’re the only one who gets to ask questions, I got many of my own, especially now!","Vale… P-Pero no es justo que seas la única en preguntarme cosas, yo tengo muchas preguntas también, ¡y más aún ahora!"
-Text/70/text,"Ugh… Fine, fine, your confusion is understandable as much as it pains me, I'll allow you to ask a few questions… As long as its entertaining…","Ugh… Bien bien, tu confusión es entendible por mucho que me moleste, te permitiré que me preguntes cosas… Más vale que sea entretenido…"
-Text/71/text,Despite supposedly having me as her minion she seemed weirdly helpful… Better not jinx it…,Para supuestamente tenerme como un esbirro se muestra extrañamente cooperativa… Mejor no tiento a la suerte y aprovecho…
+Text/65/text,Quería nuevos amigos…,I wanted to find new friends…
+Text/66/text,¿Amigos? ¿No se supone que los humanos sois sociables o algo así?,Friends? I thought you humans were meant to be social creatures or something like that.
+Text/67/text,"Soy sociable si, pero… La mayoría de amistades que he tenido a lo largo de mi vida terminaron separándose de mí por motivos fuera de mi control…","I’m sociable yes, but… Most of the friendships i’ve had throughout my life ended up distancing themselves from me due to reasons outside of my control…"
+Text/68/text,"Por muy abierto que sea, siempre termino solo…","Doesn’t matter how open or extroverted I am, I always end up alone by the end…"
+Text/69/text,Ya veo… Que pena me das..,I see… How pitiful…
+Text/6a/text,"Por suerte para tí ahora estás aquí abajo, posiblemente para siempre, por lo que ya sabes, ¡borrón y cuenta nueva!","Luckily for you though you’re down here now, possibly forever, so you know, no better time to turn a new leaf!"
+Text/6b/text,"Además tus habilidades ‘sociables’ me serán de gran utilidad para mis planes, jejeje…","Not to mention just how useful your ‘social skills’ will be for my plans, kehehe…"
+Text/6c/text,¿...Estás insinuando que quieres ser mi amiga-?,...Are you implying you want to be my friend?
+Text/6d/text,"¿Qué? No te hagas ilusiones chaval yo no me junto con cualquiera y menos con humanos, como mucho vas a llegar a ser mi esbirro favorito, ¡jajaja!","What? Don’t kid yourself punk, I don’t hang out with just anyone much less humans like you, you’ll get to be my favorite minion at most, kyahaha!"
+Text/6e/text,Se estaba burlando de mí por completo… Decidí armarme de valor e intentar sonsacar algo de información de ella mientras podía.,She was making a mockery of me… I decided to brace myself and try to draw out some info out of her while I still could.
+Text/6f/text,"Vale… P-Pero no es justo que seas la única en preguntarme cosas, yo tengo muchas preguntas también, ¡y más aún ahora!","Alright… B-But it’s not fair that you’re the only one who gets to ask questions, I got many of my own, especially now!"
+Text/70/text,"Ugh… Bien bien, tu confusión es entendible por mucho que me moleste, te permitiré que me preguntes cosas… Más vale que sea entretenido…","Ugh… Fine, fine, your confusion is understandable as much as it pains me, I'll allow you to ask a few questions… As long as its entertaining…"
+Text/71/text,Para supuestamente tenerme como un esbirro se muestra extrañamente cooperativa… Mejor no tiento a la suerte y aprovecho…,Despite supposedly having me as her minion she seemed weirdly helpful… Better not jinx it…
 Label/72/display_name,,
-Choice/73/text,What are you exactly?,¿Qué eres exactamente?
+Choice/73/text,¿Qué eres exactamente?,What are you exactly?
 Choice/73/disabled_text,,
-Text/74/text,What are you exactly?,¿Qué eres exactamente?
-Text/75/text,"I’m what your kind refers to as a ‘ningen’, an ancient race hailing from the arctic depths, though very few of us remain, hehe…","Soy lo que tu especie define como una ‘ningen’, somos una raza antigua proveniente de las profundidades de los mares árticos, aunque ya quedan muy pocos de nosotros, jeje…"
-Text/76/text,"Oh, I'm sorry to hear…","Oh, lamento oir eso…"
-Text/77/text,Are you kidding? That means way less competition for me! All of our arcane knowledge will eventually fall to me once me and my parents are the last ones remaining.,¿Bromeas? ¡Eso significa menos competición para mi! Todos nuestros conocimientos arcanos eventualmente recaeran sobre mi una vez yo y mis padres seamos los últimos restantes.
-Text/78/text,Y-You have parents-?,¿T-Tienes padres?
-Text/79/text,Of course! Where else did you think I popped out from? The void?,¡Pues claro! ¿De dónde voy a salir yo sí no? ¿De la nada?
-Text/7a/text,"Sorry, didn’t take you for the type to have a close bond with your parents…","Perdón, tampoco te tomaba como alguien con una relación sentimental hacia sus padres…"
-Text/7b/text,"Of course I do, I'm a witch not a monster, my parents taught me all I know, if you think i’m intimidating you don’t even wanna imagine how THEY are.","Claro que la tengo, soy una bruja pero no un monstruo, mis padres me enseñaron todo lo que sé, si crees que yo intimido no te quieres ni imaginar cómo son mis viejos."
-Text/7c/text,"I couldn’t help but feel a shiver run down my spine just from thinking about how her parents may be, probably some sort of abyssal abominations far too complex for my imagination… I don’t ever wanna go out into the sea again after this…","No pude evitar sentir un escalofrío de solo pensar cómo deberían ser sus padres, posiblemente abominaciones abisales fuera de mi conocimiento… No quiero volver a estar en el mar después de esto…"
-Choice/7d/text,Why do you call yourself a witch,Por qué te haces llamar bruja?
+Text/74/text,¿Qué eres exactamente?,What are you exactly?
+Text/75/text,"Soy lo que tu especie define como una ‘ningen’, somos una raza antigua proveniente de las profundidades de los mares árticos, aunque ya quedan muy pocos de nosotros, jeje…","I’m what your kind refers to as a ‘ningen’, an ancient race hailing from the arctic depths, though very few of us remain, hehe…"
+Text/76/text,"Oh, lamento oir eso…","Oh, I'm sorry to hear…"
+Text/77/text,¿Bromeas? ¡Eso significa menos competición para mi! Todos nuestros conocimientos arcanos eventualmente recaeran sobre mi una vez yo y mis padres seamos los últimos restantes.,Are you kidding? That means way less competition for me! All of our arcane knowledge will eventually fall to me once me and my parents are the last ones remaining.
+Text/78/text,¿T-Tienes padres?,Y-You have parents-?
+Text/79/text,¡Pues claro! ¿De dónde voy a salir yo sí no? ¿De la nada?,Of course! Where else did you think I popped out from? The void?
+Text/7a/text,"Perdón, tampoco te tomaba como alguien con una relación sentimental hacia sus padres…","Sorry, didn’t take you for the type to have a close bond with your parents…"
+Text/7b/text,"Claro que la tengo, soy una bruja pero no un monstruo, mis padres me enseñaron todo lo que sé, si crees que yo intimido no te quieres ni imaginar cómo son mis viejos.","Of course I do, I'm a witch not a monster, my parents taught me all I know, if you think i’m intimidating you don’t even wanna imagine how THEY are."
+Text/7c/text,"No pude evitar sentir un escalofrío de solo pensar cómo deberían ser sus padres, posiblemente abominaciones abisales fuera de mi conocimiento… No quiero volver a estar en el mar después de esto…","I couldn’t help but feel a shiver run down my spine just from thinking about how her parents may be, probably some sort of abyssal abominations far too complex for my imagination… I don’t ever wanna go out into the sea again after this…"
+Choice/7d/text,Por qué te haces llamar bruja?,Why do you call yourself a witch
 Choice/7d/disabled_text,,
-Text/7e/text,Why do you call yourself a witch,¿Por qué te haces llamar bruja?
-Text/7f/text,"Cause it's my thing, duh.","Porque es mi oficio, obvio."
-Text/80/text,But isn’t it kind of… derogatory?,Pero no es un título algo… ¿despectivo?
-Text/81/text,"I’m already infamous to my fellow inhabitants of the deep as well as to humans, i’d rather embrace the title and make it mind, besides, it just fits me perfectly, don’t you think?","Ya soy infame tanto para los otros habitantes de las profundidades como para los humanos, prefiero adoptar el título y hacerlo mío antes que negarlo, además, me queda de fábula."
-Text/82/text,And why so much interest in being seen as a witch…? You enjoy other people’s misery that much?,¿Y para que tanto interés en ser vista como una bruja…? ¿Disfrutas de la miseria de los demás?
-Text/83/text,"As you can already tell, I obviously do, kyahaha! But it has nothing to do with my real motives.","Pues ya ves que es obvio que si, ¡jajaja! Pero no tiene nada que ver con mis motivos."
-Text/84/text,"As any scholar of the arcane forces I only crave knowledge and ways to put myself above everyone else, if someone suffers due to it then they’re nothing more than casualties, petty details.","Como cualquier estudiante de las fuerzas arcanas yo solo busco conocimiento y maneras de mejorarme por encima de los demás, si alguien sufre por ello no son nada más que bajas accidentales, minucias."
-Text/85/text,That’s kind of cruel…,Eso es bastante cruel…
-Text/86/text,"Its not like I go around killing people for fun, it's all for the greater good, [pause=0.5] MY greater good","Tampoco es que vaya matando gente por diversión, todo es por un bien mayor, [pause=0.5]MI bien mayor."
-Text/87/text,"And eventually i’ll be invincible, with such a humongous power that nobody will be able to face me, i’ll be perfect, praised like a goddess!","Y eventualmente me volveré invencible, con un poder tan descomunal que nadie será capaz de plantarme cara, seré perfecta, ¡alabada como una diosa!"
-Text/88/text,You could also start by improving your looks…,También podrías empezar por mejorar tu aspecto…
-Text/89/text,What was that?,¿Qué has dicho?
-Text/8a/text,N-NOTHING-!,¡N-NADA-!
-Choice/8b/text,Do you hate humans?,¿Odias a los humanos?
+Text/7e/text,¿Por qué te haces llamar bruja?,Why do you call yourself a witch
+Text/7f/text,"Porque es mi oficio, obvio.","Cause it's my thing, duh."
+Text/80/text,Pero no es un título algo… ¿despectivo?,But isn’t it kind of… derogatory?
+Text/81/text,"Ya soy infame tanto para los otros habitantes de las profundidades como para los humanos, prefiero adoptar el título y hacerlo mío antes que negarlo, además, me queda de fábula.","I’m already infamous to my fellow inhabitants of the deep as well as to humans, i’d rather embrace the title and make it mind, besides, it just fits me perfectly, don’t you think?"
+Text/82/text,¿Y para que tanto interés en ser vista como una bruja…? ¿Disfrutas de la miseria de los demás?,And why so much interest in being seen as a witch…? You enjoy other people’s misery that much?
+Text/83/text,"Pues ya ves que es obvio que si, ¡jajaja! Pero no tiene nada que ver con mis motivos.","As you can already tell, I obviously do, kyahaha! But it has nothing to do with my real motives."
+Text/84/text,"Como cualquier estudiante de las fuerzas arcanas yo solo busco conocimiento y maneras de mejorarme por encima de los demás, si alguien sufre por ello no son nada más que bajas accidentales, minucias.","As any scholar of the arcane forces I only crave knowledge and ways to put myself above everyone else, if someone suffers due to it then they’re nothing more than casualties, petty details."
+Text/85/text,Eso es bastante cruel…,That’s kind of cruel…
+Text/86/text,"Tampoco es que vaya matando gente por diversión, todo es por un bien mayor, [pause=0.5]MI bien mayor.","Its not like I go around killing people for fun, it's all for the greater good, [pause=0.5] MY greater good"
+Text/87/text,"Y eventualmente me volveré invencible, con un poder tan descomunal que nadie será capaz de plantarme cara, seré perfecta, ¡alabada como una diosa!","And eventually i’ll be invincible, with such a humongous power that nobody will be able to face me, i’ll be perfect, praised like a goddess!"
+Text/88/text,También podrías empezar por mejorar tu aspecto…,You could also start by improving your looks…
+Text/89/text,¿Qué has dicho?,What was that?
+Text/8a/text,¡N-NADA-!,N-NOTHING-!
+Choice/8b/text,¿Odias a los humanos?,Do you hate humans?
 Choice/8b/disabled_text,,
-Text/8c/text,"Nah, I don’t hate them, but that doesn’t make them any less objectively inferior.","Nah, no los odio, pero eso no quita que no sean objetivamente inferiores."
-Text/8d/text,W-What makes us inferior exactly?,¿Q-Qué nos hace inferiores exactamente?
-Text/8e/text,"How about the fact that you have no knowledge of the arcane forces for example, you have split yourself from nature to the point you’ve forgotten your own roots.","El hecho de que no tenéis conocimiento de las fuerzas arcanas por ejemplo, os habéis separado hasta tal punto de la naturaleza que se os han olvidado vuestras propias raíces."
-Text/8f/text,"But we’ve also managed many other accomplishments, like going to space…","Pero también hemos conseguido muchos otros logros, como ir al espacio…"
-Text/90/text,"Space, HAH!, you haven’t even explored most of the seas on this planet and you actually believe I'm going to believe that.","El espacio, ¡JA!, no habeis ni tan siquiera explorado la mayoría de los mares de este planeta y de verdad piensas que me voy a creer eso."
-Text/91/text,"You can’t even survive down here for long, it's pathetic!","¡No podéis ni tan siquiera sobrevivir aquí abajo durante mucho tiempo, es patético!"
-Text/92/text,"You can’t survive on the surface either, can you?","Tú tampoco puedes sobrevivir en la superficie, ¿verdad?"
+Text/8b1/text,¿Odias a los humanos?,
+Text/8c/text,"Nah, no los odio, pero eso no quita que no sean objetivamente inferiores.","Nah, I don’t hate them, but that doesn’t make them any less objectively inferior."
+Text/8d/text,¿Q-Qué nos hace inferiores exactamente?,W-What makes us inferior exactly?
+Text/8e/text,"El hecho de que no tenéis conocimiento de las fuerzas arcanas por ejemplo, os habéis separado hasta tal punto de la naturaleza que se os han olvidado vuestras propias raíces.","How about the fact that you have no knowledge of the arcane forces for example, you have split yourself from nature to the point you’ve forgotten your own roots."
+Text/8f/text,"Pero también hemos conseguido muchos otros logros, como ir al espacio…","But we’ve also managed many other accomplishments, like going to space…"
+Text/90/text,"El espacio, ¡JA!, no habeis ni tan siquiera explorado la mayoría de los mares de este planeta y de verdad piensas que me voy a creer eso.","Space, HAH!, you haven’t even explored most of the seas on this planet and you actually believe I'm going to believe that."
+Text/91/text,"¡No podéis ni tan siquiera sobrevivir aquí abajo durante mucho tiempo, es patético!","You can’t even survive down here for long, it's pathetic!"
+Text/92/text,"Tú tampoco puedes sobrevivir en la superficie, ¿verdad?","You can’t survive on the surface either, can you?"
 Text/93/text,...,...
-Text/94/text,[pause=0.5]“...Touche.,[pause=0.5]“...Touche.
-Choice/95/text,What was that giant water creature that attacked me?,¿Qué era esa criatura gigante de agua que me atacó?
+Text/94/text,[pause=0.5]...Touche.,[pause=0.5]...Touche.
+Choice/95/text,¿Qué era esa criatura gigante de agua que me atacó?,What was that giant water creature that attacked me?
 Choice/95/disabled_text,,
-Text/96/text,What was that giant water creature that attacked me?,¿Qué era esa criatura gigante de agua que me atacó?
-Text/97/text,...,...
+Text/96/text,¿Qué era esa criatura gigante de agua que me atacó?,What was that giant water creature that attacked me?
+Text/97/text,[pause=3.0]...,[pause=3.0]...
 Text/98/text,...,...
-Text/99/text,"The witch stared at me intensely, she looked as if she was holding back her laughter…","La bruja me miró intensamente, parecía que se intentaba aguantar la risa…"
-Text/9a/text,...So?,¿...Y bien?
-Text/9b/text,Oh nothing… I’ll only say you’ve had some insane luck…,Oh nada nada… Solo diré que has tenido una suerte descomunal…
-Text/9c/text,So you know it?,¿Entonces la conoces?
-Text/9d/text,I’ll say nothing on it for your own good… Just pray that you don’t encounter her again… Hehe…,No diré nada al respecto por tu bien… Solo reza por que no te la vuelvas a encontrar… Jeje…
-Text/9e/text,"I felt that terrifying feeling from before for a few instants, I better change topics…","Sentí ese terror de antes por unos instantes, mejor cambio de tema…"
-Choice/9f/text,Do you like me?,¿Te gusto?
+Text/99/text,"La bruja me miró intensamente, parecía que se intentaba aguantar la risa…","The witch stared at me intensely, she looked as if she was holding back her laughter…"
+Text/9a/text,¿...Y bien?,...So?
+Text/9b/text,Oh nada nada… Solo diré que has tenido una suerte descomunal…,Oh nothing… I’ll only say you’ve had some insane luck…
+Text/9c/text,¿Entonces la conoces?,So you know it?
+Text/9d/text,No diré nada al respecto por tu bien… Solo reza por que no te la vuelvas a encontrar… Jeje…,I’ll say nothing on it for your own good… Just pray that you don’t encounter her again… Hehe…
+Text/9e/text,"Sentí ese terror de antes por unos instantes, mejor cambio de tema…","I felt that terrifying feeling from before for a few instants, I better change topics…"
+Choice/9f/text,¿Te gusto?,Do you like me?
 Choice/9f/disabled_text,,
-Text/a0/text,Do you like me?,¿Te gusto?
-Text/a1/text,What?,¿Qué?
-Text/a2/text,"...Well if you normally tear apart humans to use them as ingredients, why haven’t you done the same to me?","...Bueno si tu normalmente despedazas a humanos para usarlos de ingredientes, ¿por qué no lo has hecho conmigo?"
-Text/a3/text,"Oh! Because you’re more useful to me being alive in your case, your human sociability is just what I need to get my hands on the missing ingredient I need for my potion.","¡Ah! Porque me resultas más útil vivo en tu caso, tu sociabilidad humana es justo lo que necesito para hacerme con el ingrediente que me falta para mi poción."
-Text/a4/text,And that’s why you cursed me…,Y por eso me has puesto esta maldición…
-Text/a5/text,"Now you’re starting to get it, I suggest you get used to following my orders if you want to survive down here…","Ya lo vas pillando, te recomiendo que te acostumbres a seguir mis órdenes si quieres sobrevivir aquí abajo…"
-Text/a6/text,I feel like you’re also doing it cause you feel lonely…,A mi se me hace que tu también quieres compañía…
-Text/a7/text,Don’t try to swoon me with your human sentimentalities! You’re just a tool! Another minion for me to use!,¡No intentes engatusarme con tus sentimentalidades humanas! ¡Solo eres una herramienta! ¡Un esbirro más!
-Text/a8/text,If you say so…,Si tu lo dices…
-Choice/a9/text,How can I go back to being a human?,¿Cómo puedo volver a mi forma humana?
+Text/a0/text,¿Te gusto?,Do you like me?
+Text/a1/text,¿Qué?,What?
+Text/a2/text,"...Bueno si tu normalmente despedazas a humanos para usarlos de ingredientes, ¿por qué no lo has hecho conmigo?","...Well if you normally tear apart humans to use them as ingredients, why haven’t you done the same to me?"
+Text/a3/text,"¡Ah! Porque me resultas más útil vivo en tu caso, tu sociabilidad humana es justo lo que necesito para hacerme con el ingrediente que me falta para mi poción.","Oh! Because you’re more useful to me being alive in your case, your human sociability is just what I need to get my hands on the missing ingredient I need for my potion."
+Text/a4/text,Y por eso me has puesto esta maldición…,And that’s why you cursed me…
+Text/a5/text,"Ya lo vas pillando, te recomiendo que te acostumbres a seguir mis órdenes si quieres sobrevivir aquí abajo…","Now you’re starting to get it, I suggest you get used to following my orders if you want to survive down here…"
+Text/a6/text,A mi se me hace que tu también quieres compañía…,I feel like you’re also doing it cause you feel lonely…
+Text/a7/text,¡No intentes engatusarme con tus sentimentalidades humanas! ¡Solo eres una herramienta! ¡Un esbirro más!,Don’t try to swoon me with your human sentimentalities! You’re just a tool! Another minion for me to use!
+Text/a8/text,Si tu lo dices…,If you say so…
+Choice/a9/text,¿Cómo puedo volver a mi forma humana?,How can I go back to being a human?
 Choice/a9/disabled_text,,
-Text/aa/text,How can I go back to being a human?,¿Cómo puedo volver a mi forma humana?
+Text/aa/text,¿Cómo puedo volver a mi forma humana?,How can I go back to being a human?
 Label/ab/display_name,,
-Text/ac/text,"So we’re back to this huh? Fine, I'll get to the point…","¿Así que vuelves con esas eh? Bien, pues iré al grano…"
-Text/ad/text,The only way to get rid of your curse is to use the same potion that i’m making… A potion made out of the various emotional essences that exist within intelligent creatures…,La única manera de quitar tu maldición es consiguiendo la misma poción que estoy intentando crear yo… Una poción formada por esencias de los sentimientos que habitan en criaturas inteligentes…
-Text/ae/text,"I already have most ingredients: wrath, joy, sorrow, fear, so much fear… And I only need another emotional essence, the most difficult of all to attain…","Ya tengo todos los ingredientes: ira, alegría, tristeza, miedo, mucho miedo… Y solo me falta una esencia de sentimiento más, la más compleja de todas…"
-Text/af/text,The emotional essence of love… Forged only when a pure emotional bond between two people manifests…,La esencia del sentimiento del amor… Formada únicamente cuando una unión emocional de tal pureza se crea entre dos personas…
-Text/b0/text,"Which requires meeting folks, being friendly, making them like you, many bothersome steps that aren’t my thing. Not to mention my reputation putting me at a disadvantage.","Lo cuál requiere relacionarse con otras personas, caerles bien, hacer que le gustes, en fin muchos pasos complejos que no van conmigo. Además de que mi infamia ya me pone en desventaja."
-Text/b1/text,"And that’s where YOU come in my dear minion, you’ll be the new face around this sea neighborhood, I want you to find someone, anyone, and make them fall for you so I can get my hands on that essence.","Y ahí entras TÚ mi querido esbirro, serás la nueva cara en este mar perdido, quiero que encuentres a alguien, quien sea, y que hagas que se enamoren de ti para obtener esa esencia."
-Text/b2/text,"If you want to go back to being a human, you have no choice but to follow my instructions, kehehe…","Si quieres volver a ser humano no te queda otra que seguir mis instrucciones, jejeje…"
-Text/b3/text,"I felt desperate as I heard her words, do I really have no choice but to help her? I didn’t want to believe it, I didn’t want to be a slave for this witch…","Sentí desesperación al escuchar sus palabras, ¿de verdad no tengo más elección que ayudarla? No quería creerlo, no quiero tener que ser un esclavo para esta bruja…"
-Text/b4/text,"...N-No… …I-It can’t be true, there has to be another way!","...N-No… …N-No puede ser cierto, ¡tiene que haber otra manera!"
-Text/b5/text,"Hah! Believe me, if there was, I'd have already used it, you have no choice, I already have the rest of the potion at the ready and I only need that last ingredient.","¡Ja! Creeme, si la hubiera ya la hubiera utilizado yo, no tienes otra elección, yo ya tengo el resto de la poción preparada y solo falta ese ingrediente."
-Text/b6/text,"...I-I refuse! There has to be another way out there, a-and if there isn’t, then I'll just make the potion myself, I won’t let you use me!","¡...M-Me niego! Tiene que haber otra manera allí afuera, y-y si no, entonces yo crearé la poción por mi cuenta, ¡no dejaré que me manipules!"
-Text/b7/text,"Hey hey hey… Don’t get too cocky… You’re only alive thanks to me, you’re in MY cave, and even if you escape you have no idea what awaits you out there…","Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera…"
-Text/b8/text,Trust me when I say that the inhabitants of the deep aren’t as merciful as I am… [b]You’ll be dead in a matter of minutes.[/b],Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b]
-Text/b9/text,…I’d rather risk it.,...Prefiero arriesgarme.
-Text/ba/text,"At that moment the witch began to growl in frustration, strange wrinkly creatures began to emerge from within the cracks on the cave walls, slowly moving towards me…","En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi…"
-Text/bb/text,I suggest you change your mind… Unless you’d rather die by my hand…,Te recomiendo que cambies de idea… A menos que quieras que te mate yo misma…
-Text/bc/text,"The witch’s minions brandished their jaws threateningly towards me, strange magic cracking on her hands…","Los esbirros de la bruja mordían hacia mi amenazantemente, magia extraña brotaba de sus manos…"
-Text/bd/text,"So human, [b]what will you do?[/b]",¿Y bien humano? [b] ¿Qué harás?[/b]
+Text/ac/text,"¿Así que vuelves con esas eh? Bien, pues iré al grano…","So we’re back to this huh? Fine, I'll get to the point…"
+Text/ad/text,La única manera de quitar tu maldición es consiguiendo la misma poción que estoy intentando crear yo… Una poción formada por esencias de los sentimientos que habitan en criaturas inteligentes…,The only way to get rid of your curse is to use the same potion that i’m making… A potion made out of the various emotional essences that exist within intelligent creatures…
+Text/ae/text,"Ya tengo todos los ingredientes: ira, alegría, tristeza, miedo, mucho miedo… Y solo me falta una esencia de sentimiento más, la más compleja de todas…","I already have most ingredients: wrath, joy, sorrow, fear, so much fear… And I only need another emotional essence, the most difficult of all to attain…"
+Text/af/text,La esencia del sentimiento del amor… Formada únicamente cuando una unión emocional de tal pureza se crea entre dos personas…,The emotional essence of love… Forged only when a pure emotional bond between two people manifests…
+Text/b0/text,"Lo cuál requiere relacionarse con otras personas, caerles bien, hacer que le gustes, en fin muchos pasos complejos que no van conmigo. Además de que mi infamia ya me pone en desventaja.","Which requires meeting folks, being friendly, making them like you, many bothersome steps that aren’t my thing. Not to mention my reputation putting me at a disadvantage."
+Text/b1/text,"Y ahí entras TÚ mi querido esbirro, serás la nueva cara en este mar perdido, quiero que encuentres a alguien, quien sea, y que hagas que se enamoren de ti para obtener esa esencia.","And that’s where YOU come in my dear minion, you’ll be the new face around this sea neighborhood, I want you to find someone, anyone, and make them fall for you so I can get my hands on that essence."
+Text/b2/text,"Si quieres volver a ser humano no te queda otra que seguir mis instrucciones, jejeje…","If you want to go back to being a human, you have no choice but to follow my instructions, kehehe…"
+Text/b3/text,"Sentí desesperación al escuchar sus palabras, ¿de verdad no tengo más elección que ayudarla? No quería creerlo, no quiero tener que ser un esclavo para esta bruja…","I felt desperate as I heard her words, do I really have no choice but to help her? I didn’t want to believe it, I didn’t want to be a slave for this witch…"
+Text/b4/text,"...N-No… …N-No puede ser cierto, ¡tiene que haber otra manera!","...N-No… …I-It can’t be true, there has to be another way!"
+Text/b5/text,"¡Ja! Creeme, si la hubiera ya la hubiera utilizado yo, no tienes otra elección, yo ya tengo el resto de la poción preparada y solo falta ese ingrediente.","Hah! Believe me, if there was, I'd have already used it, you have no choice, I already have the rest of the potion at the ready and I only need that last ingredient."
+Text/b6/text,"¡...M-Me niego! Tiene que haber otra manera allí afuera, y-y si no, entonces yo crearé la poción por mi cuenta, ¡no dejaré que me manipules!","...I-I refuse! There has to be another way out there, a-and if there isn’t, then I'll just make the potion myself, I won’t let you use me!"
+Text/b7/text,"Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera…","Hey hey hey… Don’t get too cocky… You’re only alive thanks to me, you’re in MY cave, and even if you escape you have no idea what awaits you out there…"
+Text/b8/text,Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b],Trust me when I say that the inhabitants of the deep aren’t as merciful as I am… [b]You’ll be dead in a matter of minutes.[/b]
+Text/b9/text,...Prefiero arriesgarme.,…I’d rather risk it.
+Text/ba/text,"En ese momento, la bruja empezó a gruñir de frustración, extrañas criaturas arrugadas empezaron a emerger de entre las grietas de la cueva, acercándose lentamente hacia mi…","At that moment the witch began to growl in frustration, strange wrinkly creatures began to emerge from within the cracks on the cave walls, slowly moving towards me…"
+Text/bb/text,Te recomiendo que cambies de idea… A menos que quieras que te mate yo misma…,I suggest you change your mind… Unless you’d rather die by my hand…
+Text/bc/text,"Los esbirros de la bruja mordían hacia mi amenazantemente, magia extraña brotaba de sus manos…","The witch’s minions brandished their jaws threateningly towards me, strange magic cracking on her hands…"
+Text/bd/text,¿Y bien humano? ¿Qué harás?,"So human, [b]what will you do?[/b]"
 Label/be/display_name,,
-Choice/bf/text, Run!,¡Huir!
+Choice/bf/text,¡Huir!, Run!
 Choice/bf/disabled_text,,
-Text/c0/text,"I immediately swam away to leave the room, delving deeper into the cave in the hopes of finding an exit!","¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida!"
-Text/c1/text,You fool! Nobody knows these caves better than I! You won’t get out of here alive! AFTER HIM!,¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL!
-Choice/c2/text,Fight!,¡Luchar!
+Text/c0/text,"¡Inmediatamente empecé a nadar en dirección contraria para escapar del cuarto, adentrándome en la cueva con la esperanza de encontrar otra salida!","I immediately swam away to leave the room, delving deeper into the cave in the hopes of finding an exit!"
+Text/c1/text,¡Insensato! ¡Nadie conoce estas cuevas mejor que yo! ¡No saldrás con vida! ¡TRAS ÉL!,You fool! Nobody knows these caves better than I! You won’t get out of here alive! AFTER HIM!
+Choice/c2/text,¡Luchar!,Fight!
 Choice/c2/disabled_text,,
-Text/c3/text," I get in a fighting stance, showing my sharp teeth and fists without fear.","Me pongo en posición de combate, enseñando mis dientes y puños sin miedo."
-Text/c4/text,"...KYAHAHAHA! Are you serious?! You have no idea of the sheer power I hold, I could kill you in an instant!","...¡JAJAJAJA! ¡¿Es en serio?! ¡No tienes ni idea del poder que tengo, te podría matar en un instante!"
-Text/c5/text,T-Try it then witch!,¡I-Inténtalo entonces bruja!
-Text/c6/text,So be it!,¡Que así sea pues!
-Text/c7/text, PREPARE TO DIE!,¡PREPÁRATE A MORIR!
-Text/c8/text,"The witch summoned a current that sent me floating back out of the room, slamming me into a wall, I could hear her minions moving towards me quickly, I gotta get back to her and defeat her!","La bruja invocó una corriente que me mandó flotando fuera del cuarto hacia atrás, tocándome contra una pared, podía escuchar a sus esbirros acercándose rápidamente, ¡tengo que llegar hasta ella y derrotarla!"
+Text/c3/text,"Me pongo en posición de combate, enseñando mis dientes y puños sin miedo."," I get in a fighting stance, showing my sharp teeth and fists without fear."
+Text/c4/text,"...¡JAJAJAJA! ¡¿Es en serio?! ¡No tienes ni idea del poder que tengo, te podría matar en un instante!","...KYAHAHAHA! Are you serious?! You have no idea of the sheer power I hold, I could kill you in an instant!"
+Text/c5/text,¡I-Inténtalo entonces bruja!,T-Try it then witch!
+Text/c6/text,¡Que así sea pues! [pause=0.2] ¡PREPÁRATE A MORIR!,So be it! [pause=0.2] PREPARE TO DIE!
+Text/c7/text,"Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma.","I quickly lunged at the witch, attacking her with scratches and bites thanks to my new form."
+Label/4a/display_name,,
+Text/4b/text,URGH-! No lo haces mal…,"URGH-! Not too shabby…"
+Text/4c/text,"Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro.","I managed to corner the witch, we gripped each other, trying to overpower one another."
+Text/4d/text,"Por suerte, vi mi oportunidad: una estalactita caída en el suelo.","Luckily, I saw my opportunity: a broken stalactite on the ground."
+Text/4e/text,¡Utilicé mi cola para cogerla y-!,"I used my tail to snatch it and-!"
+Text/4f/text,¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!!,¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!!
+Text/50/text,¡Lo conseguí! ¡La hice sangrar!,"I did it! I made her bleed!"
+Text/51/text,G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?,G-Ggghhh… [pause=0.2] Y-You idiot… [pause=0.2] …D-Don’t you see i’m the only one keeping you alive down h-here…?
+Text/52/text,Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más…,"I’d rather live on my own accord… You won’t hurt anyone else anymore…"
+Text/53/text,...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara…,...K-Kehehehe… [pause=0.2] …You have no idea what awaits you…
+Text/54/text,Disfruta… [pause=0.2] de tu muerte…,Enjoy… [Mini pausa] your demise…
+Text/55/text,"La bruja entonces se desvaneció en una nube oscura, sin dejar rastro…","The witch then vanished in a purple smog cloud, leaving no trace…"
+Text/56/text,…Supongo que eso cuenta como haberla derrotado.,…I guess that counts as beating her.
+Text/57/text,"Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas…","I stared into the volcanic crater she used as a cauldron, the mixture of essences was inside of it, but I had no idea of how to use them, or handle them…"
+Text/58/text,No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo…,"I have no choice but to leave and try to find another way back to normal… With some luck I'll manage to get that missing essence or something…"
+Label/59/display_name,,
+Text/5a/text,¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo!,"Nrgh-! Not too bad for someone who was only transformed a bit ago!"
+Text/5b/text,¡¡¡Sin embargo…!!!,However…!!!
+Text/5c/text,"La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos.","The witch grabbed me by the neck and slammed me into the wall, making me lose control of my body for a moment."
+Text/5d/text,"Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor.","It was in those few seconds that the witch’s minions clamped down on me, biting my wrists and my tail to trap me, making me wail in pain."
+Text/5e/text,"¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato.","Not so brave now huh? Don’t underestimate me just because of my squalid appearance, idiot."
+Text/5f/text,N-Nnngghh… N-No puede ser…,"N-Nnngghh… I-It can’t be…"
+Text/60/text,"Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar…","It seems I won this round, and now that I'm well aware that you refuse to cooperate…"
+Text/61/text,[b]Voy a asegurarme de que no vuelvas a desobedecerme nunca.[/b],"[b]I’m going to make sure you will never disobey me again.[/b]"
+Text/62/text,"Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero…","The last thing I saw was how the witch shot another spell at me, a far more painful one than the first…"
+Text/63/text,Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía…,"I felt my entire body squirm in agony as I was newly transformed for my boldness…"
+Text/64/text,"En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer…","In a matter of minutes, I had been turned into something far more insignificant, I was unable to process what I had become, my intelligence had been reduced to a point that I could only think about eating…"
+Text/65/text,Como un animal salvaje… Comer… comer…,Like a wild animal… Eat… eat…
+Text/66/text,"¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~!","Maybe this new form is more to your liking, kyahahaha! Enjoy being an abyssal leech, minion~!"
+Text/67/text,Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer…,"I’m only… another minion now… I can’t think for myself… only eat… obey…"
+Text/68/text,Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto…,"If only I… had something to defend myself then… maybe things would’ve been different…"
+Choice/69/text,Reintentar,Retry
+Choice/69/disabled_text,,
+Choice/6a/text,Me rindo,I surrender
+Choice/6a/disabled_text,,

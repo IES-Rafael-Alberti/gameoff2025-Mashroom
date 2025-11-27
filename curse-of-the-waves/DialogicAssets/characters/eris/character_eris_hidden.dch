@@ -10,25 +10,16 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "only_eyes",
+&"default_portrait": "icon",
 &"description": "",
 &"display_name": "???",
 &"mirror": false,
 &"nicknames": ["Eris"],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"eyes_smile": {
+"icon": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"only_eyes": {
-"export_overrides": {
-"image": "\"res://DialogicAssets/characters/eris/ErisIcon.png\""
+"image": "\"res://DialogicAssets/characters/eris/ErisIconSilouette.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
