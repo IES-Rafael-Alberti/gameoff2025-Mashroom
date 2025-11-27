@@ -124,7 +124,17 @@ offset_bottom = -0.08001709
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
+<<<<<<< Updated upstream
 [node name="Options" type="Control" parent="." node_paths=PackedStringArray("OptionAnim")]
+=======
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "ui_credits"
+
+[node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
+visible = false
+>>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -317,7 +327,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_s2c3o")
 }
 
+<<<<<<< Updated upstream
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="item_selected" from="Options/OptionsBackground/Control/SettingsVBox/LanguageVBox/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Options/OptionsBackground/Control/BackButton" to="." method="_on_back_button_pressed"]
+=======
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/RightHBox/RightButton" to="." method="_on_right_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/KeyControlsVBox/MainHBox/MainButton" to="." method="_on_main_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/UpHBox/UpButton" to="." method="_on_up_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/DownHBox/DownButton" to="." method="_on_down_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/LeftHBox/LeftButton" to="." method="_on_left_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/RightHBox/RightButton" to="." method="_on_right_button_toggled" flags=18]
+[connection signal="toggled" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls/ControlsHbox/JoystickControlsVBox/MainHBox/MainButton" to="." method="_on_main_button_toggled" flags=18]
+[connection signal="item_selected" from="OptionsMenu/OptionsBackground/Options/TabContainer/ui_language/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="OptionsMenu/OptionsBackground/Options/ExitButton" to="." method="_on_exit_button_pressed"]
+>>>>>>> Stashed changes

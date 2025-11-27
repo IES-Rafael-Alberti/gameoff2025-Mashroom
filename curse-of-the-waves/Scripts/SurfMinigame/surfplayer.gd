@@ -80,7 +80,14 @@ func death(): # Proceso de Muerte
 	await anims.animation_finished
 	# Temporal, para testeo
 	if true:
+<<<<<<< Updated upstream
 		AudioPlayer.stopMusic()
 		var GameManager = get_tree().get_root().get_node("Main/GameManager")
 		GameManager.loadSceneDialogic(preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
+=======
+		AudioPlayer.stop_music()
+		var game_manager = get_tree().get_root().get_node("Main/GameManager")
+		game_manager.load_scene_dialogic(
+			preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene', true)
+>>>>>>> Stashed changes
 		
