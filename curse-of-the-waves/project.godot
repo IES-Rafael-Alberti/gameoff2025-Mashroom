@@ -38,8 +38,7 @@ directories/dtl_directory={
 "3-cave_scene": "res://DialogicAssets/timelines/3-cave_scene.dtl"
 }
 layout/style_directory={
-"": "res://DialogicAssets/styles/Base.tres",
-"BASE_BIG": "res://DialogicAssets/styles/BASE_BIG.tres",
+"": "res://DialogicAssets/styles/Base_Dialogo.tres",
 "Base": "res://DialogicAssets/styles/Base.tres",
 "Base_Dialogo": "res://DialogicAssets/styles/Base_Dialogo.tres",
 "Kumi_style": "res://DialogicAssets/styles/Kumi_style.tres",
@@ -85,8 +84,8 @@ audio/channel_defaults={
 }
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://DialogicAssets/styles/Base.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/BASE_BIG.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base_Dialogo.tres"]
-layout/default_style="res://DialogicAssets/styles/Base.tres"
+layout/style_list=["res://DialogicAssets/styles/Base_Dialogo.tres", "res://DialogicAssets/styles/Kumi_style.tres", "res://DialogicAssets/styles/New_File.tres", "res://DialogicAssets/styles/Base.tres"]
+layout/default_style="res://DialogicAssets/styles/Base_Dialogo.tres"
 variables={
 "canon_final": false,
 "has_weapon": false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwnp2640ybc13"
-path="res://.godot/imported/Eris.png-3307fbbe14b9bb18fae9c0cc1233e88a.ctex"
+uid="uid://1whs68p488ni"
+path="res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/characters/eris/Eris.png"
-dest_files=["res://.godot/imported/Eris.png-3307fbbe14b9bb18fae9c0cc1233e88a.ctex"]
+source_file="res://DialogicAssets/characters/kumi/OutsideCavePOVKumi1.png"
+dest_files=["res://.godot/imported/OutsideCavePOVKumi1.png-d8f585b137aae332df93b21924e79bf7.ctex"]
 
 [params]
 
