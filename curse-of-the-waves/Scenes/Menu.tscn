@@ -22,8 +22,6 @@ font_size = 30
 [sub_resource type="LabelSettings" id="LabelSettings_ma218"]
 font_size = 40
 
-[sub_resource type="Theme" id="Theme_idohh"]
-
 [sub_resource type="Animation" id="Animation_6pedr"]
 resource_name = "OptionsMenu"
 length = 0.3
@@ -119,11 +117,13 @@ alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_options"
 
@@ -173,17 +173,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_ma218")
+theme_override_font_sizes/font_size = 35
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="ui_controls" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="ControlsLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_controls"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.02745098, 0.26666668, 0.33333334, 1)
 theme_override_constants/line_spacing = 3
 text = "ui_controls"
 label_settings = SubResource("LabelSettings_s2c3o")
@@ -466,6 +468,7 @@ metadata/_tab_index = 1
 [node name="VolumeLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 3
 text = "ui_volume"
 label_settings = SubResource("LabelSettings_s2c3o")
@@ -584,7 +587,6 @@ theme_override_font_sizes/font_size = 30
 text = "+"
 
 [node name="ui_language" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -602,9 +604,9 @@ vertical_alignment = 2
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_wfhf6")
 focus_neighbor_left = NodePath(".")
 focus_neighbor_right = NodePath(".")
-theme = SubResource("Theme_idohh")
 theme_override_font_sizes/font_size = 50
 alignment = 1
 selected = 0
@@ -626,6 +628,7 @@ offset_left = -0.94311523
 offset_top = -0.34753418
 offset_right = 0.059448242
 offset_bottom = 0.14837646
+theme = ExtResource("4_wfhf6")
 theme_override_font_sizes/font_size = 50
 text = "ui_exit"
 
