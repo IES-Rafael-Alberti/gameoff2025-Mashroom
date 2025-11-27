@@ -15,7 +15,7 @@ specular_color = Color(0, 0, 0, 1)
 [node name="GameManager" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("1_kln2b")
-currentScene = ExtResource("2_rgh2o")
+current_scene = ExtResource("2_rgh2o")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="GameManager"]
 
@@ -42,8 +42,8 @@ offset_bottom = -1016.0
 scale = Vector2(2, 2)
 alignment = 1
 script = ExtResource("4_pbw6q")
-fullHpIcon = ExtResource("4_rgh2o")
-emptyHpIcon = ExtResource("6_v1gob")
+full_hp_icon = ExtResource("4_rgh2o")
+empty_hp_icon = ExtResource("6_v1gob")
 
 [node name="H1" type="TextureRect" parent="GameManager/Camera/GUI/Hearts"]
 layout_mode = 2

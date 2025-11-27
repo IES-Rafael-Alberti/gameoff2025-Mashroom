@@ -1,32 +1,34 @@
 extends Node2D
 
 @export_group("Base")
-@export var BaseSpawnTime = 3.0
+@export var base_spawn_time = 3.0
 
 @export_group("SoundWaves")
-@export var SWBigSpeed = 3000
-@export var SWBigDespawnTime = 10
-@export var SWBigScale = 20
-@export var SWBigPushPower = -2000
-@export var SWSpeed = 2000
-@export var SWDespawnTime = 10
-@export var SWScale = 3
-@export var SWPushPower = -2000
-@export var SWGroupCd = 0.5
+@export var sw_big_speed = 3000
+@export var sw_big_despawn_time = 10
+@export var sw_big_scale = 20
+@export var sw_big_push_power = -2000
+@export var sw_speed = 2000
+@export var sw_despawn_time = 10
+@export var sw_scale = 3
+@export var sw_push_power = -2000
+@export var sw_group_cd = 0.5
 
 @export_group("Objects")
-@export var SpawnPoint: Marker2D
-@export var SoundWave: PackedScene
-@export var TopSpawn: Marker2D
-@export var BottomSpawn: Marker2D
+@export var spawn_point: Marker2D
+@export var sound_wave: PackedScene
+@export var top_spawn: Marker2D
+@export var bottom_spawn: Marker2D
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	$SpawnTimer.start(BaseSpawnTime)
+	$SpawnTimer.start(base_spawn_time)
 
-func _process(delta):
-	var GameCamera = get_tree().get_root().get_node("Main/GameManager/Camera")
-	position = GameCamera.global_position
+
+func _process(_delta):
+	var game_camera = get_tree().get_root().get_node("Main/GameManager/Camera")
+	position = game_camera.global_position
+
 
 func _on_spawn_timer_timeout():
 	match randi_range(0,1):
