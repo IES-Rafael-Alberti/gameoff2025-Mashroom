@@ -1,4 +1,4 @@
-audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav"
+audio music "res://assets/Audio/Música/Cutscene 2/musicaTension.wav" [fade="2.1" bus="Musica" loop="true"]
 [background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="0.0"]
 
 No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo. #id:17
@@ -45,6 +45,7 @@ character_eris_hidden: ¡¡¡Déjame mostrarte a lo que te enfrentas maldita esc
 
 #  flash de color morado fuerte
 [style name="New_File"]
+audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 character_zach_human: ¡¡¡AAAAAAGGGGGGGGHHHHHHHH!!! #id:2a
 [style name="Base"]
 
@@ -55,13 +56,14 @@ leave --All-- [animation="Fade Out" wait="true"]
 label Cueva #id:42
 
 [background arg="res://DialogicAssets/backgrounds/EntradaCueva.png" fade="2.0"]
-audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav"
+audio music "res://assets/Audio/Música/Novela visual/1/tension-dark-cinematic2.wav" [fade="0.5" bus="Musica" loop="true"]
 …Cuando abrí los ojos, me encontraba en una extraña cueva con paredes oscuras y viscosas, mi cuerpo seguía flotando por lo que sabía que seguía en el agua. #id:2d
 
 Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #id:2e
 
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
+audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
 join character_zach (Cutscene1) center [animation="Fade In Up" wait="true"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
@@ -141,7 +143,7 @@ leave character_eris
 Eris me guió a través de su cueva, utilicé la oportunidad para aprender a nadar mejor con mi nueva cola, era difícil, pero sentía que me estaba empezando a acostumbrar un poco… #id:4e
 label Cueva pt2 #id:4f
 [background arg="res://DialogicAssets/backgrounds/Edited_CaveLairScene.png" fade="0.0"]
-audio music "res://assets/Audio/Música/Novela visual/2/scary-horror2.wav"
+audio music "res://assets/Audio/Música/Novela visual/2/scary-horror2.wav" [fade="1.5" bus="Musica" loop="true"]
 
 Llegamos a la ‘sala de estar’, había varias estanterías de piedra con objetos extraños y otras partes del cuerpo, en medio había un cráter volcánico que expulsaba vapor como si fuera un caldero, producía mucho calor y olía fatal. #id:50
 join character_eris (Joy) center [animation="Fade In"]
@@ -394,6 +396,7 @@ join character_eris (Neutral) center
 character_eris: Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera… #id:b7
 
 character_eris: Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b] #id:b8
+audio music "res://assets/Audio/Música/Novela visual/3/panic-attack2.wav" [fade="1.0" bus="Musica" loop="true"]
 
 character_zach: ...Prefiero arriesgarme. #id:b9
 join character_eris (Joy) center

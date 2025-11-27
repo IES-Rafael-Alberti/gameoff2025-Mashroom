@@ -1,4 +1,4 @@
-audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav"
+audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav" [fade="2.5" bus="Musica" loop="true"]
 label final-canon
 
 if {canon_final} == true:
