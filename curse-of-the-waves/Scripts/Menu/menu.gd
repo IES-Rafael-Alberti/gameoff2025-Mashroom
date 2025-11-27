@@ -25,9 +25,9 @@ func _on_play_button_pressed() -> void:
 	AudioPlayer.stop_music()
 	AudioPlayer.pulsar_btn()
 	menuFocus(false)
-	game_manager.load_scene_dialogic(
-		load("res://Scenes/SurfMinigame/SurfMinigame.tscn"),'1-prologue', true)
-	#	load("res://Scenes/CaveMinigame/CaveGame.tscn"), true)
+	#game_manager.load_scene_dialogic(load("res://Scenes/SurfMinigame/SurfMinigame.tscn"),'1-prologue', true)
+	#game_manager.load_scene(load("res://Scenes/CaveMinigame/CaveGame.tscn"), true)
+	game_manager.load_scene_dialogic(load("res://Scenes/CaveMinigame/CaveGame.tscn"),'1-prologue', true)
 
 
 func _on_options_button_pressed():
