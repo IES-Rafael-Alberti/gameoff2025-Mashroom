@@ -13,7 +13,7 @@ var change_button: Button
 
 
 func _ready():
-	AudioPlayer.music_nivel()
+	AudioPlayer.music_nivel(-3.0)
 	_start_update_buttons()
 	if play_button:
 		play_button.grab_focus()

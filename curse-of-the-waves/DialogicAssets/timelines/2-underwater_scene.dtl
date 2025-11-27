@@ -64,7 +64,7 @@ Lentamente puse mi mano sobre mi cabeza… ¿Por qué se sentía tan pegajosa? #
 ¡¿...Y por qué tenía manos palmeadas?! #id:2f
 [style name="New_File"]
 audio "res://assets/Audio/SFX/Sorpresa/Track5_Instrumento (2).wav" [bus="SFX"]
-join character_zach (Cutscene1) center [animation="Slide In Down"]
+join character_zach (Cutscene1) center [animation="Fade In Up" wait="true"]
 
 character_zach: ¡¿...Q-QUÉ ES ESTOOOO?! #id:30
 [style name="Base"]
@@ -401,6 +401,7 @@ join character_eris (Neutral) center
 character_eris: Oye oye oye… No te pases de listo… Solo estas vivo gracias a mi, estas en MI cueva, y aunque escapes no tienes ni idea de lo que te depara allí afuera… #id:b7
 
 character_eris: Creeme cuando te digo que los habitantes de estas profundidades no son tan piadosos como yo…  [b]Terminarás muerto en cuestión de minutos.[/b] #id:b8
+audio music "res://assets/Audio/Música/Novela visual/3/panic-attack2.wav" [fade="1.0" bus="Musica" loop="true"]
 
 character_zach: ...Prefiero arriesgarme. #id:b9
 join character_eris (Joy) center
