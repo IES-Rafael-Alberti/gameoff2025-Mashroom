@@ -138,10 +138,37 @@ func _update_button(button: Button, movement: String) -> void:
 			button.text = event.as_text()
 			break
 		elif type == 1 and (event is InputEventJoypadButton or event is InputEventJoypadMotion):
-			button.text = event.as_text()
+			button.text = _format_joypad_text(event)
 			break
 
 	button.button_pressed = false
+
+
+func _format_joypad_text(event: InputEvent) -> String:
+	if event is InputEventJoypadButton:
+		return "Button " + str(event.button_index)
+	elif event is InputEventJoypadMotion:
+		var axis_name := ""
+		match event.axis:
+			JOY_AXIS_LEFT_X:
+				axis_name = "Left Stick Horizontal"
+			JOY_AXIS_LEFT_Y:
+				axis_name = "Left Stick Vertical"
+			JOY_AXIS_RIGHT_X:
+				axis_name = "Right Stick Horizontal"
+			JOY_AXIS_RIGHT_Y:
+				axis_name = "Right Stick Vertical"
+			JOY_AXIS_TRIGGER_LEFT:
+				axis_name = "L2/LT"
+			JOY_AXIS_TRIGGER_RIGHT:
+				axis_name = "R2/RT"
+			_:
+				axis_name = "Axis " + str(event.axis)
+		
+		var direction := "Up" if event.axis_value > 0 else "Down"
+		return axis_name + " " + direction
+	
+	return event.as_text()
 
 
 func _select_change(button: Button, toggle: bool, movement: String) -> void:
