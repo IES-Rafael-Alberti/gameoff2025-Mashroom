@@ -92,12 +92,9 @@ variables={
 "has_weapon": false,
 "said_ugly": false
 }
-translation/locales=["en", "es"]
-translation/id_counter=66
+translation/locales=[]
+translation/id_counter=285
 portraits/default_portrait=""
-translation/intern/save_mode=0
-translation/intern/file_mode=1
-translation/intern/translation_folder="res://DialogicAssets/translations"
 glossary/glossary_files=[]
 history/simple_history_enabled=true
 history/visited_event_history_enabled=true
@@ -108,6 +105,9 @@ animations/join_default="Instant In"
 animations/leave_default="Instant Out"
 text/input_action="MainAction"
 choices/hotkey_behaviour=0
+translation/intern/save_mode=0
+translation/intern/file_mode=1
+translation/intern/translation_folder="res://DialogicAssets/translations"
 
 [display]
 
@@ -238,7 +238,7 @@ dialogic_fast_forward={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation", "res://Translations/ui_translations.en.translation", "res://Translations/ui_translations.es.translation")
+locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://Translations/ui_translations.en.translation", "res://Translations/ui_translations.es.translation")
 locale/test="es"
 
 [rendering]
