@@ -111,6 +111,7 @@ join character_eris (Smug) center
 character_eris: Vamos chaval, habla de una vez, es de mala educación no responder a una dama, ¿a que soy hermosa eh? #id:3d
 label Primera eleccion #id:43
 - ...E-Eres muy hermosa… #id:44
+	set {said_ugly} = false
 	[style name="Base_Dialogo"]
 	character_zach: ...E-Eres muy hermosa… #id:45
 	join character_eris (Joy) center
@@ -119,6 +120,7 @@ label Primera eleccion #id:43
 	
 	Estaba jugando conmigo, poniéndome a prueba como si fuera una mascota… Esto es vergonzoso a más no poder, pero supongo que es mejor que terminar muerto… #id:47
 - Creo que voy a vomitar… #id:48
+	set {said_ugly} = true
 	[style name="Base_Dialogo"]
 	join character_eris (Neutral) center
 	character_eris: Ah ¿conque esas tenemos eh? ¿Aún no comprendes en qué situación estás? #id:49
