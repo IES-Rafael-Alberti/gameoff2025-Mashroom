@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://dgtgkp3w2atab"
+uid="uid://cx6yhrlss8xp1"
 
 [deps]
 
-files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation"]
+files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation"]
 
 source_file="res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.csv"
-dest_files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation"]
+dest_files=["res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation"]
 
 [params]
 

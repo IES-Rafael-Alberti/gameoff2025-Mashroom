@@ -238,7 +238,7 @@ dialogic_fast_forward={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://Translations/ui_translations.en.translation", "res://Translations/ui_translations.es.translation")
+locale/translations=PackedStringArray("res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.es.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.es.translation", "res://Translations/ui_translations.en.translation", "res://Translations/ui_translations.es.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_2-underwater_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_3-cave_scene_translation.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.en.translation")
 locale/test="es"
 
 [rendering]
