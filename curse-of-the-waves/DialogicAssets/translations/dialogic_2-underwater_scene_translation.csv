@@ -1,4 +1,4 @@
-keys,en,en
+keys,es,en
 Text/17/text,"No sé cuánto tiempo ha pasado, estaba completamente desorientado, sumergido en el agua y mirando hacia el abismo.","I don’t know how much time has passed, I was completely disoriented, submerged in the water and staring off into the abyss below"
 Text/18/text,"Sin darme cuenta, estaba respirando, tosí fuertemente pensando que había respirado agua, pero por algún motivo mis pulmones no se inundaban, estaba respirando sin ningún problema.","Without even noticing, I was breathing, I coughed hard thinking I just inhaled a bunch of water, but for some reason my lungs weren’t flooding, I was breathing just fine."
 Text/19/text,¿...Q-Qué…? ¿...Cómo estoy-…?,...W-What…? …H-How am I…?
@@ -120,7 +120,7 @@ Text/89/text,¿Qué has dicho?,What was that?
 Text/8a/text,¡N-NADA-!,N-NOTHING-!
 Choice/8b/text,¿Odias a los humanos?,Do you hate humans?
 Choice/8b/disabled_text,,
-Text/8b1/text,¿Odias a los humanos?,
+Text/8b1/text,¿Odias a los humanos?,Do you hate humans?
 Text/8c/text,"Nah, no los odio, pero eso no quita que no sean objetivamente inferiores.","Nah, I don’t hate them, but that doesn’t make them any less objectively inferior."
 Text/8d/text,¿Q-Qué nos hace inferiores exactamente?,W-What makes us inferior exactly?
 Text/8e/text,"El hecho de que no tenéis conocimiento de las fuerzas arcanas por ejemplo, os habéis separado hasta tal punto de la naturaleza que se os han olvidado vuestras propias raíces.","How about the fact that you have no knowledge of the arcane forces for example, you have split yourself from nature to the point you’ve forgotten your own roots."

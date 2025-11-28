@@ -6,10 +6,10 @@ uid="uid://do5yvr8k6gbkq"
 
 [deps]
 
-files=["res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation"]
+files=["res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation"]
 
 source_file="res://DialogicAssets/translations/dialogic_1-prologue_translation.csv"
-dest_files=["res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation"]
+dest_files=["res://DialogicAssets/translations/dialogic_1-prologue_translation.es.translation", "res://DialogicAssets/translations/dialogic_1-prologue_translation.en.translation"]
 
 [params]
 
