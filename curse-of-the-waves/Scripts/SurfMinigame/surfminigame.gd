@@ -1,11 +1,41 @@
 extends Node2D
 
+@export_group("Basics")
+@export var intervals: int = 4
+@export var transition_total_duration: float = 60
+@export var transition_duration: float = 1.2
+@export var time_before_ending: float = 5
+
+@export_group("Complex")
+@export var auto_cycle: bool = true
+@export var start_phase: int = 0
+
 @export_group("Objects")
 @export var player: CharacterBody2D
 @export var spawner: Node2D
 @export var min_pos: Marker2D
 @export var max_pos: Marker2D
 
+# Inspector-editable phase texture lists. Populate these in the Inspector to
+# avoid modifying the code when adding/removing phases.
+@export var phase_Sky_textures: Array[Texture2D] = []
+@export var phase_Clouds_textures: Array[Texture2D] = []
+@export var phase_Water_textures: Array[Texture2D] = []
+@export var phase_Wave_textures: Array[Texture2D] = []
+@export var phase_Shadow_textures: Array[Texture2D] = []
+
+var _current_phase: int = 1
+var backgroundNames: Array = ["Sky","Clouds", "Water"]
+var foregroundNames: Array = ["Shadow", "Wave"]
+
+var _sky_textures: Array = []
+var _ocean_textures: Array = []
+var _clouds_textures: Array = []
+var _wave_textures: Array = []
+var _shadow_textures: Array = []
+
+# Cache shader path so we don't call load repeatedly
+const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
 
 func _ready():
 	player.limit_min = min_pos.position.x
@@ -14,245 +44,27 @@ func _ready():
 	spawner.limit_max = max_pos.position.x
 	spawner.height_start = min_pos.position.y
 	spawner.height_end = max_pos.position.y
-
-	# Start automatic background/asset transitions for the surf minigame.
-	# This will cycle the Sky, Clouds and Ocean sprites through phase textures
-	# using the `Transition_between_two_textures.gdshader` shader.
+	
 	start_background_cycle()
 
 
-@export var transition_interval: float = 5.0
-@export var transition_duration: float = 1.2
-
-# Inspector-editable phase texture lists. Populate these in the Inspector to
-# avoid modifying the code when adding/removing phases.
-@export var phase_sky_textures: Array[Texture2D] = []
-@export var phase_clouds_textures: Array[Texture2D] = []
-@export var phase_ocean_textures: Array[Texture2D] = []
-@export var phase_wave_textures: Array[Texture2D] = []
-@export var phase_shadow_textures: Array[Texture2D] = []
-
-@export var auto_cycle: bool = true
-@export var start_phase: int = 0
-
-# Optional array of NodePaths you can populate in the Inspector to choose which
-# nodes will be transitioned. Order convention (if used):
-# [Sky, Clouds, Ocean, Wave, Shadow]
-@export var transition_nodes: Array[NodePath] = []
-
-var _sky_textures: Array = []
-var _ocean_textures: Array = []
-var _clouds_textures: Array = []
-var _wave_textures: Array = []
-var _shadow_textures: Array = []
-
-var _current_phase: int = 0
-var _cycle_running: bool = false
-
-# Cache shader path so we don't call load repeatedly
-const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
-
-func _init_phase_textures() -> void:
-	# Prefer inspector arrays when provided.
-	if phase_sky_textures.size() > 0:
-		_sky_textures = phase_sky_textures.duplicate()
-	else:
-		_sky_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/sky1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/sky2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/sky3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/sky4.png")
-		]
-
-	if phase_ocean_textures.size() > 0:
-		_ocean_textures = phase_ocean_textures.duplicate()
-	else:
-		_ocean_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/water1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/water2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/water3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/water4.png")
-		]
-
-	if phase_clouds_textures.size() > 0:
-		_clouds_textures = phase_clouds_textures.duplicate()
-	else:
-		_clouds_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/clouds1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/clouds2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/clouds3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/clouds4.png")
-		]
-
-	# Optional wave/shadow lists (may be empty)
-	if phase_wave_textures.size() > 0:
-		_wave_textures = phase_wave_textures.duplicate()
-	else:
-		_wave_textures = []
-
-	if phase_shadow_textures.size() > 0:
-		_shadow_textures = phase_shadow_textures.duplicate()
-	else:
-		_shadow_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/shadow1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/shadow2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/shadow3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/shadow4.png")
-		]
-
-	# Provide sensible defaults for wave textures if none supplied.
-	if _wave_textures.size() == 0:
-		_wave_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/wave1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/wave2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/wave3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/wave4.png")
-		]
-
 
 func start_background_cycle() -> void:
-	_init_phase_textures()
-	# Find the sprites inside this scene. You may supply `transition_nodes` in
-	# the Inspector (preferred) or the code will fall back to the default paths.
-	var sky_sprite: Sprite2D
-	var clouds_sprite: Sprite2D
-	var ocean_sprite: Sprite2D
-	if transition_nodes.size() >= 3:
-		sky_sprite = get_node_or_null(transition_nodes[0])
-		clouds_sprite = get_node_or_null(transition_nodes[1])
-		ocean_sprite = get_node_or_null(transition_nodes[2])
-	else:
-		sky_sprite = get_node_or_null("Oleaje/BackGround/Sky")
-		clouds_sprite = get_node_or_null("Oleaje/BackGround/Clouds")
-		ocean_sprite = get_node_or_null("Oleaje/BackGround/Water")
-
-	if not sky_sprite or not ocean_sprite:
-		push_warning("SurfMinigame: required sprites not found.")
-		push_warning("  Sky: %s  Ocean: %s" % [sky_sprite, ocean_sprite])
-		return # scene layout changed; abort silently.
-
-	print("SurfMinigame: starting background cycle.")
-	print("  auto_cycle: %s" % auto_cycle)
-	print("  start_phase: %d" % start_phase)
-	print("  phases: %d" % _sky_textures.size())
-
-	# Start background cycling (if enabled).
-	_current_phase = clamp(start_phase, 0, max(0, _sky_textures.size() - 1))
-
-	# Prepare wave/shadow sprites here so we can set initial textures immediately
-	var wave_sprite: Sprite2D
-	var shadow_sprite: Sprite2D
-	if transition_nodes.size() >= 5:
-		wave_sprite = get_node_or_null(transition_nodes[3])
-		shadow_sprite = get_node_or_null(transition_nodes[4])
-	else:
-		wave_sprite = get_node_or_null("Oleaje/Foreground/Wave")
-		shadow_sprite = get_node_or_null("Oleaje/Foreground/Shadow")
-
-	# Ensure the current textures are included as the first phase (default assets)
-	_ensure_default_phase(
-		sky_sprite,
-		clouds_sprite,
-		ocean_sprite,
-		wave_sprite,
-		shadow_sprite
-	)
-
-	# Apply the starting phase immediately so the scene shows the correct visuals
-	_apply_phase_instant(
-		sky_sprite,
-		clouds_sprite,
-		ocean_sprite,
-		wave_sprite,
-		shadow_sprite,
-		_current_phase
-	)
-
-	if auto_cycle:
-		_cycle_running = true
-		_background_cycle(
-			sky_sprite,
-			clouds_sprite,
-			ocean_sprite,
-			wave_sprite,
-			shadow_sprite,
-			_current_phase
-		)
-
-
-func _background_cycle(
-		sky_sprite: Sprite2D,
-		clouds_sprite: Sprite2D,
-		ocean_sprite: Sprite2D,
-		wave_sprite: Sprite2D,
-		shadow_sprite: Sprite2D,
-		phase_index: int
-	) -> void:
-	# Wait initial interval before the first transition so the first change is delayed
-	await get_tree().create_timer(transition_interval).timeout
-
-	while _cycle_running:
-		var last_index: int = _sky_textures.size() - 1
-		# If we're already at the last phase, stop cycling
-		if phase_index >= last_index:
-			print("SurfMinigame: reached final phase %d - stopping cycle" % phase_index)
-			_cycle_running = false
-			break
-
-		var next_index: int = phase_index + 1
-
-		var pending := []
-
-		# Sky / clouds / ocean
-		if _sky_textures.size() > 0:
-			var p_sky = transition_sprite(
-				sky_sprite,
-				_get_texture_for_phase(_sky_textures, next_index),
-				transition_duration
-			)
-			pending.append(p_sky)
-		if _clouds_textures.size() > 0 and clouds_sprite:
-			var p_clouds = transition_sprite(
-				clouds_sprite,
-				_get_texture_for_phase(_clouds_textures, next_index),
-				transition_duration
-			)
-			pending.append(p_clouds)
-		if _ocean_textures.size() > 0:
-			var p_ocean = transition_sprite(
-				ocean_sprite,
-				_get_texture_for_phase(_ocean_textures, next_index),
-				transition_duration
-			)
-			pending.append(p_ocean)
-
-		# Optional Wave / Shadow from Foreground (use parameters passed in)
-		if _wave_textures.size() > 0 and wave_sprite:
-			var p_wave = transition_sprite(
-				wave_sprite,
-				_get_texture_for_phase(_wave_textures, next_index),
-				transition_duration
-			)
-			pending.append(p_wave)
-		if _shadow_textures.size() > 0 and shadow_sprite:
-			var p_shadow = transition_sprite(
-				shadow_sprite,
-				_get_texture_for_phase(_shadow_textures, next_index),
-				transition_duration
-			)
-			pending.append(p_shadow)
-
-		# Await all transitions
-		for p in pending:
-			if p:
-				# p is a FunctionState returned by transition_sprite; await it
-				await p
-
-		phase_index = next_index
-		_current_phase = phase_index
-		print("SurfMinigame: completed transition to phase %d" % phase_index)
-
-		await get_tree().create_timer(transition_interval).timeout
+	var dur = transition_total_duration/intervals
+	while _current_phase < intervals:
+		await get_tree().create_timer(dur).timeout
+		_current_phase += 1
+		for backName in backgroundNames:
+			transition_sprite(get_node(str("Oleaje/BackGround/",backName)), get(str("phase_",backName,"_textures"))[_current_phase-1], transition_duration)
+		for frontName in foregroundNames:
+			transition_sprite(get_node(str("Oleaje/Foreground/",frontName)), get(str("phase_",frontName,"_textures"))[_current_phase-1], transition_duration)
+		await get_tree().create_timer(transition_duration).timeout
+		print(_current_phase)
+	await get_tree().create_timer(dur).timeout
+	$Spawner.active = false
+	await get_tree().create_timer(time_before_ending).timeout
+	# Here spawns the monster
+	$Spawner.spawn_kumi()
 
 
 func transition_sprite(
@@ -423,9 +235,6 @@ func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 
 	index = index % _sky_textures.size()
 
-	if stop_cycle:
-		_cycle_running = false
-
 	var pending := []
 	pending.append(
 		transition_sprite(
@@ -469,5 +278,6 @@ func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 
 	for p in pending:
 		await p
-
-	_current_phase = index
+	
+func finalPhase():
+	pass
