@@ -99,8 +99,7 @@ func _on_hitbox_area_entered(area):
 func _finish():
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	AudioPlayer.stop_music()
-	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', false)
-
+	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', true)
 
 func _take_damage():
 	if _upd_hp(-1) <= 0:

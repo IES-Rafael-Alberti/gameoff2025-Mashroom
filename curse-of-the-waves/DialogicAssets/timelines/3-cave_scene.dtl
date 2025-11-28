@@ -42,7 +42,7 @@ else:
 		leave character_zach
 		join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
 		[style name="New_File"]
-		audio "res://assets/Audio/SFX/sfxGritoBruja3.wav" [volume="5.0" bus="SFX"]
+		audio "res://assets/Audio/SFX/sfxGritoBruja3.wav" [volume="5.5" bus="SFX"]
 		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
 		update character_eris (Hurt) center
 		[style name="Base"]

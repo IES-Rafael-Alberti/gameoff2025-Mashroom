@@ -464,7 +464,7 @@ label Final choice #id:be
 		[background arg="res://DialogicAssets/backgrounds/Edited_CaveLairScene.png" fade="0.0"]
 		leave character_zach
 		join character_eris (Cutscene) center
-		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
+		audio "res://assets/Audio/SFX/sfxGritoBruja3.wav" [volume="2.6" bus="SFX"]
 		[style name="Base_Dialogo"]
 		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:4f
 		[style name="Base"]
