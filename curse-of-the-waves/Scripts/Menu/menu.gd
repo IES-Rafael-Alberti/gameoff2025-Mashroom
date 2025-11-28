@@ -7,8 +7,6 @@ extends Control
 
 @onready var play_button: Button = $VBoxContainer/PlayButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
-@onready var credits_button: Button = $VBoxContainer/CreditsButton
-@onready var game_manager = get_tree().get_root().get_node("Main/GameManager")
 
 var change_control := ""
 var change_button: Button
@@ -28,33 +26,37 @@ func _on_play_button_pressed() -> void:
 	Dialogic.VAR.set_variable("gave_up", false)
 	AudioPlayer.stop_music()
 	AudioPlayer.pulsar_btn()
-	menuFocus(false)
-	game_manager.load_scene_dialogic(load("res://Scenes/SurfMinigame/SurfMinigame.tscn"),'1-prologue', true)
-	#game_manager.load_scene(load("res://Scenes/CaveMinigame/CaveGame.tscn"), true)
-	#game_manager.load_scene_dialogic(load("res://Scenes/CaveMinigame/CaveGame.tscn"),'1-prologue', true)
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_NONE
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_NONE
+	var game_manager = get_tree().get_root().get_node("Main/GameManager")
+	game_manager.load_scene_dialogic(
+		preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue')
+
 
 
 func _on_options_button_pressed():
 	AudioPlayer.pulsar_btn()
 	options_container.show_option_menu(true)
-	menuFocus(false)
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_NONE
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_NONE
 
 
 func _on_exit_button_pressed():
 	AudioPlayer.pulsar_btn()
 	await options_container.show_option_menu(false)
-	menuFocus(true)
-	play_button.grab_focus()
+	if play_button:
+		play_button.focus_mode = Control.FOCUS_ALL
+	if options_button:
+		options_button.focus_mode = Control.FOCUS_ALL
+		options_button.grab_focus()
 
-func menuFocus(activated: bool):
-	var act = Control.FOCUS_ALL
-	if not activated:
-		act = Control.FOCUS_NONE
-	play_button.focus_mode = act
-	options_button.focus_mode = act
-	credits_button.focus_mode = act
 
 func _on_option_button_item_selected(index):
+	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.change_language(index)
 
 
@@ -118,44 +120,15 @@ func _update_button(button: Button, movement: String):
 	button.text = ""
 
 	for event in events:
-		var text = event.as_text()
 		# Type 0 = Keyboard, Type 1 = Joystick
 		if type == 0 and event is InputEventKey:
-			button.text = text
+			button.text = event.as_text()
 			break
 		elif type == 1 and (event is InputEventJoypadButton or event is InputEventJoypadMotion):
-			if event is InputEventJoypadButton:
-				if text.contains("D-pad"):
-					var substr = text.substr(text.find("D-pad"))
-					button.text = substr.substr(0,substr.length()-1)
-				else:
-					var substr = text.substr(text.find("Xbox"))
-					button.text = substr.substr(0,substr.find(","))
-			else:
-				var axis = text.substr(text.find("Axis")+5,1)
-				var axisDir = text.substr(text.find("Value")+6)
-				button.text = getDirByAxis(int(axis),float(axisDir))
-	button.button_pressed = false
+			button.text = event.as_text()
+			break
 
-func getDirByAxis(axis: int, value: float):
-	var toReturn = ""
-	if axis == 4: return "Left Trigger"
-	if axis == 5: return "Right Trigger"
-	if axis/2 == 1:toReturn += "Right stick: "
-	else: toReturn += "Left stick: "
-	
-	match axis%2:
-		1:
-			if value > 0:
-					toReturn += "Down"
-			else:
-					toReturn += "Up"
-		0:
-			if value > 0:
-					toReturn += "Right"
-			else:
-					toReturn += "Left"
-	return toReturn
+	button.button_pressed = false
 
 
 func _select_change(button: Button, toggle: bool, movement: String):
@@ -219,8 +192,3 @@ func _start_update_buttons():
 		_update_button(button_keyboard, button_keyboard.text)
 		var button_joystick = controls.get_node(path + "/JoystickControlsVBox/" + button_url)
 		_update_button(button_joystick, button_joystick.text)
-
-
-func _on_credits_button_pressed():
-	game_manager.load_scene(
-		load("res://Scenes/Credits.tscn"), false)
