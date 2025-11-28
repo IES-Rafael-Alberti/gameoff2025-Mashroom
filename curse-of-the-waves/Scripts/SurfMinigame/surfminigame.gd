@@ -2,14 +2,14 @@ extends Node2D
 
 @export_group("Basics")
 @export var intervals: int = 4
-@export var transition_total_duration: float = 60.0
+@export var transition_total_duration: float = 60
 @export var transition_duration: float = 1.2
-@export var time_before_ending: float = 5.0
+@export var time_before_ending: float = 5
 
 @export_group("Complex")
 @export var auto_cycle: bool = true
 @export var start_phase: int = 0
-@export var player_colors: Array[String] = ["ffffff", "d8e3ec", "bfd2e7fe", "75a4cafe"]
+@export var playerColors: Array = ["ffffff","d8e3ec", "bfd2e7fe", "75a4cafe"]
 
 @export_group("Objects")
 @export var player: CharacterBody2D
@@ -17,120 +17,70 @@ extends Node2D
 @export var min_pos: Marker2D
 @export var max_pos: Marker2D
 
-# Texture paths organized by phase and type
-var sky_textures: Array[Texture2D] = [
-	preload("res://assets/SurfMinigame/Ocean/Phase1/sky1.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase2/sky2.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase3/sky3.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase4/sky4.png"),
-]
-var clouds_textures: Array[Texture2D] = [
-	preload("res://assets/SurfMinigame/Ocean/Phase1/clouds1.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase2/clouds2.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase3/clouds3.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase4/clouds4.png"),
-]
-var water_textures: Array[Texture2D] = [
-	preload("res://assets/SurfMinigame/Ocean/Phase1/water1.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase2/water2.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase3/water3.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase4/water4.png"),
-]
-var wave_textures: Array[Texture2D] = [
-	preload("res://assets/SurfMinigame/Ocean/Phase1/wave1.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase2/wave2.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase3/wave3.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase4/wave4.png"),
-]
-var shadow_textures: Array[Texture2D] = [
-	preload("res://assets/SurfMinigame/Ocean/Phase1/shadow1.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase2/shadow2.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase3/shadow3.png"),
-	preload("res://assets/SurfMinigame/Ocean/Phase4/shadow4.png"),
-]
+# Inspector-editable phase texture lists. Populate these in the Inspector to
+# avoid modifying the code when adding/removing phases.
+@export var phase_Sky_textures: Array[Texture2D] = []
+@export var phase_Clouds_textures: Array[Texture2D] = []
+@export var phase_Water_textures: Array[Texture2D] = []
+@export var phase_Wave_textures: Array[Texture2D] = []
+@export var phase_Shadow_textures: Array[Texture2D] = []
 
 var _current_phase: int = 1
+var backgroundNames: Array = ["Sky","Clouds", "Water"]
+var foregroundNames: Array = ["Shadow", "Wave"]
+
+var _sky_textures: Array = []
+var _ocean_textures: Array = []
+var _clouds_textures: Array = []
+var _wave_textures: Array = []
+var _shadow_textures: Array = []
 
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
 
-
-func _ready() -> void:
+func _ready():
 	player.limit_min = min_pos.position.x
 	player.limit_max = max_pos.position.x
 	spawner.limit_min = min_pos.position.x
 	spawner.limit_max = max_pos.position.x
 	spawner.height_start = min_pos.position.y
 	spawner.height_end = max_pos.position.y
-
+	
 	start_background_cycle()
 
 
+
 func start_background_cycle() -> void:
-	var dur: float = transition_total_duration / intervals
+	var dur = transition_total_duration/intervals
 	while _current_phase < intervals:
 		await get_tree().create_timer(dur).timeout
 		_current_phase += 1
-		transition_sprite(
-			get_node("Oleaje/BackGround/Sky"),
-			_get_texture_for_phase(sky_textures, _current_phase - 1),
-			transition_duration,
-		)
-		transition_sprite(
-			get_node("Oleaje/BackGround/Clouds"),
-			_get_texture_for_phase(clouds_textures, _current_phase - 1),
-			transition_duration,
-		)
-		transition_sprite(
-			get_node("Oleaje/BackGround/Water"),
-			_get_texture_for_phase(water_textures, _current_phase - 1),
-			transition_duration,
-		)
-		transition_sprite(
-			get_node("Oleaje/Foreground/Wave"),
-			_get_texture_for_phase(wave_textures, _current_phase - 1),
-			transition_duration,
-		)
-		transition_sprite(
-			get_node("Oleaje/Foreground/Shadow"),
-			_get_texture_for_phase(shadow_textures, _current_phase - 1),
-			transition_duration,
-		)
-
-		create_tween().tween_property(
-			player,
-			"modulate",
-			Color(player_colors[_current_phase - 1]),
-			1,
-		)
-
-		create_tween().tween_property(
-			spawner,
-			"modulate",
-			Color(player_colors[_current_phase - 1]),
-			1,
-		)
-
+		for backName in backgroundNames:
+			transition_sprite(get_node(str("Oleaje/BackGround/",backName)), get(str("phase_",backName,"_textures"))[_current_phase-1], transition_duration)
+		for frontName in foregroundNames:
+			transition_sprite(get_node(str("Oleaje/Foreground/",frontName)), get(str("phase_",frontName,"_textures"))[_current_phase-1], transition_duration)
+			
+		create_tween().tween_property(player, "modulate", Color(playerColors[_current_phase-1]), 1)
+		
+		create_tween().tween_property(spawner, "modulate", Color(playerColors[_current_phase-1]), 1)
+		
 		await get_tree().create_timer(transition_duration).timeout
 		print(_current_phase)
-
 	await get_tree().create_timer(dur).timeout
 	spawner.active = false
 	await get_tree().create_timer(time_before_ending).timeout
 	# Here spawns the monster
 	spawner.spawn_kumi()
 
-
 func transition_sprite(
 		sprite: Sprite2D,
 		new_texture: Texture2D,
-		duration: float,
-) -> Signal:
+		duration: float
+	):
 	var shader_res = load(TRANSITION_SHADER_PATH)
 	if shader_res == null:
 		push_error("Transition shader not found")
-		# Return a dummy signal if shader fails, to avoid crashes on await
-		return get_tree().process_frame
+		return null
 
 	var mat: ShaderMaterial
 	# Reuse existing ShaderMaterial if possible so we keep the material persistent
@@ -153,7 +103,7 @@ func transition_sprite(
 		mat,
 		"shader_parameter/transform_ratio",
 		0.0,
-		duration,
+		duration
 	)
 
 	# When the tween finishes, update the shader so texture_2 becomes the base.
@@ -171,47 +121,47 @@ func _apply_phase_instant(
 		ocean_sprite: Sprite2D,
 		wave_sprite: Sprite2D,
 		shadow_sprite: Sprite2D,
-		phase_index: int,
-) -> void:
+		phase_index: int
+	) -> void:
 	# Immediately apply the provided phase textures to sprites using persistent ShaderMaterial
 	var shader_res = load(TRANSITION_SHADER_PATH)
 	if shader_res == null:
 		return
 
-	if sky_sprite and sky_textures.size() > phase_index:
+	if sky_sprite and _sky_textures.size() > phase_index:
 		var m = ShaderMaterial.new()
 		m.shader = shader_res
-		m.set_shader_parameter("texture_1", sky_textures[phase_index])
+		m.set_shader_parameter("texture_1", _sky_textures[phase_index])
 		m.set_shader_parameter("transform_ratio", 1.0)
 		sky_sprite.material = m
-	if clouds_sprite and clouds_textures.size() > phase_index:
+	if clouds_sprite and _clouds_textures.size() > phase_index:
 		var mc = ShaderMaterial.new()
 		mc.shader = shader_res
-		mc.set_shader_parameter("texture_1", clouds_textures[phase_index])
+		mc.set_shader_parameter("texture_1", _clouds_textures[phase_index])
 		mc.set_shader_parameter("transform_ratio", 1.0)
 		clouds_sprite.material = mc
-	if ocean_sprite and water_textures.size() > phase_index:
+	if ocean_sprite and _ocean_textures.size() > phase_index:
 		var mo = ShaderMaterial.new()
 		mo.shader = shader_res
-		mo.set_shader_parameter("texture_1", water_textures[phase_index])
+		mo.set_shader_parameter("texture_1", _ocean_textures[phase_index])
 		mo.set_shader_parameter("transform_ratio", 1.0)
 		ocean_sprite.material = mo
-	if wave_sprite and wave_textures.size() > phase_index:
+	if wave_sprite and _wave_textures.size() > phase_index:
 		var mw = ShaderMaterial.new()
 		mw.shader = shader_res
-		mw.set_shader_parameter("texture_1", wave_textures[phase_index % wave_textures.size()])
+		mw.set_shader_parameter("texture_1", _wave_textures[phase_index % _wave_textures.size()])
 		mw.set_shader_parameter("transform_ratio", 1.0)
 		wave_sprite.material = mw
-	if shadow_sprite and shadow_textures.size() > phase_index:
+	if shadow_sprite and _shadow_textures.size() > phase_index:
 		var ms = ShaderMaterial.new()
 		ms.shader = shader_res
-		var sh_tex = shadow_textures[phase_index % shadow_textures.size()]
+		var sh_tex = _shadow_textures[phase_index % _shadow_textures.size()]
 		ms.set_shader_parameter("texture_1", sh_tex)
 		ms.set_shader_parameter("transform_ratio", 1.0)
 		shadow_sprite.material = ms
 
 
-func _get_texture_for_phase(list: Array[Texture2D], index: int) -> Texture2D:
+func _get_texture_for_phase(list: Array, index: int):
 	# Safe lookup: if the requested index is within bounds, return it. Otherwise
 	# return the last available texture (so missing entries fall back to final phase).
 	if list == null or list.size() == 0:
@@ -228,11 +178,43 @@ func _ensure_default_phase(
 		clouds_sprite: Sprite2D,
 		ocean_sprite: Sprite2D,
 		wave_sprite: Sprite2D,
-		shadow_sprite: Sprite2D,
-) -> void:
-	pass
+		shadow_sprite: Sprite2D
+	) -> void:
 	# Insert the currently visible texture as the first phase if not already present.
-	# Textures are now preloaded at class initialization
+	if sky_sprite:
+		var cur = sky_sprite.texture
+		if _sky_textures.size() == 0:
+			_sky_textures.insert(0, cur)
+		elif _sky_textures[0] != cur:
+			_sky_textures.insert(0, cur)
+
+	if clouds_sprite:
+		var curc = clouds_sprite.texture
+		if _clouds_textures.size() == 0:
+			_clouds_textures.insert(0, curc)
+		elif _clouds_textures[0] != curc:
+			_clouds_textures.insert(0, curc)
+
+	if ocean_sprite:
+		var curo = ocean_sprite.texture
+		if _ocean_textures.size() == 0:
+			_ocean_textures.insert(0, curo)
+		elif _ocean_textures[0] != curo:
+			_ocean_textures.insert(0, curo)
+
+	if wave_sprite:
+		var curw = wave_sprite.texture
+		if _wave_textures.size() == 0:
+			_wave_textures.insert(0, curw)
+		elif _wave_textures[0] != curw:
+			_wave_textures.insert(0, curw)
+
+	if shadow_sprite:
+		var curs = shadow_sprite.texture
+		if _shadow_textures.size() == 0:
+			_shadow_textures.insert(0, curs)
+		elif _shadow_textures[0] != curs:
+			_shadow_textures.insert(0, curs)
 
 
 func _on_transition_finished(mat: ShaderMaterial, new_texture: Texture2D) -> void:
@@ -242,7 +224,7 @@ func _on_transition_finished(mat: ShaderMaterial, new_texture: Texture2D) -> voi
 	mat.set_shader_parameter("transform_ratio", 1.0)
 
 
-func transition_to_phase(index: int, stop_cycle: bool = false) -> void:
+func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 	# Immediately transition sprites to the specified phase index.
 	var sky_sprite: Sprite2D = get_node_or_null("Oleaje/BackGround/Sky")
 	var clouds_sprite: Sprite2D = get_node_or_null("Oleaje/BackGround/Clouds")
@@ -253,50 +235,50 @@ func transition_to_phase(index: int, stop_cycle: bool = false) -> void:
 	if index < 0:
 		return
 
-	if sky_textures.size() == 0:
+	if _sky_textures.size() == 0:
 		return
 
-	index = index % sky_textures.size()
+	index = index % _sky_textures.size()
 
 	var pending := []
 	pending.append(
 		transition_sprite(
 			sky_sprite,
-			_get_texture_for_phase(sky_textures, index),
-			transition_duration,
-		),
+			_get_texture_for_phase(_sky_textures, index),
+			transition_duration
+		)
 	)
-	if clouds_textures.size() > 0 and clouds_sprite:
+	if _clouds_textures.size() > 0 and clouds_sprite:
 		pending.append(
 			transition_sprite(
 				clouds_sprite,
-				_get_texture_for_phase(clouds_textures, index),
-				transition_duration,
-			),
+				_get_texture_for_phase(_clouds_textures, index),
+				transition_duration
+			)
 		)
-	if water_textures.size() > 0 and ocean_sprite:
+	if _ocean_textures.size() > 0 and ocean_sprite:
 		pending.append(
 			transition_sprite(
 				ocean_sprite,
-				_get_texture_for_phase(water_textures, index),
-				transition_duration,
-			),
+				_get_texture_for_phase(_ocean_textures, index),
+				transition_duration
+			)
 		)
-	if wave_textures.size() > 0 and wave_sprite:
+	if _wave_textures.size() > 0 and wave_sprite:
 		pending.append(
 			transition_sprite(
 				wave_sprite,
-				_get_texture_for_phase(wave_textures, index),
-				transition_duration,
-			),
+				_get_texture_for_phase(_wave_textures, index),
+				transition_duration
+			)
 		)
-	if shadow_textures.size() > 0 and shadow_sprite:
+	if _shadow_textures.size() > 0 and shadow_sprite:
 		pending.append(
 			transition_sprite(
 				shadow_sprite,
-				_get_texture_for_phase(shadow_textures, index),
-				transition_duration,
-			),
+				_get_texture_for_phase(_shadow_textures, index),
+				transition_duration
+			)
 		)
 
 	for p in pending:
