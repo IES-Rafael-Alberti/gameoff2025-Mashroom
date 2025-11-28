@@ -21,16 +21,18 @@
 [ext_resource type="Texture2D" uid="uid://dpw4ocssqapo5" path="res://assets/SurfMinigame/Ocean/Phase1/wave1.png" id="12_nv0eg"]
 [ext_resource type="Texture2D" uid="uid://dyrr8skiobii5" path="res://assets/SurfMinigame/Ocean/Phase3/water3.png" id="12_slhde"]
 [ext_resource type="Texture2D" uid="uid://ceealwu4mpe1l" path="res://assets/SurfMinigame/Ocean/Phase4/water4.png" id="13_5220b"]
-[ext_resource type="Texture2D" uid="uid://c7kbkoiaus2mp" path="res://assets/SurfMinigame/Ocean/Phase2/wave2.png" id="15_pm8bu"]
-[ext_resource type="Texture2D" uid="uid://fwwt1m4ubrq0" path="res://assets/SurfMinigame/Ocean/Phase3/wave3.png" id="16_n4x3a"]
-[ext_resource type="Texture2D" uid="uid://xcf3nf1hf0fn" path="res://assets/SurfMinigame/Ocean/Phase4/wave4.png" id="17_l3ybb"]
-[ext_resource type="Texture2D" uid="uid://4uv7gywc1lmj" path="res://assets/SurfMinigame/Ocean/Phase2/shadow2.png" id="19_5b0ke"]
-[ext_resource type="Texture2D" uid="uid://b2y3846depswm" path="res://assets/SurfMinigame/Ocean/Phase3/shadow3.png" id="20_e7pq8"]
-[ext_resource type="Texture2D" uid="uid://c6qqg03cpkyic" path="res://assets/SurfMinigame/Ocean/Phase4/shadow4.png" id="21_pg3oq"]
-[ext_resource type="PackedScene" uid="uid://da8j3f2yd6nwg" path="res://Scenes/SurfMinigame/Obstacles/SurfKumi.tscn" id="26_b6oyd"]
+[ext_resource type="Texture2D" uid="uid://4uv7gywc1lmj" path="res://assets/SurfMinigame/Ocean/Phase2/shadow2.png" id="15_pm8bu"]
+[ext_resource type="Texture2D" uid="uid://b2y3846depswm" path="res://assets/SurfMinigame/Ocean/Phase3/shadow3.png" id="16_n4x3a"]
+[ext_resource type="Texture2D" uid="uid://c6qqg03cpkyic" path="res://assets/SurfMinigame/Ocean/Phase4/shadow4.png" id="17_l3ybb"]
+[ext_resource type="Texture2D" uid="uid://c7kbkoiaus2mp" path="res://assets/SurfMinigame/Ocean/Phase2/wave2.png" id="19_5b0ke"]
+[ext_resource type="Texture2D" uid="uid://fwwt1m4ubrq0" path="res://assets/SurfMinigame/Ocean/Phase3/wave3.png" id="20_e7pq8"]
+[ext_resource type="Texture2D" uid="uid://xcf3nf1hf0fn" path="res://assets/SurfMinigame/Ocean/Phase4/wave4.png" id="21_pg3oq"]
+[ext_resource type="PackedScene" uid="uid://d27pbidt4dpj5" path="res://Scenes/SurfMinigame/Obstacles/SurfKumi.tscn" id="26_b6oyd"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player", "spawner", "min_pos", "max_pos")]
 script = ExtResource("1_rkf72")
+transition_duration = 3.0
+time_before_ending = 7.0
 player = NodePath("Player")
 spawner = NodePath("Spawner")
 min_pos = NodePath("Player/MinPlayerMov")
@@ -38,8 +40,8 @@ max_pos = NodePath("Player/MaxPlayerMov")
 phase_Sky_textures = Array[Texture2D]([ExtResource("8_nv0eg"), ExtResource("3_ddyeb"), ExtResource("4_b6oyd"), ExtResource("5_ol6og")])
 phase_Clouds_textures = Array[Texture2D]([ExtResource("9_kkn7c"), ExtResource("7_mm8sp"), ExtResource("8_x42gn"), ExtResource("9_g2utp")])
 phase_Water_textures = Array[Texture2D]([ExtResource("10_16ybj"), ExtResource("11_ppano"), ExtResource("12_slhde"), ExtResource("13_5220b")])
-phase_Wave_textures = Array[Texture2D]([ExtResource("12_nv0eg"), ExtResource("15_pm8bu"), ExtResource("16_n4x3a"), ExtResource("17_l3ybb")])
-phase_Shadow_textures = Array[Texture2D]([ExtResource("11_1dovv"), ExtResource("19_5b0ke"), ExtResource("20_e7pq8"), ExtResource("21_pg3oq")])
+phase_Shadow_textures = Array[Texture2D]([ExtResource("11_1dovv"), ExtResource("15_pm8bu"), ExtResource("16_n4x3a"), ExtResource("17_l3ybb")])
+phase_Wave_textures = Array[Texture2D]([ExtResource("12_nv0eg"), ExtResource("19_5b0ke"), ExtResource("20_e7pq8"), ExtResource("21_pg3oq")])
 
 [node name="Player" parent="." instance=ExtResource("1_7ktql")]
 scale = Vector2(1, 1)

@@ -137,6 +137,7 @@ func _spawn_object_pos(object: PackedScene, pos_range: float):  # pos_range: Ran
 	obj_mov.Speed *= objects_speed
 
 	add_child(next_object)
+	
 
 func spawn_kumi():
 	_spawn_object_pos(kumi, 50)

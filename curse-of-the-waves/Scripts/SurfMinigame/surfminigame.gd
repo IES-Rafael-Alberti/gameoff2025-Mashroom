@@ -9,12 +9,27 @@ extends Node2D
 @export_group("Complex")
 @export var auto_cycle: bool = true
 @export var start_phase: int = 0
+@export var playerColors: Array = ["ffffff","d8e3ec", "bfd2e7fe", "75a4cafe"]
 
 @export_group("Objects")
 @export var player: CharacterBody2D
 @export var spawner: Node2D
 @export var min_pos: Marker2D
 @export var max_pos: Marker2D
+
+
+func _ready():
+	player.limit_min = min_pos.position.x
+	player.limit_max = max_pos.position.x
+	spawner.limit_min = min_pos.position.x
+	spawner.limit_max = max_pos.position.x
+	spawner.height_start = min_pos.position.y
+	spawner.height_end = max_pos.position.y
+
+	# Start automatic background/asset transitions for the surf minigame.
+	# This will cycle the Sky, Clouds and Ocean sprites through phase textures
+	# using the `Transition_between_two_textures.gdshader` shader.
+	start_background_cycle()
 
 # Inspector-editable phase texture lists. Populate these in the Inspector to
 # avoid modifying the code when adding/removing phases.
@@ -33,6 +48,15 @@ var _ocean_textures: Array = []
 var _clouds_textures: Array = []
 var _wave_textures: Array = []
 var _shadow_textures: Array = []
+
+var _current_phase: int = 0
+var _cycle_running: bool = false
+
+var backgroundNames: Array = ["Sky","Clouds","Water"]
+var foregroundNames: Array = ["Shadow","Wave"]
+
+# Cache shader path so we don't call load repeatedly
+const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
 
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
@@ -58,14 +82,18 @@ func start_background_cycle() -> void:
 			transition_sprite(get_node(str("Oleaje/BackGround/",backName)), get(str("phase_",backName,"_textures"))[_current_phase-1], transition_duration)
 		for frontName in foregroundNames:
 			transition_sprite(get_node(str("Oleaje/Foreground/",frontName)), get(str("phase_",frontName,"_textures"))[_current_phase-1], transition_duration)
+			
+		create_tween().tween_property(player, "modulate", Color(playerColors[_current_phase-1]), 1)
+		
+		create_tween().tween_property(spawner, "modulate", Color(playerColors[_current_phase-1]), 1)
+		
 		await get_tree().create_timer(transition_duration).timeout
 		print(_current_phase)
 	await get_tree().create_timer(dur).timeout
-	$Spawner.active = false
+	spawner.active = false
 	await get_tree().create_timer(time_before_ending).timeout
 	# Here spawns the monster
-	$Spawner.spawn_kumi()
-
+	spawner.spawn_kumi()
 
 func transition_sprite(
 		sprite: Sprite2D,
