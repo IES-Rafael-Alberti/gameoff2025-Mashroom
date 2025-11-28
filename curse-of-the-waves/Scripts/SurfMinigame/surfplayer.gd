@@ -13,9 +13,28 @@ var limit_max: float
 var can_move = true
 var can_be_damaged = true
 
+var is_speed_boost = false
+var is_invulnerable = false
+var is_slowing = false
+# Temporizador de cada buff
+var buff_timers = {
+	"speed": 0.0,
+	"invul": 0.0,
+	"slow": 0.0
+}
+# Duración predefinida de cada buff
+var buff_durations = {
+	"speed": 5.0,
+	"invul": 4.0,
+	"slow": 6.0
+}
+
 
 func _ready():
 	AudioPlayer.music_minijuego_surf()
+
+func _process(delta):
+	update_buffs(delta) # Actualiza los buff activos
 
 
 func _physics_process(_delta):
@@ -44,6 +63,14 @@ func _physics_process(_delta):
 				anims.play("turning_right")
 			elif velocity.x < 0:
 				anims.play("turning_left")
+		
+		if is_invulnerable:
+			if velocity.x == 0:  # Pone animaciones segun su movimiento
+				anims.play("default")
+			elif velocity.x > 0:
+				anims.play("turning_right")
+			elif velocity.x < 0:
+				anims.play("turning_left")
 
 
 func _on_hitbox_area_entered(area):
@@ -54,6 +81,10 @@ func _on_hitbox_area_entered(area):
 			_death()
 		else:
 			_damage()
+			
+	if area.is_in_group("Buff"): #Buff recibido
+		apply_buff(area.buff_type)
+		area.queue_free()
 
 
 func _upd_hp(add: int):
@@ -90,3 +121,47 @@ func _death():
 		game_manager.load_scene_dialogic(
 			preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene')
 		
+
+func apply_buff(type: String):
+	match type: #Aplica el buff según su tipo
+		"invul":
+			invulnerability()
+		"slow":
+			slow_obstacles()
+
+			
+func invulnerability():
+	is_invulnerable = true
+	buff_timers["invul"] = buff_durations["invul"]
+	can_be_damaged = false
+	print("BUFF: invu aplicado")
+	
+	print("can_be_damaged =", can_be_damaged)
+
+func slow_obstacles():
+	is_slowing = true
+	buff_timers["slow"] = buff_durations["slow"]
+	# Aplicamos slow a todos los obstáculos existentes
+	for o in get_tree().get_nodes_in_group("Obstacle"):
+		if o.has_node("ObstacleMovement"):
+			o.get_node("ObstacleMovement").global_multiplier = 0.5
+	print("BUFF: slow aplicado")
+	
+func update_buffs(delta):
+	# Invulnerabilidad
+	if is_invulnerable:
+		buff_timers["invul"] -= delta
+		if buff_timers["invul"] <= 0:
+			is_invulnerable = false
+			can_be_damaged = true
+			
+	# Slow obstacles
+	if is_slowing:
+		buff_timers["slow"] -= delta
+		if buff_timers["slow"] <= 0:
+			is_slowing = false
+			# Restauramos la volocidad normal a los obstáculos
+			for o in get_tree().get_nodes_in_group("Obstacle"):
+				if o.has_node("ObstacleMovement"):
+					o.get_node("ObstacleMovement").global_multiplier = 1.0
+	

@@ -15,13 +15,14 @@ extends Node2D
 @onready var movement = (EndPos-startPos)/100.0
 
 var movAmount: float
+var global_multiplier: = 1.0 #Multiplicador global para poder reducir la velocidad de los obstáculos con el buff de slow
 
 func _ready():
 	parent.scale = Vector2(0.01,0.01)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	parent.position += movement * delta * Speed
+	parent.position += movement * delta * Speed * global_multiplier
 	parent.scale += Vector2(sizeIncrement,sizeIncrement) * delta * Speed
 	
 	if parent.position.y < EndPos.y: # Proceso para similar acercamiento 3D

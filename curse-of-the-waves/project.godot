@@ -124,6 +124,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 Damage=""
 SoundWave=""
+buffItem=""
 
 [input]
 

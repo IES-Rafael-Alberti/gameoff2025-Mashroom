@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtppkhc763bvn"]
+[gd_scene load_steps=15 format=3 uid="uid://dtppkhc763bvn"]
 
 [ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/SurfPlayer.tscn" id="1_7ktql"]
 [ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surfminigame.gd" id="1_rkf72"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bs4n5x3ah1xcj" path="res://Scenes/SurfMinigame/Obstacles/SurfRock.tscn" id="4_kjjhm"]
 [ext_resource type="Texture2D" uid="uid://k8egjqyrclw3" path="res://assets/SurfMinigame/BackgroundTemplate.png" id="5_4j74a"]
 [ext_resource type="PackedScene" uid="uid://737vwjxu5i2r" path="res://Scenes/SurfMinigame/Obstacles/SurfBigRock.tscn" id="5_bs3yf"]
+[ext_resource type="PackedScene" uid="uid://ddldu474idi00" path="res://Scenes/SurfMinigame/Items/alga.tscn" id="6_2kmx6"]
 [ext_resource type="Texture2D" uid="uid://fnf80fbxsr5" path="res://assets/SurfMinigame/FrontGroundTemplate.png" id="6_4kepo"]
+[ext_resource type="PackedScene" uid="uid://cgc4ok82aeig7" path="res://Scenes/SurfMinigame/Items/madera.tscn" id="7_5en2c"]
 [ext_resource type="Texture2D" uid="uid://c1hoif03525ha" path="res://assets/SurfMinigame/Ocean/Phase1/sky1.png" id="8_nv0eg"]
 [ext_resource type="Texture2D" uid="uid://dek12vocqne1x" path="res://assets/SurfMinigame/Ocean/Phase1/clouds1.png" id="9_kkn7c"]
 [ext_resource type="Texture2D" uid="uid://drcbvvsar7085" path="res://assets/SurfMinigame/Ocean/Phase1/water1.png" id="10_16ybj"]
@@ -31,13 +33,15 @@ position = Vector2(192, 960)
 top_level = true
 position = Vector2(1728, 960)
 
-[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_point")]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_point", "spawn_point_item")]
 top_level = true
 y_sort_enabled = true
 script = ExtResource("3_f7fj6")
 fish_eye = 0.2
 spawn_point = NodePath("SpawnPoint")
 objects = Array[PackedScene]([ExtResource("4_kjjhm"), ExtResource("5_bs3yf")])
+spawn_point_item = NodePath("SpawnPoint")
+items = Array[PackedScene]([ExtResource("6_2kmx6"), ExtResource("7_5en2c")])
 
 [node name="SpawnPoint" type="Marker2D" parent="Spawner"]
 top_level = true
@@ -45,6 +49,9 @@ position = Vector2(960, 352)
 
 [node name="SpawnTimer" type="Timer" parent="Spawner"]
 one_shot = true
+autostart = true
+
+[node name="BuffTimer" type="Timer" parent="Spawner"]
 autostart = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -93,3 +100,4 @@ texture = ExtResource("12_nv0eg")
 position = Vector2(960, 540)
 
 [connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Spawner/BuffTimer" to="Spawner" method="_on_buff_timer_timeout"]

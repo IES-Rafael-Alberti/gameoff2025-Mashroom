@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgc4ok82aeig7"]
+
+[ext_resource type="Script" uid="uid://c1ja1h0cf2weq" path="res://Scripts/SurfMinigame/Items/buff.gd" id="1_benfd"]
+[ext_resource type="Texture2D" uid="uid://bsxpb0o7v3v87" path="res://assets/SurfMinigame/Items/madera.png" id="2_ydukk"]
+[ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/SurfObstacleMovement.tscn" id="3_h242d"]
+[ext_resource type="Script" uid="uid://dwlyd8yrjmpdk" path="res://Scripts/SurfMinigame/Items/itemMovement.gd" id="4_gjwq0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_benfd"]
+atlas = ExtResource("2_ydukk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydukk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_benfd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp7fq"]
+size = Vector2(52, 54)
+
+[node name="Alga" type="Area2D" groups=["buffItem"]]
+position = Vector2(633, 365)
+script = ExtResource("1_benfd")
+buff_type = "slow"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["buffItem"]]
+position = Vector2(-13, -11.5)
+scale = Vector2(1.40625, 1.359375)
+sprite_frames = SubResource("SpriteFrames_ydukk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, -9)
+shape = SubResource("RectangleShape2D_kp7fq")
+
+[node name="ItemMovement" parent="." instance=ExtResource("3_h242d")]
+script = ExtResource("4_gjwq0")
+Speed = 5.0
+SpeedMult = 1.001
+SizeMult = 1.001

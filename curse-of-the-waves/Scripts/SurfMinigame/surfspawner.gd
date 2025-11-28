@@ -9,6 +9,12 @@ extends Node2D
 @export var spawn_point: Marker2D
 @export var objects: Array[PackedScene]
 
+@export_group("Items")
+@export var spawn_point_item: Marker2D
+@export var items: Array[PackedScene]
+@export var buff_spawnMin: = 1.0
+@export var buff_spawnMax: = 3.0
+
 var spawn_time: float
 var spawn_mult = 1.0
 var objects_speed = base_objects_speed
@@ -26,7 +32,10 @@ func _ready():
 func _get_spawn_time():
 	return spawn_mult * base_spawn_time
 
-
+func _on_buff_timer_timeout():
+	spawn_buff()
+	$BuffTimer.wait_time = randf_range(buff_spawnMin, buff_spawnMax)
+	
 func _on_spawn_timer_timeout():
 	spawn_time = randf_range(_get_spawn_time() / 1.2, _get_spawn_time() * 1.5)
 	await _obstacle_spawns()
@@ -135,3 +144,20 @@ func _spawn_object_pos(object: PackedScene, pos_range: float):  # pos_range: Ran
 	obj_mov.Speed *= objects_speed
 
 	add_child(next_object)
+
+func spawn_buff():
+	if items.is_empty():
+		return
+		
+	var buff = items[randi_range(0, items.size() -1)].instantiate()
+	var posRange = randf_range(0, 100)
+	var actualPos = (limit_max - limit_min) * (posRange / 100) + limit_min
+	var spawnPos = Vector2(actualPos, spawn_point_item.position.y)
+	
+	buff.global_position = spawnPos + Vector2((spawn_point_item.position.x - spawnPos.x) / (fish_eye + 1), 0)
+	
+	var mov = buff.get_node("ItemMovement")
+	mov.EndPos = Vector2(spawnPos.x, height_end)
+	mov.Speed = objects_speed
+	
+	add_child(buff)
