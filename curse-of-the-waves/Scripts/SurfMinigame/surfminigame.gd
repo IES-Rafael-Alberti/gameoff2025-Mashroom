@@ -31,25 +31,13 @@ func _ready():
 	# using the `Transition_between_two_textures.gdshader` shader.
 	start_background_cycle()
 
-
-@export var transition_interval: float = 5.0
-@export var transition_duration: float = 1.2
-
 # Inspector-editable phase texture lists. Populate these in the Inspector to
 # avoid modifying the code when adding/removing phases.
-@export var phase_sky_textures: Array[Texture2D] = []
-@export var phase_clouds_textures: Array[Texture2D] = []
-@export var phase_ocean_textures: Array[Texture2D] = []
-@export var phase_wave_textures: Array[Texture2D] = []
-@export var phase_shadow_textures: Array[Texture2D] = []
-
-@export var auto_cycle: bool = true
-@export var start_phase: int = 0
-
-# Optional array of NodePaths you can populate in the Inspector to choose which
-# nodes will be transitioned. Order convention (if used):
-# [Sky, Clouds, Ocean, Wave, Shadow]
-@export var transition_nodes: Array[NodePath] = []
+@export var phase_Sky_textures: Array[Texture2D] = []
+@export var phase_Clouds_textures: Array[Texture2D] = []
+@export var phase_Water_textures: Array[Texture2D] = []
+@export var phase_Shadow_textures: Array[Texture2D] = []
+@export var phase_Wave_textures: Array[Texture2D] = []
 
 var _sky_textures: Array = []
 var _ocean_textures: Array = []
@@ -60,66 +48,11 @@ var _shadow_textures: Array = []
 var _current_phase: int = 0
 var _cycle_running: bool = false
 
+var backgroundNames: Array = ["Sky","Clouds","Water"]
+var foregroundNames: Array = ["Shadow","Wave"]
+
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
-
-func _init_phase_textures() -> void:
-	# Prefer inspector arrays when provided.
-	if phase_sky_textures.size() > 0:
-		_sky_textures = phase_sky_textures.duplicate()
-	else:
-		_sky_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/sky1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/sky2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/sky3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/sky4.png")
-		]
-
-	if phase_ocean_textures.size() > 0:
-		_ocean_textures = phase_ocean_textures.duplicate()
-	else:
-		_ocean_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/water1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/water2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/water3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/water4.png")
-		]
-
-	if phase_clouds_textures.size() > 0:
-		_clouds_textures = phase_clouds_textures.duplicate()
-	else:
-		_clouds_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/clouds1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/clouds2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/clouds3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/clouds4.png")
-		]
-
-	# Optional wave/shadow lists (may be empty)
-	if phase_wave_textures.size() > 0:
-		_wave_textures = phase_wave_textures.duplicate()
-	else:
-		_wave_textures = []
-
-	if phase_shadow_textures.size() > 0:
-		_shadow_textures = phase_shadow_textures.duplicate()
-	else:
-		_shadow_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/shadow1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/shadow2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/shadow3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/shadow4.png")
-		]
-
-	# Provide sensible defaults for wave textures if none supplied.
-	if _wave_textures.size() == 0:
-		_wave_textures = [
-			load("res://assets/SurfMinigame/Ocean/Phase1/wave1.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase2/wave2.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase3/wave3.png"),
-			load("res://assets/SurfMinigame/Ocean/Phase4/wave4.png")
-		]
-
 
 func start_background_cycle() -> void:
 	var dur = transition_total_duration/intervals

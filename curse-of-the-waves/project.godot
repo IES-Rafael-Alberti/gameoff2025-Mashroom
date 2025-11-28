@@ -125,6 +125,7 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 Damage=""
 SoundWave=""
+Kumi=""
 
 [gui]
 

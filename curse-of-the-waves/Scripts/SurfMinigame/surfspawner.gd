@@ -4,10 +4,12 @@ extends Node2D
 @export var base_spawn_time = 1.0
 @export var fish_eye = 0.0
 @export var base_objects_speed = 2
+@export var active = true
 
 @export_group("Objects")
 @export var spawn_point: Marker2D
 @export var objects: Array[PackedScene]
+@export var kumi: PackedScene
 
 var spawn_time: float
 var spawn_mult = 1.0
@@ -29,8 +31,9 @@ func _get_spawn_time():
 
 func _on_spawn_timer_timeout():
 	spawn_time = randf_range(_get_spawn_time() / 1.2, _get_spawn_time() * 1.5)
-	await _obstacle_spawns()
-	_outside_spawns()
+	if active:
+		await _obstacle_spawns()
+		_outside_spawns()
 
 	$SpawnTimer.wait_time = spawn_time
 	$SpawnTimer.start()
@@ -135,3 +138,6 @@ func _spawn_object_pos(object: PackedScene, pos_range: float):  # pos_range: Ran
 	obj_mov.Speed *= objects_speed
 
 	add_child(next_object)
+	
+func spawn_kumi():
+	_spawn_object_pos(kumi, 50)
