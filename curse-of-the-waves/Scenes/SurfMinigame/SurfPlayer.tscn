@@ -180,6 +180,6 @@ y_sort_enabled = true
 position = Vector2(-2.666687, -106.66668)
 scale = Vector2(0.70952386, 0.70952386)
 sprite_frames = SubResource("SpriteFrames_advmg")
-animation = &"turning_right"
+frame_progress = 0.010961221
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

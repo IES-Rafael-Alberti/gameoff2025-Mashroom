@@ -88,6 +88,7 @@ layout/style_list=["res://DialogicAssets/styles/Base_Dialogo.tres", "res://Dialo
 layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false,
+"gave_up": false,
 "has_weapon": false
 }
 translation/locales=["en", "es"]
