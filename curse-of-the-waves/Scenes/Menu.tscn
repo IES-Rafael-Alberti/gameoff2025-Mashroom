@@ -122,7 +122,6 @@ text = "ui_credits"
 bus = &"SFX"
 
 [node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("option_anim")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

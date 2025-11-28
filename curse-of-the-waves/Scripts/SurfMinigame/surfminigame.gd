@@ -36,8 +36,12 @@ func _ready():
 @export var phase_Sky_textures: Array[Texture2D] = []
 @export var phase_Clouds_textures: Array[Texture2D] = []
 @export var phase_Water_textures: Array[Texture2D] = []
-@export var phase_Shadow_textures: Array[Texture2D] = []
 @export var phase_Wave_textures: Array[Texture2D] = []
+@export var phase_Shadow_textures: Array[Texture2D] = []
+
+var _current_phase: int = 1
+var backgroundNames: Array = ["Sky","Clouds", "Water"]
+var foregroundNames: Array = ["Shadow", "Wave"]
 
 var _sky_textures: Array = []
 var _ocean_textures: Array = []
@@ -53,6 +57,21 @@ var foregroundNames: Array = ["Shadow","Wave"]
 
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
+
+# Cache shader path so we don't call load repeatedly
+const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
+
+func _ready():
+	player.limit_min = min_pos.position.x
+	player.limit_max = max_pos.position.x
+	spawner.limit_min = min_pos.position.x
+	spawner.limit_max = max_pos.position.x
+	spawner.height_start = min_pos.position.y
+	spawner.height_end = max_pos.position.y
+	
+	start_background_cycle()
+
+
 
 func start_background_cycle() -> void:
 	var dur = transition_total_duration/intervals
@@ -244,9 +263,6 @@ func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 
 	index = index % _sky_textures.size()
 
-	if stop_cycle:
-		_cycle_running = false
-
 	var pending := []
 	pending.append(
 		transition_sprite(
@@ -290,5 +306,6 @@ func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 
 	for p in pending:
 		await p
-
-	_current_phase = index
+	
+func finalPhase():
+	pass

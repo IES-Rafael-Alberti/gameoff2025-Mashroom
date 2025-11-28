@@ -89,7 +89,8 @@ layout/default_style="res://DialogicAssets/styles/Base.tres"
 variables={
 "canon_final": false,
 "gave_up": false,
-"has_weapon": false
+"has_weapon": false,
+"said_ugly": false
 }
 translation/locales=["en", "es"]
 translation/id_counter=66

@@ -7,8 +7,8 @@ extends CharacterBody2D
 @onready var sonido_caida = preload("res://assets/Audio/SFX/splash_effect.wav")
 @onready var anims = $Sprite2D
 @onready var heart_textures = {
-	"full": preload("res://assets/GUI/Heart.png"),
-	"broken": preload("res://assets/GUI/Broken-heart.png")
+	"full": preload("res://assets/GUI/Full.png"),
+	"broken": preload("res://assets/GUI/Empty.png")
 }
 
 var speed = base_speed

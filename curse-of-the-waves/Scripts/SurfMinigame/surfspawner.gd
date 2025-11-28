@@ -125,7 +125,6 @@ func _obstacle_spawns():  # Obstacles for the gameplay
 			if randi_range(0, 1) == 0:
 				_spawn_object_pos(next_object, 50)
 
-
 func _spawn_object_pos(object: PackedScene, pos_range: float):  # pos_range: Range between 0 and 100
 	var next_object = object.instantiate()
 	var actual_pos = (limit_max - limit_min) * (pos_range / 100) + limit_min
@@ -139,5 +138,6 @@ func _spawn_object_pos(object: PackedScene, pos_range: float):  # pos_range: Ran
 
 	add_child(next_object)
 	
+
 func spawn_kumi():
 	_spawn_object_pos(kumi, 50)
