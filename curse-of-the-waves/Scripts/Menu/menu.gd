@@ -32,7 +32,7 @@ func _on_play_button_pressed() -> void:
 		options_button.focus_mode = Control.FOCUS_NONE
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.load_scene_dialogic(
-		preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue')
+		preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue',true)
 
 
 

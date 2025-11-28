@@ -16,7 +16,7 @@ var can_be_damaged = true
 
 func _ready():
 	AudioPlayer.music_minijuego_surf()
-	await get_tree().create_timer(6.0).timeout
+	await get_tree().create_timer(18.0).timeout
 	sfx_tormenta()
 
 func _physics_process(_delta):
@@ -95,7 +95,7 @@ func _death():
 func sfx_tormenta():
 	var vol_trueno = -5.0  #vol inicial
 	var vol_aumenta = 2.0  #cuanto x va aumentando
-	var intervalo = 3.0  #segundos entre truenos
+	var intervalo = 4.0  #segundos entre truenos
 	var duracionSfx = 2.0
 	var max = 11  #limite truenos
 	var contador = 0
@@ -113,6 +113,6 @@ func sfx_tormenta():
 		
 		vol_trueno += vol_aumenta
 		if contador <= 2:
-			intervalo = max(1.0, intervalo - 0.5)
+			intervalo = max(1.0, intervalo - 1.0)
 		contador += 1
 		
