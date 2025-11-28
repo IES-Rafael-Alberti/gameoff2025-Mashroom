@@ -7,6 +7,7 @@ extends Control
 
 @onready var play_button: Button = $VBoxContainer/PlayButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
+@onready var credits_button: Button = $VBoxContainer/CreditsButton
 
 var change_control := ""
 var change_button: Button
@@ -30,10 +31,17 @@ func _on_play_button_pressed() -> void:
 		play_button.focus_mode = Control.FOCUS_NONE
 	if options_button:
 		options_button.focus_mode = Control.FOCUS_NONE
+	if credits_button:
+		credits_button.focus_mode = Control.FOCUS_NONE
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.load_scene_dialogic(
 		preload("res://Scenes/SurfMinigame/SurfMinigame.tscn"), '1-prologue',true)
 
+
+func _on_credits_button_pressed():
+	AudioPlayer.pulsar_btn()
+	var game_manager = get_tree().get_root().get_node("Main/GameManager")
+	game_manager.load_scene(preload("res://Scenes/Credits.tscn"),false)
 
 
 func _on_options_button_pressed():
@@ -43,6 +51,8 @@ func _on_options_button_pressed():
 		play_button.focus_mode = Control.FOCUS_NONE
 	if options_button:
 		options_button.focus_mode = Control.FOCUS_NONE
+	if credits_button:
+		credits_button.focus_mode = Control.FOCUS_NONE
 
 
 func _on_exit_button_pressed():
@@ -53,6 +63,9 @@ func _on_exit_button_pressed():
 	if options_button:
 		options_button.focus_mode = Control.FOCUS_ALL
 		options_button.grab_focus()
+	if credits_button:
+		credits_button.focus_mode = Control.FOCUS_ALL
+		credits_button.grab_focus()
 
 
 func _on_option_button_item_selected(index):
