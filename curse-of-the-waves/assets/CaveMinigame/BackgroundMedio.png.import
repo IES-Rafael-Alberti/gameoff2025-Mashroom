@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8l7seiqaky0"
-path="res://.godot/imported/LogotipoMashroomHiveWHITE.svg-afccd57e17d2bddbb52b33e005b01d96.ctex"
+uid="uid://car3vt346g2kc"
+path="res://.godot/imported/BackgroundMedio.png-bd524c5c64a731c466a2ec269f70f500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LogotipoMashroomHiveWHITE.svg"
-dest_files=["res://.godot/imported/LogotipoMashroomHiveWHITE.svg-afccd57e17d2bddbb52b33e005b01d96.ctex"]
+source_file="res://assets/CaveMinigame/BackgroundMedio.png"
+dest_files=["res://.godot/imported/BackgroundMedio.png-bd524c5c64a731c466a2ec269f70f500.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

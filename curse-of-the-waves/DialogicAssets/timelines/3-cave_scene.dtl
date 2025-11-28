@@ -1,5 +1,5 @@
 audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav" [fade="2.5" bus="Musica" loop="true"]
-label final-canon
+label final-canon #id:47
 
 if {canon_final} == true:
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOV.png" fade="0.0"]

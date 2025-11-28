@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://20fp21ngqhwu"
-path="res://.godot/imported/CurseoftheWavesTitle.svg-b2e3427209fb20f78d04f3dc19d8b332.ctex"
+uid="uid://ddg81l5wp8gij"
+path="res://.godot/imported/Imagotipo.png-6ae9078778dbea0bc5824731c74e4e12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CurseoftheWavesTitle.svg"
-dest_files=["res://.godot/imported/CurseoftheWavesTitle.svg-b2e3427209fb20f78d04f3dc19d8b332.ctex"]
+source_file="res://assets/Imagotipo.png"
+dest_files=["res://.godot/imported/Imagotipo.png-6ae9078778dbea0bc5824731c74e4e12.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
