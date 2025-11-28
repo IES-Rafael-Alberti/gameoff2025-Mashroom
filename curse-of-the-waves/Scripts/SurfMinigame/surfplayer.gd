@@ -16,7 +16,8 @@ var can_be_damaged = true
 
 func _ready():
 	AudioPlayer.music_minijuego_surf()
-
+	await get_tree().create_timer(18.0).timeout
+	sfx_tormenta()
 
 func _physics_process(_delta):
 	# Get the input direction and handle the movement/deceleration.
@@ -83,7 +84,7 @@ func _death():
 	can_be_damaged = false
 	anims.play("death")
 	await get_tree().create_timer(0.998).timeout #para sfx de caida y que espere
-	AudioPlayer.play_sfx(sonido_caida, -12.0)
+	AudioPlayer.play_sfx(sonido_caida, -7.0) #-12
 	await anims.animation_finished
 	# Temporal, para testeo
 	nextScene()
@@ -93,3 +94,28 @@ func nextScene():
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.load_scene_cave(
 		preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene', true)
+
+func sfx_tormenta():
+	var vol_trueno = -5.0  #vol inicial
+	var vol_aumenta = 2.0  #cuanto x va aumentando
+	var intervalo = 4.0  #segundos entre truenos
+	var duracionSfx = 2.0
+	var max = 11  #limite truenos
+	var contador = 0
+	
+	while contador < max:
+		var tween = create_tween()
+		tween.tween_property(AudioPlayer, "volume_db", -8.0, 1.5)
+		await tween.finished
+
+		AudioPlayer.sfxTrueno(vol_trueno)
+		await get_tree().create_timer(duracionSfx).timeout
+		tween = create_tween()
+		tween.tween_property(AudioPlayer, "volume_db", 0.0, 1.5)
+		await get_tree().create_timer(intervalo).timeout
+		
+		vol_trueno += vol_aumenta
+		if contador <= 2:
+			intervalo = max(1.0, intervalo - 1.0)
+		contador += 1
+		
