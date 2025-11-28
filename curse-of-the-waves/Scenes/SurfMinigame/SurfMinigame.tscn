@@ -15,6 +15,7 @@
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player", "spawner", "min_pos", "max_pos")]
 script = ExtResource("1_rkf72")
+transition_duration = 2.0
 player = NodePath("Player")
 spawner = NodePath("Spawner")
 min_pos = NodePath("Player/MinPlayerMov")
