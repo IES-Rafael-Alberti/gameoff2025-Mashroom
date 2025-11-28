@@ -11,6 +11,7 @@ const ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/SFX
 const onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxOndaGrave2.wav")
 const antes_ondita = preload("res://assets/Audio/SFX/Minijuego cueva/onda pequeña/sfxAntesOndita2.wav")
 const antes_onda = preload("res://assets/Audio/SFX/Minijuego cueva/onda grande/sfxAntesOndaGrave2.wav")
+const trueno = preload("res://assets/Audio/SFX/Minijuego surf/sfxTrueno.wav")
 
 var vel_fade = 1.0
 var fade = false
@@ -50,6 +51,9 @@ func sfxOnda(vol = 0.0):
 
 func sfxAntesOnda(vol = 0.0):
 	play_sfx(antes_onda, vol)
+
+func sfxTrueno(vol = 0.0):
+	play_sfx(trueno, vol)
 
 func stop_music():  # con fade
 	if fade:
