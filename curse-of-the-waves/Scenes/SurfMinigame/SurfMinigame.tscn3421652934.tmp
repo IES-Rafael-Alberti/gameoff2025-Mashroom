@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dtppkhc763bvn"]
+[gd_scene load_steps=28 format=3 uid="uid://dtppkhc763bvn"]
 
 [ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/SurfPlayer.tscn" id="1_7ktql"]
 [ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surfminigame.gd" id="1_rkf72"]
@@ -27,10 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://4uv7gywc1lmj" path="res://assets/SurfMinigame/Ocean/Phase2/shadow2.png" id="19_5b0ke"]
 [ext_resource type="Texture2D" uid="uid://b2y3846depswm" path="res://assets/SurfMinigame/Ocean/Phase3/shadow3.png" id="20_e7pq8"]
 [ext_resource type="Texture2D" uid="uid://c6qqg03cpkyic" path="res://assets/SurfMinigame/Ocean/Phase4/shadow4.png" id="21_pg3oq"]
-[ext_resource type="PackedScene" uid="uid://da8j3f2yd6nwg" path="res://Scenes/SurfMinigame/Obstacles/SurfKumi.tscn" id="26_b6oyd"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player", "spawner", "min_pos", "max_pos")]
 script = ExtResource("1_rkf72")
+transition_interval = 1.0
+transition_duration = 1.0
 player = NodePath("Player")
 spawner = NodePath("Spawner")
 min_pos = NodePath("Player/MinPlayerMov")
@@ -59,7 +60,6 @@ script = ExtResource("3_f7fj6")
 fish_eye = 0.2
 spawn_point = NodePath("SpawnPoint")
 objects = Array[PackedScene]([ExtResource("4_kjjhm"), ExtResource("5_bs3yf")])
-kumi = ExtResource("26_b6oyd")
 
 [node name="SpawnPoint" type="Marker2D" parent="Spawner"]
 top_level = true

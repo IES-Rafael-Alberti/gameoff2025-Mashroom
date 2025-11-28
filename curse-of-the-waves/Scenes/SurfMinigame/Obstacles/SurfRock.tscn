@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/SurfObstacleMovement.tscn" id="2_ckm5w"]
 [ext_resource type="Texture2D" uid="uid://inixhkskjocr" path="res://assets/SurfMinigame/Obstacles/SurfObstacles1.png" id="3_settv"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecett"]
 atlas = ExtResource("3_settv")
 region = Rect2(0, 0, 100, 100)
@@ -127,7 +126,7 @@ y_sort_enabled = true
 position = Vector2(-2.666648, -66.66665)
 scale = Vector2(2.2933333, 2.2933333)
 sprite_frames = SubResource("SpriteFrames_l1yic")
-animation = &"Obj2"
+animation = &"Obj4"
 script = ExtResource("1_b81qs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
