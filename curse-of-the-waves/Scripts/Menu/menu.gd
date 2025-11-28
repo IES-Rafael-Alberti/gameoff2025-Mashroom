@@ -22,6 +22,9 @@ func _ready():
 
 
 func _on_play_button_pressed() -> void:
+	Dialogic.VAR.set_variable("canon_final", false)
+	Dialogic.VAR.set_variable("has_weapon", false)
+	Dialogic.VAR.set_variable("gave_up", false)
 	AudioPlayer.stop_music()
 	AudioPlayer.pulsar_btn()
 	menuFocus(false)

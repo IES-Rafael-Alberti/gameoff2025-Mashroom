@@ -19,6 +19,8 @@ player = NodePath("Player")
 spawner = NodePath("Spawner")
 min_pos = NodePath("Player/MinPlayerMov")
 max_pos = NodePath("Player/MaxPlayerMov")
+transition_interval = 15.0
+transition_duration = 5.0
 
 [node name="Player" parent="." instance=ExtResource("1_7ktql")]
 scale = Vector2(1, 1)

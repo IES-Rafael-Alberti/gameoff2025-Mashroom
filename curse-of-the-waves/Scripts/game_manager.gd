@@ -42,9 +42,29 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String, isGame: bool):
 			scenes[i].queue_free()
 
 	await Dialogic.timeline_ended
-	$LoadedScene.add_child(scene.instantiate())
+	$LoadedScene.add_child(current_scene.instantiate())
 	_gui_show(isGame)
 
+func load_scene_cave(scene: PackedScene, dialogic: String, isGame: bool):
+	_gui_show(false)
+	$Camera.follow_player = false
+	if health <= 0:
+		hp_update(3)
+	current_scene = scene
+	Dialogic.start(dialogic)
+	var scenes = $LoadedScene.get_children()
+	if scenes:
+		for i in range(0, scenes.size()):
+			scenes[i].queue_free()
+
+	await Dialogic.timeline_ended
+	if Dialogic.VAR.get_variable("gave_up"):
+		Dialogic.VAR.set_variable("gave_up", false)
+		current_scene = load("res://Scenes/Main.tscn")
+		$LoadedScene.add_child(current_scene.instantiate())
+	else:
+		$LoadedScene.add_child(current_scene.instantiate())
+		_gui_show(isGame)
 
 func load_scene(scene: PackedScene, isGame: bool):
 	_gui_show(false)
