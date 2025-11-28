@@ -6,6 +6,8 @@ extends Node
 @export var current_scene: PackedScene
 @export var full_hp: CompressedTexture2D
 
+var surfBeated = false
+
 var base_windows_size = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_width"),
 	ProjectSettings.get_setting("display/window/size/viewport_height")
@@ -58,6 +60,8 @@ func load_scene_cave(scene: PackedScene, dialogic: String, isGame: bool):
 	await Dialogic.timeline_ended
 	if Dialogic.VAR.get_variable("said_ugly"):
 		hp_add(-1)
+	if surfBeated:
+		hp_add(1)
 	if Dialogic.VAR.get_variable("gave_up"):
 		Dialogic.VAR.set_variable("gave_up", false)
 		current_scene = load("res://Scenes/Main.tscn")

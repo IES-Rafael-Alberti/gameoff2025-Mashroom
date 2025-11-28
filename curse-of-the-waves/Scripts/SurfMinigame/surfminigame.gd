@@ -17,20 +17,6 @@ extends Node2D
 @export var min_pos: Marker2D
 @export var max_pos: Marker2D
 
-
-func _ready():
-	player.limit_min = min_pos.position.x
-	player.limit_max = max_pos.position.x
-	spawner.limit_min = min_pos.position.x
-	spawner.limit_max = max_pos.position.x
-	spawner.height_start = min_pos.position.y
-	spawner.height_end = max_pos.position.y
-
-	# Start automatic background/asset transitions for the surf minigame.
-	# This will cycle the Sky, Clouds and Ocean sprites through phase textures
-	# using the `Transition_between_two_textures.gdshader` shader.
-	start_background_cycle()
-
 # Inspector-editable phase texture lists. Populate these in the Inspector to
 # avoid modifying the code when adding/removing phases.
 @export var phase_Sky_textures: Array[Texture2D] = []
@@ -48,15 +34,6 @@ var _ocean_textures: Array = []
 var _clouds_textures: Array = []
 var _wave_textures: Array = []
 var _shadow_textures: Array = []
-
-var _current_phase: int = 0
-var _cycle_running: bool = false
-
-var backgroundNames: Array = ["Sky","Clouds","Water"]
-var foregroundNames: Array = ["Shadow","Wave"]
-
-# Cache shader path so we don't call load repeatedly
-const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
 
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
@@ -306,6 +283,3 @@ func transition_to_phase(index: int, stop_cycle: bool=false) -> void:
 
 	for p in pending:
 		await p
-	
-func finalPhase():
-	pass

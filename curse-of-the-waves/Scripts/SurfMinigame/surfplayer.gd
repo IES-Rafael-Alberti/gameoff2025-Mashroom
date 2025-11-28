@@ -6,13 +6,13 @@ extends CharacterBody2D
 @onready var sonido_caida = preload("res://assets/Audio/SFX/Minijuego surf/efectoSplash.wav")
 @onready var anims = $Sprite2D
 @onready var sonido_golpe = preload("res://assets/Audio/SFX/Minijuego surf/sonidoGolpe.wav")
+@onready var game_manager = get_tree().get_root().get_node("Main/GameManager")
 
 var speed = base_speed
 var limit_min: float
 var limit_max: float
 var can_move = true
 var can_be_damaged = true
-
 
 func _ready():
 	AudioPlayer.music_minijuego_surf()
@@ -56,6 +56,7 @@ func _on_hitbox_area_entered(area):
 		else:
 			_damage()
 	elif area.is_in_group("Kumi"):
+		game_manager.surfBeated = true
 		nextScene()
 
 
@@ -91,7 +92,6 @@ func _death():
 		
 func nextScene():
 	AudioPlayer.stop_music()
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	game_manager.load_scene_cave(
 		preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene', true)
 
