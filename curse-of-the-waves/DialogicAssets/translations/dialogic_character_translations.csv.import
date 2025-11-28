@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://c6fh8od8wmiga"
+uid="uid://ccce3iq75u70r"
 
 [deps]
 
-files=["res://DialogicAssets/translations/dialogic_character_translations.en.translation"]
+files=["res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation"]
 
 source_file="res://DialogicAssets/translations/dialogic_character_translations.csv"
-dest_files=["res://DialogicAssets/translations/dialogic_character_translations.en.translation"]
+dest_files=["res://DialogicAssets/translations/dialogic_character_translations.en.translation", "res://DialogicAssets/translations/dialogic_character_translations.es.translation"]
 
 [params]
 
