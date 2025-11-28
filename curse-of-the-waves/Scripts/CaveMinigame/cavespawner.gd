@@ -3,7 +3,7 @@ extends Node2D
 @export_group("Base")
 @export var base_spawn_time = 3.0
 @export var witch_killed = false
-@export var WK_spawn_time = 10.0
+@export var wk_spawn_time = 10.0
 
 @export_group("SoundWaves")
 @export var sw_big_speed = 3000
@@ -40,7 +40,7 @@ func _on_spawn_timer_timeout():
 			await _spawn_big_sound_wave()
 		1:
 			await _spawn_group_sound_wave()
-	$SpawnTimer.start(base_spawn_time if not witch_killed else WK_spawn_time)
+	$SpawnTimer.start(base_spawn_time if not witch_killed else wk_spawn_time)
 
 
 func _spawn_group_sound_wave():
@@ -51,7 +51,8 @@ func _spawn_group_sound_wave():
 		AudioPlayer.sfxOndita(3.0) #bajarle volumen a esta para subir el de la grande
 		var spawn_pos = Vector2(
 			spawn_point.global_position.x,
-			randf_range(bottom_spawn.position.y, top_spawn.position.y))
+			randf_range(bottom_spawn.position.y, top_spawn.position.y),
+		)
 		_spawn_sound_wave(sw_speed, sw_despawn_time, sw_scale, sw_push_power, spawn_pos)
 		await get_tree().create_timer(sw_group_cd).timeout
 
@@ -62,16 +63,25 @@ func _spawn_big_sound_wave():
 	await get_tree().create_timer(1).timeout #sfx antes de la onda y se espera
 	AudioPlayer.sfxOnda(7.0)
 	_spawn_sound_wave(
-		sw_big_speed, sw_big_despawn_time, sw_big_scale,
-		sw_big_push_power, spawn_point.global_position)
+		sw_big_speed,
+		sw_big_despawn_time,
+		sw_big_scale,
+		sw_big_push_power,
+		spawn_point.global_position,
+	)
 
 
-func _spawn_sound_wave(speed: float, dp: float, sw_scale_val: float,
-		push_power: float, pos: Vector2):
+func _spawn_sound_wave(
+		speed: float,
+		dp: float,
+		sw_scale_val: float,
+		push_power: float,
+		pos: Vector2,
+):
 	var sw_instance = sound_wave.instantiate()
-	sw_instance.Speed = speed
-	sw_instance.DespawnTime = dp
+	sw_instance.speed = speed
+	sw_instance.despawn_time = dp
 	sw_instance.scale *= sw_scale_val
-	sw_instance.PushPower = push_power
+	sw_instance.push_power = push_power
 	sw_instance.position = pos
 	add_child(sw_instance)

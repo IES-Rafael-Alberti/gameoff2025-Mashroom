@@ -1,27 +1,22 @@
 extends CharacterBody2D
 
 @export_group("Basics")
-@export var hp = 3
-@export var base_speed = 800.0
+@export var base_speed: float = 800.0
 
 @onready var sonido_caida = preload("res://assets/Audio/SFX/splash_effect.wav")
-@onready var anims = $Sprite2D
-@onready var heart_textures = {
-	"full": preload("res://assets/GUI/Full.png"),
-	"broken": preload("res://assets/GUI/Empty.png")
-}
+@onready var anims: AnimatedSprite2D = $Sprite2D
+@onready var game_manager = get_tree().get_root().get_node("Main/GameManager")
 
-var speed = base_speed
+var speed: float = base_speed
 var limit_min: float
 var limit_max: float
-var can_move = true
-var can_be_damaged = true
+var can_move: bool = true
+var can_be_damaged: bool = true
 
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	if can_move:
-
 		var direction = Input.get_axis("move_left", "move_right")  # Player Movement
 		if direction:
 			velocity.x = direction * speed
@@ -46,13 +41,11 @@ func _physics_process(_delta):
 				anims.play("turning_left")
 
 
-func _on_hitbox_area_entered(body):
-	if body.is_in_group("Damage") and can_be_damaged:
-		body.queue_free()
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Damage") and can_be_damaged:
+		area.queue_free()
 
-		hp -= 1
-		_salud_ctrl()
-		if hp <= 0:
+		if _upd_hp(-1) <= 0:
 			_death()
 		else:
 			anims.play("damaged")
@@ -65,7 +58,13 @@ func _on_hitbox_area_entered(body):
 			anims.play("default")
 
 
-func _death():
+func _upd_hp(add: int) -> int:
+	var new_hp = game_manager.health + add
+	game_manager.hp_update(new_hp)
+	return new_hp
+
+
+func _death() -> void:
 	can_move = false
 	can_be_damaged = false
 	if randi_range(0, 1) == 1:  # 50% de flipear la death anim para dar variedad
@@ -81,26 +80,3 @@ func _death():
 		get_tree().change_scene_to_file("res://Scenes/cuevaMinijuego/escena_cueva.tscn")
 	else:
 		get_tree().reload_current_scene()
-
-
-func _salud_ctrl():
-	match hp:
-		3:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["full"]
-			$Life/Heart3.texture = heart_textures["full"]
-
-		2:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["full"]
-			$Life/Heart3.texture = heart_textures["broken"]
-
-		1:
-			$Life/Heart.texture = heart_textures["full"]
-			$Life/Heart2.texture = heart_textures["broken"]
-			$Life/Heart3.texture = heart_textures["broken"]
-
-		0:
-			$Life/Heart.texture = heart_textures["broken"]
-			$Life/Heart2.texture = heart_textures["broken"]
-			$Life/Heart3.texture = heart_textures["broken"]
