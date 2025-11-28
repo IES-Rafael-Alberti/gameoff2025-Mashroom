@@ -57,11 +57,10 @@ func _on_hitbox_area_entered(area):
 			_damage()
 	elif area.is_in_group("Kumi"):
 		game_manager.surf_beated = true
-		nextScene()
+		next_scene()
 
 
 func _upd_hp(add: int):
-	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	var new_hp = game_manager.health + add
 	game_manager.hp_update(new_hp)
 	return new_hp
@@ -88,9 +87,9 @@ func _death():
 	AudioPlayer.play_sfx(sonido_caida, -7.0) #-12
 	await anims.animation_finished
 	# Temporal, para testeo
-	nextScene()
+	next_scene()
 		
-func nextScene():
+func next_scene():
 	AudioPlayer.stop_music()
 	game_manager.load_scene_cave(
 		preload("res://Scenes/CaveMinigame/CaveGame.tscn"), '2-underwater_scene', true)
@@ -99,17 +98,17 @@ func sfx_tormenta():
 	var vol_trueno = -5.0  #vol inicial
 	var vol_aumenta = 2.0  #cuanto x va aumentando
 	var intervalo = 4.0  #segundos entre truenos
-	var duracionSfx = 2.0
-	var max = 11  #limite truenos
+	var duracion_sfx = 2.0
+	var max_thunder = 11  #limite truenos
 	var contador = 0
 	
-	while contador < max:
+	while contador < max_thunder:
 		var tween = create_tween()
 		tween.tween_property(AudioPlayer, "volume_db", -8.0, 1.5)
 		await tween.finished
 
 		AudioPlayer.sfx_trueno(vol_trueno)
-		await get_tree().create_timer(duracionSfx).timeout
+		await get_tree().create_timer(duracion_sfx).timeout
 		tween = create_tween()
 		tween.tween_property(AudioPlayer, "volume_db", 0.0, 1.5)
 		await get_tree().create_timer(intervalo).timeout

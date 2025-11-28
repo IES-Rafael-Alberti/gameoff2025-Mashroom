@@ -51,8 +51,7 @@ func _spawn_group_sound_wave():
 		AudioPlayer.sfx_ondita(3.0) #bajarle volumen a esta para subir el de la grande
 		var spawn_pos = Vector2(
 			spawn_point.global_position.x,
-			randf_range(bottom_spawn.position.y, top_spawn.position.y),
-		)
+			randf_range(bottom_spawn.position.y, top_spawn.position.y))
 		_spawn_sound_wave(sw_speed, sw_despawn_time, sw_scale, sw_push_power, spawn_pos)
 		await get_tree().create_timer(sw_group_cd).timeout
 
@@ -63,21 +62,12 @@ func _spawn_big_sound_wave():
 	await get_tree().create_timer(1).timeout #sfx antes de la onda y se espera
 	AudioPlayer.sfx_onda(7.0)
 	_spawn_sound_wave(
-		sw_big_speed,
-		sw_big_despawn_time,
-		sw_big_scale,
-		sw_big_push_power,
-		spawn_point.global_position,
-	)
+		sw_big_speed, sw_big_despawn_time, sw_big_scale,
+		sw_big_push_power, spawn_point.global_position)
 
 
-func _spawn_sound_wave(
-		speed: float,
-		dp: float,
-		sw_scale_val: float,
-		push_power: float,
-		pos: Vector2,
-):
+func _spawn_sound_wave(speed: float, dp: float, sw_scale_val: float,
+		push_power: float, pos: Vector2):
 	var sw_instance = sound_wave.instantiate()
 	sw_instance.speed = speed
 	sw_instance.despawn_time = dp

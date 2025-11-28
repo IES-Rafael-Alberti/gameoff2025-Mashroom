@@ -5,38 +5,37 @@ extends Area2D
 @export var min_speed = 100
 
 @export_group("Points")
-@export var Points: Array[Marker2D]
+@export var points: Array[Marker2D]
 
 var target_num = 0
 var speed = max_speed
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Points.size() > 0:
+	if points.size() > 0:
 		upd_speed()
-		var target_pos = Points[target_num].global_position
+		var target_pos = points[target_num].global_position
 		look_at(target_pos)
 		rotation_degrees += 180
-		position = position.move_toward(target_pos, speed * delta)
-
-		if position.distance_to(target_pos) < 10:
-			target_num += 1
-			if target_num >= Points.size() - 1:
+		
+		if global_position.x <= target_pos.x:
+			$AnimatedSprite2D.flip_v = true
+		else: $AnimatedSprite2D.flip_v = false
+		global_position = global_position.move_toward(target_pos, speed * delta)
+		
+		if global_position == target_pos:
+			if target_num >= points.size()-1:
 				target_num = 0
-
+			else: target_num += 1
 
 func upd_speed():
-	var int_num = target_num - 1
-	if int_num < 0:
-		int_num = Points.size() - 1
-
-	var int_pos = Points[int_num].global_position
-	var target_pos = Points[target_num].global_position
-	var total_dist = int_pos.distance_to(target_pos)
-	var current_dist = position.distance_to(target_pos)
-
-	if current_dist > total_dist / 2:
-		speed = move_toward(speed, max_speed, 5)
-	else:
-		speed = move_toward(speed, min_speed, 5)
+	var int_num: int
+	if target_num == 0: int_num = points.size()-1
+	else: int_num = target_num-1
+	
+	var int_pos = points[int_num].global_position
+	var target_pos = points[target_num].global_position
+	
+	var int_dist = int_pos.distance_to(global_position)
+	var target_dist = target_pos.distance_to(global_position)
+	
+	speed = max_speed - max_speed*(abs(int_dist - target_dist)/int_pos.distance_to(target_pos)) + min_speed

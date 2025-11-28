@@ -1,35 +1,37 @@
 extends CharacterBody2D
 
+
 @export_group("Basics")
-@export var base_speed: float = 400.0
-@export var jump_power: int = -20
-@export var iframes: float = 1.0
+@export var base_speed = 400.0
+@export var jump_power = -20
+@export var iframes = 1
 
 @export_group("Complex")
-@export var gravity_mult: float = 0.5
-@export var release_jump_power: int = -200
-@export var max_jump_speed: int = -300
-@export var max_fall_speed: int = 300
+@export var gravity_mult = 0.5
+@export var release_jump_power = -200
+@export var max_jump_speed = -300
+@export var max_fall_speed = 300
+
 
 @onready var anims: AnimatedSprite2D = $Sprite2D
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-var speed: float = base_speed
-var can_move: bool = true
-var can_be_damaged: bool = true
-var is_moving: bool = false
-var is_hidden: bool = false
+var speed = base_speed
+var can_move = true
+var can_be_damaged = true
+var is_moving = false
+var is_hidden = false
 
 
-func _ready() -> void:
+func _ready():
 	AudioPlayer.music_minijuego_cueva()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
 	var desired_anim = "default"
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += Vector2(0, gravity) * delta * gravity_mult
+		velocity += Vector2(0,gravity) * delta * gravity_mult
 	# Input handling (movement, jump, hide)
 	if can_move:
 		if Input.is_action_pressed("MainAction"):
@@ -83,24 +85,23 @@ func _physics_process(delta: float) -> void:
 		anims.flip_v = false
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
+func _on_hitbox_area_entered(area):
 	if area.is_in_group("Damage") and can_be_damaged and not is_hidden:
 		_take_damage()
 	elif area.is_in_group("SoundWave"):
-		velocity.x = area.PushPower
+		velocity.x = area.push_power
 		if can_be_damaged and not is_hidden:
 			_take_damage()
 	elif area.is_in_group("Finish"):
 		_finish()
 
 
-func _finish() -> void:
+func _finish():
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	AudioPlayer.stop_music()
 	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', true)
 
-
-func _take_damage() -> void:
+func _take_damage():
 	if _upd_hp(-1) <= 0:
 		_death()
 	else:
@@ -109,14 +110,14 @@ func _take_damage() -> void:
 		can_be_damaged = true
 
 
-func _upd_hp(add: int) -> int:
+func _upd_hp(add: int):
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	var new_hp = game_manager.health + add
 	game_manager.hp_update(new_hp)
 	return new_hp
 
 
-func _death() -> void:
+func _death():
 	can_move = false
 	can_be_damaged = false
 
@@ -125,8 +126,4 @@ func _death() -> void:
 		#Dialogic.start('2-underwater_scene')
 		#await Dialogic.timeline_ended
 		var game_manager = get_tree().get_root().get_node("Main/GameManager")
-		game_manager.call_deferred(
-			"load_scene",
-			load("res://Scenes/CaveMinigame/CaveGame.tscn"),
-			true,
-		)
+		game_manager.call_deferred("load_scene", load("res://Scenes/CaveMinigame/CaveGame.tscn"), true)

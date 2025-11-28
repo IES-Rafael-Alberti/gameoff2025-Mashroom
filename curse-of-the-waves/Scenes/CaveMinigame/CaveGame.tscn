@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b4gsjk0vvrubs"]
+[gd_scene load_steps=13 format=4 uid="uid://b4gsjk0vvrubs"]
 
 [ext_resource type="PackedScene" uid="uid://d17finaakavly" path="res://Scenes/CaveMinigame/CavePlayer.tscn" id="1_qvq2s"]
 [ext_resource type="Script" uid="uid://cew6ujsgeswek" path="res://Scenes/CaveMinigame/CaveGame.gd" id="1_si7a0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://car3vt346g2kc" path="res://assets/CaveMinigame/BackgroundMedio.png" id="3_10r4k"]
 [ext_resource type="Script" uid="uid://bes152j6yk3ek" path="res://Scripts/CaveMinigame/cavespawner.gd" id="3_n6d1v"]
 [ext_resource type="PackedScene" uid="uid://cnbw4a2re15di" path="res://Scenes/CaveMinigame/Enemies/SoundWave.tscn" id="4_upos3"]
+[ext_resource type="Texture2D" uid="uid://dusngvoi0brer" path="res://assets/CaveMinigame/TutorialRock.png" id="4_vm0bc"]
 [ext_resource type="PackedScene" uid="uid://b01ah5q562863" path="res://Scenes/CaveMinigame/Enemies/caveenemy1.tscn" id="5_si7a0"]
 [ext_resource type="PackedScene" uid="uid://cqp8i6gt6j2oe" path="res://Scenes/CaveMinigame/FinishLine.tscn" id="6_pxwp0"]
 
@@ -47,27 +48,33 @@ sources/1 = SubResource("TileSetAtlasSource_4u28f")
 [node name="CaveGame" type="Node2D"]
 script = ExtResource("1_si7a0")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
 scroll_scale = Vector2(0.01, 0.01)
 scroll_offset = Vector2(48, -168)
 repeat_size = Vector2(3840, 0)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
 position = Vector2(-3485.9998, 180)
 scale = Vector2(1.7962964, 1.7962962)
 texture = ExtResource("2_4u28f")
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
+[node name="Parallax2D2" type="Parallax2D" parent="Node2D"]
 scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-12, -108)
 repeat_size = Vector2(6897, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D2"]
 position = Vector2(-3485.9998, 180)
 scale = Vector2(1.7962964, 1.7962962)
 texture = ExtResource("3_10r4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(912, 669)
+texture = ExtResource("4_vm0bc")
 
 [node name="Player" parent="." instance=ExtResource("1_qvq2s")]
 position = Vector2(1744, 880)
@@ -99,10 +106,10 @@ position = Vector2(2104, -1208)
 [node name="Enemy" type="Node2D" parent="Enemies"]
 position = Vector2(-176, 800)
 
-[node name="Enemy" parent="Enemies/Enemy" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy"]
@@ -113,10 +120,10 @@ position = Vector2(-1120, 1)
 [node name="Enemy2" type="Node2D" parent="Enemies"]
 position = Vector2(-1968, 736)
 
-[node name="Enemy" parent="Enemies/Enemy2" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy2" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
 metadata/_edit_group_ = true
 
 [node name="Point2" type="Marker2D" parent="Enemies/Enemy2"]
@@ -130,10 +137,10 @@ position = Vector2(-432, 0)
 [node name="Enemy3" type="Node2D" parent="Enemies"]
 position = Vector2(-2544, 96)
 
-[node name="Enemy" parent="Enemies/Enemy3" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy3" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
 metadata/_edit_group_ = true
 
 [node name="Point2" type="Marker2D" parent="Enemies/Enemy3"]
@@ -147,10 +154,10 @@ position = Vector2(-304, 320)
 [node name="Enemy4" type="Node2D" parent="Enemies"]
 position = Vector2(-3112, 736)
 
-[node name="Enemy" parent="Enemies/Enemy4" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy4" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy4"]
@@ -161,10 +168,10 @@ position = Vector2(-1848, 0)
 [node name="Enemy5" type="Node2D" parent="Enemies"]
 position = Vector2(-6016, 272)
 
-[node name="Enemy" parent="Enemies/Enemy5" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy5" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(16, 304)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy5"]
@@ -176,10 +183,10 @@ position = Vector2(16, 304)
 [node name="Enemy6" type="Node2D" parent="Enemies"]
 position = Vector2(-6608, 144)
 
-[node name="Enemy" parent="Enemies/Enemy6" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy6" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(16, -656)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy6"]
@@ -191,10 +198,10 @@ position = Vector2(16, -656)
 [node name="Enemy7" type="Node2D" parent="Enemies"]
 position = Vector2(-7664, -16)
 
-[node name="Enemy" parent="Enemies/Enemy7" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy7" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(16, -656)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy7"]
@@ -212,10 +219,10 @@ position = Vector2(16, -656)
 [node name="Enemy8" type="Node2D" parent="Enemies"]
 position = Vector2(-7664, -16)
 
-[node name="Enemy" parent="Enemies/Enemy8" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy8" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(656, 304)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy8"]
@@ -233,10 +240,10 @@ position = Vector2(656, 304)
 [node name="Enemy9" type="Node2D" parent="Enemies"]
 position = Vector2(-8832, -400)
 
-[node name="Enemy" parent="Enemies/Enemy9" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy9" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(656, 304)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy9"]
@@ -254,10 +261,10 @@ position = Vector2(656, 304)
 [node name="Enemy10" type="Node2D" parent="Enemies"]
 position = Vector2(-8832, -400)
 
-[node name="Enemy" parent="Enemies/Enemy10" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy10" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(656, 304)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy10"]
@@ -275,10 +282,10 @@ position = Vector2(656, 304)
 [node name="Enemy11" type="Node2D" parent="Enemies"]
 position = Vector2(-9200, 288)
 
-[node name="Enemy" parent="Enemies/Enemy11" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy11" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy11"]
@@ -289,10 +296,10 @@ position = Vector2(-688, 0)
 [node name="Enemy12" type="Node2D" parent="Enemies"]
 position = Vector2(-10608, 416)
 
-[node name="Enemy" parent="Enemies/Enemy12" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy12" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy12"]
@@ -303,10 +310,10 @@ position = Vector2(-432, 0)
 [node name="Enemy13" type="Node2D" parent="Enemies"]
 position = Vector2(-11056, 288)
 
-[node name="Enemy" parent="Enemies/Enemy13" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="Enemies/Enemy13" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(0, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemy13"]
@@ -329,10 +336,10 @@ visible = false
 [node name="Enemy" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-1264, 800)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy"]
@@ -344,10 +351,10 @@ position = Vector2(-32, 0)
 [node name="Enemy8" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-11856, 32)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy8" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy8" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy8"]
@@ -362,10 +369,10 @@ position = Vector2(-32, 0)
 [node name="Enemy7" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-9808, 160)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy7" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy7" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy7"]
@@ -383,10 +390,10 @@ position = Vector2(-32, 0)
 [node name="Enemy6" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-7376, 96)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy6" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy6" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy6"]
@@ -401,10 +408,10 @@ position = Vector2(-32, 0)
 [node name="Enemy5" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-5712, 544)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy5" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy5" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-32, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4"), NodePath("../Point5")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3"), NodePath("../Point4"), NodePath("../Point5")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy5"]
@@ -428,10 +435,10 @@ position = Vector2(-32, 0)
 [node name="Enemy2" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-656, 736)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy2" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy2" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-48, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy2"]
@@ -443,10 +450,10 @@ position = Vector2(-48, 0)
 [node name="Enemy3" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-2752, 736)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy3" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy3" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-64, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1")]
+points = [NodePath("../Point0"), NodePath("../Point1")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy3"]
@@ -458,10 +465,10 @@ position = Vector2(-64, 0)
 [node name="Enemy4" type="Node2D" parent="EnemiesWitchKilled"]
 position = Vector2(-4896, 736)
 
-[node name="Enemy" parent="EnemiesWitchKilled/Enemy4" node_paths=PackedStringArray("Points") instance=ExtResource("5_si7a0")]
+[node name="Enemy" parent="EnemiesWitchKilled/Enemy4" node_paths=PackedStringArray("points") instance=ExtResource("5_si7a0")]
 position = Vector2(-64, 0)
 scale = Vector2(2, 2)
-Points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
+points = [NodePath("../Point0"), NodePath("../Point1"), NodePath("../Point2"), NodePath("../Point3")]
 metadata/_edit_group_ = true
 
 [node name="Point1" type="Marker2D" parent="EnemiesWitchKilled/Enemy4"]
