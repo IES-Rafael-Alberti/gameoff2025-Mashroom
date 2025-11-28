@@ -32,8 +32,7 @@ func change_language(index: int):
 func load_scene_dialogic(scene: PackedScene, dialogic: String, isGame: bool):
 	_gui_show(false)
 	$Camera.follow_player = false
-	if health <= 0:
-		hp_update(3)
+	hp_update(3)
 	current_scene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -48,8 +47,7 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String, isGame: bool):
 func load_scene_cave(scene: PackedScene, dialogic: String, isGame: bool):
 	_gui_show(false)
 	$Camera.follow_player = false
-	if health <= 0:
-		hp_update(3)
+	hp_update(3)
 	current_scene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -58,6 +56,8 @@ func load_scene_cave(scene: PackedScene, dialogic: String, isGame: bool):
 			scenes[i].queue_free()
 
 	await Dialogic.timeline_ended
+	if Dialogic.VAR.get_variable("said_ugly"):
+		hp_add(-1)
 	if Dialogic.VAR.get_variable("gave_up"):
 		Dialogic.VAR.set_variable("gave_up", false)
 		current_scene = load("res://Scenes/Main.tscn")
@@ -69,8 +69,7 @@ func load_scene_cave(scene: PackedScene, dialogic: String, isGame: bool):
 func load_scene(scene: PackedScene, isGame: bool):
 	_gui_show(false)
 	$Camera.follow_player = false
-	if health <= 0:
-		hp_update(3)
+	hp_update(3)
 	current_scene = scene
 
 	var scenes = $LoadedScene.get_children()
@@ -83,10 +82,14 @@ func load_scene(scene: PackedScene, isGame: bool):
 
 
 func hp_update(number: int):
-	if number > 3:
-		number = 3
 	health = number
-	$Camera/GUI/Hearts.update_icons(number)
+	$Camera/GUI/Hearts.update_icons(health)
+
+func hp_add(number: int):
+	health = health + number
+	if health <= 0:
+		health = 1
+	$Camera/GUI/Hearts.update_icons(health)
 
 
 func _gui_show(visible: bool):
