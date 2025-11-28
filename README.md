@@ -20,7 +20,7 @@ By default they are as follows, they can be changed on settings
 - **Down**: S / Left stick down
 - **Left**: A / Left stick left
 - **Right**: D/Left stick right
-- **Action**: Space / Xbox A
+- **Action**: E / Xbox A
 
 ### Surf minigame
 

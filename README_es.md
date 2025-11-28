@@ -22,7 +22,7 @@ Por defecto son las siguientes, se pueden cambiar en la configuración
 - **Abajo**: S / Left stick down
 - **Izquierda**: A / Left stick left
 - **Derecha**: D/Left stick right
-- **Acción**: Space / Xbox A
+- **Acción**: E / Xbox A
 
 ### Minijuego de surf
 

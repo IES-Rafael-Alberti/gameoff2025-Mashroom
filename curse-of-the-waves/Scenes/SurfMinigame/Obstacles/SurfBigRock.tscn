@@ -1,43 +1,44 @@
-[gd_scene load_steps=13 format=3 uid="uid://737vwjxu5i2r"]
+[gd_scene load_steps=15 format=3 uid="uid://737vwjxu5i2r"]
 
 [ext_resource type="Script" uid="uid://dmu5i2llg2css" path="res://Scripts/SurfMinigame/Obstacles/surfobstacleSkin.gd" id="1_4tvrl"]
 [ext_resource type="Texture2D" uid="uid://bxa63sbfjdvv7" path="res://icon.svg" id="2_4llxu"]
-[ext_resource type="Texture2D" uid="uid://b8xt1bivdy2gu" path="res://assets/SurfMinigame/Obstacles/SurfObstacles2.png" id="3_4llxu"]
+[ext_resource type="Texture2D" uid="uid://b78p01uw0qa8b" path="res://assets/SurfMinigame/Obstacles/Phase1/SurfMinigameObstaclesResizedPillar.png" id="3_cy6kf"]
 [ext_resource type="PackedScene" uid="uid://cl24m24mpki3k" path="res://Scenes/SurfMinigame/SurfObstacleMovement.tscn" id="3_gsrt2"]
+[ext_resource type="Texture2D" uid="uid://b04uv3t5jtchy" path="res://assets/SurfMinigame/Obstacles/Phase1/SurfMinigameObstaclesResizedStone.png" id="4_3x0vc"]
+[ext_resource type="Texture2D" uid="uid://bwopncxt025ki" path="res://assets/SurfMinigame/Obstacles/Phase1/SurfMinigameObstaclesResizedWhirlpool.png" id="5_iea00"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x0vc"]
+atlas = ExtResource("3_cy6kf")
+region = Rect2(0, 0, 1400, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsrt2"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(0, 0, 225, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_iea00"]
+atlas = ExtResource("3_cy6kf")
+region = Rect2(1400, 0, 1400, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfvkj"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(225, 0, 225, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bulux"]
+atlas = ExtResource("4_3x0vc")
+region = Rect2(0, 0, 1400, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqmt1"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(0, 200, 225, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbh0"]
+atlas = ExtResource("4_3x0vc")
+region = Rect2(1400, 0, 1400, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2naqm"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(225, 200, 225, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lfrf"]
+atlas = ExtResource("5_iea00")
+region = Rect2(0, 0, 1400, 1400)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xkdsv"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(0, 400, 225, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgmtm"]
-atlas = ExtResource("3_4llxu")
-region = Rect2(225, 400, 225, 200)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0etnt"]
+atlas = ExtResource("5_iea00")
+region = Rect2(1400, 0, 1400, 1400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfvkj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gsrt2")
+"texture": SubResource("AtlasTexture_3x0vc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nfvkj")
+"texture": SubResource("AtlasTexture_iea00")
 }],
 "loop": true,
 "name": &"Obj1",
@@ -45,10 +46,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mqmt1")
+"texture": SubResource("AtlasTexture_bulux")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2naqm")
+"texture": SubResource("AtlasTexture_wdbh0")
 }],
 "loop": true,
 "name": &"Obj2",
@@ -56,10 +57,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xkdsv")
+"texture": SubResource("AtlasTexture_4lfrf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qgmtm")
+"texture": SubResource("AtlasTexture_0etnt")
 }],
 "loop": true,
 "name": &"Obj3",
@@ -86,11 +87,11 @@ SizeMult = 0.3
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." groups=["Damage"]]
 y_sort_enabled = true
-position = Vector2(-2.666648, -128)
-scale = Vector2(2.2933333, 2.2933333)
+position = Vector2(-15.333323, -176)
+scale = Vector2(0.29702383, 0.29702383)
 sprite_frames = SubResource("SpriteFrames_nfvkj")
-animation = &"Obj3"
-frame_progress = 0.60788774
+animation = &"Obj1"
+frame_progress = 0.406287
 script = ExtResource("1_4tvrl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

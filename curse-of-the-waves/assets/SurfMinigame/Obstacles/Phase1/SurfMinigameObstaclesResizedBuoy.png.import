@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmjumwwyis163"
-path="res://.godot/imported/Heart.png-16df4fe15ad94c6597015e71d493e34d.ctex"
+uid="uid://g0isce7w7hpp"
+path="res://.godot/imported/SurfMinigameObstaclesResizedBuoy.png-d94ccddc7f060993c904e7a0fd79286d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GUI/Heart.png"
-dest_files=["res://.godot/imported/Heart.png-16df4fe15ad94c6597015e71d493e34d.ctex"]
+source_file="res://assets/SurfMinigame/Obstacles/Phase1/SurfMinigameObstaclesResizedBuoy.png"
+dest_files=["res://.godot/imported/SurfMinigameObstaclesResizedBuoy.png-d94ccddc7f060993c904e7a0fd79286d.ctex"]
 
 [params]
 

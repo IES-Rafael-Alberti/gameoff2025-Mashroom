@@ -1,5 +1,5 @@
 extends Node2D
-var witchKilled = false
+var witch_killed = false
 
 func _ready():
 	var game_camera = get_tree().get_root().get_node("Main/GameManager/Camera")
@@ -9,10 +9,10 @@ func _ready():
 	await get_tree().process_frame  # o hasta que un dialogic scene se inicie
 	
 	# Ahora sí accedes a la variable
-	witchKilledEffect(not Dialogic.VAR.get_variable("canon_final"))
+	witch_killed_effect(not Dialogic.VAR.get_variable("canon_final"))
 
-func witchKilledEffect(isDead: bool):
-	if isDead:
+func witch_killed_effect(is_dead: bool):
+	if is_dead:
 		print("The witch is dead")
 		$Spawner.witch_killed = true
 		$EnemiesWitchKilled.visible = true
