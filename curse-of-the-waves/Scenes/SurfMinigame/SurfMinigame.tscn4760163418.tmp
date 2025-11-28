@@ -16,13 +16,22 @@
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player", "spawner", "min_pos", "max_pos")]
 script = ExtResource("1_rkf72")
+intervals = null
 transition_total_duration = 6.0
 transition_duration = 4.0
 time_before_ending = 10.0
+auto_cycle = null
+start_phase = null
+player_colors = null
 player = NodePath("Player")
 spawner = NodePath("Spawner")
 min_pos = NodePath("Player/MinPlayerMov")
 max_pos = NodePath("Player/MaxPlayerMov")
+phase_Sky_textures = null
+phase_Clouds_textures = null
+phase_Water_textures = null
+phase_Wave_textures = null
+phase_Shadow_textures = null
 
 [node name="Player" parent="." instance=ExtResource("1_7ktql")]
 scale = Vector2(1, 1)

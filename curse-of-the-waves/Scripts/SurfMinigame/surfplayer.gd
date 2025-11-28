@@ -67,7 +67,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		else:
 			_damage()
 	elif area.is_in_group("Kumi"):
-		game_manager.surfBeated = true
+		game_manager.surf_beated = true
 		next_scene()
 
 

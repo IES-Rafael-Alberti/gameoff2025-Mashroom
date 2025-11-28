@@ -131,8 +131,8 @@ func _spawn_object_pos(object: PackedScene, pos_range: float) -> void:
 		0,
 	)
 	var obj_mov = next_object.get_node("ObstacleMovement")
-	obj_mov.EndPos = Vector2(spawn_pos.x, height_end)
-	obj_mov.Speed *= objects_speed
+	obj_mov.end_pos = Vector2(spawn_pos.x, height_end)
+	obj_mov.speed *= objects_speed
 
 	add_child(next_object)
 
