@@ -452,68 +452,68 @@ label Final choice #id:be
 	character_eris: Me abalancé sobre la bruja rápidamente, atacando con arañazos y mordiscos gracias a mi nueva forma. #id:c7
 	leave 
 	[wait time="1.0"]
-	label con-estalactita #id:c8
+	label con-estalactita #id:4a
 	if {has_weapon} == true:
 		[style name="Base_Dialogo"]
-		character_eris: URGH-! No lo haces mal… #id:c9
+		character_eris: URGH-! No lo haces mal… #id:4b
 		[style name="Base"]
-		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:ca
+		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:4c
 		join character_zach (Stalactite) right
-		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:cb
-		¡Utilicé mi cola para cogerla y-! #id:cc
+		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:4d
+		¡Utilicé mi cola para cogerla y-! #id:4e
 		[background arg="res://DialogicAssets/backgrounds/Edited_CaveLairScene.png" fade="0.0"]
 		leave character_zach
 		join character_eris (Cutscene) center
 		audio "res://assets/Audio/SFX/Sorpresa/Track6_Instrumento.wav" [bus="SFX"]
 		[style name="Base_Dialogo"]
-		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:cd
+		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:4f
 		[style name="Base"]
 		leave character_eris
 		join character_eris (Hurt) center
-		¡Lo conseguí! ¡La hice sangrar! #id:ce
+		¡Lo conseguí! ¡La hice sangrar! #id:50
 		[style name="Base_Dialogo"]
-		character_eris: G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…? #id:cf
-		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:d0
-		character_eris: ...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara… #id:d1
-		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:d2
+		character_eris: G-Ggghhh…[pause=0.2] I-Idiota… [pause=0.2]¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…? #id:51
+		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:52
+		character_eris: ...J-Jejejeje… [pause=0.2] …No tienes ni idea de lo que te depara… #id:53
+		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:54
 		#  [Flash morado oscuro momentaneo, Eris exit] 
 		leave character_eris
-		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:d3
-		…Supongo que eso cuenta como haberla derrotado. #id:d4
-		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:d5
-		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:d6
+		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:55
+		…Supongo que eso cuenta como haberla derrotado. #id:56
+		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:57
+		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:58
 		[end_timeline]
-	label sin-estalactita #id:d7
+	label sin-estalactita #id:59
 	else:
 		update character_eris (Attack) [animation="Heartbeat" wait="true"]
 		[style name="Base_Dialogo"]
-		character_eris: ¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo! #id:d8
-		character_eris: ¡¡¡Sin embargo…!!! #id:d9
+		character_eris: ¡Nrgh-! ¡No lo haces mal para haber sido transformado hace tan poco tiempo! #id:5a
+		character_eris: ¡¡¡Sin embargo…!!! #id:5b
 		[style name="Base"]
-		La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos. #id:da
-		Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor. #id:db
+		La bruja me agarró del cuello y me embistió contra la pared, haciéndome perder el control de mi cuerpo por momentos. #id:5c
+		Fueron esos pocos segundos en los que los esbirros de la bruja se abalanzaron sobre mí, mordiendo mis muñecas y mi cola para atraparme, haciéndome aullar de dolor. #id:5d
 		update character_eris (Joy)
 		[style name="Base_Dialogo"]
-		character_eris: ¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato. #id:dc
-		character_zach: N-Nnngghh… N-No puede ser… #id:dd
-		character_eris: Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar… #id:de
+		character_eris: ¿Qué, ya no eres tan valiente eh? No me subestimes solo por mi forma escuálida, mentecato. #id:5e
+		character_zach: N-Nnngghh… N-No puede ser… #id:5f
+		character_eris: Parece que he sido la ganadora de esta contienda, y ahora que he visto que no estás dispuesto a cooperar… #id:60
 		update character_eris (Attack) [animation="Heartbeat" wait="true"]
 		[style name="Base"]
-		Voy a asegurarme de que no vuelvas a desobedecerme nunca. #id:df
-		Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero… #id:e0
-		Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía… #id:e1
-		En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer… #id:e2
-		Como un animal salvaje… Comer… comer… #id:e3
+		Voy a asegurarme de que no vuelvas a desobedecerme nunca. #id:61
+		Lo último que ví fue como la bruja me lanzó un hechizo nuevamente, mucho más doloroso que el primero… #id:62
+		Sentí como mi cuerpo lentamente se retorcía de dolor mientras era transformado nuevamente por mi osadía… #id:63
+		En cuestión de minutos, me había convertido en algo aún más insignificante, era incapaz de procesar lo que era ahora, mi inteligencia había sido reducida a tal punto que solo podía pensar en comer… #id:64
+		Como un animal salvaje… Comer… comer… #id:65
 		update character_eris (Joy)
 		[style name="Base_Dialogo"]
-		character_eris: ¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~! #id:e4
+		character_eris: ¡Tal vez esta nueva forma sea más de tu tipo, jajajaja! ¡Disfruta de ser una sanguijuela abisal, esbirro~! #id:66
 		[style name="Base"]
-		Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer… #id:e5
-		Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto… #id:e6
-		- Reintentar #id:e7
+		Solo soy… un esbirro más ahora… No puedo pensar por mi mismo… solo puedo comer… obedecer… #id:67
+		Si tan solo… hubiera tenido algo con lo que defenderme… tal vez podría haber sido distinto… #id:68
+		- Reintentar #id:69
 			jump Final choice
 			jump Final choice
-		- Me rindo #id:e8
+		- Me rindo #id:6a
 			set {gave_up} = true
 			[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="0.0"]
 			# Mandar al menú
