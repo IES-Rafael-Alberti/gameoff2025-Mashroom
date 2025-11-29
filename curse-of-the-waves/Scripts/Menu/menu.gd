@@ -8,6 +8,7 @@ extends Control
 @onready var play_button: Button = $VBoxContainer/PlayButton
 @onready var options_button: Button = $VBoxContainer/OptionsButton
 @onready var credits_button: Button = $VBoxContainer/CreditsButton
+@onready var language_option_button: OptionButton = $OptionsMenu/OptionsBackground/Options/TabContainer/ui_language/OptionButton
 
 var change_control: String = ""
 var change_button: Button
@@ -16,6 +17,7 @@ var change_button: Button
 func _ready() -> void:
 	AudioPlayer.music_nivel(-3.0)
 	_start_update_buttons()
+	_set_language_option_to_current()
 	if play_button:
 		play_button.grab_focus()
 
@@ -232,3 +234,17 @@ func _start_update_buttons() -> void:
 		_update_button(button_keyboard, button_keyboard.text)
 		var button_joystick = controls.get_node(path + "/JoystickControlsVBox/" + button_url)
 		_update_button(button_joystick, button_joystick.text)
+
+
+func _set_language_option_to_current() -> void:
+	var current_locale: String = TranslationServer.get_locale()
+	var index: int = 0
+	match current_locale:
+		"en":
+			index = 0
+		"es":
+			index = 1
+		_:
+			index = 0
+	
+	language_option_button.select(index)
