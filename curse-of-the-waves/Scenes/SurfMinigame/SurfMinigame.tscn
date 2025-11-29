@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtppkhc763bvn"]
+[gd_scene load_steps=15 format=3 uid="uid://dtppkhc763bvn"]
 
 [ext_resource type="PackedScene" uid="uid://kg2yrh4ogamm" path="res://Scenes/SurfMinigame/SurfPlayer.tscn" id="1_7ktql"]
 [ext_resource type="Script" uid="uid://gf23gvtwx4xm" path="res://Scripts/SurfMinigame/surfminigame.gd" id="1_rkf72"]
@@ -26,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://fwwt1m4ubrq0" path="res://assets/SurfMinigame/Ocean/Phase3/wave3.png" id="20_e7pq8"]
 [ext_resource type="Texture2D" uid="uid://xcf3nf1hf0fn" path="res://assets/SurfMinigame/Ocean/Phase4/wave4.png" id="21_pg3oq"]
 [ext_resource type="PackedScene" uid="uid://da8j3f2yd6nwg" path="res://Scenes/SurfMinigame/Obstacles/SurfKumi.tscn" id="26_b6oyd"]
+[ext_resource type="Texture2D" uid="uid://dqvewmtg8pqxl" path="res://assets/SurfMinigame/Ocean/Phase4/sky4.png" id="5_ol6og"]
+[ext_resource type="PackedScene" uid="uid://dpcqvmtg9pqxl" path="res://assets/SurfMinigame/Ocean/Phase2/clouds2.png" id="7_mm8sp"]
+[ext_resource type="PackedScene" uid="uid://drcbvvsa7085a" path="res://Scenes/SurfMinigame/Items/alga.tscn" id="6_2kmx6"]
+[ext_resource type="PackedScene" uid="uid://drcbvvsa7085b" path="res://Scenes/SurfMinigame/Items/madera.tscn" id="7_5en2c"]
 
 [node name="Gameplay" type="Node2D" node_paths=PackedStringArray("player", "spawner", "min_pos", "max_pos")]
 script = ExtResource("1_rkf72")
