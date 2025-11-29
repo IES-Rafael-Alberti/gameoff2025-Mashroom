@@ -192,7 +192,7 @@ label Segunda eleccion #id:50
 	join character_zach (Stalactite) right
 	set {has_weapon} = true
 	
-	Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… (+1 Estalactita) #id:5f
+	Vi como una estalactita se desprendía del techo tras haber sido golpeada por el hueso; aproveché el momento y cuidadosamente cogí la estalactita mientras la bruja estaba distraída, por si acaso me ayuda en un futuro… #id:5f
 	leave character_zach
 - Quería nuevos amigos… #id:60
 	[style name="Base_Dialogo"]
