@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export_group("Basics")
 @export var base_speed = 400.0
 @export var jump_power = -20
-@export var iframes = 1
+@export var iframes = 0.8
 
 @export_group("Complex")
 @export var gravity_mult = 0.5
