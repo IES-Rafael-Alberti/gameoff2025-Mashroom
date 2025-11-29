@@ -161,7 +161,7 @@ jobs:
       
       echo "Matrix: {\"include\":$matrix_include}"
  Export:
-  needs: [Detect-Platforms, Confirm-Release]
+  needs: [Detect-Platforms]
   if: |
     needs.Detect-Platforms.outputs.has-platforms == 'true' && 
     (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'))
@@ -262,10 +262,10 @@ jobs:
      path: exports/${{ matrix.folder }}
   
  Release:
-  needs: [Detect-Platforms, Export, Confirm-Release]
+  needs: [Detect-Platforms, Export]
   if: |
     always() && (needs.Export.result == 'success' || needs.Export.result == 'skipped') && 
-    (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && needs.Confirm-Release.outputs.should-release == 'true'))
+    (github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'))
   runs-on: ubuntu-latest
   outputs:
     release-tag: ${{ steps.existing_tag.outputs.new_tag || steps.new_tag.outputs.new_tag }}
