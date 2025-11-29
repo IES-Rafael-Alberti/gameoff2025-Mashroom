@@ -25,7 +25,7 @@ if {canon_final} == true:
 	...La realidad me vuelve a caer como un bloque de hormigón… #id:ef
 	leave character_kumi [animation="Zoom Center Out" length="3.0" wait="true"]
 	
-	…Estoy perdido en las profundidades… (Fundido a negro) #id:f0
+	…Estoy perdido en las profundidades… #id:f0
 else:
 	label final-fake-objects #id:f1
 	if {has_weapon} == false:
