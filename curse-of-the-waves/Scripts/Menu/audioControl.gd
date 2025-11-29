@@ -117,6 +117,14 @@ func btn_mas_s():
 
 #metodo para que suene algo que indique cuan alto o bajo esta el volumen de sfx
 func play_sfx():
-	if audio_player and test_sonido:
-		audio_player.stream = test_sonido
-		audio_player.play()
+
+	# Create a temporary audio player for the test sound
+	var temp_player = AudioStreamPlayer.new()
+	temp_player.stream = test_sonido
+	temp_player.bus = "SFX"
+	add_child(temp_player)
+	temp_player.play()
+	
+	# Clean up after sound finishes
+	await temp_player.finished
+	temp_player.queue_free()
