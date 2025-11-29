@@ -18,7 +18,7 @@ var config: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:
 	load_scene(current_scene, false)
-	_gui_show(false)
+	gui_show(false)
 
 
 func _enter_tree() -> void:
@@ -81,7 +81,7 @@ func _save_language_to_localstorage(locale: String) -> void:
 
 
 func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -93,11 +93,11 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) ->
 
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(current_scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
 
 
 func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -118,11 +118,11 @@ func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> voi
 		$LoadedScene.add_child(current_scene.instantiate())
 	else:
 		$LoadedScene.add_child(current_scene.instantiate())
-		_gui_show(is_game)
+		gui_show(is_game)
 
 
 func load_scene(scene: PackedScene, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -133,7 +133,7 @@ func load_scene(scene: PackedScene, is_game: bool) -> void:
 			scenes[i].queue_free()
 
 	$LoadedScene.add_child(scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
 
 
 func hp_update(number: int) -> void:
@@ -148,5 +148,5 @@ func hp_add(number: int) -> void:
 	$Camera/GUI/Hearts.update_icons(health)
 
 
-func _gui_show(is_visible: bool) -> void:
+func gui_show(is_visible: bool) -> void:
 	$Camera/GUI.visible = is_visible
