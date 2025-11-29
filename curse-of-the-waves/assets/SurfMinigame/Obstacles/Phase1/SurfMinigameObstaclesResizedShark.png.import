@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dneu4jd8hripl"
-path="res://.godot/imported/ZachSurfSpritesheet.png-14d9313e18d5b314a19fdd042e26e398.ctex"
+uid="uid://mhw7a78julqi"
+path="res://.godot/imported/SurfMinigameObstaclesResizedShark.png-ac179461e6b4806b256436a298de12ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SurfMinigame/Zach/ZachSurfSpritesheet.png"
-dest_files=["res://.godot/imported/ZachSurfSpritesheet.png-14d9313e18d5b314a19fdd042e26e398.ctex"]
+source_file="res://assets/SurfMinigame/Obstacles/Phase1/SurfMinigameObstaclesResizedShark.png"
+dest_files=["res://.godot/imported/SurfMinigameObstaclesResizedShark.png-ac179461e6b4806b256436a298de12ab.ctex"]
 
 [params]
 

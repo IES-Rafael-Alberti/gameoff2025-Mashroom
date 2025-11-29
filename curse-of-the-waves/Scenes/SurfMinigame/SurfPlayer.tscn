@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://kg2yrh4ogamm"]
+[gd_scene load_steps=23 format=3 uid="uid://kg2yrh4ogamm"]
 
 [ext_resource type="Script" uid="uid://byor8eyxyn80p" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_i56nu"]
-[ext_resource type="Texture2D" uid="uid://dneu4jd8hripl" path="res://assets/SurfMinigame/Zach/ZachSurfSpritesheet.png" id="3_i56nu"]
+[ext_resource type="Texture2D" uid="uid://dneu4jd8hripl" path="res://assets/SurfMinigame/Zach/Phase1/ZachSurfSpritesheet.png" id="3_i56nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f12qk"]
 size = Vector2(96, 78.6667)
@@ -56,11 +56,27 @@ region = Rect2(700, 1402, 700, 701)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sw0s6"]
 atlas = ExtResource("3_i56nu")
-region = Rect2(0, 701, 700, 701)
+region = Rect2(1400, 1402, 700, 701)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xoosh"]
 atlas = ExtResource("3_i56nu")
+region = Rect2(2100, 1402, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fhtq"]
+atlas = ExtResource("3_i56nu")
+region = Rect2(0, 701, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_531po"]
+atlas = ExtResource("3_i56nu")
 region = Rect2(700, 701, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmvsk"]
+atlas = ExtResource("3_i56nu")
+region = Rect2(1400, 701, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vby2"]
+atlas = ExtResource("3_i56nu")
+region = Rect2(2100, 701, 700, 701)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_advmg"]
 animations = [{
@@ -115,6 +131,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e01dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw0s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoosh")
 }],
 "loop": true,
 "name": &"turning_left",
@@ -122,10 +144,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sw0s6")
+"texture": SubResource("AtlasTexture_7fhtq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xoosh")
+"texture": SubResource("AtlasTexture_531po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmvsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vby2")
 }],
 "loop": true,
 "name": &"turning_right",
@@ -152,5 +180,7 @@ y_sort_enabled = true
 position = Vector2(-2.666687, -106.66668)
 scale = Vector2(0.70952386, 0.70952386)
 sprite_frames = SubResource("SpriteFrames_advmg")
+frame = 1
+frame_progress = 0.9276441
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

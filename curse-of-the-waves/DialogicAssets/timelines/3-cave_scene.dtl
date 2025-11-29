@@ -1,100 +1,99 @@
 audio music "res://assets/Audio/Música/encuentro con umibozu/encuentroUmibozu2.wav" [fade="2.5" bus="Musica" loop="true"]
-label final-canon #id:47
+label final-canon #id:e6
 
 if {canon_final} == true:
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOV.png" fade="0.0"]
-	Al fin logré escapar… Estoy fuera de la cueva… #id:c9
+	Al fin logré escapar… Estoy fuera de la cueva… #id:e7
 	
-	Puedo escuchar los gritos de la bruja mientras me sigue buscando más adentro, pero ya he logrado escapar, por lo que no logrará encontrarme… #id:ca
+	Puedo escuchar los gritos de la bruja mientras me sigue buscando más adentro, pero ya he logrado escapar, por lo que no logrará encontrarme… #id:e8
 	
-	Lo conseguí… ¡Soy libre otra vez! #id:cb
+	Lo conseguí… ¡Soy libre otra vez! #id:e9
 	
-	Pero… #id:cc
+	Pero… #id:ea
 	[background arg="res://DialogicAssets/backgrounds/HandsEndingCutscene.png" fade="0.6" transition="Simple Fade"]
 	
-	Cierto… sigo atrapado en esta forma… No sé como conseguiré volver a la normalidad… No me queda otra que empezar a buscar soluciones… #id:cd
+	Cierto… sigo atrapado en esta forma… No sé como conseguiré volver a la normalidad… No me queda otra que empezar a buscar soluciones… #id:eb
 	
-	…Pero… …si he logrado llegar tan lejos, seguro que podré encontrar una manera de volver a la normalidad… …sí, ¡puedo hacerlo-! #id:ce
+	…Pero… …si he logrado llegar tan lejos, seguro que podré encontrar una manera de volver a la normalidad… …sí, ¡puedo hacerlo-! #id:ec
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi1.png" fade="0.5" transition="Simple Fade"]
 	
-	... #id:cf
+	... #id:ed
 	
-	“...Siento ese terror de que mi muerte se aproxima nuevamente… #id:d0
+	“...Siento ese terror de que mi muerte se aproxima nuevamente… #id:ee
 	[background arg="res://DialogicAssets/backgrounds/OutsideCavePOVKumi2.png" fade="1.5"]
 	
-	...La realidad me vuelve a caer como un bloque de hormigón… #id:d1
+	...La realidad me vuelve a caer como un bloque de hormigón… #id:ef
 	leave character_kumi [animation="Zoom Center Out" length="3.0" wait="true"]
 	
-	…Estoy perdido en las profundidades… (Fundido a negro) #id:d2
+	…Estoy perdido en las profundidades… (Fundido a negro) #id:f0
 else:
-	label final-fake-objects
+	label final-fake-objects #id:f1
 	if {has_weapon} == false:
 		join character_eris (Shock) center [animation="Fade In Up"]
 		[style name="Base_Dialogo"]
-		character_eris: URGH-! No lo haces mal… #id:d3
+		character_eris: URGH-! No lo haces mal… #id:f2
 		[style name="Base"]
-		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:d4
+		Conseguí arrinconar a la bruja, estábamos agarrados el uno al otro, intentando subyugarnos el uno al otro. #id:f3
 		leave character_eris [animation="Fade In Up"]
 		join character_zach (Stalactite) center
 		[background arg="res://DialogicAssets/backgrounds/ErisCaveBackgroundMinigameRaw.png" fade="0.0"]
-		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:d5
-		¡Utilicé mi cola para cogerla y-! #id:d6
+		Por suerte, vi mi oportunidad\: una estalactita caída en el suelo. #id:f4
+		¡Utilicé mi cola para cogerla y-! #id:f5
 		leave character_zach
 		join character_eris (Cutscene) center [animation="Instant Out" length="0.2"]
 		[style name="New_File"]
-		audio "res://assets/Audio/SFX/sfxGritoBruja3.wav" [volume="5.0" bus="SFX"]
-		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:d8
+		audio "res://assets/Audio/SFX/sfxGritoBruja3.wav" [volume="5.5" bus="SFX"]
+		character_eris: ¡¡¡GYYYYYAAAAAAAAAAAAGGGGGGHHHHHH-!!! #id:f6
 		update character_eris (Hurt) center
 		[style name="Base"]
-		¡Lo conseguí! ¡La hice sangrar! #id:d9
+		¡Lo conseguí! ¡La hice sangrar! #id:f7
 		[style name="Base_Dialogo"]
-		character_eris: “G-Ggghhh… [pause=0.2] I-Idiota… [pause=0.2] ¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?” #id:da
-		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:db
-		character_eris: ...J-Jejejeje… [pause=0.2]…No tienes ni idea de lo que te depara… #id:dc
-		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:dd
+		character_eris: “G-Ggghhh… [pause=0.2] I-Idiota… [pause=0.2] ¿...Q-Que no ves que lo único que te mantiene con vida aquí abajo soy y-yo…?” #id:f8
+		character_zach: Prefiero vivir por mi propia cuenta… Ya no volverás a hacer daño a nadie más… #id:f9
+		character_eris: ...J-Jejejeje… [pause=0.2]…No tienes ni idea de lo que te depara… #id:fa
+		character_eris: Disfruta… [pause=0.2] de tu muerte… #id:fb
 		leave --All-- [animation="Fade Out"]
 		# Flash morado oscuro momentaneo
 		[style name="Base"]
-		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:de
-		…Supongo que eso cuenta como haberla derrotado. #id:df
-		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:e0
-		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:e1
-	label final-fake
+		La bruja entonces se desvaneció en una nube oscura, sin dejar rastro… #id:fc
+		…Supongo que eso cuenta como haberla derrotado. #id:fd
+		Miré en el cráter volcánico que usaba como caldero, la mezcla de las esencias estaba dentro, pero no tenía ni idea de cómo utilizarlas, o mezclarlas… #id:fe
+		No me queda otra que salir e intentar encontrar otra manera de volver a la normalidad… Con suerte conseguiré la esencia esa que me hace falta o algo… #id:ff
+	label final-fake #id:100
 	[background arg="res://DialogicAssets/backgrounds/OpenSeaPOV.png" fade="0.0"]
-	…Llevo nadando durante varios minutos sin encontrar nada ni nadie… …Está todo tranquilo… #id:e2
-	No veo nada de tierra, ni rocas, solo agua… …creo que me he alejado demasiado de la cueva, no sé en qué dirección ir… #id:e3
+	…Llevo nadando durante varios minutos sin encontrar nada ni nadie… …Está todo tranquilo… #id:101
+	No veo nada de tierra, ni rocas, solo agua… …creo que me he alejado demasiado de la cueva, no sé en qué dirección ir… #id:102
 	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="1.0"]
-	… #id:e4
-	…Oh no… #id:e5
-	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:e6
+	… #id:103
+	…Oh no… #id:104
+	…Mi cuerpo no responde… [pause=0.2] …estoy paralizado por el miedo… #id:105
 	# [Kumi habla lentamente en todos sus diálogos y tiene letra de mayor tamaño y color distinto]
 	[style name="Kumi_style"]
-	character_kumi: ¿ACASO TE DOY MIEDO? #id:e7
+	character_kumi: ¿ACASO TE DOY MIEDO? #id:106
 	[style name="Base"]
-	…No puedo ni responder, no puedo hacer nada… #id:e8
+	…No puedo ni responder, no puedo hacer nada… #id:107
 	[style name="Base_Dialogo"]
-	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:e9
-	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:ea
-	character_kumi: ERES MUY VALIENTE… INCLUSO HAS ESCAPADO DE ERIS… #id:eb
+	character_kumi: DE TODOS LOS HUMANOS… TU ERES EL MÁS INTERESANTE… #id:108
+	character_kumi: NINGUNO HABÍA SOBREVIVIDO DELANTE MÍA POR TANTO TIEMPO SIN MORIR… O SIN SUICIDARSE… #id:109
+	character_kumi: ERES MUY VALIENTE… INCLUSO HAS ESCAPADO DE ERIS… #id:10a
 	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
-	character_kumi: …TENGO CURIOSIDAD… #id:ec
-	character_kumi: ¿...HASTA CUANTO LLEGAN TUS LÍMITES, HUMANO? #id:ed
-	character_kumi: ¿...CREES QUE PODRÍAS SOBREVIVIR CONMIGO? #id:ee
+	character_kumi: …TENGO CURIOSIDAD… #id:10b
+	character_kumi: ¿...HASTA CUANTO LLEGAN TUS LÍMITES, HUMANO? #id:10c
+	character_kumi: ¿...CREES QUE PODRÍAS SOBREVIVIR CONMIGO? #id:10d
 	[background arg="res://DialogicAssets/characters/kumi/KumiNeutral.png" fade="2.2"]
-	character_kumi: …QUIERO AVERIGUARLO… #id:ef
+	character_kumi: …QUIERO AVERIGUARLO… #id:10e
 	[style name="Base"]
-	Una mano gigante compuesta por agua oscura me agarró el cuerpo completo, no tengo escapatoria… #id:f0
+	Una mano gigante compuesta por agua oscura me agarró el cuerpo completo, no tengo escapatoria… #id:10f
 	[style name="Kumi_style"]
-	character_kumi: …TU NUEVO CUERPO… …A LO MEJOR SERÁ CAPAZ DE AGUANTAR TODA LA PRESIÓN… #id:f1
+	character_kumi: …TU NUEVO CUERPO… …A LO MEJOR SERÁ CAPAZ DE AGUANTAR TODA LA PRESIÓN… #id:110
 	[background arg="res://DialogicAssets/characters/kumi/KumiJoy.png" fade="2.2"]
-	character_kumi: …VAMOS A VERLO… …HEEHEE… #id:f2
+	character_kumi: …VAMOS A VERLO… …HEEHEE… #id:111
 	[style name="Base"]
 	[background arg="res://DialogicAssets/backgrounds/AbyssPOV1.png" fade="2.0"]
-	Al más mínimo movimiento al fin solté un grito desgarrador que fue sofocado por el mar mientras era sumergido en las profundidades abisales por la criatura… #id:f3
-	En cuestión de minutos no podía ver nada, estaba todo demasiado oscuro, cada vez me dolía más el cuerpo… Puede que consiga sobrevivir a la presión, pero sigue doliendo demasiado… #id:f4
-	Estoy atrapado aquí abajo… No sé cuanto tiempo ha pasado… No se que será de mi… Tengo miedo… #id:f5
-	… #id:f6
+	Al más mínimo movimiento al fin solté un grito desgarrador que fue sofocado por el mar mientras era sumergido en las profundidades abisales por la criatura… #id:112
+	En cuestión de minutos no podía ver nada, estaba todo demasiado oscuro, cada vez me dolía más el cuerpo… Puede que consiga sobrevivir a la presión, pero sigue doliendo demasiado… #id:113
+	Estoy atrapado aquí abajo… No sé cuanto tiempo ha pasado… No se que será de mi… Tengo miedo… #id:114
+	… #id:115
 
-FIN #id:f7
-# Conexión a los créditos
+FIN #id:116
 [end_timeline]

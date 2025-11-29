@@ -214,15 +214,13 @@ popup/item_0/id = 0
 popup/item_1/text = "Español"
 popup/item_1/id = 1
 
-[node name="ui_volume" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer" node_paths=PackedStringArray("general", "musica", "efectos", "audioPlayer")]
+[node name="ui_volume" type="VBoxContainer" parent="OptionsMenu/OptionsBackground/Options/TabContainer" node_paths=PackedStringArray("general", "musica", "efectos")]
 visible = false
 layout_mode = 2
 script = ExtResource("4_s2c3o")
 general = NodePath("MainHBox/General")
 musica = NodePath("MusicHBox/Musica")
 efectos = NodePath("SoundHBox/Sfx")
-testSonido = ExtResource("6_idohh")
-audioPlayer = NodePath("../../../../../VBoxContainer/audioPlayer")
 metadata/_tab_index = 1
 
 [node name="VolumeLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume"]

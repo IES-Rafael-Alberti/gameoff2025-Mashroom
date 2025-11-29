@@ -410,6 +410,8 @@ jobs:
           folder: windows
         - platform: linux
           folder: linux
+        - platform: macos
+          folder: macos
         - platform: web
           folder: web
     fail-fast: false
@@ -501,6 +503,7 @@ jobs:
           if [ "${{ needs.Publish.result }}" == "success" ]; then
             echo "- ✅ Windows" >> $GITHUB_STEP_SUMMARY
             echo "- ✅ Linux" >> $GITHUB_STEP_SUMMARY
+            echo "- ✅ macOS" >> $GITHUB_STEP_SUMMARY
             echo "- ✅ Web" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 🎮 Play Now" >> $GITHUB_STEP_SUMMARY
