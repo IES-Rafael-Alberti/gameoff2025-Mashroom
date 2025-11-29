@@ -418,6 +418,7 @@ jobs:
   steps:
     - name: Download ${{ matrix.platform }} Export (from test run)
       if: github.event.inputs.rebuild != 'true'
+      id: download-test
       uses: dawidd6/action-download-artifact@v3
       with:
         workflow: test.yml
@@ -429,11 +430,22 @@ jobs:
       continue-on-error: true
     
     - name: Download ${{ matrix.platform }} Export (freshly built)
-      if: github.event.inputs.rebuild == 'true' || failure()
+      if: (github.event.inputs.rebuild == 'true' || steps.download-test.outcome == 'failure') && github.event.inputs.rebuild != 'false'
       uses: actions/download-artifact@v4
       with:
         name: export-${{ matrix.platform }}
         path: exports/${{ matrix.folder }}
+    
+    - name: Verify ${{ matrix.platform }} Export Downloaded
+      shell: bash
+      run: |
+        if [ ! -d "exports/${{ matrix.folder }}" ] || [ -z "$(ls -A exports/${{ matrix.folder }})" ]; then
+          echo "❌ ERROR: No ${{ matrix.platform }} export found!"
+          echo "This means the export either failed to build or download."
+          exit 1
+        fi
+        echo "✅ ${{ matrix.platform }} export verified"
+        ls -la exports/${{ matrix.folder }}/
     
     - name: Cache Butler
       uses: actions/cache@v4
