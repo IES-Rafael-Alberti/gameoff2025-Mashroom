@@ -4,14 +4,14 @@ var object_to_follow: Node2D
 var bl_marker: Marker2D
 var tr_marker: Marker2D
 
-@onready var camera_size = get_viewport().get_visible_rect().size / zoom
-@onready var cam_width = camera_size.x
-@onready var cam_height = camera_size.y
+@onready var camera_size: Vector2 = get_viewport().get_visible_rect().size / zoom
+@onready var cam_width: float = camera_size.x
+@onready var cam_height: float = camera_size.y
 
-var follow_player = false
+var follow_player: bool = false
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if follow_player:
 		position.x = object_to_follow.position.x
 		position.y = object_to_follow.position.y
@@ -29,7 +29,7 @@ func _process(_delta):
 		position = Vector2(960, 540)
 
 
-func start_follow(follow: Node2D, bl_mark: Marker2D, tr_mark: Marker2D):
+func start_follow(follow: Node2D, bl_mark: Marker2D, tr_mark: Marker2D) -> void:
 	object_to_follow = follow
 	bl_marker = bl_mark
 	tr_marker = tr_mark
