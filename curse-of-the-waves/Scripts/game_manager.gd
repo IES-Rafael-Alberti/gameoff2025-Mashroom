@@ -12,26 +12,76 @@ var base_windows_size: Vector2 = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_height"),
 )
 
+const CONFIG_FILE_PATH: String = "user://game_settings.cfg"
+var config: ConfigFile = ConfigFile.new()
+
 
 func _ready() -> void:
 	load_scene(current_scene, false)
-	_gui_show(false)
+	gui_show(false)
 
 
 func _enter_tree() -> void:
-	TranslationServer.set_locale("en")
+	_load_language_preference()
+
+
+func _load_language_preference() -> void:
+	var locale: String = "en"
+	
+	if OS.get_name() == "Web":
+		locale = _load_language_from_localstorage()
+	else:
+		locale = _load_language_from_configfile()
+	
+	TranslationServer.set_locale(locale)
+
+
+func _load_language_from_configfile() -> String:
+	var error = config.load(CONFIG_FILE_PATH)
+	if error == OK:
+		return config.get_value("language", "locale", "en")
+	return "en"
+
+
+func _load_language_from_localstorage() -> String:
+	if OS.get_name() == "Web":
+		var result = JavaScriptBridge.eval("localStorage.getItem('game_language') || 'en'")
+		return result if result else "en"
+	return "en"
 
 
 func change_language(index: int) -> void:
+	var locale: String = ""
 	match index:
 		0:
-			TranslationServer.set_locale("en")
+			locale = "en"
 		1:
-			TranslationServer.set_locale("es")
+			locale = "es"
+	
+	if locale != "":
+		TranslationServer.set_locale(locale)
+		_save_language_preference(locale)
+
+
+func _save_language_preference(locale: String) -> void:
+	if OS.get_name() == "Web":
+		_save_language_to_localstorage(locale)
+	else:
+		_save_language_to_configfile(locale)
+
+
+func _save_language_to_configfile(locale: String) -> void:
+	config.set_value("language", "locale", locale)
+	config.save(CONFIG_FILE_PATH)
+
+
+func _save_language_to_localstorage(locale: String) -> void:
+	if OS.get_name() == "Web":
+		JavaScriptBridge.eval("localStorage.setItem('game_language', '" + locale + "')")
 
 
 func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -43,11 +93,11 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) ->
 
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(current_scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
 
 
 func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -68,11 +118,11 @@ func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> voi
 		$LoadedScene.add_child(current_scene.instantiate())
 	else:
 		$LoadedScene.add_child(current_scene.instantiate())
-		_gui_show(is_game)
+		gui_show(is_game)
 
 
 func load_scene(scene: PackedScene, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
 	hp_update(3)
 	current_scene = scene
@@ -83,7 +133,7 @@ func load_scene(scene: PackedScene, is_game: bool) -> void:
 			scenes[i].queue_free()
 
 	$LoadedScene.add_child(scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
 
 
 func hp_update(number: int) -> void:
@@ -98,5 +148,5 @@ func hp_add(number: int) -> void:
 	$Camera/GUI/Hearts.update_icons(health)
 
 
-func _gui_show(is_visible: bool) -> void:
+func gui_show(is_visible: bool) -> void:
 	$Camera/GUI.visible = is_visible

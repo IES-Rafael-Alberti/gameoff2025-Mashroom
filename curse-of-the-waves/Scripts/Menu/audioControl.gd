@@ -21,6 +21,8 @@ extends VBoxContainer
 const MIN_DECI = -60.0
 const MAX_DECI = 0.0
 
+var is_initializing = true
+
 
 func _ready():
 	sliders()
@@ -35,25 +37,22 @@ func _ready():
 	mas_m.pressed.connect(btn_mas_m)
 	menos_s.pressed.connect(btn_menos_s)
 	mas_s.pressed.connect(btn_mas_s)
+	
+	# Done initializing - now test sounds will play when SFX is adjusted
+	is_initializing = false
 
 
 func sliders():
 	print(general)
-	general.value = deci_to_slider(
-		AudioServer.get_bus_volume_db(
-			AudioServer.get_bus_index("Master"),
-		),
-	)
-	musica.value = deci_to_slider(
-		AudioServer.get_bus_volume_db(
-			AudioServer.get_bus_index("Musica"),
-		),
-	)
-	efectos.value = deci_to_slider(
-		AudioServer.get_bus_volume_db(
-			AudioServer.get_bus_index("SFX"),
-		),
-	)
+	# Set all sliders to middle (50) and apply middle volume to all buses
+	general.value = 50.0
+	musica.value = 50.0
+	efectos.value = 50.0
+	
+	# Apply middle volume to all buses (without playing test sound during init)
+	vol_general(50.0)
+	vol_musica(50.0)
+	volumen("SFX", 50.0)  # Just set the volume, don't play test sound
 
 
 func slider_to_deci(value: float) -> float:
@@ -88,7 +87,9 @@ func vol_musica(value: float):
 
 func vol_sfx(value: float):
 	volumen("SFX", value)
-	play_sfx()
+	# Only play test sound when user is actively adjusting, not during initialization
+	if not is_initializing:
+		play_sfx()
 
 
 func btn_menos_g():
@@ -117,6 +118,14 @@ func btn_mas_s():
 
 #metodo para que suene algo que indique cuan alto o bajo esta el volumen de sfx
 func play_sfx():
-	if audio_player and test_sonido:
-		audio_player.stream = test_sonido
-		audio_player.play()
+
+	# Create a temporary audio player for the test sound
+	var temp_player = AudioStreamPlayer.new()
+	temp_player.stream = test_sonido
+	temp_player.bus = "SFX"
+	add_child(temp_player)
+	temp_player.play()
+	
+	# Clean up after sound finishes
+	await temp_player.finished
+	temp_player.queue_free()
