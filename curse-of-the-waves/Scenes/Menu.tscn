@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=18 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Theme" uid="uid://dscponihkcj3x" path="res://assets/Temas/themeButton.tres" id="4_idohh"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
-[ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="6_idohh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aobxe"]
 bg_color = Color(0.03137255, 0.101960786, 0.15686275, 0.3882353)
@@ -204,6 +203,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath(".")
 focus_neighbor_right = NodePath(".")
+theme = ExtResource("4_idohh")
 theme_override_font_sizes/font_size = 60
 alignment = 1
 selected = 0
