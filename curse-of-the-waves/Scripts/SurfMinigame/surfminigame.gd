@@ -35,6 +35,8 @@ var _clouds_textures: Array = []
 var _wave_textures: Array = []
 var _shadow_textures: Array = []
 
+var surf_completed: bool = false
+
 # Cache shader path so we don't call load repeatedly
 const TRANSITION_SHADER_PATH := "res://assets/Shaders/Transition_between_two_textures.gdshader"
 
@@ -69,8 +71,20 @@ func start_background_cycle() -> void:
 	await get_tree().create_timer(dur).timeout
 	spawner.active = false
 	await get_tree().create_timer(time_before_ending).timeout
+	
+	on_surf_completed()
+	
 	# Here spawns the monster
 	spawner.spawn_kumi()
+
+func on_surf_completed() -> void:
+	if not surf_completed:
+		surf_completed = true
+		# Obtener referencia al GameManager y marcar que se completó el surf
+		var game_manager = get_tree().get_root().get_node("Main/GameManager")
+		if game_manager:
+			game_manager.complete_surf()
+			print("¡Surf completado! Corazón azul desbloqueado")
 
 func transition_sprite(
 		sprite: Sprite2D,
