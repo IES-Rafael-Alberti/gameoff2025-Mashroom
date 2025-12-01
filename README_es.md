@@ -21,8 +21,8 @@ Por defecto son las siguientes, se pueden cambiar en la configuración
 - **Arriba**: W / Left stick up
 - **Abajo**: S / Left stick down
 - **Izquierda**: A / Left stick left
-- **Derecha**: D/Left stick right
-- **Acción**: E / Xbox A
+- **Derecha**: D / Left stick right
+- **Acción**: E / Xbox A / PlayStation X / Nintendo B
 
 ### Minijuego de surf
 

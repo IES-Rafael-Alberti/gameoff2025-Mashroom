@@ -234,26 +234,31 @@ jobs:
     shell: bash
     run: |
       PROJECT_PATH="${{ needs.Detect-Platforms.outputs.project-path }}"
-      mkdir -p ./exports/${{ matrix.folder }}
-      echo "Exporting ${{ matrix.platform }} build..."
+      EXPORT_DIR="$(pwd)/exports/${{ matrix.folder }}"
+      mkdir -p "$EXPORT_DIR"
+      echo "Exporting ${{ matrix.platform }} build to: $EXPORT_DIR"
       
-      godot --headless --path "./$PROJECT_PATH" --export-release "${{ matrix.preset }}" "../exports/${{ matrix.folder }}/${{ matrix.file }}"
+      godot --headless --path "./$PROJECT_PATH" --export-release "${{ matrix.preset }}" "$EXPORT_DIR/${{ matrix.file }}"
       
       # Verify export
       if [ "${{ matrix.platform }}" == "macos" ]; then
-        if [ ! -d "./exports/${{ matrix.folder }}/${{ matrix.file }}" ]; then
-          echo "❌ ${{ matrix.platform }} export failed"
+        if [ ! -d "$EXPORT_DIR/${{ matrix.file }}" ]; then
+          echo "❌ ${{ matrix.platform }} export failed - file not found at $EXPORT_DIR/${{ matrix.file }}"
+          echo "Contents of export directory:"
+          ls -la "$EXPORT_DIR/" || echo "Directory does not exist!"
           exit 1
         fi
       else
-        if [ ! -f "./exports/${{ matrix.folder }}/${{ matrix.file }}" ]; then
-          echo "❌ ${{ matrix.platform }} export failed"
+        if [ ! -f "$EXPORT_DIR/${{ matrix.file }}" ]; then
+          echo "❌ ${{ matrix.platform }} export failed - file not found at $EXPORT_DIR/${{ matrix.file }}"
+          echo "Contents of export directory:"
+          ls -la "$EXPORT_DIR/" || echo "Directory does not exist!"
           exit 1
         fi
       fi
       
       echo "✅ ${{ matrix.platform }} export completed successfully"
-      ls -la "./exports/${{ matrix.folder }}/"
+      ls -la "$EXPORT_DIR/"
   
   - name: Upload ${{ matrix.platform }} Export
     uses: actions/upload-artifact@v4
