@@ -6,6 +6,10 @@ extends Node
 @export var full_hp: CompressedTexture2D
 
 var surf_beated: bool = false
+var witch_hit: bool = false
+
+var base_hp: int = 3  
+var max_hp: int = 3
 
 var base_windows_size: Vector2 = Vector2(
 	ProjectSettings.get_setting("display/window/size/viewport_width"),
@@ -18,7 +22,7 @@ var config: ConfigFile = ConfigFile.new()
 
 func _ready() -> void:
 	load_scene(current_scene, false)
-	_gui_show(false)
+	gui_show(false)
 
 
 func _enter_tree() -> void:
@@ -80,10 +84,15 @@ func _save_language_to_localstorage(locale: String) -> void:
 		JavaScriptBridge.eval("localStorage.setItem('game_language', '" + locale + "')")
 
 
+func complete_surf() -> void:
+	surf_beated = true
+	max_hp = 4
+
+
 func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
-	hp_update(3)
+	restore_hp_state()
 	current_scene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -93,13 +102,13 @@ func load_scene_dialogic(scene: PackedScene, dialogic: String, is_game: bool) ->
 
 	await Dialogic.timeline_ended
 	$LoadedScene.add_child(current_scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
 
 
 func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
-	hp_update(3)
+	restore_hp_state()
 	current_scene = scene
 	Dialogic.start(dialogic)
 	var scenes = $LoadedScene.get_children()
@@ -109,22 +118,25 @@ func load_scene_cave(scene: PackedScene, dialogic: String, is_game: bool) -> voi
 
 	await Dialogic.timeline_ended
 	if Dialogic.VAR.get_variable("said_ugly"):
+		witch_hit = true
 		hp_add(-1)
-	if surf_beated:
+	if surf_beated and max_hp != 4:
+		max_hp = 4
 		hp_add(1)
 	if Dialogic.VAR.get_variable("gave_up"):
 		Dialogic.VAR.set_variable("gave_up", false)
+		reset_game_state()
 		current_scene = load("res://Scenes/Main.tscn")
 		$LoadedScene.add_child(current_scene.instantiate())
 	else:
 		$LoadedScene.add_child(current_scene.instantiate())
-		_gui_show(is_game)
+		gui_show(is_game)
 
 
 func load_scene(scene: PackedScene, is_game: bool) -> void:
-	_gui_show(false)
+	gui_show(false)
 	$Camera.follow_player = false
-	hp_update(3)
+	restore_hp_state()
 	current_scene = scene
 
 	var scenes = $LoadedScene.get_children()
@@ -133,20 +145,62 @@ func load_scene(scene: PackedScene, is_game: bool) -> void:
 			scenes[i].queue_free()
 
 	$LoadedScene.add_child(scene.instantiate())
-	_gui_show(is_game)
+	gui_show(is_game)
+
+
+func restore_hp_state() -> void:
+	if surf_beated:
+		max_hp = 4
+	else:
+		max_hp = 3
+	
+	health = max_hp
+	
+	if witch_hit:
+		health -= 1
+		if health <= 0:
+			health = 1
+	
+	update_hearts_display()
+
+
+func update_hearts_display() -> void:
+	var hearts_info = []
+	
+	for i in range(1, 5): 
+		var heart_state = {
+			"index": i,
+			"is_visible": i <= max_hp,
+			"is_full": health >= i,  
+			"is_blue": (i == 4 and surf_beated), 
+			"is_broken": (i == max_hp and witch_hit and health < i) 
+		}
+		hearts_info.append(heart_state)
+	
+	$Camera/GUI/Hearts.update_hearts_with_colors(hearts_info)
 
 
 func hp_update(number: int) -> void:
 	health = number
-	$Camera/GUI/Hearts.update_icons(health)
+	update_hearts_display()
 
 
 func hp_add(number: int) -> void:
 	health = health + number
 	if health <= 0:
 		health = 1
-	$Camera/GUI/Hearts.update_icons(health)
+	if health > max_hp:
+		health = max_hp
+	update_hearts_display()
 
 
-func _gui_show(is_visible: bool) -> void:
+func reset_game_state() -> void:
+	surf_beated = false
+	witch_hit = false
+	max_hp = 3
+	health = 3
+	update_hearts_display()
+
+
+func gui_show(is_visible: bool) -> void:
 	$Camera/GUI.visible = is_visible

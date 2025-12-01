@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export_group("Basics")
 @export var base_speed = 400.0
 @export var jump_power = -20
-@export var iframes = 1
+@export var iframes = 0.8
 
 @export_group("Complex")
 @export var gravity_mult = 0.5
@@ -99,15 +99,27 @@ func _on_hitbox_area_entered(area):
 func _finish():
 	var game_manager = get_tree().get_root().get_node("Main/GameManager")
 	AudioPlayer.stop_music()
-	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', true)
+	game_manager.load_scene_dialogic(preload("res://Scenes/Credits.tscn"), '3-cave_scene', false)
 
 func _take_damage():
+	# Show damage feedback - flash red
+	anims.play("damage")
+	anims.self_modulate = Color.RED
+	
 	if _upd_hp(-1) <= 0:
 		_death()
 	else:
 		can_be_damaged = false
 		await get_tree().create_timer(iframes).timeout
 		can_be_damaged = true
+		# Return to normal color and animation
+		anims.self_modulate = Color.WHITE
+		if is_hidden:
+			anims.play("hide")
+		elif is_moving:
+			anims.play("move")
+		else:
+			anims.play("default")
 
 
 func _upd_hp(add: int):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://kg2yrh4ogamm"]
+[gd_scene load_steps=25 format=3 uid="uid://kg2yrh4ogamm"]
 
 [ext_resource type="Script" uid="uid://byor8eyxyn80p" path="res://Scripts/SurfMinigame/surfplayer.gd" id="1_i56nu"]
 [ext_resource type="Texture2D" uid="uid://dneu4jd8hripl" path="res://assets/SurfMinigame/Zach/Phase1/ZachSurfSpritesheet.png" id="3_i56nu"]
@@ -13,6 +13,14 @@ region = Rect2(0, 2804, 700, 701)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i56nu"]
 atlas = ExtResource("3_i56nu")
 region = Rect2(700, 2804, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_280by"]
+atlas = ExtResource("3_i56nu")
+region = Rect2(1400, 2804, 700, 701)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xlij"]
+atlas = ExtResource("3_i56nu")
+region = Rect2(2100, 2804, 700, 701)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqrvi"]
 atlas = ExtResource("3_i56nu")
@@ -86,6 +94,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i56nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_280by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xlij")
 }],
 "loop": false,
 "name": &"damaged",
@@ -180,7 +194,6 @@ y_sort_enabled = true
 position = Vector2(-2.666687, -106.66668)
 scale = Vector2(0.70952386, 0.70952386)
 sprite_frames = SubResource("SpriteFrames_advmg")
-frame = 1
-frame_progress = 0.9276441
+animation = &"damaged"
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://167ot86du27h"]
+[gd_scene load_steps=18 format=3 uid="uid://167ot86du27h"]
 
 [ext_resource type="Script" uid="uid://c11tsm1v5edsh" path="res://Scripts/Menu/menu.gd" id="1_syfuq"]
 [ext_resource type="Texture2D" uid="uid://cgsoys62dclov" path="res://DialogicAssets/backgrounds/Fondo_Playa.png" id="2_ma218"]
@@ -6,13 +6,27 @@
 [ext_resource type="Script" uid="uid://cwko6gfrw80vd" path="res://Scripts/Menu/OptionsMenu.gd" id="3_ma218"]
 [ext_resource type="Theme" uid="uid://dscponihkcj3x" path="res://assets/Temas/themeButton.tres" id="4_idohh"]
 [ext_resource type="Script" uid="uid://chvyj0vt1v0qi" path="res://Scripts/Menu/audioControl.gd" id="4_s2c3o"]
+[ext_resource type="AudioStream" uid="uid://bkr6g8yyislqr" path="res://assets/Audio/SFX/sfxBarraVol.wav" id="6_s2c3o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aobxe"]
+bg_color = Color(0.03137255, 0.101960786, 0.15686275, 0.3882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jcrr"]
+bg_color = Color(0.03529412, 0.101960786, 0.15686275, 0.94509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab40c"]
+bg_color = Color(0.03529412, 0.101960786, 0.15686275, 0.87058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfhf6"]
+bg_color = Color(0.03529412, 0.101960786, 0.15686275, 0.87058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjh0l"]
+bg_color = Color(0.03529412, 0.101960786, 0.15686275, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s2c3o"]
 font_size = 80
 outline_size = 2
 shadow_size = 16
-
-[sub_resource type="Theme" id="Theme_idohh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ma218"]
 font_size = 40
@@ -147,6 +161,7 @@ offset_right = 2.8798828
 offset_bottom = 0.00024414063
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aobxe")
 
 [node name="Options" type="Control" parent="OptionsMenu/OptionsBackground"]
 layout_mode = 2
@@ -156,9 +171,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 35
+theme_override_colors/font_hovered_color = Color(0.5130324, 0.8345069, 0.8163637, 1)
+theme_override_colors/font_unselected_color = Color(0.35323557, 0.6781937, 0.6601216, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/panel = SubResource("StyleBoxFlat_3jcrr")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_ab40c")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_wfhf6")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_sjh0l")
 tab_alignment = 1
 current_tab = 0
 
@@ -182,8 +204,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath(".")
 focus_neighbor_right = NodePath(".")
-theme = SubResource("Theme_idohh")
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("4_idohh")
+theme_override_font_sizes/font_size = 60
 alignment = 1
 selected = 0
 fit_to_longest_item = false
@@ -200,6 +222,7 @@ script = ExtResource("4_s2c3o")
 general = NodePath("MainHBox/General")
 musica = NodePath("MusicHBox/Musica")
 efectos = NodePath("SoundHBox/Sfx")
+test_sonido = ExtResource("6_s2c3o")
 metadata/_tab_index = 1
 
 [node name="VolumeLabel" type="Label" parent="OptionsMenu/OptionsBackground/Options/TabContainer/ui_volume"]
