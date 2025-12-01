@@ -19,8 +19,8 @@ By default they are as follows, they can be changed on settings
 - **Up**: W / Left stick up
 - **Down**: S / Left stick down
 - **Left**: A / Left stick left
-- **Right**: D/Left stick right
-- **Action**: E / Xbox A
+- **Right**: D / Left stick right
+- **Action**: E / Xbox A / PlayStation X / Nintendo B
 
 ### Surf minigame
 
