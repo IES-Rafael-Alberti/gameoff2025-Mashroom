@@ -228,11 +228,6 @@ jobs:
       
       echo "✅ ${{ matrix.platform }} export completed successfully"
       ls -la "$EXPORT_DIR/"
-        fi
-      fi
-      
-      echo "✅ ${{ matrix.platform }} export completed successfully"
-      ls -la "./exports/${{ matrix.folder }}/"
   
   - name: Upload ${{ matrix.platform }} Test Build
     uses: actions/upload-artifact@v4
